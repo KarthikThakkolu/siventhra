@@ -11,6 +11,7 @@ function App() {
         <Navbar />
         <main>
           <Routes>
+            <Route path="/" element={<Navbar/>}/>
           </Routes>
         </main>
         {/* <Footer /> */}
