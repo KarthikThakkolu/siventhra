@@ -12,11 +12,11 @@ function App() {
         <Navbar />
         <main>
           <Routes>
-            <Route path="/" element={<Footer/>}/>
+            {/* <Route path="/" element={<Footer/>}/> */}
 
           </Routes>
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </div>
   );
