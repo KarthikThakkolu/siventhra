@@ -18,7 +18,7 @@ function App() {
         {/* <main> */}
           <Routes>
             <Route path="/" element={<Navbar/>}/>
-            <Route path="/" element={<Footer/>}/>
+            {/* <Route path="/" element={<Footer/>}/> */}
             {/* Default Home Page */}
             {/* <Route path="/" element={<Homepage />} /> */}
 
@@ -27,7 +27,7 @@ function App() {
           </Routes>
         {/* </main> */}
 
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </div>
   );
