@@ -5,10 +5,10 @@
 .slider-wrapper {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 95vh;
   overflow: hidden;
   background: #000;
-  background:cover
+  /* background:cover */
 }
 
 /* ===========================
@@ -19,8 +19,12 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+   object-fit: cover;   /* Covers the entire slider */
+  object-position: center;
+  /* display: block; */
+
+  /* opacity: 0;
+  transition: opacity 0.8s ease-in-out; */
 }
 
 .slider-slide.active {
@@ -349,4 +353,149 @@
     display:none;
 }
 
+}
+
+
+
+
+/* container step 2 css  */
+
+/*==============================
+CONTAINER
+==============================*/
+
+.homepage-container{
+    width:95%;
+    margin:70px auto;
+}
+
+/*==============================
+ROW
+==============================*/
+
+.homepage-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+/*==============================
+CARD
+==============================*/
+
+.homepage-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+    transition:.4s;
+}
+
+.homepage-card:hover{
+    transform:translateY(-8px);
+}
+
+/*==============================
+IMAGE
+==============================*/
+
+.homepage-card-image{
+    width:100%;
+    height:300px;
+}
+
+.homepage-card-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/*==============================
+CONTENT
+==============================*/
+
+.homepage-card-content{
+    padding:25px;
+}
+
+.homepage-card-title{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.homepage-card-description{
+    font-size:18px;
+    color:#555;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.homepage-card-button{
+    padding:14px 35px;
+    border:none;
+    border-radius:6px;
+    background:#ff7300;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.homepage-card-button:hover{
+    background:#e66100;
+}
+
+/*==============================
+TABLET
+==============================*/
+
+@media(max-width:992px){
+
+.homepage-row{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.homepage-card-image{
+    height:260px;
+}
+
+.homepage-card-title{
+    font-size:24px;
+}
+
+}
+
+/*==============================
+MOBILE
+==============================*/
+
+@media(max-width:768px){
+
+.homepage-row{
+    grid-template-columns:1fr;
+}
+
+.homepage-card-image{
+    height:240px;
+}
+
+.homepage-card-title{
+    font-size:22px;
+}
+
+.homepage-card-description{
+    font-size:16px;
+}
+
+.homepage-card-button{
+    width:100%;
+}
+
+}
+
+.homepage-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
 }
