@@ -324,16 +324,17 @@ const Homepage = () => {
                         
                     </div>
 
-                    <div className="button-container">
-                        <button className="specialization-btn">
-                            See All Specializations
-                        </button>
-                    </div>
 
 
 
 
                 </div>
+                
+                    <div className="button-container">
+                        <button className="specialization-btn">
+                            See All Specializations
+                        </button>
+                    </div>
 
             </div>
 
