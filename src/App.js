@@ -8,9 +8,10 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar />
         <main>
           <Routes>
-            <Route path="/" element={<Navbar/>}/>
+            {/* <Route path="/" element={<Navbar/>}/> */}
           </Routes>
         </main>
         {/* <Footer /> */}
