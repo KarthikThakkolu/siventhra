@@ -8,7 +8,7 @@ const Home = () => {
 
   const images = [
     {
-      url: "https://www.hindustantimes.com/ht-img/img/2024/01/20/550x309/smrt_lock_1705734461390_1705734461631.jpg",
+      url: "https://i.pinimg.com/736x/59/3c/17/593c1764523530d5f3e0f2ff8fd6b06d.jpg",
       title: "Modern Interior Design",
       subtitle: "Advanced Locking Systems for Your Safety",
       link: "/services/ss-automation",
