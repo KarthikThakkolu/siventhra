@@ -7,7 +7,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-import logo from "./assets/logo.png";
+// import logo from "./assets/logo.png";
 
 function Footer() {
   return (
@@ -43,7 +43,7 @@ function Footer() {
 
           <div className="footer-col about">
 
-            <img src={logo} alt="logo" className="footer-logo" />
+            {/* <img src={logo} alt="logo" className="footer-logo" /> */}
 
             <p>
               Siventhra — Your one-stop destination for all interior design,
