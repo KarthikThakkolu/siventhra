@@ -5,9 +5,10 @@
 .slider-wrapper {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
   background: #000;
+  background:cover
 }
 
 /* ===========================
