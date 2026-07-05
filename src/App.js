@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
-import Homepage from "./Main/Homepage";
-import About from "./Main/About";
+// import Footer from "./Components/Footer";
+// import Homepage from "./Main/Homepage";
+// import About from "./Main/About";
 
 function App() {
   return (
@@ -14,15 +14,16 @@ function App() {
       <Router>
         <Navbar />
 
-        <main>
+        {/* <main> */}
           <Routes>
+            <Route path="/" element={<Navbar/>}/>
             {/* Default Home Page */}
             {/* <Route path="/" element={<Homepage />} /> */}
 
             {/* About Page */}
             {/* <Route path="/about" element={<About />} /> */}
           </Routes>
-        </main>
+        {/* </main> */}
 
         {/* <Footer /> */}
       </Router>
