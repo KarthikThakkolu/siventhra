@@ -10,12 +10,12 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <main>
+        {/* <main> */}
           <Routes>
             {/* <Route path="/" element={<Footer/>}/> */}
 
           </Routes>
-        </main>
+        {/* </main> */}
         <Footer />
       </Router>
     </div>
