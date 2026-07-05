@@ -7,8 +7,8 @@ import "./App.css";
 
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-// import Homepage from "./Main/Homepage";
-// import About from "./Main/About";
+import Homepage from "./Main/Homepage";
+import About from "./Main/About";
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
       <Navbar />
 
       <Routes>
-        {/* <Route path="/" element={<Homepage />} />
-        <Route path="/about" element={<About />} /> */}
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
       </Routes>
 
       <Footer />
