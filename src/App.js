@@ -3,20 +3,21 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import Navbar from './Components/Navbar';
-// import Footer from "./Components/Footer";
+import Footer from "./Components/Footer";
+import Homepage from "./Main/Homepage";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Navbar />
-        {/* <main> */}
+        <main>
           <Routes>
-            {/* <Route path="/" element={<Footer/>}/> */}
+            <Route path="/" element={<Homepage/>}/>
 
           </Routes>
-        {/* </main> */}
-        {/* <Footer /> */}
+        </main>
+        <Footer />
       </Router>
     </div>
   );
