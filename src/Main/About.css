@@ -1,0 +1,262 @@
+/* Overall container for About Section */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Image + Text Side-by-Side */
+.about-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #132e49;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 800px;
+  margin: 0 0 15px;
+}
+
+/* Service Boxes Section */
+.service-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.service-box {
+  font-size: 17px;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; Icons left aligned */
+  background-color: white;
+  color: black;
+  padding: 20px 50px;
+  border-radius: 10px;
+  width: 235px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  background-color: white;
+}
+
+/* Icon Styling in Service Boxes */
+.service-box i {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #0b81f7;
+}
+
+/* Icon Row Section */
+.about-review {
+  display: flex;
+  flex-wrap: wrap;             /* Allows wrapping on smaller screens */
+  gap: 160px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  text-align: center;
+  max-width: 100%;             /* Prevents overflow */
+  padding: 0 20px;             /* Adds some breathing room */
+  box-sizing: border-box; 
+  margin-bottom: 60px;     /* Includes padding in width */
+}
+
+
+.about-review div i {
+  font-size: 40px;
+  color: #17487a;
+}
+
+.review-container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: rgb(252, 248, 248);
+}
+
+.heading {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #132e49;
+}
+
+.rev-conts {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.review-box {
+  background-color: white;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  width: 350px;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.review-box img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-content {
+  flex: 1;
+}
+
+.review-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.review-header h4 {
+  font-size: 16px;
+  margin: 0;
+  color: #17487a;
+}
+
+.stars {
+  color: #f6b500; /* gold star */
+  font-size: 24px;
+}
+
+.review-content p {
+  font-size: 14px;
+  color: #444;
+  margin: 0;
+}
+
+
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  gap: 40px;
+  margin-top: 40px;
+  width: 98%;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+.left-content {
+  flex: 1;
+  padding: 20px;
+}
+
+
+
+.right-form {
+  flex: 1;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.right-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.right-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-form input,
+.right-form textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.right-form button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.right-form button:hover {
+  background-color: #005fa3;
+}
+
+.contact-details {
+  margin-top: 20px;
+}
+
+.contact-details p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 30px;
+}
+
+.contact-details i {
+  color: #0077cc;
+  margin-right: 10px;
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
+.contact-details span {
+  font-weight: bold;
+  color: #222;
+}
