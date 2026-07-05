@@ -17,14 +17,14 @@ function App() {
         <main>
           <Routes>
             {/* Default Home Page */}
-            <Route path="/" element={<Homepage />} />
+            {/* <Route path="/" element={<Homepage />} /> */}
 
             {/* About Page */}
-            <Route path="/about" element={<About />} />
+            {/* <Route path="/about" element={<About />} /> */}
           </Routes>
         </main>
 
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );
