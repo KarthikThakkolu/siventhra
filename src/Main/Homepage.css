@@ -5,7 +5,7 @@
 .slider-wrapper {
   position: relative;
   width: 100%;
-  height: 95vh;
+  height: 91vh;
   overflow: hidden;
   background: #000;
   /* background:cover */
@@ -493,9 +493,399 @@ MOBILE
 }
 
 }
-
+/* 
 .homepage-row{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:35px;
+} */
+
+
+/* small-container-clients */
+/* .small-container-clients{
+    width:100vh;
+    height:500px;
+    background-color:peru;
+} */
+
+/* Full Width Section */
+
+ .client-section {
+    width: 100%;
+    height: 110px;
+    background: #1d3557; /* Change color if needed */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+ }
+
+/* Container */
+
+.clients-container {
+    width: 100vh;
+    height:100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+/* Each Box */
+
+.client-box {
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+    padding: 15px;
+    display :flex;
+    color:blue;
+}
+
+/* Numbers */
+
+.client-box-h2 {
+    font-size: 42px;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+/* Text */
+
+.client-box-p {
+    font-size: 18px;
+    color: #f1f1f1;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+
+    .client-box-h2 {
+        font-size: 34px;
+    }
+
+    .client-box-p {
+        font-size: 16px;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .clients-container {
+        flex-direction: column;
+    }
+
+    .client-box {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .client-box-h2 {
+        font-size: 32px;
+    }
+
+    .client-box-p {
+        font-size: 16px;
+    }
+
+}
+
+
+/* ===========================
+   Discover Section
+=========================== */
+
+.small-under-container {
+    width: 100%;
+    padding: 70px 20px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.small-under-content {
+    max-width: 750px;
+}
+
+/* Small Heading */
+
+.small-under-container-heading {
+    color: #d97706;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Main Heading */
+
+.small-under-container-title {
+    font-size: 48px;
+    color: #222;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+/* Paragraph */
+
+.small-under-container-paragraph {
+    font-size: 19px;
+    color: #666;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* Decorative Line */
+
+.small-under-container-heading::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #d97706;
+    margin: 12px auto 0;
+    border-radius: 20px;
+}
+
+/* Hover Effect */
+
+.small-under-content:hover .small-under-container-title {
+    color: #d97706;
+    transition: 0.4s ease;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+
+    .small-under-container {
+        padding: 60px 20px;
+    }
+
+    .small-under-container-title {
+        font-size: 38px;
+    }
+
+    .small-under-container-paragraph {
+        font-size: 17px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .small-under-container {
+        padding: 50px 15px;
+    }
+
+    .small-under-container-heading {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .small-under-container-title {
+        font-size: 30px;
+    }
+
+    .small-under-container-paragraph {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+}
+
+
+
+/* specialation button */
+/* ==========================
+   Specialization Button
+========================== */
+/* Center the button */
+.button-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:40px 0;
+}
+
+.specialization-btn{
+    background:#e66100;
+    color:#fff;
+    border:none;
+    border-radius:50px;
+    padding:15px 40px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.specialization-btn:hover{
+    background:#222;
+    color:#fff;
+    transform:translateY(-5px);
+}
+/* Hover Effect */
+/* 
+.specialization-btn:hover {
+    background: #1f2937;
+    color: #ffffff;
+    border-color: #1f2937;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(31, 41, 55, 0.35);
+} */
+
+/* Click Effect */
+
+.specialization-btn:active {
+    transform: scale(0.96);
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+    .specialization-btn {
+        padding: 13px 30px;
+        font-size: 16px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .specialization-btn {
+        width: 90%;
+        max-width: 320px;
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+}
+
+
+
+
+
+/* last container page */
+/* ==============================
+   Specialization Section
+============================== */
+
+.specialization-section{
+    width:100%;
+    max-width:1400px;
+    margin:60px auto;
+}
+
+.specialization-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+.specialization-card{
+    background:#ffffff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    transition:.4s;
+    cursor:pointer;
+}
+
+.specialization-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.specialization-image{
+    width:100%;
+    height:240px;
+}
+
+.specialization-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.specialization-content{
+    padding:22px;
+}
+
+.specialization-title{
+    font-size:26px;
+    color:#222;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.specialization-description{
+    font-size:17px;
+    color:#666;
+    line-height:1.7;
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.specialization-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.specialization-image{
+    height:220px;
+}
+
+.specialization-title{
+    font-size:23px;
+}
+
+.specialization-description{
+    font-size:16px;
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.specialization-section{
+    width:92%;
+}
+
+.specialization-grid{
+    grid-template-columns:1fr;
+}
+
+.specialization-image{
+    height:220px;
+}
+
+.specialization-content{
+    padding:18px;
+}
+
+.specialization-title{
+    font-size:22px;
+}
+
+.specialization-description{
+    font-size:15px;
+}
+
 }

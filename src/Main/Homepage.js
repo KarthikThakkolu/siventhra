@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
 
-const Home = () => {
+const Homepage = () => {
     const navigate = useNavigate();
     const [current, setCurrent] = useState(0);
 
@@ -97,71 +97,99 @@ const Home = () => {
 
 
                 </div>
-                <div className="homepage-container">
 
-                    <div className="homepage-row">
+                {/* <div className="client-section">
+                <div className="clients-container">
 
-                        <div className="homepage-card">
-                            <div className="homepage-card-image">
-                                <img
-                                    className="homepage-card-img"
-                                    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
-                                    alt=""
-                                />
-                            </div>
+                    <div className="client-box">
+                        <h2 className="client-box-h2">500+</h2>
+                        <p className="client-box-p">Happy Clients</p>
+                    </div>
 
-                            <div className="homepage-card-content">
-                                <div className="homepage-card-title">
-                                    Premium Curtains
-                                </div>
+                    <div className="client-box">
+                        <h2 className="client-box-h2">30+</h2>
+                        <p className="client-box-p">Services Offered</p>
+                    </div>
 
-                                <div className="homepage-card-description">
-                                    Elegant curtain collections for homes, offices and commercial spaces.
-                                </div>
+                    <div className="client-box">
+                        <h2 className="client-box-h2">24/7</h2>
+                        <p className="client-box-p">Days Support</p>
+                    </div>
 
-                                <button className="homepage-card-button">
-                                    View More
-                                </button>
-                            </div>
+                    <div className="client-box">
+                        <h2 className="client-box-h2">5+</h2>
+                        <p className="client-box-p">Years Experienced Persons</p>
+                    </div>
+
+                </div>
+            </div> */}
+
+
+                {/* <div className="homepage-container">
+
+                <div className="homepage-row">
+
+                    <div className="homepage-card">
+                        <div className="homepage-card-image">
+                            <img
+                                className="homepage-card-img"
+                                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
+                                alt=""
+                            />
                         </div>
 
-                        <div className="homepage-card">
-                            <div className="homepage-card-image">
-                                <img
-                                    className="homepage-card-img"
-                                    src="https://images.unsplash.com/photo-1484154218962-a197022b5858"
-                                    alt=""
-                                />
+                        <div className="homepage-card-content">
+                            <div className="homepage-card-title">
+                                Premium Curtains
                             </div>
 
-                            <div className="homepage-card-content">
-                                <div className="homepage-card-title">
-                                    PVC Wall Panels
-                                </div>
-
-                                <div className="homepage-card-description">
-                                    Stylish waterproof decorative wall panels for modern interiors.
-                                </div>
-
-                                <button className="homepage-card-button">
-                                    View More
-                                </button>
+                            <div className="homepage-card-description">
+                                Elegant curtain collections for homes, offices and commercial spaces.
                             </div>
+
+                            <button className="homepage-card-button">
+                                View More
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="homepage-card">
+                        <div className="homepage-card-image">
+                            <img
+                                className="homepage-card-img"
+                                src="https://images.unsplash.com/photo-1484154218962-a197022b5858"
+                                alt=""
+                            />
                         </div>
 
-                        <div className="homepage-card">
-                            <div className="homepage-card-image">
-                                <img
-                                    className="homepage-card-img"
-                                    src="https://images.unsplash.com/photo-1494526585095-c41746248156"
-                                    alt=""
-                                />
+                        <div className="homepage-card-content">
+                            <div className="homepage-card-title">
+                                PVC Wall Panels
                             </div>
 
-                            <div className="homepage-card-content">
-                                <div className="homepage-card-title">
-                                    Wooden Flooring
-                                </div>
+                            <div className="homepage-card-description">
+                                Stylish waterproof decorative wall panels for modern interiors.
+                            </div>
+
+                            <button className="homepage-card-button">
+                                View More
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="homepage-card">
+                        <div className="homepage-card-image">
+                            <img
+                                className="homepage-card-img"
+                                src="https://images.unsplash.com/photo-1494526585095-c41746248156"
+                                alt=""
+                            />
+                        </div>
+
+                        <div className="homepage-card-content">
+                            <div className="homepage-card-title">
+                                Wooden Flooring
+                            </div>
 
                                 <div className="homepage-card-description">
                                     Premium flooring solutions with elegant finishes.
@@ -173,11 +201,51 @@ const Home = () => {
                             </div>
                         </div>
 
+                    </div> */}
+
+                {/* </div> */}
+
+            </div>
+
+            <div className="client-section">
+                <div className="clients-container">
+
+                    <div className="client-box">
+                        <h2 className="client-box-h2">500+</h2>
+                        <p className="client-box-p">Happy Clients</p>
+                    </div>
+
+                    <div className="client-box">
+                        <h2 className="client-box-h2">30+</h2>
+                        <p className="client-box-p">Services Offered</p>
+                    </div>
+
+                    <div className="client-box">
+                        <h2 className="client-box-h2">24/7</h2>
+                        <p className="client-box-p">Days Support</p>
+                    </div>
+
+                    <div className="client-box">
+                        <h2 className="client-box-h2">5+</h2>
+                        <p className="client-box-p">Years Experienced Persons</p>
                     </div>
 
                 </div>
-
             </div>
+            <div className="small-under-container">
+                <div className="small-under-content">
+                    <h3 className="small-under-container-heading">Discover</h3>
+
+                    <h1 className="small-under-container-title">
+                        Explore Our Collections
+                    </h1>
+
+                    <p className="small-under-container-paragraph">
+                        Browse our curated interior categories crafted for modern Indian homes.
+                    </p>
+                </div>
+            </div>
+
 
             <div className="homepage-container">
 
@@ -253,16 +321,174 @@ const Home = () => {
                                 View More
                             </button>
                         </div>
+                        
                     </div>
+
+                    <div className="button-container">
+                        <button className="specialization-btn">
+                            See All Specializations
+                        </button>
+                    </div>
+
+
+
 
                 </div>
 
             </div>
-            
+
+            <div className="specialization-section">
+
+    <div className="specialization-grid">
+
+        <div className="specialization-card">
+
+            <div className="specialization-image">
+                <img
+                    className="specialization-img"
+                    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600"
+                    alt="Wallpapers"
+                />
+            </div>
+
+            <div className="specialization-content">
+                <h3 className="specialization-title">Wallpapers</h3>
+
+                <p className="specialization-description">
+                    Premium imported wallpapers for homes, offices and commercial interiors.
+                </p>
+            </div>
+
+        </div>
+
+        <div className="specialization-card">
+
+            <div className="specialization-image">
+                <img
+                    className="specialization-img"
+                    src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600"
+                    alt="Blinds"
+                />
+            </div>
+
+            <div className="specialization-content">
+                <h3 className="specialization-title">Window Blinds</h3>
+
+                <p className="specialization-description">
+                    Stylish Zebra, Roller, Roman and Venetian blinds for every space.
+                </p>
+            </div>
+
+        </div>
+
+        <div className="specialization-card">
+
+            <div className="specialization-image">
+                <img
+                    className="specialization-img"
+                    src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600"
+                    alt="Flooring"
+                />
+            </div>
+
+            <div className="specialization-content">
+                <h3 className="specialization-title">Wooden Flooring</h3>
+
+                <p className="specialization-description">
+                    Elegant laminate and SPC flooring with premium finish.
+                </p>
+            </div>
+
+        </div>
+
+        <div className="specialization-card">
+
+            <div className="specialization-image">
+                <img
+                    className="specialization-img"
+                    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600"
+                    alt="PVC Partition"
+                />
+            </div>
+
+            <div className="specialization-content">
+                <h3 className="specialization-title">PVC Room Partition</h3>
+
+                <p className="specialization-description">
+                    Modern decorative partition screens for homes and offices.
+                </p>
+            </div>
+
+        </div>
+
+        <div className="specialization-card">
+
+            <div className="specialization-image">
+                <img
+                    className="specialization-img"
+                    src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600"
+                    alt="AC Partition"
+                />
+            </div>
+
+            <div className="specialization-content">
+                <h3 className="specialization-title">AC Partition</h3>
+
+                <p className="specialization-description">
+                    PVC strip curtains and industrial AC partitions for cooling efficiency.
+                </p>
+            </div>
+
+        </div>
+
+        <div className="specialization-card">
+
+            <div className="specialization-image">
+                <img
+                    className="specialization-img"
+                    src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600"
+                    alt="Mosquito Mesh"
+                />
+            </div>
+
+            <div className="specialization-content">
+                <h3 className="specialization-title">Mosquito Mesh</h3>
+
+                <p className="specialization-description">
+                    Invisible mosquito protection with durable mesh systems.
+                </p>
+            </div>
+
+        </div>
+
+        <div className="specialization-card">
+
+            <div className="specialization-image">
+                <img
+                    className="specialization-img"
+                    src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600"
+                    alt="Ceiling Hanger"
+                />
+            </div>
+
+            <div className="specialization-content">
+                <h3 className="specialization-title">Ceiling Hangers</h3>
+
+                <p className="specialization-description">
+                    Automatic ceiling cloth drying hangers with modern designs.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
         </div>
 
 
     );
 };
 
-export default Home;
+export default Homepage;
