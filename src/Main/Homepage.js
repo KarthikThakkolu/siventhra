@@ -482,9 +482,123 @@ const Homepage = () => {
 
                     </div>
 
+                    <div className="specialization-card">
+
+                        <div className="specialization-image">
+                            <img
+                                className="specialization-img"
+                                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600"
+                                alt="Ceiling Hanger"
+                            />
+                        </div>
+
+                        <div className="specialization-content">
+                            <h3 className="specialization-title">Ceiling Hangers</h3>
+
+                            <p className="specialization-description">
+                                Automatic ceiling cloth drying hangers with modern designs.
+                            </p>
+                        </div>
+
+                    </div>
+
+ <div className="specialization-card">
+
+                        <div className="specialization-image">
+                            <img
+                                className="specialization-img"
+                                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600"
+                                alt="Ceiling Hanger"
+                            />
+                        </div>
+
+                        <div className="specialization-content">
+                            <h3 className="specialization-title">Ceiling Hangers</h3>
+
+                            <p className="specialization-description">
+                                Automatic ceiling cloth drying hangers with modern designs.
+                            </p>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
+
+
+
+            {/* ================= Testimonials Section ================= */}
+
+            <section className="testimonial-section">
+
+                <div className="testimonial-heading">
+
+                    <p className="testimonial-subtitle">
+                        TESTIMONIALS
+                    </p>
+
+                    <h2 className="testimonial-title">
+                        What Our Customers Say
+                    </h2>
+
+                </div>
+
+                <div className="testimonial-card">
+
+                    <div className="quote-icon">
+                        ❝
+                    </div>
+
+                    <img
+                        src="https://i.pravatar.cc/150?img=12"
+                        alt="Customer"
+                        className="testimonial-image"
+                    />
+
+                    <div className="testimonial-stars">
+                        ★★★★★
+                    </div>
+
+                    <p className="testimonial-review">
+                        Excellent work by Siventhra Interiors. Wallpaper installation
+                        and mosquito mesh quality exceeded my expectations. The
+                        finishing was premium, the staff were professional, and the
+                        project was completed on time. Highly recommended for home
+                        interiors.
+                    </p>
+
+                    <h3 className="testimonial-name">
+                        Karthik Thakkolu
+                    </h3>
+
+                    <p className="testimonial-location">
+                        Homeowner • Nellore
+                    </p>
+
+                    <div className="testimonial-buttons">
+
+                        <button className="testimonial-btn">
+                            ←
+                        </button>
+
+                        <button className="testimonial-btn">
+                            →
+                        </button>
+
+                    </div>
+
+                    <div className="testimonial-dots">
+                        <span className="active"></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* ================= End Testimonials ================= */}
 
         </div>
 

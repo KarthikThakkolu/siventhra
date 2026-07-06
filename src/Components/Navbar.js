@@ -1,78 +1,220 @@
-// src/Component/Navbar.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  FaBars,
+  FaTimes,
+  FaChevronDown,
+  FaSearch,
+} from "react-icons/fa";
+
 import "./Navbar.css";
+import Logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [serviceOpen, setServiceOpen] = useState(false);
 
   return (
-    <nav className="navbar">
-      <div className="navbar-logo">
-        <img
-          src="https://t4.ftcdn.net/jpg/03/16/40/61/360_F_316406153_OiWmjf1aL2gErJ4vpxTFjg9W7TYRoZ23.jpg"
-          alt="Logo"
-          className="logo-img"
-        />
-        <h1 className="brand-name">Siventhra</h1>
+
+    <div className="navbar-main">
+
+      <div className="navbar-container">
+
+        {/* ===========================
+            BRAND
+        ============================ */}
+
+        <Link
+          to="/"
+          className="navbar-brand"
+        >
+
+          <img
+            src={Logo}
+            alt="Siventhra"
+            className="navbar-brand-logo"
+          />
+
+          <div className="navbar-brand-content">
+
+            <div className="navbar-brand-title">
+              Siventhra
+            </div>
+
+            <div className="navbar-brand-tagline">
+              Creative Spaces, Happy Faces
+            </div>
+
+          </div>
+
+        </Link>
+
+        {/* ===========================
+             MENU
+        ============================ */}
+
+        <div className={`navbar-links ${menuOpen ? "navbar-links-open" : ""}`}>
+
+          <Link
+            to="/"
+            className="navbar-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Home
+          </Link>
+
+          <Link
+            to="/about"
+            className="navbar-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            About
+          </Link>
+
+          {/* SERVICES */}
+
+          <div
+            className="navbar-dropdown"
+            onMouseEnter={() => setServiceOpen(true)}
+            onMouseLeave={() => setServiceOpen(false)}
+          >
+
+            <div className="navbar-dropdown-title">
+
+              Services
+
+              <FaChevronDown
+                className="navbar-dropdown-arrow"
+              />
+
+            </div>
+
+            <div
+              className={`navbar-dropdown-menu ${
+                serviceOpen ? "navbar-dropdown-show" : ""
+              }`}
+            >
+
+              <Link
+                to="/services/curtains"
+                className="navbar-dropdown-link"
+              >
+                Curtains
+              </Link>
+
+              <Link
+                to="/services/blinds"
+                className="navbar-dropdown-link"
+              >
+                Blinds
+              </Link>
+
+              <Link
+                to="/services/wallpapers"
+                className="navbar-dropdown-link"
+              >
+                Wallpapers
+              </Link>
+
+              <Link
+                to="/services/mosquito-mesh"
+                className="navbar-dropdown-link"
+              >
+                Mosquito Mesh
+              </Link>
+
+              <Link
+                to="/services/pvc-partition"
+                className="navbar-dropdown-link"
+              >
+                PVC Partition
+              </Link>
+
+              <Link
+                to="/services/false-ceiling"
+                className="navbar-dropdown-link"
+              >
+                False Ceiling
+              </Link>
+
+              <Link
+                to="/services/modular-interior"
+                className="navbar-dropdown-link"
+              >
+                Modular Interior
+              </Link>
+
+            </div>
+
+          </div>
+
+          <Link
+            to="/process"
+            className="navbar-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Process
+          </Link>
+
+          <Link
+            to="/reviews"
+            className="navbar-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Reviews
+          </Link>
+
+          <Link
+            to="/contact"
+            className="navbar-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact
+          </Link>
+
+        </div>
+
+        {/* ===========================
+            RIGHT SIDE
+        ============================ */}
+
+        <div className="navbar-right">
+
+          <div className="navbar-search">
+
+            <FaSearch />
+
+          </div>
+
+          <Link
+            to="/orderrequest"
+            className="navbar-quote-button"
+          >
+            Get Quote
+          </Link>
+
+          <div
+            className="navbar-mobile-button"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+
+            {
+              menuOpen
+                ? <FaTimes />
+                : <FaBars />
+            }
+
+          </div>
+
+        </div>
+
       </div>
 
-      {/* Hamburger button for mobile */}
-      <button
-        className="menu-toggle"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        ☰
-      </button>
+    </div>
 
-      <ul className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
-        <li className="navbar-item">
-          <Link to="/" className="home-navbar" onClick={() => setIsMenuOpen(false)}>Home</Link>
-        </li>
-
-        <li
-          className="navbar-item dropdown"
-          onClick={() => setIsServicesOpen(!isServicesOpen)}
-        >
-          <span className="home-navbar">Services ▾</span>
-          <ul className={`dropdown-menu ${isServicesOpen ? "show" : ""}`}>
-            <li>
-              <Link to="/services/ss-automation" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>SS Automation</Link>
-            </li>
-            <li>
-              <Link to="/services/floor-designers" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>Floor Designers</Link>
-            </li>
-            <li>
-              <Link to="/services/the-best" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>The Best</Link>
-            </li>
-            {/* <li>
-              <Link to="/services/Galvanium" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>Galvanium doors and windows</Link>
-            </li> */}
-            <li>
-              <Link to="/services/pest-control" className="dropdown-link" onClick={() => setIsMenuOpen(false)}>Pest Control</Link>
-            </li>
-          </ul>
-        </li>
-
-        <li className="navbar-item">
-          <Link to="/about" className="home-navbar" onClick={() => setIsMenuOpen(false)}>About</Link>
-        </li>
-        <li className="navbar-item">
-          <Link to="/feedback" className="home-navbar" onClick={() => setIsMenuOpen(false)}>Feedback</Link>
-        </li>
-        <li className="navbar-item">
-          <Link to="/orderrequest" className="home-navbar" onClick={() => setIsMenuOpen(false)}>Order Request</Link>
-        </li>
-
-        {/* Single Profile Section (works for both desktop & mobile) */}
-        <li className="navbar-profile">
-          {/* <Link to="/profile" className="profile-btn" onClick={() => setIsMenuOpen(false)}>Profile</Link>
-          <Link to="/" className="logout-btn" onClick={() => setIsMenuOpen(false)}>Logout</Link> */}
-        </li>
-      </ul>
-    </nav>
   );
+
 };
 
 export default Navbar;

@@ -1,0 +1,797 @@
+/* ======================================================
+   ORDER REQUEST PAGE
+====================================================== */
+
+.order-page-main{
+    width:100%;
+    background:linear-gradient(180deg,#ffffff 0%,#faf6f1 100%);
+    padding:80px 0;
+}
+
+/* ======================================================
+   HERO
+====================================================== */
+
+.order-page-hero{
+    width:90%;
+    max-width:1200px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.order-page-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 24px;
+    background:#f5ebe2;
+    color:#8b5a35;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:3px;
+    margin-bottom:25px;
+}
+
+.order-page-title{
+    font-size:54px;
+    font-weight:700;
+    color:#2d1d13;
+    line-height:1.2;
+    margin-bottom:22px;
+}
+
+.order-page-description{
+    width:80%;
+    margin:auto;
+    color:#666;
+    font-size:20px;
+    line-height:1.9;
+}
+
+/* ======================================================
+   MAIN CONTAINER
+====================================================== */
+
+.order-page-container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:45px;
+    align-items:flex-start;
+}
+
+/* ======================================================
+   LEFT PANEL
+====================================================== */
+
+.order-left-panel{
+    background:#ffffff;
+    border-radius:28px;
+    padding:35px;
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+    position:sticky;
+    top:100px;
+}
+
+.order-left-title{
+    font-size:34px;
+    font-weight:700;
+    color:#2d1d13;
+    margin-bottom:15px;
+}
+
+.order-left-description{
+    color:#666;
+    font-size:17px;
+    line-height:1.9;
+    margin-bottom:35px;
+}
+
+/* ======================================================
+   FEATURE CARD
+====================================================== */
+
+.order-feature-card{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:18px;
+    border-radius:18px;
+    background:#faf6f1;
+    margin-bottom:18px;
+    transition:.35s;
+}
+
+.order-feature-card:hover{
+    transform:translateY(-6px);
+    background:#8b5a35;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.order-feature-card:hover .order-feature-icon{
+    background:#ffffff;
+    color:#8b5a35;
+}
+
+.order-feature-card:hover .order-feature-text{
+    color:#ffffff;
+}
+
+.order-feature-icon{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#8b5a35;
+    color:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    transition:.35s;
+    flex-shrink:0;
+}
+
+.order-feature-text{
+    font-size:18px;
+    color:#333;
+    font-weight:600;
+    transition:.35s;
+}
+
+/* ======================================================
+   HIGHLIGHT BOX
+====================================================== */
+
+.order-highlight-box{
+    margin-top:35px;
+    padding:30px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#8b5a35,#6f4425);
+    text-align:center;
+    color:#ffffff;
+}
+
+.order-highlight-number{
+    font-size:52px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.order-highlight-text{
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* ======================================================
+   CONTACT BOX
+====================================================== */
+
+.order-contact-box{
+    margin-top:35px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:20px;
+    border-radius:18px;
+    background:#f3faf4;
+    border:1px solid #dcefdc;
+}
+
+.order-contact-icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#25D366;
+    color:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    flex-shrink:0;
+}
+
+.order-contact-content{
+    flex:1;
+}
+
+.order-contact-title{
+    font-size:21px;
+    font-weight:700;
+    color:#222;
+    margin-bottom:6px;
+}
+
+.order-contact-value{
+    font-size:18px;
+    color:#555;
+}
+
+/* ======================================================
+   RIGHT PANEL
+====================================================== */
+
+.order-right-panel{
+    background:#ffffff;
+    border-radius:28px;
+    padding:45px;
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+}
+
+.order-form-title{
+    font-size:40px;
+    font-weight:700;
+    color:#2d1d13;
+    margin-bottom:12px;
+}
+
+.order-form-subtitle{
+    font-size:18px;
+    color:#666;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+/* ======================================================
+   FORM
+====================================================== */
+
+.order-form-wrapper{
+    width:100%;
+}
+
+.order-form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.order-input-full{
+    grid-column:1 / 3;
+}
+
+/* ======================================================
+   INPUT BOX
+====================================================== */
+
+.order-input-box{
+    display:flex;
+    align-items:center;
+    background:#faf6f1;
+    border:1px solid #e7ddd4;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.order-input-box:hover{
+    border-color:#8b5a35;
+}
+
+.order-input-box:focus-within{
+    border-color:#8b5a35;
+    box-shadow:0 0 0 4px rgba(139,90,53,.12);
+}
+
+.order-input-icon{
+    width:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#8b5a35;
+    font-size:18px;
+}
+
+/* ======================================================
+   INPUT FIELD
+====================================================== */
+
+.order-input-field{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    padding:18px 18px 18px 0;
+    font-size:16px;
+    color:#333;
+}
+
+.order-input-field::placeholder{
+    color:#999;
+}
+
+/* ======================================================
+   SELECT FIELD
+====================================================== */
+
+.order-select-field{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    padding:18px 18px 18px 0;
+    font-size:16px;
+    color:#333;
+    cursor:pointer;
+}
+
+/* ======================================================
+   TEXTAREA
+====================================================== */
+
+.order-textarea-box{
+    margin-top:25px;
+}
+
+.order-message-field{
+    width:100%;
+    min-height:180px;
+    resize:vertical;
+    background:#faf6f1;
+    border:1px solid #e7ddd4;
+    border-radius:18px;
+    padding:22px;
+    box-sizing:border-box;
+    outline:none;
+    font-size:16px;
+    color:#333;
+    line-height:1.8;
+    transition:.35s;
+}
+
+.order-message-field:focus{
+    border-color:#8b5a35;
+    box-shadow:0 0 0 4px rgba(139,90,53,.12);
+}
+
+.order-message-field::placeholder{
+    color:#999;
+}
+
+/* ======================================================
+   SUBMIT BUTTON
+====================================================== */
+
+.order-submit-button{
+    width:100%;
+    margin-top:30px;
+    padding:20px;
+    border:none;
+    border-radius:18px;
+    background:linear-gradient(135deg,#25D366,#1da851);
+    color:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    font-size:20px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.35s;
+    letter-spacing:.5px;
+}
+
+.order-submit-button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 35px rgba(37,211,102,.35);
+}
+
+.order-submit-button:active{
+    transform:scale(.98);
+}
+
+/* ======================================================
+   SMALL ANIMATIONS
+====================================================== */
+
+.order-left-panel,
+.order-right-panel{
+    animation:orderFadeUp .8s ease;
+}
+
+@keyframes orderFadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ======================================================
+   1400px
+====================================================== */
+
+@media (max-width:1400px){
+
+.order-page-container{
+    grid-template-columns:350px 1fr;
+    gap:35px;
+}
+
+.order-page-title{
+    font-size:48px;
+}
+
+.order-form-title{
+    font-size:36px;
+}
+
+}
+
+/* ======================================================
+   1200px
+====================================================== */
+
+@media (max-width:1200px){
+
+.order-page-container{
+    grid-template-columns:1fr;
+}
+
+.order-left-panel{
+    position:static;
+}
+
+.order-page-description{
+    width:100%;
+}
+
+.order-left-panel{
+    padding:30px;
+}
+
+.order-right-panel{
+    padding:35px;
+}
+
+.order-form-title{
+    font-size:34px;
+}
+
+.order-page-title{
+    font-size:44px;
+}
+
+}
+
+/* ======================================================
+   992px
+====================================================== */
+
+@media (max-width:992px){
+
+.order-page-main{
+    padding:70px 0;
+}
+
+.order-page-container{
+    width:94%;
+}
+
+.order-page-title{
+    font-size:40px;
+}
+
+.order-page-description{
+    font-size:18px;
+}
+
+.order-form-grid{
+    gap:18px;
+}
+
+.order-left-title{
+    font-size:30px;
+}
+
+.order-form-title{
+    font-size:32px;
+}
+
+.order-highlight-number{
+    font-size:46px;
+}
+
+}
+
+/* ======================================================
+   768px
+====================================================== */
+
+@media (max-width:768px){
+
+.order-page-main{
+    padding:60px 0;
+}
+
+.order-page-hero{
+    width:94%;
+    margin-bottom:50px;
+}
+
+.order-page-container{
+    width:94%;
+}
+
+.order-page-title{
+    font-size:34px;
+}
+
+.order-page-description{
+    font-size:17px;
+    line-height:1.8;
+}
+
+.order-form-grid{
+    grid-template-columns:1fr;
+}
+
+.order-input-full{
+    grid-column:auto;
+}
+
+.order-right-panel{
+    padding:28px;
+}
+
+.order-left-panel{
+    padding:28px;
+}
+
+.order-form-title{
+    font-size:30px;
+}
+
+.order-left-title{
+    font-size:28px;
+}
+
+.order-submit-button{
+    font-size:18px;
+}
+
+}
+
+/* ======================================================
+   576px
+====================================================== */
+
+@media (max-width:576px){
+
+.order-page-main{
+    padding:50px 0;
+}
+
+.order-page-title{
+    font-size:30px;
+}
+
+.order-page-description{
+    font-size:16px;
+}
+
+.order-page-badge{
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.order-right-panel{
+    padding:22px;
+    border-radius:22px;
+}
+
+.order-left-panel{
+    padding:22px;
+    border-radius:22px;
+}
+
+.order-left-title{
+    font-size:25px;
+}
+
+.order-form-title{
+    font-size:27px;
+}
+
+.order-feature-card{
+    padding:15px;
+}
+
+.order-feature-icon{
+    width:46px;
+    height:46px;
+    font-size:18px;
+}
+
+.order-feature-text{
+    font-size:16px;
+}
+
+.order-highlight-number{
+    font-size:40px;
+}
+
+.order-contact-box{
+    flex-direction:column;
+    text-align:center;
+}
+
+.order-contact-icon{
+    margin-bottom:10px;
+}
+
+.order-submit-button{
+    font-size:17px;
+    padding:18px;
+}
+
+}
+
+/* ======================================================
+   480px
+====================================================== */
+
+@media (max-width:480px){
+
+.order-page-main{
+    padding:45px 0;
+}
+
+.order-page-title{
+    font-size:26px;
+    line-height:1.3;
+}
+
+.order-page-description{
+    font-size:15px;
+}
+
+.order-left-title{
+    font-size:23px;
+}
+
+.order-form-title{
+    font-size:24px;
+}
+
+.order-form-subtitle{
+    font-size:15px;
+}
+
+.order-input-icon{
+    width:50px;
+    font-size:16px;
+}
+
+.order-input-field{
+    font-size:15px;
+    padding:16px 16px 16px 0;
+}
+
+.order-select-field{
+    font-size:15px;
+    padding:16px 16px 16px 0;
+}
+
+.order-message-field{
+    font-size:15px;
+    padding:18px;
+}
+
+.order-submit-button{
+    font-size:16px;
+    gap:10px;
+}
+
+.order-highlight-box{
+    padding:24px;
+}
+
+.order-highlight-number{
+    font-size:36px;
+}
+
+}
+
+/* ======================================================
+   360px
+====================================================== */
+
+@media (max-width:360px){
+
+.order-page-main{
+    padding:40px 0;
+}
+
+.order-page-title{
+    font-size:22px;
+}
+
+.order-page-description{
+    font-size:14px;
+}
+
+.order-page-badge{
+    padding:8px 16px;
+    font-size:11px;
+}
+
+.order-left-panel{
+    padding:18px;
+}
+
+.order-right-panel{
+    padding:18px;
+}
+
+.order-left-title{
+    font-size:21px;
+}
+
+.order-form-title{
+    font-size:22px;
+}
+
+.order-feature-card{
+    gap:12px;
+    padding:14px;
+}
+
+.order-feature-icon{
+    width:42px;
+    height:42px;
+    font-size:16px;
+}
+
+.order-feature-text{
+    font-size:15px;
+}
+
+.order-input-icon{
+    width:46px;
+}
+
+.order-input-field{
+    font-size:14px;
+}
+
+.order-select-field{
+    font-size:14px;
+}
+
+.order-message-field{
+    font-size:14px;
+}
+
+.order-submit-button{
+    font-size:15px;
+    padding:16px;
+}
+
+.order-contact-icon{
+    width:52px;
+    height:52px;
+    font-size:24px;
+}
+
+.order-highlight-number{
+    font-size:32px;
+}
+
+.order-highlight-text{
+    font-size:15px;
+}
+
+}

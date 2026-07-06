@@ -1,109 +1,293 @@
-import React, { useState } from "react";
+import React from "react";
+import {
+  FaComments,
+  FaPencilRuler,
+  FaTools,
+  FaKey,
+  FaCheck,
+} from "react-icons/fa";
+
 import "./About.css";
 
 const About = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const processData = [
+    {
+      id: "01",
+      icon: <FaComments />,
+      title: "Consultation",
+      text: "Share your ideas and we plan together",
+    },
+    {
+      id: "02",
+      icon: <FaPencilRuler />,
+      title: "Design",
+      text: "Custom 3D designs tailored for you",
+    },
+    {
+      id: "03",
+      icon: <FaTools />,
+      title: "Execution",
+      text: "Expert team brings it to life on time",
+    },
+    {
+      id: "04",
+      icon: <FaKey />,
+      title: "Handover",
+      text: "Walk into your dream space",
+    },
+  ];
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  try {
-    const res = await fetch("http://localhost:5000/send-whatsapp", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-
-    const result = await res.json();
-    if (result.success) {
-      alert("✅ Message sent to WhatsApp!");
-    } else {
-      alert("❌ Error: " + result.error);
-    }
-  } catch (err) {
-    alert("❌ Failed to send message.");
-  }
-};
-
+  const featureData = [
+    "Custom Solutions",
+    "Fast Delivery",
+    "Budget Friendly",
+    "Expert Team",
+    "24/7 Support",
+    "Quality Materials",
+  ];
 
   return (
-    <div className="about-container">
-      {/* ... Keep your existing content (top image, reviews, etc.) ... */}
+    <div className="about-page">
 
-      {/* ✉️ Contact Section */}
-      <div className="container1">
-        <div className="left-content">
-          <h1>Get in Touch</h1>
-          <p>
-            Have questions? We'd love to hear from you. Send us a message and
-            we'll respond as soon as possible.
-          </p>
-          <div className="contact-details">
-            <p>
-              <i className="fa-solid fa-location-dot"></i> <span>Our Office</span> <br />
-              123 Service Avenue, Home Park, Bangalore
-            </p>
-            <p>
-              <i className="fa-solid fa-phone-volume"></i> <span>Phone</span> <br />
-              +91 6383431936
-            </p>
-            <p>
-              <i className="fa-solid fa-envelope-circle-check"></i> <span>Email</span> <br />
-              ssinteriors99@gmail.com
-            </p>
+      <div className="about-container">
+
+        {/* ================= LEFT ================= */}
+
+        <div className="about-left-column">
+
+          <div className="about-process-card">
+
+            <div className="about-process-header">
+
+              <img
+                src="/logo192.png"
+                alt="logo"
+                className="about-process-logo"
+              />
+
+              <div className="about-process-heading">
+                How We Work
+              </div>
+
+            </div>
+
+            <div className="about-process-divider"></div>
+
+            {processData.map((item) => (
+
+              <div className="about-process-item" key={item.id}>
+
+                <div className="about-process-number">
+                  {item.id}
+                </div>
+
+                <div className="about-process-icon">
+                  {item.icon}
+                </div>
+
+                <div className="about-process-content">
+
+                  <div className="about-process-title">
+                    {item.title}
+                  </div>
+
+                  <div className="about-process-text">
+                    {item.text}
+                  </div>
+
+                </div>
+
+              </div>
+
+            ))}
+
           </div>
+
         </div>
 
-        <div className="right-form">
-          <h2>Contact Us</h2>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="4"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-            <button type="submit">Send Message</button>
-          </form>
+        {/* ================= RIGHT ================= */}
+
+        <div className="about-right-column">
+
+          <div className="about-small-title">
+            ABOUT SIVENTHRA
+          </div>
+
+          <div className="about-main-title">
+            Creative Spaces, Happy Faces
+          </div>
+
+          <div className="about-description">
+
+            At <strong>Siventhra Interior & Decors</strong>, we believe every
+            space has the power to inspire comfort, style, and happiness.
+            Our mission is to transform ordinary spaces into elegant and
+            functional environments that truly reflect your lifestyle.
+
+            <br /><br />
+
+            Our tagline —
+            <strong> Creative Spaces, Happy Faces </strong>
+            — is simple to live by: we make every wall, every window,
+            and every corner uniquely beautiful.
+
+            <br /><br />
+
+            Founded by
+            <strong> T. Karthik </strong>
+            (B.Tech Electronics & Communication Engineering),
+            Siventhra was built on passion and bold decision making.
+
+            <br /><br />
+
+            From a small beginning in Nellore,
+            Siventhra has grown into a trusted name for
+
+            <strong>
+              {" "}
+              curtains,
+              blinds,
+              wallpapers,
+              mosquito mesh,
+              ceiling hangers,
+              wall panels,
+              false ceilings,
+              modular interiors
+            </strong>
+
+            and many more premium interior services.
+
+          </div>
+
+          <div className="about-feature-grid">
+
+            {featureData.map((item, index) => (
+
+              <div
+                className="about-feature-card"
+                key={index}
+              >
+
+                <div className="about-feature-icon">
+                  <FaCheck />
+                </div>
+
+                <div className="about-feature-title">
+                  {item}
+                </div>
+
+              </div>
+
+            ))}
+
+          </div>
+
         </div>
+
       </div>
+
+      {/* ================================================= */}
+
+      {/* FOUNDER */}
+
+      {/* ================================================= */}
+
+      <div className="about-founder-section">
+
+        <div className="about-founder-small-title">
+          THE FOUNDER
+        </div>
+
+        <div className="about-founder-main-title">
+          From Code to Craft
+        </div>
+
+        <div className="about-founder-description">
+
+          After graduating with a B.Tech in
+          <strong> Electronics & Communication Engineering </strong>
+          from Bapatla Engineering College (2018–2022),
+          T. Karthik spent two years as a Full Stack Developer
+          in website design.
+
+          <br /><br />
+
+          But his heart wasn't in code —
+          it was in creating beautiful,
+          functional spaces that bring joy to people's lives.
+
+          <br /><br />
+
+          Armed with analytical thinking and
+          relentless passion for design,
+          he founded
+          <strong> Siventhra Interior & Decors </strong>
+          to deliver premium interior solutions with
+          honesty, creativity and quality.
+
+          <br /><br />
+
+          Today,
+          Siventhra proudly serves hundreds of happy
+          clients across Nellore with more than
+          40 premium services.
+
+        </div>
+
+        <div className="about-stats-container">
+
+          <div className="about-stat-card">
+
+            <div className="about-stat-number">
+              500+
+            </div>
+
+            <div className="about-stat-title">
+              HAPPY CLIENTS
+            </div>
+
+          </div>
+
+          <div className="about-stat-card">
+
+            <div className="about-stat-number">
+              40+
+            </div>
+
+            <div className="about-stat-title">
+              SERVICES
+            </div>
+
+          </div>
+
+          <div className="about-stat-card">
+
+            <div className="about-stat-number">
+              5+
+            </div>
+
+            <div className="about-stat-title">
+              YEARS VISION
+            </div>
+
+          </div>
+
+          <div className="about-stat-card">
+
+            <div className="about-stat-number">
+              24/7
+            </div>
+
+            <div className="about-stat-title">
+              SUPPORT
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   );
 };
