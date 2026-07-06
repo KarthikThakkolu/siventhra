@@ -321,7 +321,7 @@ const Homepage = () => {
                                 View More
                             </button>
                         </div>
-                        
+
                     </div>
 
 
@@ -329,162 +329,162 @@ const Homepage = () => {
 
 
                 </div>
-                
-                    <div className="button-container">
-                        <button className="specialization-btn">
-                            See All Specializations
-                        </button>
-                    </div>
+
+                <div className="button-container">
+                    <button className="specialization-btn">
+                        See All Specializations
+                    </button>
+                </div>
 
             </div>
 
             <div className="specialization-section">
 
-    <div className="specialization-grid">
+                <div className="specialization-grid">
 
-        <div className="specialization-card">
+                    <div className="specialization-card">
 
-            <div className="specialization-image">
-                <img
-                    className="specialization-img"
-                    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600"
-                    alt="Wallpapers"
-                />
+                        <div className="specialization-image">
+                            <img
+                                className="specialization-img"
+                                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600"
+                                alt="Wallpapers"
+                            />
+                        </div>
+
+                        <div className="specialization-content">
+                            <h3 className="specialization-title">Wallpapers</h3>
+
+                            <p className="specialization-description">
+                                Premium imported wallpapers for homes, offices and commercial interiors.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div className="specialization-card">
+
+                        <div className="specialization-image">
+                            <img
+                                className="specialization-img"
+                                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600"
+                                alt="Blinds"
+                            />
+                        </div>
+
+                        <div className="specialization-content">
+                            <h3 className="specialization-title">Window Blinds</h3>
+
+                            <p className="specialization-description">
+                                Stylish Zebra, Roller, Roman and Venetian blinds for every space.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div className="specialization-card">
+
+                        <div className="specialization-image">
+                            <img
+                                className="specialization-img"
+                                src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600"
+                                alt="Flooring"
+                            />
+                        </div>
+
+                        <div className="specialization-content">
+                            <h3 className="specialization-title">Wooden Flooring</h3>
+
+                            <p className="specialization-description">
+                                Elegant laminate and SPC flooring with premium finish.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div className="specialization-card">
+
+                        <div className="specialization-image">
+                            <img
+                                className="specialization-img"
+                                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600"
+                                alt="PVC Partition"
+                            />
+                        </div>
+
+                        <div className="specialization-content">
+                            <h3 className="specialization-title">PVC Room Partition</h3>
+
+                            <p className="specialization-description">
+                                Modern decorative partition screens for homes and offices.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div className="specialization-card">
+
+                        <div className="specialization-image">
+                            <img
+                                className="specialization-img"
+                                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600"
+                                alt="AC Partition"
+                            />
+                        </div>
+
+                        <div className="specialization-content">
+                            <h3 className="specialization-title">AC Partition</h3>
+
+                            <p className="specialization-description">
+                                PVC strip curtains and industrial AC partitions for cooling efficiency.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div className="specialization-card">
+
+                        <div className="specialization-image">
+                            <img
+                                className="specialization-img"
+                                src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600"
+                                alt="Mosquito Mesh"
+                            />
+                        </div>
+
+                        <div className="specialization-content">
+                            <h3 className="specialization-title">Mosquito Mesh</h3>
+
+                            <p className="specialization-description">
+                                Invisible mosquito protection with durable mesh systems.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div className="specialization-card">
+
+                        <div className="specialization-image">
+                            <img
+                                className="specialization-img"
+                                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600"
+                                alt="Ceiling Hanger"
+                            />
+                        </div>
+
+                        <div className="specialization-content">
+                            <h3 className="specialization-title">Ceiling Hangers</h3>
+
+                            <p className="specialization-description">
+                                Automatic ceiling cloth drying hangers with modern designs.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-
-            <div className="specialization-content">
-                <h3 className="specialization-title">Wallpapers</h3>
-
-                <p className="specialization-description">
-                    Premium imported wallpapers for homes, offices and commercial interiors.
-                </p>
-            </div>
-
-        </div>
-
-        <div className="specialization-card">
-
-            <div className="specialization-image">
-                <img
-                    className="specialization-img"
-                    src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600"
-                    alt="Blinds"
-                />
-            </div>
-
-            <div className="specialization-content">
-                <h3 className="specialization-title">Window Blinds</h3>
-
-                <p className="specialization-description">
-                    Stylish Zebra, Roller, Roman and Venetian blinds for every space.
-                </p>
-            </div>
-
-        </div>
-
-        <div className="specialization-card">
-
-            <div className="specialization-image">
-                <img
-                    className="specialization-img"
-                    src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600"
-                    alt="Flooring"
-                />
-            </div>
-
-            <div className="specialization-content">
-                <h3 className="specialization-title">Wooden Flooring</h3>
-
-                <p className="specialization-description">
-                    Elegant laminate and SPC flooring with premium finish.
-                </p>
-            </div>
-
-        </div>
-
-        <div className="specialization-card">
-
-            <div className="specialization-image">
-                <img
-                    className="specialization-img"
-                    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600"
-                    alt="PVC Partition"
-                />
-            </div>
-
-            <div className="specialization-content">
-                <h3 className="specialization-title">PVC Room Partition</h3>
-
-                <p className="specialization-description">
-                    Modern decorative partition screens for homes and offices.
-                </p>
-            </div>
-
-        </div>
-
-        <div className="specialization-card">
-
-            <div className="specialization-image">
-                <img
-                    className="specialization-img"
-                    src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600"
-                    alt="AC Partition"
-                />
-            </div>
-
-            <div className="specialization-content">
-                <h3 className="specialization-title">AC Partition</h3>
-
-                <p className="specialization-description">
-                    PVC strip curtains and industrial AC partitions for cooling efficiency.
-                </p>
-            </div>
-
-        </div>
-
-        <div className="specialization-card">
-
-            <div className="specialization-image">
-                <img
-                    className="specialization-img"
-                    src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600"
-                    alt="Mosquito Mesh"
-                />
-            </div>
-
-            <div className="specialization-content">
-                <h3 className="specialization-title">Mosquito Mesh</h3>
-
-                <p className="specialization-description">
-                    Invisible mosquito protection with durable mesh systems.
-                </p>
-            </div>
-
-        </div>
-
-        <div className="specialization-card">
-
-            <div className="specialization-image">
-                <img
-                    className="specialization-img"
-                    src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600"
-                    alt="Ceiling Hanger"
-                />
-            </div>
-
-            <div className="specialization-content">
-                <h3 className="specialization-title">Ceiling Hangers</h3>
-
-                <p className="specialization-description">
-                    Automatic ceiling cloth drying hangers with modern designs.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
 
         </div>
 
