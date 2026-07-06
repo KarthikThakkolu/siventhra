@@ -1,262 +1,270 @@
-/* Overall container for About Section */
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* ===========================
+   ABOUT PAGE
+=========================== */
+
+.about-page{
+    width:100%;
+    background:#ffffff;
+    padding:80px 0;
 }
 
-/* Image + Text Side-by-Side */
-.about-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 40px;
-  width: 100%;
+.about-container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:70px;
+    align-items:flex-start;
 }
 
-.about-image {
-  flex: 1;
-  min-width: 300px;
+/* ===========================
+   LEFT
+=========================== */
+
+.about-left-column{
+    flex:1;
 }
 
-.about-image img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 10px;
+.about-process-card{
+    width:100%;
+    background:#fdf8f2;
+    border-radius:24px;
+    padding:35px;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
 }
 
-.about-text {
-  flex: 1;
-  min-width: 300px;
-  text-align: left;
+.about-process-header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:25px;
 }
 
-.about-text h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #132e49;
+.about-process-logo{
+    width:45px;
+    height:45px;
+    object-fit:contain;
 }
 
-.about-text p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #444;
-  max-width: 800px;
-  margin: 0 0 15px;
+.about-process-heading{
+    font-size:36px;
+    font-weight:700;
+    color:#2f2118;
+    letter-spacing:.4px;
 }
 
-/* Service Boxes Section */
-.service-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.about-process-divider{
+    width:100%;
+    height:1px;
+    background:#e6d8ca;
+    margin-bottom:25px;
 }
 
-.service-box {
-  font-size: 17px;
-  font-style: normal;
-  display: flex;
-  flex-direction: column;
-  /* align-items: flex-start; Icons left aligned */
-  background-color: white;
-  color: black;
-  padding: 20px 50px;
-  border-radius: 10px;
-  width: 235px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+.about-process-item{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:#ffffff;
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:22px;
+    transition:.35s;
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
 }
 
-.service-box:hover {
-  transform: translateY(-5px);
-  background-color: white;
+.about-process-item:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
 }
 
-/* Icon Styling in Service Boxes */
-.service-box i {
-  font-size: 40px;
-  margin-bottom: 10px;
-  color: #0b81f7;
+.about-process-number{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#7d4d2c;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    font-weight:700;
 }
 
-/* Icon Row Section */
-.about-review {
-  display: flex;
-  flex-wrap: wrap;             /* Allows wrapping on smaller screens */
-  gap: 160px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 70px;
-  text-align: center;
-  max-width: 100%;             /* Prevents overflow */
-  padding: 0 20px;             /* Adds some breathing room */
-  box-sizing: border-box; 
-  margin-bottom: 60px;     /* Includes padding in width */
+.about-process-icon{
+    width:55px;
+    height:55px;
+    background:#f5ebe1;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#7d4d2c;
+    font-size:22px;
 }
 
-
-.about-review div i {
-  font-size: 40px;
-  color: #17487a;
+.about-process-content{
+    flex:1;
 }
 
-.review-container {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: rgb(252, 248, 248);
+.about-process-title{
+    font-size:24px;
+    font-weight:700;
+    color:#222;
+    margin-bottom:6px;
 }
 
-.heading {
-  font-size: 28px;
-  margin-bottom: 40px;
-  color: #132e49;
+.about-process-text{
+    font-size:17px;
+    line-height:1.7;
+    color:#666;
 }
 
-.rev-conts {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+/* ===========================
+   RIGHT
+=========================== */
+
+.about-right-column{
+    flex:1;
 }
 
-.review-box {
-  background-color: white;
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  padding: 20px;
-  width: 350px;
-  height: 100px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: left;
+.about-small-title{
+    font-size:15px;
+    color:#7d4d2c;
+    letter-spacing:4px;
+    font-weight:700;
+    margin-bottom:18px;
 }
 
-.review-box img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
+.about-main-title{
+    font-size:58px;
+    color:#24170f;
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:35px;
 }
 
-.review-content {
-  flex: 1;
+.about-description{
+    font-size:21px;
+    color:#555;
+    line-height:2;
+    margin-bottom:45px;
 }
 
-.review-header {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+/* ===========================
+   FEATURES
+=========================== */
+
+.about-feature-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
 }
 
-.review-header h4 {
-  font-size: 16px;
-  margin: 0;
-  color: #17487a;
+.about-feature-card{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:#f8f3ee;
+    border-radius:16px;
+    padding:20px;
+    transition:.35s;
 }
 
-.stars {
-  color: #f6b500; /* gold star */
-  font-size: 24px;
+.about-feature-card:hover{
+    background:#7d4d2c;
 }
 
-.review-content p {
-  font-size: 14px;
-  color: #444;
-  margin: 0;
+.about-feature-card:hover .about-feature-title{
+    color:#fff;
 }
 
-
-.container1 {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px;
-  gap: 40px;
-  margin-top: 40px;
-  width: 98%;
-  background-color: #f4f4f4;
-  font-family: Arial, sans-serif;
+.about-feature-card:hover .about-feature-icon{
+    background:#ffffff;
+    color:#7d4d2c;
 }
 
-.left-content {
-  flex: 1;
-  padding: 20px;
+.about-feature-icon{
+    width:50px;
+    height:50px;
+    border-radius:12px;
+    background:#7d4d2c;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    transition:.35s;
 }
 
-
-
-.right-form {
-  flex: 1;
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+.about-feature-title{
+    font-size:20px;
+    color:#222;
+    font-weight:600;
+    transition:.35s;
 }
 
-.right-form h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
+/* ===========================
+   FOUNDER
+=========================== */
+
+.about-founder-section{
+    width:90%;
+    max-width:1200px;
+    margin:100px auto 0;
+    border-top:1px solid #e6d8ca;
+    padding-top:90px;
+    text-align:center;
 }
 
-.right-form form {
-  display: flex;
-  flex-direction: column;
+.about-founder-small-title{
+    color:#7d4d2c;
+    font-size:15px;
+    letter-spacing:5px;
+    font-weight:700;
+    margin-bottom:20px;
 }
 
-.right-form input,
-.right-form textarea {
-  margin-bottom: 15px;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.about-founder-main-title{
+    font-size:62px;
+    color:#24170f;
+    font-weight:700;
+    margin-bottom:45px;
 }
 
-.right-form button {
-  padding: 12px;
-  font-size: 16px;
-  background-color: #0077cc;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
+.about-founder-description{
+    width:80%;
+    margin:auto;
+    font-size:22px;
+    color:#555;
+    line-height:2;
 }
 
-.right-form button:hover {
-  background-color: #005fa3;
+/* ===========================
+   STATS
+=========================== */
+
+.about-stats-container{
+    display:flex;
+    justify-content:center;
+    gap:70px;
+    margin-top:70px;
+    flex-wrap:wrap;
 }
 
-.contact-details {
-  margin-top: 20px;
+.about-stat-card{
+    text-align:center;
 }
 
-.contact-details p {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 20px;
-  line-height: 1.6;
-  position: relative;
-  padding-left: 30px;
+.about-stat-number{
+    font-size:58px;
+    color:#7d4d2c;
+    font-weight:700;
 }
 
-.contact-details i {
-  color: #0077cc;
-  margin-right: 10px;
-  font-size: 18px;
-  position: absolute;
-  left: 0;
-  top: 4px;
-}
-
-.contact-details span {
-  font-weight: bold;
-  color: #222;
+.about-stat-title{
+    margin-top:10px;
+    font-size:18px;
+    letter-spacing:2px;
+    color:#555;
 }
