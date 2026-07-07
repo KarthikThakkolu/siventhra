@@ -268,3 +268,338 @@
     letter-spacing:2px;
     color:#555;
 }
+
+/* ===================================================
+   LARGE LAPTOPS (1200px)
+=================================================== */
+
+@media (max-width:1200px){
+
+.about-container{
+    width:95%;
+    gap:40px;
+}
+
+.about-main-title{
+    font-size:48px;
+}
+
+.about-description{
+    font-size:19px;
+}
+
+.about-founder-main-title{
+    font-size:52px;
+}
+
+.about-founder-description{
+    width:90%;
+    font-size:20px;
+}
+
+}
+
+
+/* ===================================================
+   LAPTOPS (992px)
+=================================================== */
+
+@media (max-width:992px){
+
+.about-page{
+    padding:60px 0;
+}
+
+.about-container{
+    flex-direction:column;
+    gap:50px;
+}
+
+.about-left-column,
+.about-right-column{
+    width:100%;
+}
+
+.about-main-title{
+    font-size:44px;
+}
+
+.about-description{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.about-process-heading{
+    font-size:32px;
+}
+
+.about-feature-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.about-founder-section{
+    margin-top:70px;
+    padding-top:70px;
+}
+
+.about-founder-main-title{
+    font-size:46px;
+}
+
+.about-founder-description{
+    width:100%;
+    font-size:19px;
+}
+
+.about-stats-container{
+    gap:40px;
+}
+
+.about-stat-number{
+    font-size:48px;
+}
+
+}
+
+
+/* ===================================================
+   TABLETS (768px)
+=================================================== */
+
+@media (max-width:768px){
+
+.about-page{
+    padding:50px 0;
+}
+
+.about-container{
+    width:92%;
+}
+
+.about-process-card{
+    padding:25px;
+}
+
+.about-process-heading{
+    font-size:28px;
+}
+
+.about-process-item{
+    padding:18px;
+    gap:15px;
+}
+
+.about-process-number{
+    width:42px;
+    height:42px;
+    font-size:16px;
+}
+
+.about-process-icon{
+    width:48px;
+    height:48px;
+    font-size:18px;
+}
+
+.about-process-title{
+    font-size:20px;
+}
+
+.about-process-text{
+    font-size:15px;
+}
+
+.about-small-title{
+    font-size:13px;
+    letter-spacing:3px;
+}
+
+.about-main-title{
+    font-size:38px;
+}
+
+.about-description{
+    font-size:17px;
+}
+
+.about-feature-grid{
+    grid-template-columns:1fr;
+}
+
+.about-feature-card{
+    padding:18px;
+}
+
+.about-founder-main-title{
+    font-size:38px;
+}
+
+.about-founder-description{
+    font-size:17px;
+    line-height:1.8;
+}
+
+.about-stat-number{
+    font-size:42px;
+}
+
+.about-stat-title{
+    font-size:16px;
+}
+
+}
+
+
+/* ===================================================
+   MOBILE (576px)
+=================================================== */
+
+@media (max-width:576px){
+
+.about-page{
+    padding:40px 0;
+}
+
+.about-container{
+    width:94%;
+    gap:35px;
+}
+
+.about-process-card{
+    padding:20px;
+    border-radius:18px;
+}
+
+.about-process-header{
+    gap:12px;
+}
+
+.about-process-logo{
+    width:35px;
+    height:35px;
+}
+
+.about-process-heading{
+    font-size:24px;
+}
+
+.about-process-item{
+    padding:15px;
+    gap:12px;
+}
+
+.about-process-number{
+    width:38px;
+    height:38px;
+    font-size:14px;
+}
+
+.about-process-icon{
+    width:42px;
+    height:42px;
+    font-size:16px;
+}
+
+.about-process-title{
+    font-size:18px;
+}
+
+.about-process-text{
+    font-size:14px;
+    line-height:1.6;
+}
+
+.about-small-title{
+    font-size:12px;
+}
+
+.about-main-title{
+    font-size:32px;
+    line-height:1.25;
+}
+
+.about-description{
+    font-size:16px;
+    line-height:1.8;
+}
+
+.about-feature-card{
+    padding:16px;
+}
+
+.about-feature-icon{
+    width:42px;
+    height:42px;
+    font-size:15px;
+}
+
+.about-feature-title{
+    font-size:17px;
+}
+
+.about-founder-section{
+    margin-top:50px;
+    padding-top:50px;
+}
+
+.about-founder-small-title{
+    font-size:12px;
+}
+
+.about-founder-main-title{
+    font-size:32px;
+}
+
+.about-founder-description{
+    width:100%;
+    font-size:16px;
+}
+
+.about-stats-container{
+    gap:30px;
+}
+
+.about-stat-number{
+    font-size:36px;
+}
+
+.about-stat-title{
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+}
+
+
+/* ===================================================
+   SMALL PHONES (400px)
+=================================================== */
+
+@media (max-width:400px){
+
+.about-main-title{
+    font-size:28px;
+}
+
+.about-founder-main-title{
+    font-size:28px;
+}
+
+.about-process-heading{
+    font-size:22px;
+}
+
+.about-process-item{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.about-process-content{
+    width:100%;
+}
+
+.about-feature-card{
+    gap:12px;
+}
+
+}

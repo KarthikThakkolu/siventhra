@@ -14,7 +14,7 @@ function Footer() {
     <>
       {/* CTA SECTION */}
 
-      <section className="footer-top">
+      {/* <section className="footer-top">
         <h2>Ready to Transform Your Space?</h2>
 
         <p>
@@ -31,7 +31,7 @@ function Footer() {
           <FaWhatsapp />
           Get Free Quote on WhatsApp
         </a>
-      </section>
+      </section> */}
 
       {/* FOOTER */}
 
