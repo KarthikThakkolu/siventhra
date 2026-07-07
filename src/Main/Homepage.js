@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
     const navigate = useNavigate();
@@ -268,10 +269,11 @@ const Homepage = () => {
                             <div className="homepage-card-description">
                                 Elegant curtain collections for homes, offices and commercial spaces.
                             </div>
-
-                            <button className="homepage-card-button">
-                                View More
-                            </button>
+<Link to="/Pages/Curtains">
+    <button className="homepage-card-button">
+        View More
+    </button>
+</Link>
                         </div>
                     </div>
 
@@ -530,7 +532,7 @@ const Homepage = () => {
 
             {/* ================= Testimonials Section ================= */}
 
-            <section className="testimonial-section">
+            <div className="testimonial-section">
 
                 <div className="testimonial-heading">
 
@@ -596,7 +598,7 @@ const Homepage = () => {
 
                 </div>
 
-            </section>
+            </div>
 
             {/* ================= End Testimonials ================= */}
 
