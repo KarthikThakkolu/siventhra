@@ -1,32 +1,16 @@
 // import React from "react";
 import React, { useState } from "react";
 
-// import { FaStar } from "react-icons/fa";
-
-// import {
-//   FaStar,
-//   FaCheckCircle,
-//   FaQuoteLeft,
-//   FaThumbsUp,
-//   FaMapMarkerAlt,
-//   FaCalendarAlt,
-//   FaHome,
-// } from "react-icons/fa";
-
 
 import {
   FaStar,
-  FaUser,
   FaQuoteLeft,
   FaThumbsUp,
-  FaPhone,
   FaHome,
-  FaEnvelope,
   FaMapMarkerAlt,
   FaCalendarAlt,
   FaUpload,
   FaCheckCircle,
-  FaSmile,
   FaAward,
   FaUsers,
   FaClipboardCheck
