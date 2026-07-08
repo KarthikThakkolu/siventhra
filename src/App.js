@@ -25,8 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/orderrequest" element={<OrderRequest />} />
         <Route path="/Feedback" element={<Feedback />} />
-        {/* <Route path="/curtains" element={<Curtains/>}/> */}
-        <Route path="/Pages/Curtains" element={<Curtains />} />
+        {/* <Route path="/Pages/Curtains" element={<Curtains />} /> */}
       </Routes>
 
       <Footer />
