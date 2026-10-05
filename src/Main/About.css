@@ -1,605 +1,1371 @@
-/* ===========================
+/* =========================================================
    ABOUT PAGE
-=========================== */
+========================================================= */
 
 .about-page{
     width:100%;
+    max-width:100%;
     background:#ffffff;
-    padding:80px 0;
+    margin-top:150px;
+    overflow:hidden;
 }
+
+/* IMPORTANT GLOBAL BOX SIZING */
+.about-page *,
+.about-page *::before,
+.about-page *::after{
+    box-sizing:border-box;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
 
 .about-container{
-    width:90%;
-    max-width:1400px;
-    margin:auto;
+    width:88%;
+    max-width:1900px;
+    margin:0 auto;
+
     display:flex;
-    justify-content:space-between;
-    gap:70px;
     align-items:flex-start;
+    gap:70px;
 }
 
-/* ===========================
-   LEFT
-=========================== */
+
+/* =========================================================
+   LEFT COLUMN
+========================================================= */
 
 .about-left-column{
-    flex:1;
+    flex:1 1 0;
+    min-width:0;
+    width:100%;
 }
+
+
+/* =========================================================
+   PROCESS CARD
+========================================================= */
 
 .about-process-card{
     width:100%;
+    max-width:100%;
+
     background:#fdf8f2;
     border-radius:24px;
     padding:35px;
+
     box-shadow:0 10px 35px rgba(0,0,0,.08);
 }
 
+
 .about-process-header{
+    width:100%;
+
     display:flex;
     align-items:center;
+
     gap:18px;
     margin-bottom:25px;
 }
+
 
 .about-process-logo{
     width:45px;
     height:45px;
+
     object-fit:contain;
+    flex-shrink:0;
 }
 
+
 .about-process-heading{
+    min-width:0;
+
     font-size:36px;
     font-weight:700;
     color:#2f2118;
+
     letter-spacing:.4px;
 }
+
 
 .about-process-divider{
     width:100%;
     height:1px;
+
     background:#e6d8ca;
+
     margin-bottom:25px;
 }
 
+
+/* =========================================================
+   PROCESS ITEMS
+========================================================= */
+
 .about-process-item{
+    width:100%;
+    min-width:0;
+
     display:flex;
     align-items:center;
+
     gap:18px;
+
     background:#ffffff;
     border-radius:18px;
+
     padding:22px;
     margin-bottom:22px;
-    transition:.35s;
+
     box-shadow:0 5px 18px rgba(0,0,0,.05);
+
+    transition:.35s;
 }
+
+
+.about-process-item:last-child{
+    margin-bottom:0;
+}
+
 
 .about-process-item:hover{
     transform:translateY(-6px);
     box-shadow:0 18px 35px rgba(0,0,0,.12);
 }
 
+
+/* NUMBER */
+
 .about-process-number{
     width:48px;
     height:48px;
+
     border-radius:50%;
+
     background:#7d4d2c;
     color:#fff;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     font-size:18px;
     font-weight:700;
+
+    flex:0 0 48px;
 }
+
+
+/* ICON */
 
 .about-process-icon{
     width:55px;
     height:55px;
+
     background:#f5ebe1;
+
     border-radius:15px;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     color:#7d4d2c;
     font-size:22px;
+
+    flex:0 0 55px;
 }
 
+
+/* CONTENT */
+
 .about-process-content{
-    flex:1;
+    flex:1 1 0;
+    min-width:0;
 }
+
 
 .about-process-title{
     font-size:24px;
     font-weight:700;
     color:#222;
+
     margin-bottom:6px;
+
+    overflow-wrap:break-word;
 }
+
 
 .about-process-text{
     font-size:17px;
     line-height:1.7;
     color:#666;
+
+    overflow-wrap:break-word;
 }
 
-/* ===========================
-   RIGHT
-=========================== */
+
+/* =========================================================
+   RIGHT COLUMN
+========================================================= */
 
 .about-right-column{
-    flex:1;
+    flex:1 1 0;
+    min-width:0;
+    width:100%;
 }
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
 
 .about-small-title{
     font-size:15px;
     color:#7d4d2c;
+
     letter-spacing:4px;
     font-weight:700;
+
     margin-bottom:18px;
 }
+
 
 .about-main-title{
     font-size:58px;
     color:#24170f;
+
     font-weight:700;
     line-height:1.2;
+
     margin-bottom:35px;
+
+    overflow-wrap:break-word;
 }
+
 
 .about-description{
+    width:100%;
+
     font-size:21px;
     color:#555;
+
     line-height:2;
+
     margin-bottom:45px;
+
+    overflow-wrap:break-word;
 }
 
-/* ===========================
+
+/* =========================================================
    FEATURES
-=========================== */
+========================================================= */
 
 .about-feature-grid{
+    width:100%;
+    min-width:0;
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+
     gap:20px;
 }
 
+
 .about-feature-card{
+    width:100%;
+    min-width:0;
+
     display:flex;
     align-items:center;
+
     gap:18px;
+
     background:#f8f3ee;
+
     border-radius:16px;
+
     padding:20px;
+
     transition:.35s;
 }
+
 
 .about-feature-card:hover{
     background:#7d4d2c;
 }
 
+
 .about-feature-card:hover .about-feature-title{
     color:#fff;
 }
+
 
 .about-feature-card:hover .about-feature-icon{
     background:#ffffff;
     color:#7d4d2c;
 }
 
+
 .about-feature-icon{
     width:50px;
     height:50px;
+
     border-radius:12px;
+
     background:#7d4d2c;
     color:#fff;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     font-size:18px;
+
+    flex:0 0 50px;
+
     transition:.35s;
 }
 
+
 .about-feature-title{
+    min-width:0;
+
     font-size:20px;
     color:#222;
     font-weight:600;
+
     transition:.35s;
+
+    overflow-wrap:break-word;
 }
 
-/* ===========================
-   FOUNDER
-=========================== */
+
+/* =========================================================
+   FOUNDER SECTION
+========================================================= */
 
 .about-founder-section{
     width:90%;
     max-width:1200px;
+
     margin:100px auto 0;
+
     border-top:1px solid #e6d8ca;
+
     padding-top:90px;
+
     text-align:center;
 }
 
+
 .about-founder-small-title{
     color:#7d4d2c;
+
     font-size:15px;
     letter-spacing:5px;
     font-weight:700;
+
     margin-bottom:20px;
 }
 
+
 .about-founder-main-title{
     font-size:62px;
+
     color:#24170f;
     font-weight:700;
+
     margin-bottom:45px;
+
+    overflow-wrap:break-word;
 }
+
 
 .about-founder-description{
     width:80%;
-    margin:auto;
+    max-width:1000px;
+
+    margin:0 auto;
+
     font-size:22px;
     color:#555;
+
     line-height:2;
+
+    overflow-wrap:break-word;
 }
 
-/* ===========================
+
+/* =========================================================
    STATS
-=========================== */
+========================================================= */
 
 .about-stats-container{
+    width:100%;
+
     display:flex;
     justify-content:center;
+    align-items:flex-start;
+
     gap:70px;
+
     margin-top:70px;
+
     flex-wrap:wrap;
 }
 
+
 .about-stat-card{
     text-align:center;
+
+    min-width:120px;
 }
+
 
 .about-stat-number{
     font-size:58px;
+
     color:#7d4d2c;
     font-weight:700;
 }
 
+
 .about-stat-title{
     margin-top:10px;
+
     font-size:18px;
     letter-spacing:2px;
+
     color:#555;
 }
 
-/* ===================================================
-   LARGE LAPTOPS (1200px)
-=================================================== */
-
-@media (max-width:1200px){
-
-.about-container{
-    width:95%;
-    gap:40px;
-}
 
-.about-main-title{
-    font-size:48px;
-}
+/* =========================================================
+   LARGE DESKTOP
+   1600px+
+========================================================= */
 
-.about-description{
-    font-size:19px;
-}
+@media (min-width:1600px){
 
-.about-founder-main-title{
-    font-size:52px;
-}
+    .about-container{
+        width:86%;
+        max-width:1600px;
+        gap:90px;
+    }
 
-.about-founder-description{
-    width:90%;
-    font-size:20px;
-}
+    .about-process-card{
+        padding:40px;
+    }
 
-}
+    .about-main-title{
+        font-size:62px;
+    }
 
+    .about-description{
+        font-size:22px;
+    }
 
-/* ===================================================
-   LAPTOPS (992px)
-=================================================== */
+    .about-process-heading{
+        font-size:38px;
+    }
 
-@media (max-width:992px){
+    .about-process-title{
+        font-size:25px;
+    }
 
-.about-page{
-    padding:60px 0;
-}
+    .about-process-text{
+        font-size:18px;
+    }
 
-.about-container{
-    flex-direction:column;
-    gap:50px;
 }
 
-.about-left-column,
-.about-right-column{
-    width:100%;
-}
 
-.about-main-title{
-    font-size:44px;
-}
+/* =========================================================
+   1400px - 1599px
+========================================================= */
 
-.about-description{
-    font-size:18px;
-    line-height:1.8;
-}
+@media (min-width:1400px) and (max-width:1599px){
 
-.about-process-heading{
-    font-size:32px;
-}
+    .about-container{
+        width:87%;
+        max-width:1500px;
+        gap:70px;
+    }
 
-.about-feature-grid{
-    grid-template-columns:repeat(2,1fr);
-}
+    .about-main-title{
+        font-size:56px;
+    }
 
-.about-founder-section{
-    margin-top:70px;
-    padding-top:70px;
-}
+    .about-description{
+        font-size:20px;
+    }
 
-.about-founder-main-title{
-    font-size:46px;
 }
 
-.about-founder-description{
-    width:100%;
-    font-size:19px;
-}
 
-.about-stats-container{
-    gap:40px;
-}
+/* =========================================================
+   1200px - 1399px
+========================================================= */
 
-.about-stat-number{
-    font-size:48px;
-}
+@media (max-width:1399px){
 
-}
+    .about-container{
+        width:90%;
+        gap:50px;
+    }
 
+    .about-process-card{
+        padding:30px;
+    }
 
-/* ===================================================
-   TABLETS (768px)
-=================================================== */
+    .about-process-heading{
+        font-size:32px;
+    }
 
-@media (max-width:768px){
+    .about-main-title{
+        font-size:50px;
+    }
 
-.about-page{
-    padding:50px 0;
-}
+    .about-description{
+        font-size:19px;
+        line-height:1.9;
+    }
 
-.about-container{
-    width:92%;
-}
+    .about-founder-main-title{
+        font-size:56px;
+    }
 
-.about-process-card{
-    padding:25px;
-}
+    .about-founder-description{
+        width:85%;
+        font-size:20px;
+    }
 
-.about-process-heading{
-    font-size:28px;
 }
 
-.about-process-item{
-    padding:18px;
-    gap:15px;
-}
 
-.about-process-number{
-    width:42px;
-    height:42px;
-    font-size:16px;
-}
+/* =========================================================
+   1024px - 1199px
+========================================================= */
 
-.about-process-icon{
-    width:48px;
-    height:48px;
-    font-size:18px;
-}
+@media (max-width:1199px){
 
-.about-process-title{
-    font-size:20px;
-}
+    .about-page{
+        margin-top:120px;
+    }
 
-.about-process-text{
-    font-size:15px;
-}
+    .about-container{
+        width:92%;
+        gap:40px;
+    }
 
-.about-small-title{
-    font-size:13px;
-    letter-spacing:3px;
-}
+    .about-process-card{
+        padding:28px;
+    }
 
-.about-main-title{
-    font-size:38px;
-}
+    .about-process-heading{
+        font-size:30px;
+    }
 
-.about-description{
-    font-size:17px;
-}
+    .about-process-item{
+        gap:14px;
+        padding:18px;
+    }
 
-.about-feature-grid{
-    grid-template-columns:1fr;
-}
+    .about-process-number{
+        width:44px;
+        height:44px;
+        flex-basis:44px;
+        font-size:16px;
+    }
 
-.about-feature-card{
-    padding:18px;
-}
+    .about-process-icon{
+        width:50px;
+        height:50px;
+        flex-basis:50px;
+        font-size:20px;
+    }
 
-.about-founder-main-title{
-    font-size:38px;
-}
+    .about-process-title{
+        font-size:21px;
+    }
 
-.about-founder-description{
-    font-size:17px;
-    line-height:1.8;
-}
+    .about-process-text{
+        font-size:15px;
+    }
 
-.about-stat-number{
-    font-size:42px;
-}
+    .about-main-title{
+        font-size:44px;
+        margin-bottom:28px;
+    }
 
-.about-stat-title{
-    font-size:16px;
-}
+    .about-description{
+        font-size:18px;
+        line-height:1.85;
+        margin-bottom:35px;
+    }
 
-}
+    .about-feature-grid{
+        gap:15px;
+    }
 
+    .about-feature-card{
+        padding:16px;
+        gap:12px;
+    }
 
-/* ===================================================
-   MOBILE (576px)
-=================================================== */
+    .about-feature-icon{
+        width:44px;
+        height:44px;
+        flex-basis:44px;
+        font-size:16px;
+    }
 
-@media (max-width:576px){
+    .about-feature-title{
+        font-size:17px;
+    }
 
-.about-page{
-    padding:40px 0;
 }
 
-.about-container{
-    width:94%;
-    gap:35px;
-}
 
-.about-process-card{
-    padding:20px;
-    border-radius:18px;
-}
+/* =========================================================
+   TABLET
+   768px - 1023px
 
-.about-process-header{
-    gap:12px;
-}
+   STACK MAIN CONTENT
+========================================================= */
 
-.about-process-logo{
-    width:35px;
-    height:35px;
-}
+@media (max-width:1023px){
 
-.about-process-heading{
-    font-size:24px;
-}
+    .about-page{
+        margin-top:100px;
+    }
 
-.about-process-item{
-    padding:15px;
-    gap:12px;
-}
+    .about-container{
+        width:92%;
+        max-width:850px;
 
-.about-process-number{
-    width:38px;
-    height:38px;
-    font-size:14px;
-}
+        flex-direction:column;
 
-.about-process-icon{
-    width:42px;
-    height:42px;
-    font-size:16px;
-}
+        gap:50px;
+    }
 
-.about-process-title{
-    font-size:18px;
-}
+    .about-left-column,
+    .about-right-column{
+        width:100%;
+        max-width:100%;
+    }
 
-.about-process-text{
-    font-size:14px;
-    line-height:1.6;
-}
+    .about-process-card{
+        padding:30px;
+    }
 
-.about-small-title{
-    font-size:12px;
-}
+    .about-process-heading{
+        font-size:32px;
+    }
 
-.about-main-title{
-    font-size:32px;
-    line-height:1.25;
-}
+    .about-process-title{
+        font-size:22px;
+    }
 
-.about-description{
-    font-size:16px;
-    line-height:1.8;
-}
+    .about-process-text{
+        font-size:16px;
+    }
 
-.about-feature-card{
-    padding:16px;
-}
+    .about-main-title{
+        font-size:46px;
+    }
 
-.about-feature-icon{
-    width:42px;
-    height:42px;
-    font-size:15px;
-}
+    .about-description{
+        font-size:18px;
+        line-height:1.85;
+    }
 
-.about-feature-title{
-    font-size:17px;
-}
+    .about-feature-grid{
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(0,1fr);
 
-.about-founder-section{
-    margin-top:50px;
-    padding-top:50px;
-}
+        gap:18px;
+    }
 
-.about-founder-small-title{
-    font-size:12px;
-}
+    .about-founder-section{
+        width:92%;
+        margin-top:80px;
+        padding-top:70px;
+    }
 
-.about-founder-main-title{
-    font-size:32px;
-}
+    .about-founder-main-title{
+        font-size:48px;
+    }
 
-.about-founder-description{
-    width:100%;
-    font-size:16px;
-}
+    .about-founder-description{
+        width:95%;
+        font-size:19px;
+    }
 
-.about-stats-container{
-    gap:30px;
-}
+    .about-stats-container{
+        gap:45px;
+    }
 
-.about-stat-number{
-    font-size:36px;
 }
 
-.about-stat-title{
-    font-size:14px;
-    letter-spacing:1px;
-}
 
-}
+/* =========================================================
+   768px - 991px
+========================================================= */
 
+@media (min-width:768px) and (max-width:991px){
 
-/* ===================================================
-   SMALL PHONES (400px)
-=================================================== */
+    .about-container{
+        width:90%;
+    }
 
-@media (max-width:400px){
+    .about-process-card{
+        padding:30px;
+    }
 
-.about-main-title{
-    font-size:28px;
-}
+    .about-process-item{
+        padding:20px;
+    }
 
-.about-founder-main-title{
-    font-size:28px;
-}
+    .about-process-title{
+        font-size:23px;
+    }
 
-.about-process-heading{
-    font-size:22px;
-}
+    .about-process-text{
+        font-size:16px;
+    }
+
+    .about-main-title{
+        font-size:44px;
+    }
 
-.about-process-item{
-    flex-direction:column;
-    align-items:flex-start;
+    .about-description{
+        font-size:18px;
+    }
+
+    .about-founder-main-title{
+        font-size:46px;
+    }
+
 }
+
+
+/* =========================================================
+   576px - 767px
+========================================================= */
+
+@media (max-width:767px){
+
+    .about-page{
+        margin-top:80px;
+    }
+
+    .about-container{
+        width:92%;
+        gap:40px;
+    }
+
+    /* PROCESS */
+
+    .about-process-card{
+        padding:24px;
+        border-radius:20px;
+    }
+
+    .about-process-header{
+        gap:12px;
+        margin-bottom:20px;
+    }
+
+    .about-process-logo{
+        width:38px;
+        height:38px;
+    }
+
+    .about-process-heading{
+        font-size:28px;
+    }
+
+    .about-process-item{
+        padding:18px;
+        gap:13px;
+    }
+
+    .about-process-number{
+        width:42px;
+        height:42px;
+        flex-basis:42px;
+        font-size:15px;
+    }
+
+    .about-process-icon{
+        width:46px;
+        height:46px;
+        flex-basis:46px;
+        font-size:18px;
+    }
+
+    .about-process-title{
+        font-size:20px;
+    }
+
+    .about-process-text{
+        font-size:15px;
+        line-height:1.6;
+    }
+
+    /* RIGHT */
+
+    .about-small-title{
+        font-size:13px;
+        letter-spacing:3px;
+        margin-bottom:15px;
+    }
+
+    .about-main-title{
+        font-size:38px;
+        line-height:1.2;
+        margin-bottom:25px;
+    }
+
+    .about-description{
+        font-size:17px;
+        line-height:1.8;
+        margin-bottom:30px;
+    }
+
+    .about-feature-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+    }
+
+    .about-feature-card{
+        padding:17px;
+    }
+
+    .about-feature-title{
+        font-size:17px;
+    }
+
+    /* FOUNDER */
+
+    .about-founder-section{
+        width:92%;
+        margin-top:60px;
+        padding-top:55px;
+    }
+
+    .about-founder-small-title{
+        font-size:12px;
+        letter-spacing:4px;
+    }
+
+    .about-founder-main-title{
+        font-size:38px;
+        line-height:1.2;
+        margin-bottom:30px;
+    }
+
+    .about-founder-description{
+        width:100%;
+        font-size:17px;
+        line-height:1.8;
+    }
+
+    /* STATS */
+
+    .about-stats-container{
+        gap:35px;
+        margin-top:50px;
+    }
 
-.about-process-content{
-    width:100%;
+    .about-stat-card{
+        min-width:100px;
+    }
+
+    .about-stat-number{
+        font-size:42px;
+    }
+
+    .about-stat-title{
+        font-size:15px;
+        letter-spacing:1.5px;
+    }
+
+}
+
+
+/* =========================================================
+   480px - 575px
+========================================================= */
+
+@media (max-width:575px){
+
+    .about-page{
+        margin-top:70px;
+    }
+
+    .about-container{
+        width:94%;
+        gap:35px;
+    }
+
+    .about-process-card{
+        padding:20px;
+        border-radius:18px;
+    }
+
+    .about-process-header{
+        gap:10px;
+    }
+
+    .about-process-logo{
+        width:34px;
+        height:34px;
+    }
+
+    .about-process-heading{
+        font-size:24px;
+    }
+
+    .about-process-item{
+        padding:15px;
+        gap:11px;
+        border-radius:15px;
+    }
+
+    .about-process-number{
+        width:38px;
+        height:38px;
+        flex-basis:38px;
+        font-size:14px;
+    }
+
+    .about-process-icon{
+        width:42px;
+        height:42px;
+        flex-basis:42px;
+        font-size:16px;
+    }
+
+    .about-process-title{
+        font-size:18px;
+    }
+
+    .about-process-text{
+        font-size:14px;
+        line-height:1.55;
+    }
+
+    .about-small-title{
+        font-size:12px;
+        letter-spacing:2.5px;
+    }
+
+    .about-main-title{
+        font-size:32px;
+        line-height:1.25;
+    }
+
+    .about-description{
+        font-size:16px;
+        line-height:1.75;
+    }
+
+    .about-feature-card{
+        padding:15px;
+        gap:12px;
+    }
+
+    .about-feature-icon{
+        width:42px;
+        height:42px;
+        flex-basis:42px;
+        font-size:15px;
+    }
+
+    .about-feature-title{
+        font-size:16px;
+    }
+
+    .about-founder-section{
+        width:94%;
+        margin-top:50px;
+        padding-top:45px;
+    }
+
+    .about-founder-small-title{
+        font-size:11px;
+        letter-spacing:3px;
+    }
+
+    .about-founder-main-title{
+        font-size:32px;
+    }
+
+    .about-founder-description{
+        font-size:16px;
+        line-height:1.75;
+    }
+
+    .about-stats-container{
+        gap:28px;
+    }
+
+    .about-stat-card{
+        min-width:90px;
+    }
+
+    .about-stat-number{
+        font-size:36px;
+    }
+
+    .about-stat-title{
+        font-size:13px;
+        letter-spacing:1px;
+    }
+
 }
+
+
+/* =========================================================
+   425px - 479px
+========================================================= */
 
-.about-feature-card{
-    gap:12px;
+@media (max-width:479px){
+
+    .about-page{
+        margin-top:60px;
+    }
+
+    .about-container{
+        width:94%;
+    }
+
+    .about-process-card{
+        padding:17px;
+    }
+
+    .about-process-heading{
+        font-size:22px;
+    }
+
+    /*
+       Important:
+       Keep number + icon + text in one row.
+       Do NOT use flex-direction:column here.
+    */
+
+    .about-process-item{
+        display:flex;
+        flex-direction:row;
+        align-items:flex-start;
+        gap:10px;
+        padding:13px;
+    }
+
+    .about-process-number{
+        width:34px;
+        height:34px;
+        flex-basis:34px;
+        font-size:13px;
+    }
+
+    .about-process-icon{
+        width:38px;
+        height:38px;
+        flex-basis:38px;
+        font-size:15px;
+    }
+
+    .about-process-content{
+        flex:1 1 0;
+        min-width:0;
+    }
+
+    .about-process-title{
+        font-size:17px;
+        line-height:1.3;
+    }
+
+    .about-process-text{
+        font-size:13px;
+        line-height:1.5;
+    }
+
+    .about-main-title{
+        font-size:29px;
+    }
+
+    .about-description{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .about-founder-main-title{
+        font-size:29px;
+    }
+
+    .about-founder-description{
+        font-size:15px;
+    }
+
 }
+
+
+/* =========================================================
+   375px - 424px
+========================================================= */
+
+@media (max-width:424px){
+
+    .about-container{
+        width:94%;
+    }
+
+    .about-process-card{
+        padding:15px;
+    }
+
+    .about-process-header{
+        gap:8px;
+    }
+
+    .about-process-logo{
+        width:30px;
+        height:30px;
+    }
+
+    .about-process-heading{
+        font-size:20px;
+    }
+
+    .about-process-item{
+        gap:8px;
+        padding:12px;
+    }
+
+    .about-process-number{
+        width:32px;
+        height:32px;
+        flex-basis:32px;
+        font-size:12px;
+    }
+
+    .about-process-icon{
+        width:36px;
+        height:36px;
+        flex-basis:36px;
+        font-size:14px;
+    }
+
+    .about-process-title{
+        font-size:16px;
+    }
+
+    .about-process-text{
+        font-size:12.5px;
+    }
+
+    .about-small-title{
+        font-size:11px;
+        letter-spacing:2px;
+    }
+
+    .about-main-title{
+        font-size:27px;
+    }
+
+    .about-description{
+        font-size:14.5px;
+    }
+
+    .about-feature-card{
+        padding:13px;
+    }
+
+    .about-feature-icon{
+        width:38px;
+        height:38px;
+        flex-basis:38px;
+    }
+
+    .about-feature-title{
+        font-size:15px;
+    }
+
+    .about-founder-main-title{
+        font-size:27px;
+    }
+
+    .about-founder-description{
+        font-size:14.5px;
+    }
+
+}
+
+
+/* =========================================================
+   320px - 374px
+========================================================= */
+
+@media (max-width:374px){
+
+    .about-page{
+        margin-top:50px;
+    }
+
+    .about-container{
+        width:94%;
+    }
+
+    .about-process-card{
+        padding:13px;
+    }
+
+    .about-process-heading{
+        font-size:18px;
+    }
+
+    .about-process-item{
+        gap:6px;
+        padding:10px;
+    }
+
+    .about-process-number{
+        width:29px;
+        height:29px;
+        flex-basis:29px;
+        font-size:11px;
+    }
+
+    .about-process-icon{
+        width:33px;
+        height:33px;
+        flex-basis:33px;
+        font-size:13px;
+    }
+
+    .about-process-title{
+        font-size:15px;
+    }
+
+    .about-process-text{
+        font-size:11.5px;
+    }
+
+    .about-main-title{
+        font-size:25px;
+    }
+
+    .about-description{
+        font-size:14px;
+        line-height:1.65;
+    }
+
+    .about-feature-card{
+        gap:9px;
+        padding:11px;
+    }
+
+    .about-feature-icon{
+        width:35px;
+        height:35px;
+        flex-basis:35px;
+        font-size:14px;
+    }
+
+    .about-feature-title{
+        font-size:14px;
+    }
+
+    .about-founder-section{
+        width:94%;
+        padding-top:40px;
+    }
+
+    .about-founder-main-title{
+        font-size:25px;
+    }
+
+    .about-founder-description{
+        font-size:14px;
+    }
+
+    .about-stats-container{
+        gap:22px;
+    }
+
+    .about-stat-card{
+        min-width:75px;
+    }
+
+    .about-stat-number{
+        font-size:32px;
+    }
+
+    .about-stat-title{
+        font-size:11px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   BELOW 320px
+========================================================= */
+
+@media (max-width:319px){
+
+    .about-container{
+        width:96%;
+    }
+
+    .about-process-card{
+        padding:10px;
+    }
+
+    .about-process-item{
+        gap:5px;
+        padding:9px;
+    }
+
+    .about-process-number{
+        width:27px;
+        height:27px;
+        flex-basis:27px;
+    }
+
+    .about-process-icon{
+        width:31px;
+        height:31px;
+        flex-basis:31px;
+    }
+
+    .about-process-title{
+        font-size:14px;
+    }
+
+    .about-process-text{
+        font-size:11px;
+    }
+
+    .about-main-title{
+        font-size:23px;
+    }
+
+    .about-description{
+        font-size:13.5px;
+    }
 
 }

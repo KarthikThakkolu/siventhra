@@ -1520,9 +1520,9 @@ font-size:15px;
 
 .feedback-form-container{
 
-    width:90%;
+    width:80%;
 
-    max-width:1450px;
+    /* max-width:1850px; */
 
     margin:auto;
 
@@ -1559,7 +1559,7 @@ font-size:15px;
 
     color:#0E7C86;
 
-    font-size:14px;
+    font-size:50px;
 
     font-weight:700;
 
@@ -1666,7 +1666,7 @@ font-size:15px;
 
 .feedback-form-feature-title{
 
-    font-size:22px;
+    font-size:32px;
 
     color:#222;
 
@@ -1682,7 +1682,7 @@ font-size:15px;
 
     line-height:1.8;
 
-    font-size:16px;
+    font-size:25px;
 
 }
 
@@ -1748,7 +1748,7 @@ font-size:15px;
 
 .feedback-form-label{
 
-    font-size:16px;
+    font-size:25px;
 
     color:#333;
 

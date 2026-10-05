@@ -1,958 +1,794 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
+  FaArrowRight,
   FaCheckCircle,
-  FaRulerCombined,
-  FaShieldAlt,
-  FaPalette
+  FaCouch,
+  FaHome,
+  FaHotel,
+  FaBuilding
 } from "react-icons/fa";
 
 import "./Curtains.css";
 
+const collections = [
+  {
+    title: "Sheer Curtains",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900",
+    desc: "Soft daylight with elegant privacy for modern interiors."
+  },
+  {
+    title: "Blackout Curtains",
+    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900",
+    desc: "Complete light control for bedrooms and theatres."
+  },
+  {
+    title: "Velvet Curtains",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900",
+    desc: "Luxury fabrics that add warmth and richness."
+  },
+  {
+    title: "Linen Curtains",
+    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900",
+    desc: "Minimal, airy and timeless curtain collection."
+  }
+];
+
 const Curtains = () => {
   return (
-    <div className="curtains-page">
+    <div className="curtain-page">
 
-      {/*======================================================
-                        HERO SECTION
-      ======================================================*/}
+      {/* ================= HERO ================= */}
 
-      <section className="curtains-hero-section">
+      <section className="hero">
 
-        <div className="curtains-hero-overlay"></div>
+  <div className="hero-overlay"></div>
 
-        <div className="curtains-hero-content">
+  <div className="container hero-grid">
 
-          <div className="curtains-hero-small-title">
-            PREMIUM CURTAIN COLLECTION
-          </div>
+    <div className="hero-content">
 
-          <h1 className="curtains-hero-title">
+      <p className="hero-tag">
+        Premium Curtain Collection
+      </p>
 
-            Beautiful Curtains
-            <br />
+      <h1 className="hero-title">
+        Curtains That
+        <br />
+        Complete Every
+        <span className="hero-title-highlight">
+          {" "}Beautiful Home
+        </span>
+      </h1>
 
-            For Every Interior
+      <p className="hero-description">
+        Discover premium curtains crafted with luxury fabrics,
+        elegant stitching and professional installation.
+        Designed to elevate every living space with timeless beauty.
+      </p>
 
-          </h1>
+      <div className="hero-buttons">
 
-          <p className="curtains-hero-description">
+        <Link
+          to="/orderrequest"
+          className="btn-primary"
+        >
+          Get Free Quote
+        </Link>
 
-            Transform your living spaces with premium curtains
-            designed for elegance, privacy, comfort and style.
-            At Siventhra Interior & Decors we provide custom
-            stitched curtains for homes, apartments,
-            villas and commercial interiors.
+        <Link
+          to="/contact"
+          className="btn-secondary"
+        >
+          Explore Collection
+        </Link>
 
+      </div>
+
+    </div>
+
+    <div className="hero-image">
+
+      <img
+        className="hero-image-photo"
+        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1000"
+        alt="Curtains"
+      />
+
+    </div>
+
+  </div>
+
+</section>
+
+{/* ================= STATS ================= */}
+
+<section className="stats">
+
+  <div className="container stats-grid">
+
+    <div className="stats-card">
+
+      <h2 className="stats-number">
+        500+
+      </h2>
+
+      <p className="stats-text">
+        Projects Completed
+      </p>
+
+    </div>
+
+    <div className="stats-card">
+
+      <h2 className="stats-number">
+        1000+
+      </h2>
+
+      <p className="stats-text">
+        Fabric Designs
+      </p>
+
+    </div>
+
+    <div className="stats-card">
+
+      <h2 className="stats-number">
+        10+
+      </h2>
+
+      <p className="stats-text">
+        Years Experience
+      </p>
+
+    </div>
+
+    <div className="stats-card">
+
+      <h2 className="stats-number">
+        100%
+      </h2>
+
+      <p className="stats-text">
+        Customer Satisfaction
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+      {/* ================= COLLECTIONS ================= */}
+
+     {/* ================= COLLECTIONS ================= */}
+
+<section className="collections">
+
+  <div className="section-heading">
+
+    <p className="section-tag">
+      OUR COLLECTIONS
+    </p>
+
+    <h2 className="section-title">
+      Premium Curtain Collections
+    </h2>
+
+    <p className="section-description">
+      Choose from luxury fabrics designed for modern homes
+      and commercial interiors.
+    </p>
+
+  </div>
+
+  <div className="container collection-grid">
+
+    {collections.map((item, index) => (
+
+      <div
+        className="collection-card"
+        key={index}
+      >
+
+        <div className="collection-image">
+
+          <img
+            className="collection-photo"
+            src={item.image}
+            alt={item.title}
+          />
+
+        </div>
+
+        <div className="collection-content">
+
+          <h3 className="collection-title">
+            {item.title}
+          </h3>
+
+          <p className="collection-description">
+            {item.desc}
           </p>
 
-          <div className="curtains-hero-buttons">
+          <button className="collection-button">
 
-            <Link
-              to="/orderrequest"
-              className="curtains-primary-button"
-            >
-              Get Free Quote
-            </Link>
+            <span className="collection-button-text">
+              Explore Collection
+            </span>
 
-            <Link
-              to="/contact"
-              className="curtains-secondary-button"
-            >
-              Contact Us
-            </Link>
+            <FaArrowRight className="collection-button-icon" />
 
-          </div>
+          </button>
 
         </div>
 
-      </section>
+      </div>
 
-      {/*======================================================
-                     INTRODUCTION
-      ======================================================*/}
+    ))}
 
-      <section className="curtains-introduction-section">
+  </div>
 
-        <div className="curtains-introduction-container">
+</section>
+      {/* ================= ABOUT ================= */}
 
-          {/* IMAGE */}
+      {/* ================= ABOUT ================= */}
 
-          <div className="curtains-introduction-image-box">
+<section className="about-curtains">
 
-            <img
-              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900"
-              alt="Premium Curtains"
-              className="curtains-introduction-image"
-            />
+  <div className="container about-grid">
 
-          </div>
+    <div className="about-image">
 
-          {/* CONTENT */}
-
-          <div className="curtains-introduction-content">
-
-            <div className="curtains-section-small-title">
-              ABOUT CURTAINS
-            </div>
-
-            <h2 className="curtains-section-title">
-
-              Curtains That Blend
-              Comfort & Luxury
-
-            </h2>
-
-            <p className="curtains-section-description">
-
-              Curtains are more than window coverings.
-              They define the ambience of your room,
-              improve privacy, reduce sunlight and
-              enhance interior beauty.
-
-              <br /><br />
-
-              Siventhra Interior & Decors provides
-              premium quality curtain fabrics,
-              customized stitching,
-              modern accessories
-              and professional installation.
-
-            </p>
-
-            <div className="curtains-highlight-grid">
-
-              <div className="curtains-highlight-card">
-
-                <FaCheckCircle />
-
-                <span>
-                  Premium Fabric
-                </span>
-
-              </div>
-
-              <div className="curtains-highlight-card">
-
-                <FaPalette />
-
-                <span>
-                  Elegant Designs
-                </span>
-
-              </div>
-
-              <div className="curtains-highlight-card">
-
-                <FaRulerCombined />
-
-                <span>
-                  Custom Sizes
-                </span>
-
-              </div>
-
-              <div className="curtains-highlight-card">
-
-                <FaShieldAlt />
-
-                <span>
-                  Long Lasting
-                </span>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/*======================================================
-                  BLACKOUT CURTAINS
-      ======================================================*/}
-
-      <section className="curtains-type-section">
-
-        <div className="curtains-type-container">
-
-          <div className="curtains-type-content">
-
-            <div className="curtains-section-small-title">
-
-              BLACKOUT CURTAINS
-
-            </div>
-
-            <h2 className="curtains-section-title">
-
-              Complete Privacy &
-              Light Control
-
-            </h2>
-
-            <p className="curtains-section-description">
-
-              Blackout curtains are specially designed
-              with thick fabrics that completely block
-              outside sunlight.
-
-              These curtains provide excellent privacy,
-              thermal insulation and noise reduction,
-              making them ideal for bedrooms,
-              home theatres and offices.
-
-            </p>
-
-            <div className="curtains-feature-list">
-
-              <div className="curtains-feature-item">
-
-                <FaCheckCircle />
-
-                <span>
-                  Blocks 90-100% sunlight
-                </span>
-
-              </div>
-
-              <div className="curtains-feature-item">
-
-                <FaCheckCircle />
-
-                <span>
-                  Energy efficient
-                </span>
-
-              </div>
-
-              <div className="curtains-feature-item">
-
-                <FaCheckCircle />
-
-                <span>
-                  Better sleep quality
-                </span>
-
-              </div>
-
-              <div className="curtains-feature-item">
-
-                <FaCheckCircle />
-
-                <span>
-                  Modern premium look
-                </span>
-
-              </div>
-
-            </div>
-
-            <div className="curtains-use-box">
-
-              <h3 className="curtains-use-title">
-
-                Best Suitable For
-
-              </h3>
-
-              <p className="curtains-use-text">
-
-                ✔ Bedrooms
-
-                <br />
-
-                ✔ Home Theatre
-
-                <br />
-
-                ✔ Hotel Rooms
-
-                <br />
-
-                ✔ Conference Rooms
-
-                <br />
-
-                ✔ Office Cabins
-
-              </p>
-
-            </div>
-
-          </div>
-
-          {/* IMAGE */}
-
-          <div className="curtains-type-image-box">
-
-            <img
-
-              src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900"
-
-              alt="Blackout Curtains"
-
-              className="curtains-type-image"
-
-            />
-
-          </div>
-
-        </div>
-
-      </section>
-      {/*======================================================
-                SHEER CURTAINS
-======================================================*/}
-
-<section className="curtains-type-section curtains-type-light">
-
-    <div className="curtains-type-container curtains-type-reverse">
-
-        {/* IMAGE */}
-
-        <div className="curtains-type-image-box">
-
-            <img
-                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900"
-                alt="Sheer Curtains"
-                className="curtains-type-image"
-            />
-
-        </div>
-
-        {/* CONTENT */}
-
-        <div className="curtains-type-content">
-
-            <div className="curtains-section-small-title">
-                SHEER CURTAINS
-            </div>
-
-            <h2 className="curtains-section-title">
-
-                Soft Natural Light
-                <br />
-
-                Elegant Living
-
-            </h2>
-
-            <p className="curtains-section-description">
-
-                Sheer curtains allow natural daylight to
-                enter your home while maintaining privacy.
-                Their lightweight fabric creates a luxurious,
-                airy and modern appearance suitable for every
-                contemporary interior.
-
-                <br /><br />
-
-                They beautifully complement blackout curtains,
-                creating a perfect day-and-night curtain
-                combination.
-
-            </p>
-
-            <div className="curtains-feature-list">
-
-                <div className="curtains-feature-item">
-
-                    <FaCheckCircle />
-
-                    <span>
-                        Soft natural lighting
-                    </span>
-
-                </div>
-
-                <div className="curtains-feature-item">
-
-                    <FaCheckCircle />
-
-                    <span>
-                        Elegant premium appearance
-                    </span>
-
-                </div>
-
-                <div className="curtains-feature-item">
-
-                    <FaCheckCircle />
-
-                    <span>
-                        Improves room brightness
-                    </span>
-
-                </div>
-
-                <div className="curtains-feature-item">
-
-                    <FaCheckCircle />
-
-                    <span>
-                        Perfect with blackout curtains
-                    </span>
-
-                </div>
-
-            </div>
-
-            <div className="curtains-use-box">
-
-                <h3 className="curtains-use-title">
-
-                    Best Suitable For
-
-                </h3>
-
-                <p className="curtains-use-text">
-
-                    ✔ Living Rooms
-
-                    <br />
-
-                    ✔ Dining Rooms
-
-                    <br />
-
-                    ✔ Villas
-
-                    <br />
-
-                    ✔ Luxury Apartments
-
-                    <br />
-
-                    ✔ Hotels
-
-                </p>
-
-            </div>
-
-        </div>
+      <img
+        className="about-photo"
+        src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900"
+        alt="Curtains"
+      />
 
     </div>
 
-</section>
+    <div className="about-content">
 
-{/*======================================================
-              WHY CHOOSE SIVENTHRA
-======================================================*/}
+      <p className="about-tag">
+        WHY CURTAINS MATTER
+      </p>
 
-<section className="curtains-why-section">
+      <h2 className="about-title">
+        Luxury Meets Everyday Comfort
+      </h2>
 
-    <div className="curtains-why-heading">
+      <p className="about-description">
 
-        <div className="curtains-section-small-title">
+        Curtains are more than window coverings.
+        They enhance privacy, lighting, comfort,
+        energy efficiency and elevate the beauty
+        of every interior.
 
-            WHY CHOOSE US
+      </p>
+
+      <div className="features">
+
+        <div className="feature-item">
+
+          <FaCheckCircle className="feature-icon"/>
+
+          <span className="feature-text">
+            Premium Fabrics
+          </span>
 
         </div>
 
-        <h2 className="curtains-section-title">
+        <div className="feature-item">
 
-            Why Customers Prefer
-            Siventhra Curtains
+          <FaCheckCircle className="feature-icon"/>
 
-        </h2>
+          <span className="feature-text">
+            Custom Stitching
+          </span>
 
-        <p className="curtains-section-description">
+        </div>
 
-            Every curtain is measured, stitched and
-            installed with precision to deliver a premium
-            finish that lasts for years.
+        <div className="feature-item">
 
+          <FaCheckCircle className="feature-icon"/>
+
+          <span className="feature-text">
+            Designer Collections
+          </span>
+
+        </div>
+
+        <div className="feature-item">
+
+          <FaCheckCircle className="feature-icon"/>
+
+          <span className="feature-text">
+            Professional Installation
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+            {/* ================= CURTAIN CATEGORIES ================= */}
+
+     {/* ================= CURTAIN CATEGORIES ================= */}
+
+<section className="categories">
+
+  <div className="section-heading">
+
+    <p className="section-tag">
+      SHOP BY CATEGORY
+    </p>
+
+    <h2 className="section-title">
+      Find Curtains For Every Space
+    </h2>
+
+    <p className="section-description">
+      Designed for every room with premium fabrics,
+      elegant colors and modern styles.
+    </p>
+
+  </div>
+
+  <div className="container category-grid">
+
+    <div className="category-card">
+
+      <FaHome className="category-icon"/>
+
+      <h3 className="category-title">
+        Living Room
+      </h3>
+
+      <p className="category-description">
+        Elegant sheer and designer curtains that
+        enhance your living room beautifully.
+      </p>
+
+    </div>
+
+    <div className="category-card">
+
+      <FaCouch className="category-icon"/>
+
+      <h3 className="category-title">
+        Bedroom
+      </h3>
+
+      <p className="category-description">
+        Blackout curtains for complete privacy
+        and peaceful sleep.
+      </p>
+
+    </div>
+
+    <div className="category-card">
+
+      <FaHotel className="category-icon"/>
+
+      <h3 className="category-title">
+        Hotels
+      </h3>
+
+      <p className="category-description">
+        Premium hospitality curtain
+        collections with elegant finishing.
+      </p>
+
+    </div>
+
+    <div className="category-card">
+
+      <FaBuilding className="category-icon"/>
+
+      <h3 className="category-title">
+        Offices
+      </h3>
+
+      <p className="category-description">
+        Professional window solutions for
+        modern commercial interiors.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+      {/* ================= WHY CHOOSE US ================= */}
+
+     {/* ================= WHY CHOOSE US ================= */}
+
+<section className="why-us">
+
+  <div className="container why-grid">
+
+    <div className="why-left">
+
+      <p className="why-tag">
+        WHY CHOOSE US
+      </p>
+
+      <h2 className="why-title">
+        Crafted With Precision,
+        Designed For Luxury
+      </h2>
+
+      <p className="why-description">
+
+        Every curtain is measured,
+        stitched and installed by
+        experienced professionals.
+
+        We combine premium fabrics,
+        elegant accessories and modern
+        craftsmanship.
+
+      </p>
+
+      <div className="why-list">
+
+        <div className="why-item">
+
+          <FaCheckCircle className="why-icon"/>
+
+          <span className="why-text">
+            Free Site Measurement
+          </span>
+
+        </div>
+
+        <div className="why-item">
+
+          <FaCheckCircle className="why-icon"/>
+
+          <span className="why-text">
+            Premium Imported Fabrics
+          </span>
+
+        </div>
+
+        <div className="why-item">
+
+          <FaCheckCircle className="why-icon"/>
+
+          <span className="why-text">
+            Custom Stitching
+          </span>
+
+        </div>
+
+        <div className="why-item">
+
+          <FaCheckCircle className="why-icon"/>
+
+          <span className="why-text">
+            Professional Installation
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div className="why-right">
+
+      <div className="feature-box">
+
+        <h3 className="feature-number">
+          1000+
+        </h3>
+
+        <p className="feature-label">
+          Fabric Options
         </p>
 
-    </div>
+      </div>
 
-    <div className="curtains-why-grid">
+      <div className="feature-box">
 
-        <div className="curtains-why-card">
+        <h3 className="feature-number">
+          500+
+        </h3>
 
-            <div className="curtains-why-icon">
-
-                <FaRulerCombined />
-
-            </div>
-
-            <h3 className="curtains-why-title">
-
-                Perfect Measurement
-
-            </h3>
-
-            <p className="curtains-why-text">
-
-                Accurate measurements ensure
-                wrinkle-free and elegant installation.
-
-            </p>
-
-        </div>
-
-        <div className="curtains-why-card">
-
-            <div className="curtains-why-icon">
-
-                <FaPalette />
-
-            </div>
-
-            <h3 className="curtains-why-title">
-
-                Hundreds of Fabrics
-
-            </h3>
-
-            <p className="curtains-why-text">
-
-                Choose from modern,
-                classic and luxury collections.
-
-            </p>
-
-        </div>
-
-        <div className="curtains-why-card">
-
-            <div className="curtains-why-icon">
-
-                <FaShieldAlt />
-
-            </div>
-
-            <h3 className="curtains-why-title">
-
-                Premium Quality
-
-            </h3>
-
-            <p className="curtains-why-text">
-
-                Long-lasting fabrics with
-                excellent finishing and durability.
-
-            </p>
-
-        </div>
-
-        <div className="curtains-why-card">
-
-            <div className="curtains-why-icon">
-
-                <FaCheckCircle />
-
-            </div>
-
-            <h3 className="curtains-why-title">
-
-                Professional Installation
-
-            </h3>
-
-            <p className="curtains-why-text">
-
-                Experienced technicians ensure
-                flawless installation every time.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-{/*======================================================
-              CURTAIN PROCESS
-======================================================*/}
-
-<section className="curtains-process-section">
-
-    <div className="curtains-process-heading">
-
-        <div className="curtains-section-small-title">
-
-            OUR PROCESS
-
-        </div>
-
-        <h2 className="curtains-section-title">
-
-            How We Complete
-            Every Curtain Project
-
-        </h2>
-
-    </div>
-
-    <div className="curtains-process-container">
-
-        <div className="curtains-process-card">
-
-            <div className="curtains-process-number">
-                01
-            </div>
-
-            <h3 className="curtains-process-title">
-
-                Site Visit
-
-            </h3>
-
-            <p className="curtains-process-text">
-
-                Our team visits your location,
-                takes accurate measurements and
-                understands your requirements.
-
-            </p>
-
-        </div>
-
-        <div className="curtains-process-card">
-
-            <div className="curtains-process-number">
-                02
-            </div>
-
-            <h3 className="curtains-process-title">
-
-                Fabric Selection
-
-            </h3>
-
-            <p className="curtains-process-text">
-
-                Select colors, fabrics,
-                patterns and accessories
-                that perfectly match your interiors.
-
-            </p>
-
-        </div>
-
-        <div className="curtains-process-card">
-
-            <div className="curtains-process-number">
-                03
-            </div>
-
-            <h3 className="curtains-process-title">
-
-                Stitching
-
-            </h3>
-
-            <p className="curtains-process-text">
-
-                Curtains are stitched
-                with precision using
-                premium tailoring standards.
-
-            </p>
-
-        </div>
-
-        <div className="curtains-process-card">
-
-            <div className="curtains-process-number">
-                04
-            </div>
-
-            <h3 className="curtains-process-title">
-
-                Installation
-
-            </h3>
-
-            <p className="curtains-process-text">
-
-                Our professionals install
-                everything perfectly and
-                ensure complete customer satisfaction.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-{/*======================================================
-                    CURTAIN GALLERY
-======================================================*/}
-
-<section className="curtains-gallery-section">
-
-    <div className="curtains-gallery-heading">
-
-        <div className="curtains-section-small-title">
-            OUR PROJECTS
-        </div>
-
-        <h2 className="curtains-section-title">
-
-            Recent Curtain Installations
-
-        </h2>
-
-        <p className="curtains-section-description">
-
-            Explore some of our premium curtain projects
-            completed for homes, villas and commercial spaces.
-
+        <p className="feature-label">
+          Happy Homes
         </p>
 
-    </div>
+      </div>
 
-    <div className="curtains-gallery-grid">
+      <div className="feature-box">
 
-        <div className="curtains-gallery-card">
+        <h3 className="feature-number">
+          10+
+        </h3>
 
-            <img
-                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900"
-                alt="Curtain"
-                className="curtains-gallery-image"
-            />
-
-        </div>
-
-        <div className="curtains-gallery-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900"
-                alt="Curtain"
-                className="curtains-gallery-image"
-            />
-
-        </div>
-
-        <div className="curtains-gallery-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900"
-                alt="Curtain"
-                className="curtains-gallery-image"
-            />
-
-        </div>
-
-        <div className="curtains-gallery-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900"
-                alt="Curtain"
-                className="curtains-gallery-image"
-            />
-
-        </div>
-
-    </div>
-
-</section>
-
-{/*======================================================
-                    CURTAIN COMPARISON
-======================================================*/}
-
-<section className="curtains-comparison-section">
-
-    <div className="curtains-comparison-heading">
-
-        <div className="curtains-section-small-title">
-
-            COMPARISON
-
-        </div>
-
-        <h2 className="curtains-section-title">
-
-            Blackout vs Sheer Curtains
-
-        </h2>
-
-    </div>
-
-    <div className="curtains-comparison-grid">
-
-        <div className="curtains-comparison-card">
-
-            <h3 className="curtains-comparison-title">
-
-                Blackout Curtains
-
-            </h3>
-
-            <ul className="curtains-comparison-list">
-
-                <li>✔ Blocks sunlight</li>
-                <li>✔ Complete privacy</li>
-                <li>✔ Noise reduction</li>
-                <li>✔ Bedroom use</li>
-                <li>✔ Thermal insulation</li>
-
-            </ul>
-
-        </div>
-
-        <div className="curtains-comparison-card">
-
-            <h3 className="curtains-comparison-title">
-
-                Sheer Curtains
-
-            </h3>
-
-            <ul className="curtains-comparison-list">
-
-                <li>✔ Soft daylight</li>
-                <li>✔ Decorative look</li>
-                <li>✔ Airy interiors</li>
-                <li>✔ Living rooms</li>
-                <li>✔ Luxury appearance</li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-{/*======================================================
-                        FAQ
-======================================================*/}
-
-<section className="curtains-faq-section">
-
-    <div className="curtains-faq-heading">
-
-        <div className="curtains-section-small-title">
-
-            FAQ
-
-        </div>
-
-        <h2 className="curtains-section-title">
-
-            Frequently Asked Questions
-
-        </h2>
-
-    </div>
-
-    <div className="curtains-faq-container">
-
-        <div className="curtains-faq-card">
-
-            <h3 className="curtains-faq-question">
-
-                Which curtain is best for bedrooms?
-
-            </h3>
-
-            <p className="curtains-faq-answer">
-
-                Blackout curtains provide maximum privacy,
-                reduce sunlight and improve sleeping comfort.
-
-            </p>
-
-        </div>
-
-        <div className="curtains-faq-card">
-
-            <h3 className="curtains-faq-question">
-
-                Can I combine blackout and sheer curtains?
-
-            </h3>
-
-            <p className="curtains-faq-answer">
-
-                Yes. It is the most popular premium combination,
-                allowing natural daylight during the day and
-                complete privacy at night.
-
-            </p>
-
-        </div>
-
-        <div className="curtains-faq-card">
-
-            <h3 className="curtains-faq-question">
-
-                Do you provide installation?
-
-            </h3>
-
-            <p className="curtains-faq-answer">
-
-                Yes. Our experienced technicians provide
-                measurement, stitching and complete installation.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-{/*======================================================
-                    CALL TO ACTION
-======================================================*/}
-
-<section className="curtains-cta-section">
-
-    <div className="curtains-cta-container">
-
-        <h2 className="curtains-cta-title">
-
-            Ready To Upgrade Your Home?
-
-        </h2>
-
-        <p className="curtains-cta-description">
-
-            Get premium curtains designed,
-            stitched and installed by
-            Siventhra Interior & Decors.
-
+        <p className="feature-label">
+          Years Experience
         </p>
 
-        <div className="curtains-cta-buttons">
+      </div>
 
-            <Link
-                to="/orderrequest"
-                className="curtains-primary-button"
-            >
+      <div className="feature-box">
 
-                Get Free Quote
+        <h3 className="feature-number">
+          100%
+        </h3>
 
-            </Link>
+        <p className="feature-label">
+          Quality Assured
+        </p>
 
-            <Link
-                to="/contact"
-                className="curtains-secondary-button"
-            >
-
-                Contact Us
-
-            </Link>
-
-        </div>
+      </div>
 
     </div>
 
+  </div>
+
 </section>
 
+      {/* ================= FABRIC SHOWCASE ================= */}
+
+     {/* ================= FABRIC SHOWCASE ================= */}
+
+<section className="fabric-showcase">
+
+  <div className="section-heading">
+
+    <p className="section-tag">
+      PREMIUM FABRICS
+    </p>
+
+    <h2 className="section-title">
+      Luxury Fabrics You'll Love
+    </h2>
+
+  </div>
+
+  <div className="container fabric-grid">
+
+    <div className="fabric-card">
+
+      <img
+        className="fabric-image"
+        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700"
+        alt="Sheer Curtains"
+      />
+
+      <div className="fabric-content">
+
+        <h3 className="fabric-title">
+          Sheer Collection
+        </h3>
+
+        <p className="fabric-description">
+          Soft daylight with elegant privacy.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div className="fabric-card">
+
+      <img
+        className="fabric-image"
+        src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=700"
+        alt="Blackout Curtains"
+      />
+
+      <div className="fabric-content">
+
+        <h3 className="fabric-title">
+          Blackout Collection
+        </h3>
+
+        <p className="fabric-description">
+          Complete darkness for peaceful sleep.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div className="fabric-card">
+
+      <img
+        className="fabric-image"
+        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700"
+        alt="Velvet Curtains"
+      />
+
+      <div className="fabric-content">
+
+        <h3 className="fabric-title">
+          Velvet Collection
+        </h3>
+
+        <p className="fabric-description">
+          Rich textures with luxurious elegance.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+            {/* ================= GALLERY ================= */}
+
+    {/* ================= GALLERY ================= */}
+
+<section className="gallery">
+
+  <div className="section-heading">
+
+    <p className="section-tag">
+      OUR PROJECTS
+    </p>
+
+    <h2 className="section-title">
+      Recent Curtain Installations
+    </h2>
+
+    <p className="section-description">
+      Every installation is completed with precision,
+      premium fabrics and elegant finishing.
+    </p>
+
+  </div>
+
+  <div className="container gallery-grid">
+
+    <div className="gallery-card">
+      <img
+        className="gallery-image"
+        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900"
+        alt="Curtain Installation 1"
+      />
+    </div>
+
+    <div className="gallery-card">
+      <img
+        className="gallery-image"
+        src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900"
+        alt="Curtain Installation 2"
+      />
+    </div>
+
+    <div className="gallery-card">
+      <img
+        className="gallery-image"
+        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900"
+        alt="Curtain Installation 3"
+      />
+    </div>
+
+    <div className="gallery-card">
+      <img
+        className="gallery-image"
+        src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900"
+        alt="Curtain Installation 4"
+      />
+    </div>
+
+  </div>
+
+</section>
+      {/* ================= TESTIMONIAL ================= */}
+
+     {/* ================= TESTIMONIAL ================= */}
+
+<section className="testimonial">
+
+  <div className="container">
+
+    <div className="testimonial-card">
+
+      <p className="testimonial-tag">
+        CUSTOMER REVIEW
+      </p>
+
+      <h2 className="testimonial-title">
+        Excellent finishing and premium quality curtains.
+      </h2>
+
+      <p className="testimonial-description">
+
+        Siventhra Interiors transformed our living room
+        with elegant curtains. Their measurement,
+        stitching and installation were perfect.
+
+      </p>
+
+      <div className="testimonial-user">
+
+        <img
+          className="testimonial-image"
+          src="https://i.pravatar.cc/150?img=12"
+          alt="Customer"
+        />
+
+        <div className="testimonial-details">
+
+          <h4 className="testimonial-name">
+            Karthik Thakkolu
+          </h4>
+
+          <p className="testimonial-location">
+            Home Owner • Nellore
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+      {/* ================= CTA ================= */}
+
+     {/* ================= CTA ================= */}
+
+<section className="cta">
+
+  <div className="container cta-box">
+
+    <div className="cta-content">
+
+      <p className="cta-tag">
+        LET'S DESIGN YOUR HOME
+      </p>
+
+      <h2 className="cta-title">
+        Ready To Transform Your Windows?
+      </h2>
+
+      <p className="cta-description">
+
+        Discover luxury curtain collections with
+        professional measurement, stitching and
+        installation.
+
+      </p>
+
+    </div>
+
+    <div className="cta-buttons">
+
+      <Link
+        to="/orderrequest"
+        className="btn-primary"
+      >
+        Get Free Quote
+      </Link>
+
+      <Link
+        to="/contact"
+        className="btn-secondary"
+      >
+        Contact Us
+      </Link>
+
+    </div>
+
+  </div>
+
+</section>
     </div>
   );
 };
