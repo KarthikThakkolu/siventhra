@@ -46,17 +46,69 @@ const handleChange = (e) => {
 
 };
 
-const handleSubmit = (e) => {
-
+const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log({
-        ...formData,
-        rating
-    });
+    try {
+        const data = new FormData();
 
-    alert("Thank you for your valuable feedback!");
+        // Text fields
+        data.append("name", formData.name);
+        data.append("phone", formData.phone);
+        data.append("email", formData.email);
+        data.append("city", formData.city);
+        data.append("service", formData.service);
+        data.append("date", formData.date);
+        data.append("feedback", formData.feedback);
+        data.append("recommend", formData.recommend);
+        data.append("rating", rating);
+
+        // Images
+        images.forEach((image) => {
+            data.append("images", image.file);
+        });
+
+        const response = await fetch(
+            "http://localhost:5000/api/feedback",
+            {
+                method: "POST",
+                body: data
+            }
+        );
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.message || "Failed to submit feedback");
+        }
+
+        alert("Thank you! Your feedback has been submitted successfully.");
+
+        // Reset form
+        setFormData({
+            name: "",
+            phone: "",
+            email: "",
+            city: "",
+            service: "",
+            date: "",
+            feedback: "",
+            recommend: true
+        });
+
+        setRating(0);
+        setImages([]);
+
+    } catch (error) {
+        console.error("Feedback submission error:", error);
+
+        alert(
+            error.message ||
+            "Something went wrong while submitting your feedback."
+        );
+    }
 };
+
   const feedbackData = [
     {
       id: 1,

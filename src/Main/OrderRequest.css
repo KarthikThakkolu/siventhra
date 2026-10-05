@@ -27,7 +27,7 @@
     background:#f5ebe2;
     color:#8b5a35;
     border-radius:30px;
-    font-size:14px;
+    font-size:40px;
     font-weight:700;
     letter-spacing:3px;
     margin-bottom:25px;
@@ -54,19 +54,27 @@
 ====================================================== */
 
 .order-page-container{
-    width:90%;
-    max-width:1400px;
+    width:75%;
+    /* max-width:1400px; */
     margin:auto;
     display:grid;
-    grid-template-columns:380px 1fr;
+    grid-template-columns:550px 1fr;
     gap:45px;
-    align-items:flex-start;
+    align-items:stretch;
 }
 
 /* ======================================================
    LEFT PANEL
 ====================================================== */
 
+/* .order-left-panel{
+    background:#ffffff;
+    border-radius:28px;
+    padding:35px;
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+    position:sticky;
+    top:100px;
+} */
 .order-left-panel{
     background:#ffffff;
     border-radius:28px;
@@ -74,7 +82,11 @@
     box-shadow:0 18px 45px rgba(0,0,0,.08);
     position:sticky;
     top:100px;
+
+    height:100%;
+    box-sizing:border-box;
 }
+
 
 .order-left-title{
     font-size:34px;
@@ -218,8 +230,10 @@
     border-radius:28px;
     padding:45px;
     box-shadow:0 18px 45px rgba(0,0,0,.08);
-}
 
+    height:94%;
+    box-sizing:border-box;
+}
 .order-form-title{
     font-size:40px;
     font-weight:700;
@@ -228,7 +242,7 @@
 }
 
 .order-form-subtitle{
-    font-size:18px;
+    font-size:21px;
     color:#666;
     line-height:1.8;
     margin-bottom:35px;
@@ -264,6 +278,7 @@
     border-radius:15px;
     overflow:hidden;
     transition:.35s;
+    height:90px;
 }
 
 .order-input-box:hover{
@@ -357,7 +372,7 @@
 .order-submit-button{
     width:100%;
     margin-top:30px;
-    padding:20px;
+    padding:35px;
     border:none;
     border-radius:18px;
     background:linear-gradient(135deg,#25D366,#1da851);
@@ -366,7 +381,7 @@
     justify-content:center;
     align-items:center;
     gap:15px;
-    font-size:20px;
+    font-size:25px;
     font-weight:700;
     cursor:pointer;
     transition:.35s;
@@ -412,386 +427,680 @@
 /* ======================================================
    1400px
 ====================================================== */
-
-@media (max-width:1400px){
-
-.order-page-container{
-    grid-template-columns:350px 1fr;
-    gap:35px;
-}
-
-.order-page-title{
-    font-size:48px;
-}
-
-.order-form-title{
-    font-size:36px;
-}
-
-}
-
 /* ======================================================
-   1200px
+   1440px AND ABOVE
 ====================================================== */
 
-@media (max-width:1200px){
+/* @media (min-width:1440px){
 
-.order-page-container{
-    grid-template-columns:1fr;
-}
+    .order-page-container{
+        width:92%;
+        max-width:1450px;
 
-.order-left-panel{
-    position:static;
-}
+        grid-template-columns:minmax(0, 550px) minmax(0, 1fr);
 
-.order-page-description{
-    width:100%;
-}
+        gap:45px;
+    }
 
-.order-left-panel{
-    padding:30px;
-}
+    .order-page-hero{
+        width:90%;
+        max-width:1200px;
+    }
 
-.order-right-panel{
-    padding:35px;
-}
+} */
 
-.order-form-title{
-    font-size:34px;
-}
-
-.order-page-title{
-    font-size:44px;
-}
-
-}
 
 /* ======================================================
-   992px
+   1201px - 1439px
 ====================================================== */
 
-@media (max-width:992px){
+@media (min-width:1201px) and (max-width:1439px){
 
-.order-page-main{
-    padding:70px 0;
+    .order-page-container{
+        width:92%;
+        max-width:1250px;
+
+        grid-template-columns:minmax(0, 430px) minmax(0, 1fr);
+
+        gap:35px;
+    }
+
+    .order-left-panel{
+        padding:30px;
+    }
+
+    .order-right-panel{
+        padding:35px;
+    }
+
+    .order-page-title{
+        font-size:48px;
+    }
+
+    .order-form-title{
+        font-size:36px;
+    }
+
+    .order-form-subtitle{
+        font-size:18px;
+    }
+
+    .order-input-box{
+        height:82px;
+    }
+
 }
 
-.order-page-container{
-    width:94%;
-}
-
-.order-page-title{
-    font-size:40px;
-}
-
-.order-page-description{
-    font-size:18px;
-}
-
-.order-form-grid{
-    gap:18px;
-}
-
-.order-left-title{
-    font-size:30px;
-}
-
-.order-form-title{
-    font-size:32px;
-}
-
-.order-highlight-number{
-    font-size:46px;
-}
-
-}
 
 /* ======================================================
-   768px
+   1024px - 1200px
 ====================================================== */
 
-@media (max-width:768px){
+@media (min-width:1024px) and (max-width:1200px){
 
-.order-page-main{
-    padding:60px 0;
+    .order-page-main{
+        padding:70px 0;
+    }
+
+    .order-page-hero{
+        width:92%;
+        margin-bottom:55px;
+    }
+
+    .order-page-title{
+        font-size:44px;
+    }
+
+    .order-page-description{
+        width:90%;
+        font-size:18px;
+    }
+
+    .order-page-container{
+        width:92%;
+        max-width:1000px;
+
+        display:grid;
+        grid-template-columns:1fr;
+
+        gap:30px;
+    }
+
+    .order-left-panel{
+        position:static;
+
+        width:100%;
+        height:auto;
+
+        padding:32px;
+    }
+
+    .order-right-panel{
+        width:100%;
+        height:auto;
+
+        padding:35px;
+    }
+
+    .order-form-grid{
+        grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .order-input-full{
+        grid-column:1 / 3;
+    }
+
 }
 
-.order-page-hero{
-    width:94%;
-    margin-bottom:50px;
-}
-
-.order-page-container{
-    width:94%;
-}
-
-.order-page-title{
-    font-size:34px;
-}
-
-.order-page-description{
-    font-size:17px;
-    line-height:1.8;
-}
-
-.order-form-grid{
-    grid-template-columns:1fr;
-}
-
-.order-input-full{
-    grid-column:auto;
-}
-
-.order-right-panel{
-    padding:28px;
-}
-
-.order-left-panel{
-    padding:28px;
-}
-
-.order-form-title{
-    font-size:30px;
-}
-
-.order-left-title{
-    font-size:28px;
-}
-
-.order-submit-button{
-    font-size:18px;
-}
-
-}
 
 /* ======================================================
-   576px
+   768px - 1023px
 ====================================================== */
 
-@media (max-width:576px){
+@media (min-width:768px) and (max-width:1023px){
 
-.order-page-main{
-    padding:50px 0;
+    .order-page-main{
+        padding:60px 0;
+    }
+
+    .order-page-hero{
+        width:92%;
+        margin-bottom:50px;
+    }
+
+    .order-page-badge{
+        font-size:24px;
+        padding:9px 20px;
+    }
+
+    .order-page-title{
+        font-size:38px;
+    }
+
+    .order-page-description{
+        width:94%;
+        font-size:17px;
+        line-height:1.8;
+    }
+
+    .order-page-container{
+        width:92%;
+        max-width:850px;
+
+        display:grid;
+        grid-template-columns:1fr;
+
+        gap:28px;
+    }
+
+    .order-left-panel{
+        position:static;
+
+        width:100%;
+        height:auto;
+
+        padding:28px;
+    }
+
+    .order-right-panel{
+        width:100%;
+        height:auto;
+
+        padding:28px;
+    }
+
+    .order-form-grid{
+        grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+
+        gap:18px;
+    }
+
+    .order-input-full{
+        grid-column:1 / 3;
+    }
+
+    .order-input-box{
+        height:76px;
+    }
+
+    .order-input-icon{
+        width:55px;
+        min-width:55px;
+    }
+
+    .order-submit-button{
+        padding:24px;
+        font-size:19px;
+    }
+
 }
 
-.order-page-title{
-    font-size:30px;
-}
-
-.order-page-description{
-    font-size:16px;
-}
-
-.order-page-badge{
-    font-size:12px;
-    letter-spacing:2px;
-}
-
-.order-right-panel{
-    padding:22px;
-    border-radius:22px;
-}
-
-.order-left-panel{
-    padding:22px;
-    border-radius:22px;
-}
-
-.order-left-title{
-    font-size:25px;
-}
-
-.order-form-title{
-    font-size:27px;
-}
-
-.order-feature-card{
-    padding:15px;
-}
-
-.order-feature-icon{
-    width:46px;
-    height:46px;
-    font-size:18px;
-}
-
-.order-feature-text{
-    font-size:16px;
-}
-
-.order-highlight-number{
-    font-size:40px;
-}
-
-.order-contact-box{
-    flex-direction:column;
-    text-align:center;
-}
-
-.order-contact-icon{
-    margin-bottom:10px;
-}
-
-.order-submit-button{
-    font-size:17px;
-    padding:18px;
-}
-
-}
 
 /* ======================================================
-   480px
+   576px - 767px
 ====================================================== */
 
-@media (max-width:480px){
+@media (min-width:576px) and (max-width:767px){
 
-.order-page-main{
-    padding:45px 0;
+    .order-page-main{
+        padding:55px 0;
+    }
+
+    .order-page-hero{
+        width:92%;
+        margin-bottom:45px;
+    }
+
+    .order-page-badge{
+        font-size:15px;
+        padding:9px 18px;
+    }
+
+    .order-page-title{
+        font-size:32px;
+    }
+
+    .order-page-description{
+        width:96%;
+        font-size:16px;
+    }
+
+    .order-page-container{
+        width:92%;
+        max-width:650px;
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+    }
+
+    .order-left-panel{
+        position:static;
+        height:auto;
+
+        padding:24px;
+    }
+
+    .order-right-panel{
+        height:auto;
+
+        padding:24px;
+    }
+
+    .order-form-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .order-input-full{
+        grid-column:auto;
+    }
+
+    .order-input-box{
+        height:70px;
+    }
+
+    .order-input-icon{
+        width:52px;
+        min-width:52px;
+    }
+
+    .order-submit-button{
+        padding:20px;
+        font-size:18px;
+    }
+
 }
 
-.order-page-title{
-    font-size:26px;
-    line-height:1.3;
-}
-
-.order-page-description{
-    font-size:15px;
-}
-
-.order-left-title{
-    font-size:23px;
-}
-
-.order-form-title{
-    font-size:24px;
-}
-
-.order-form-subtitle{
-    font-size:15px;
-}
-
-.order-input-icon{
-    width:50px;
-    font-size:16px;
-}
-
-.order-input-field{
-    font-size:15px;
-    padding:16px 16px 16px 0;
-}
-
-.order-select-field{
-    font-size:15px;
-    padding:16px 16px 16px 0;
-}
-
-.order-message-field{
-    font-size:15px;
-    padding:18px;
-}
-
-.order-submit-button{
-    font-size:16px;
-    gap:10px;
-}
-
-.order-highlight-box{
-    padding:24px;
-}
-
-.order-highlight-number{
-    font-size:36px;
-}
-
-}
 
 /* ======================================================
-   360px
+   480px - 575px
 ====================================================== */
 
-@media (max-width:360px){
+@media (min-width:480px) and (max-width:575px){
 
-.order-page-main{
-    padding:40px 0;
+    .order-page-main{
+        padding:50px 0;
+    }
+
+    .order-page-hero{
+        width:92%;
+        margin-bottom:40px;
+    }
+
+    .order-page-badge{
+        font-size:12px;
+        padding:8px 16px;
+        letter-spacing:2px;
+    }
+
+    .order-page-title{
+        font-size:29px;
+    }
+
+    .order-page-description{
+        width:96%;
+        font-size:15px;
+    }
+
+    .order-page-container{
+        width:92%;
+        max-width:550px;
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+    }
+
+    .order-left-panel{
+        position:static;
+        height:auto;
+
+        padding:22px;
+        border-radius:22px;
+    }
+
+    .order-right-panel{
+        height:auto;
+
+        padding:22px;
+        border-radius:22px;
+    }
+
+    .order-form-grid{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .order-input-full{
+        grid-column:auto;
+    }
+
+    .order-input-box{
+        height:68px;
+    }
+
+    .order-input-icon{
+        width:50px;
+        min-width:50px;
+    }
+
+    .order-input-field,
+    .order-select-field{
+        font-size:15px;
+    }
+
+    .order-submit-button{
+        padding:18px;
+        font-size:16px;
+    }
+
 }
 
-.order-page-title{
-    font-size:22px;
+
+/* ======================================================
+   425px - 479px
+====================================================== */
+
+@media (min-width:425px) and (max-width:479px){
+
+    .order-page-main{
+        padding:45px 0;
+    }
+
+    .order-page-hero{
+        width:92%;
+        margin-bottom:38px;
+    }
+
+    .order-page-badge{
+        font-size:11px;
+        padding:8px 15px;
+    }
+
+    .order-page-title{
+        font-size:27px;
+    }
+
+    .order-page-description{
+        width:96%;
+        font-size:15px;
+    }
+
+    .order-page-container{
+        width:92%;
+        max-width:440px;
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+    }
+
+    .order-left-panel{
+        height:auto;
+        padding:20px;
+        border-radius:21px;
+    }
+
+    .order-right-panel{
+        height:auto;
+        padding:20px;
+        border-radius:21px;
+    }
+
+    .order-form-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+    }
+
+    .order-input-full{
+        grid-column:auto;
+    }
+
+    .order-input-box{
+        height:64px;
+    }
+
+    .order-input-icon{
+        width:48px;
+        min-width:48px;
+    }
+
+    .order-submit-button{
+        padding:17px;
+        font-size:16px;
+    }
+
 }
 
-.order-page-description{
-    font-size:14px;
+
+/* ======================================================
+   375px - 424px
+====================================================== */
+
+@media (min-width:375px) and (max-width:424px){
+
+    .order-page-main{
+        padding:42px 0;
+    }
+
+    .order-page-hero{
+        width:92%;
+        margin-bottom:35px;
+    }
+
+    .order-page-badge{
+        font-size:10px;
+        padding:7px 13px;
+    }
+
+    .order-page-title{
+        font-size:24px;
+    }
+
+    .order-page-description{
+        width:96%;
+        font-size:14px;
+    }
+
+    .order-page-container{
+        width:92%;
+        max-width:400px;
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+    }
+
+    .order-left-panel{
+        height:auto;
+        padding:18px;
+        border-radius:20px;
+    }
+
+    .order-right-panel{
+        height:auto;
+        padding:18px;
+        border-radius:20px;
+    }
+
+    .order-form-grid{
+        grid-template-columns:1fr;
+        gap:13px;
+    }
+
+    .order-input-box{
+        height:60px;
+    }
+
+    .order-input-icon{
+        width:44px;
+        min-width:44px;
+    }
+
+    .order-input-field,
+    .order-select-field{
+        font-size:14px;
+    }
+
+    .order-message-field{
+        min-height:135px;
+    }
+
+    .order-submit-button{
+        padding:15px;
+        font-size:15px;
+    }
+
 }
 
-.order-page-badge{
-    padding:8px 16px;
-    font-size:11px;
+
+/* ======================================================
+   320px - 374px
+====================================================== */
+
+@media (min-width:320px) and (max-width:374px){
+
+    .order-page-main{
+        padding:38px 0;
+    }
+
+    .order-page-hero{
+        width:92%;
+        margin-bottom:32px;
+    }
+
+    .order-page-badge{
+        font-size:9px;
+        padding:7px 11px;
+        letter-spacing:1px;
+    }
+
+    .order-page-title{
+        font-size:21px;
+    }
+
+    .order-page-description{
+        width:97%;
+        font-size:13px;
+    }
+
+    .order-page-container{
+        width:92%;
+        max-width:360px;
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+    }
+
+    .order-left-panel{
+        height:auto;
+        padding:16px;
+        border-radius:18px;
+    }
+
+    .order-right-panel{
+        height:auto;
+        padding:16px;
+        border-radius:18px;
+    }
+
+    .order-form-grid{
+        grid-template-columns:1fr;
+        gap:11px;
+    }
+
+    .order-input-box{
+        height:56px;
+    }
+
+    .order-input-icon{
+        width:40px;
+        min-width:40px;
+        font-size:14px;
+    }
+
+    .order-input-field,
+    .order-select-field{
+        font-size:13px;
+        padding-right:10px;
+    }
+
+    .order-message-field{
+        min-height:125px;
+        font-size:13px;
+        padding:14px;
+    }
+
+    .order-submit-button{
+        padding:14px 10px;
+        font-size:14px;
+    }
+
 }
 
-.order-left-panel{
-    padding:18px;
-}
 
-.order-right-panel{
-    padding:18px;
-}
+/* ======================================================
+   BELOW 320px
+====================================================== */
 
-.order-left-title{
-    font-size:21px;
-}
+@media (max-width:319px){
 
-.order-form-title{
-    font-size:22px;
-}
+    .order-page-main{
+        padding:32px 0;
+    }
 
-.order-feature-card{
-    gap:12px;
-    padding:14px;
-}
+    .order-page-hero{
+        width:92%;
+    }
 
-.order-feature-icon{
-    width:42px;
-    height:42px;
-    font-size:16px;
-}
+    .order-page-title{
+        font-size:19px;
+    }
 
-.order-feature-text{
-    font-size:15px;
-}
+    .order-page-description{
+        font-size:12px;
+    }
 
-.order-input-icon{
-    width:46px;
-}
+    .order-page-container{
+        width:92%;
+        grid-template-columns:1fr;
+    }
 
-.order-input-field{
-    font-size:14px;
-}
+    .order-left-panel,
+    .order-right-panel{
+        width:100%;
+        height:auto;
+        padding:14px;
+    }
 
-.order-select-field{
-    font-size:14px;
-}
+    .order-form-grid{
+        grid-template-columns:1fr;
+    }
 
-.order-message-field{
-    font-size:14px;
-}
+    .order-input-box{
+        height:52px;
+    }
 
-.order-submit-button{
-    font-size:15px;
-    padding:16px;
-}
+    .order-input-icon{
+        width:36px;
+        min-width:36px;
+    }
 
-.order-contact-icon{
-    width:52px;
-    height:52px;
-    font-size:24px;
-}
+    .order-input-field,
+    .order-select-field{
+        font-size:12px;
+    }
 
-.order-highlight-number{
-    font-size:32px;
-}
+    .order-message-field{
+        min-height:115px;
+        font-size:12px;
+    }
 
-.order-highlight-text{
-    font-size:15px;
-}
+    .order-submit-button{
+        padding:12px 8px;
+        font-size:13px;
+    }
 
 }
