@@ -1,29 +1,33 @@
-```css
-/* =========================================================
-   ORDER REQUEST PAGE
-   FULLY RESPONSIVE
-========================================================= */
 
 /* =========================================================
-   GLOBAL BOX SIZING
+   ORDER REQUEST PAGE
+   RESPONSIVE VERSION
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
 ========================================================= */
 
 .order-page-main,
-.order-page-main *,
-.order-page-main *::before,
-.order-page-main *::after {
+.order-page-main ,
+.order-page-main ::before,
+.order-page-main ::after {
     box-sizing: border-box;
 }
 
 .order-page-main {
     width: 100%;
     min-width: 0;
+
     background: linear-gradient(
         180deg,
         #ffffff 0%,
         #faf6f1 100%
     );
+
     padding: 80px 0;
+
     overflow-x: hidden;
 }
 
@@ -33,8 +37,11 @@
 ========================================================= */
 
 .order-page-hero {
-    width: min(90%, 1200px);
+    width: 90%;
+    max-width: 1250px;
+
     margin: 0 auto 70px;
+
     text-align: center;
 }
 
@@ -42,8 +49,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    max-width: 100%;
 
     padding: 10px 24px;
 
@@ -54,9 +59,12 @@
 
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 3px;
+
+    letter-spacing: 2px;
 
     margin-bottom: 25px;
+
+    max-width: 100%;
 
     text-align: center;
 }
@@ -64,7 +72,8 @@
 .order-page-title {
     width: 100%;
 
-    font-size: clamp(30px, 4vw, 54px);
+    font-size: clamp(32px, 4vw, 54px);
+
     font-weight: 700;
 
     color: #2d1d13;
@@ -75,15 +84,16 @@
 }
 
 .order-page-description {
-    width: min(80%, 900px);
+    width: 80%;
+    max-width: 950px;
+
     margin: 0 auto;
 
     color: #666;
 
     font-size: 20px;
-    line-height: 1.8;
 
-    overflow-wrap: break-word;
+    line-height: 1.8;
 }
 
 
@@ -91,24 +101,31 @@
    MAIN CONTAINER
 ========================================================= */
 
+/*
+   IMPORTANT:
+
+   Desktop:
+   Left panel + Right form
+
+   Tablet/Mobile:
+   One column
+*/
+
 .order-page-container {
-    width: min(92%, 1400px);
+    width: 93%;
+    max-width: 1850px;
 
     margin: 0 auto;
 
     display: grid;
 
-    /*
-       Desktop:
-       left panel + right form
-    */
     grid-template-columns:
-        minmax(320px, 0.75fr)
+        minmax(400px, 0.75fr)
         minmax(0, 1.25fr);
 
-    gap: 40px;
+    gap: 45px;
 
-    align-items: stretch;
+    align-items: start;
 
     min-width: 0;
 }
@@ -132,6 +149,7 @@
         0 18px 45px rgba(0, 0, 0, 0.08);
 
     position: sticky;
+
     top: 100px;
 
     height: fit-content;
@@ -146,6 +164,7 @@
 
 .order-left-title {
     font-size: 34px;
+
     font-weight: 700;
 
     color: #2d1d13;
@@ -159,11 +178,10 @@
     color: #666;
 
     font-size: 17px;
+
     line-height: 1.8;
 
     margin-bottom: 35px;
-
-    overflow-wrap: break-word;
 }
 
 
@@ -176,6 +194,7 @@
     min-width: 0;
 
     display: flex;
+
     align-items: center;
 
     gap: 18px;
@@ -212,23 +231,23 @@
     border-radius: 50%;
 
     background: #8b5a35;
+
     color: #ffffff;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     font-size: 20px;
 
     flex-shrink: 0;
-
-    transition:
-        background 0.35s ease,
-        color 0.35s ease;
 }
 
 .order-feature-card:hover .order-feature-icon {
     background: #ffffff;
+
     color: #8b5a35;
 }
 
@@ -236,6 +255,7 @@
     min-width: 0;
 
     font-size: 18px;
+
     color: #333;
 
     font-weight: 600;
@@ -243,8 +263,6 @@
     line-height: 1.4;
 
     overflow-wrap: break-word;
-
-    transition: color 0.35s ease;
 }
 
 .order-feature-card:hover .order-feature-text {
@@ -279,6 +297,7 @@
 
 .order-highlight-number {
     font-size: 52px;
+
     font-weight: 700;
 
     line-height: 1;
@@ -288,6 +307,7 @@
 
 .order-highlight-text {
     font-size: 18px;
+
     line-height: 1.7;
 }
 
@@ -303,6 +323,7 @@
     margin-top: 35px;
 
     display: flex;
+
     align-items: center;
 
     gap: 18px;
@@ -325,10 +346,13 @@
     border-radius: 50%;
 
     background: #25d366;
+
     color: #ffffff;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     font-size: 28px;
@@ -338,11 +362,13 @@
 
 .order-contact-content {
     min-width: 0;
+
     flex: 1;
 }
 
 .order-contact-title {
     font-size: 21px;
+
     font-weight: 700;
 
     color: #222;
@@ -352,6 +378,7 @@
 
 .order-contact-value {
     font-size: 18px;
+
     color: #555;
 
     overflow-wrap: anywhere;
@@ -359,7 +386,7 @@
 
 
 /* =========================================================
-   RIGHT PANEL
+   RIGHT FORM PANEL
 ========================================================= */
 
 .order-right-panel {
@@ -382,11 +409,12 @@
 
 
 /* =========================================================
-   FORM HEADING
+   FORM TITLE
 ========================================================= */
 
 .order-form-title {
     font-size: 40px;
+
     font-weight: 700;
 
     color: #2d1d13;
@@ -397,7 +425,7 @@
 }
 
 .order-form-subtitle {
-    font-size: 21px;
+    font-size: 20px;
 
     color: #666;
 
@@ -416,6 +444,13 @@
     min-width: 0;
 }
 
+
+/* =========================================================
+   FORM GRID
+
+   DESKTOP = TWO COLUMNS
+========================================================= */
+
 .order-form-grid {
     width: 100%;
     min-width: 0;
@@ -428,6 +463,12 @@
 
     gap: 20px;
 }
+
+
+/*
+   Preferred Contact Time
+   Full width
+*/
 
 .order-input-full {
     grid-column: 1 / -1;
@@ -443,6 +484,7 @@
     min-width: 0;
 
     display: flex;
+
     align-items: center;
 
     background: #faf6f1;
@@ -453,11 +495,11 @@
 
     overflow: hidden;
 
-    min-height: 70px;
+    min-height: 76px;
 
     transition:
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .order-input-box:hover {
@@ -477,11 +519,13 @@
 ========================================================= */
 
 .order-input-icon {
-    width: 58px;
-    min-width: 58px;
+    width: 60px;
+    min-width: 60px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     color: #8b5a35;
@@ -493,7 +537,7 @@
 
 
 /* =========================================================
-   INPUT FIELD
+   INPUT
 ========================================================= */
 
 .order-input-field {
@@ -503,11 +547,12 @@
     flex: 1;
 
     border: none;
+
     outline: none;
 
     background: transparent;
 
-    padding: 16px 16px 16px 0;
+    padding: 18px 18px 18px 0;
 
     font-family: inherit;
 
@@ -522,7 +567,7 @@
 
 
 /* =========================================================
-   SELECT FIELD
+   SELECT
 ========================================================= */
 
 .order-select-field {
@@ -532,11 +577,12 @@
     flex: 1;
 
     border: none;
+
     outline: none;
 
     background: transparent;
 
-    padding: 16px 16px 16px 0;
+    padding: 18px 18px 18px 0;
 
     font-family: inherit;
 
@@ -559,12 +605,12 @@
 }
 
 .order-message-field {
+    display: block;
+
     width: 100%;
     min-width: 0;
 
     min-height: 180px;
-
-    display: block;
 
     resize: vertical;
 
@@ -574,9 +620,7 @@
 
     border-radius: 18px;
 
-    padding: 20px;
-
-    box-sizing: border-box;
+    padding: 22px;
 
     outline: none;
 
@@ -589,8 +633,8 @@
     line-height: 1.7;
 
     transition:
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .order-message-field:focus {
@@ -613,11 +657,11 @@
     width: 100%;
     min-width: 0;
 
+    min-height: 70px;
+
     margin-top: 30px;
 
-    min-height: 68px;
-
-    padding: 18px 24px;
+    padding: 18px 25px;
 
     border: none;
 
@@ -633,14 +677,17 @@
     color: #ffffff;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    gap: 14px;
+    gap: 15px;
 
     font-family: inherit;
 
     font-size: 20px;
+
     font-weight: 700;
 
     cursor: pointer;
@@ -675,11 +722,13 @@
 
     from {
         opacity: 0;
+
         transform: translateY(40px);
     }
 
     to {
         opacity: 1;
+
         transform: translateY(0);
     }
 
@@ -687,24 +736,47 @@
 
 
 /* =========================================================
-   LARGE DESKTOP
+   EXTRA LARGE DESKTOP
    1440px+
 ========================================================= */
 
 @media (min-width: 1440px) {
 
     .order-page-container {
-        width: min(92%, 1400px);
+        width: 92%;
+        max-width: 1500px;
+
+        /*
+           Increase overall form width
+        */
 
         grid-template-columns:
-            minmax(420px, 0.8fr)
-            minmax(0, 1.2fr);
+            minmax(450px, 0.75fr)
+            minmax(700px, 1.25fr);
 
-        gap: 45px;
+        gap: 50px;
     }
 
     .order-right-panel {
-        padding: 45px;
+        padding: 50px;
+    }
+
+    .order-form-grid {
+        gap: 24px;
+    }
+
+    .order-input-box {
+        min-height: 82px;
+    }
+
+    .order-input-icon {
+        width: 65px;
+        min-width: 65px;
+    }
+
+    .order-input-field,
+    .order-select-field {
+        font-size: 17px;
     }
 
 }
@@ -712,54 +784,46 @@
 
 /* =========================================================
    LAPTOP
-   1201px - 1439px
+   1200px - 1439px
 ========================================================= */
 
-@media (min-width: 1201px) and (max-width: 1439px) {
-
-    .order-page-main {
-        padding: 70px 0;
-    }
+@media (min-width: 1200px) and (max-width: 1439px) {
 
     .order-page-container {
         width: 92%;
+        max-width: 1350px;
 
         grid-template-columns:
-            minmax(350px, 0.75fr)
-            minmax(0, 1.25fr);
+            minmax(400px, 0.78fr)
+            minmax(650px, 1.22fr);
 
-        gap: 35px;
-    }
-
-    .order-left-panel {
-        padding: 30px;
+        gap: 40px;
     }
 
     .order-right-panel {
-        padding: 35px;
+        padding: 40px;
     }
 
-    .order-page-title {
-        font-size: 48px;
+    .order-form-grid {
+        gap: 20px;
     }
 
-    .order-form-title {
-        font-size: 36px;
-    }
-
-    .order-form-subtitle {
-        font-size: 18px;
+    .order-input-box {
+        min-height: 78px;
     }
 
 }
 
 
 /* =========================================================
-   TABLET LANDSCAPE
-   1024px - 1200px
+   SMALL LAPTOP
+   1024px - 1199px
+
+   At this width we switch to ONE COLUMN.
+   This prevents the form fields becoming too narrow.
 ========================================================= */
 
-@media (min-width: 1024px) and (max-width: 1200px) {
+@media (min-width: 1024px) and (max-width: 1199px) {
 
     .order-page-main {
         padding: 65px 0;
@@ -767,6 +831,7 @@
 
     .order-page-hero {
         width: 92%;
+
         margin-bottom: 55px;
     }
 
@@ -776,16 +841,18 @@
 
     .order-page-description {
         width: 90%;
+
         font-size: 18px;
     }
 
-    /*
-       Switch to one column.
-       This prevents the form from becoming too narrow.
-    */
-
     .order-page-container {
         width: 92%;
+
+        max-width: 1050px;
+
+        /*
+           ONE COLUMN
+        */
 
         grid-template-columns: 1fr;
 
@@ -803,7 +870,7 @@
     .order-right-panel {
         width: 100%;
 
-        padding: 35px;
+        padding: 38px;
     }
 
     .order-form-grid {
@@ -811,7 +878,11 @@
             minmax(0, 1fr)
             minmax(0, 1fr);
 
-        gap: 18px;
+        gap: 20px;
+    }
+
+    .order-input-box {
+        min-height: 76px;
     }
 
 }
@@ -820,6 +891,8 @@
 /* =========================================================
    TABLET
    768px - 1023px
+
+   ONE FIELD PER ROW
 ========================================================= */
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -830,11 +903,13 @@
 
     .order-page-hero {
         width: 92%;
+
         margin-bottom: 45px;
     }
 
     .order-page-badge {
-        font-size: 18px;
+        font-size: 17px;
+
         padding: 9px 18px;
     }
 
@@ -844,12 +919,16 @@
 
     .order-page-description {
         width: 94%;
+
         font-size: 17px;
+
         line-height: 1.7;
     }
 
     .order-page-container {
         width: 92%;
+
+        max-width: 850px;
 
         grid-template-columns: 1fr;
 
@@ -859,15 +938,11 @@
     .order-left-panel {
         position: static;
 
-        width: 100%;
-
         padding: 28px;
     }
 
     .order-right-panel {
-        width: 100%;
-
-        padding: 28px;
+        padding: 30px;
     }
 
     .order-form-title {
@@ -878,89 +953,14 @@
         font-size: 18px;
     }
 
-    .order-form-grid {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr);
-
-        gap: 18px;
-    }
-
-    .order-input-box {
-        min-height: 68px;
-    }
-
-    .order-submit-button {
-        min-height: 62px;
-        font-size: 18px;
-    }
-
-}
-
-
-/* =========================================================
-   LARGE MOBILE
-   576px - 767px
-========================================================= */
-
-@media (min-width: 576px) and (max-width: 767px) {
-
-    .order-page-main {
-        padding: 50px 0;
-    }
-
-    .order-page-hero {
-        width: 92%;
-        margin-bottom: 40px;
-    }
-
-    .order-page-badge {
-        font-size: 14px;
-        padding: 8px 16px;
-        letter-spacing: 2px;
-    }
-
-    .order-page-title {
-        font-size: 32px;
-    }
-
-    .order-page-description {
-        width: 96%;
-        font-size: 16px;
-        line-height: 1.7;
-    }
-
-    .order-page-container {
-        width: 92%;
-
-        grid-template-columns: 1fr;
-
-        gap: 24px;
-    }
-
-    .order-left-panel {
-        position: static;
-
-        padding: 24px;
-
-        border-radius: 22px;
-    }
-
-    .order-right-panel {
-        padding: 24px;
-
-        border-radius: 22px;
-    }
-
     /*
-       IMPORTANT:
-       One column on mobile.
+       ONE FIELD PER ROW
     */
 
     .order-form-grid {
         grid-template-columns: 1fr;
 
-        gap: 15px;
+        gap: 16px;
     }
 
     .order-input-full {
@@ -968,32 +968,13 @@
     }
 
     .order-input-box {
-        min-height: 64px;
-    }
-
-    .order-input-icon {
-        width: 50px;
-        min-width: 50px;
-    }
-
-    .order-form-title {
-        font-size: 30px;
-    }
-
-    .order-form-subtitle {
-        font-size: 17px;
-    }
-
-    .order-message-field {
-        min-height: 160px;
+        min-height: 70px;
     }
 
     .order-submit-button {
-        min-height: 58px;
+        min-height: 62px;
 
-        padding: 16px;
-
-        font-size: 17px;
+        font-size: 18px;
     }
 
 }
@@ -1001,10 +982,12 @@
 
 /* =========================================================
    MOBILE
-   425px - 575px
+   BELOW 768px
+
+   ONE FIELD PER ROW
 ========================================================= */
 
-@media (min-width: 425px) and (max-width: 575px) {
+@media (max-width: 767px) {
 
     .order-page-main {
         padding: 45px 0;
@@ -1012,19 +995,20 @@
 
     .order-page-hero {
         width: 92%;
-        margin-bottom: 35px;
+
+        margin-bottom: 38px;
     }
 
     .order-page-badge {
         font-size: 11px;
 
-        padding: 8px 14px;
+        padding: 8px 15px;
 
         letter-spacing: 1.5px;
     }
 
     .order-page-title {
-        font-size: 27px;
+        font-size: clamp(24px, 7vw, 32px);
 
         line-height: 1.25;
     }
@@ -1037,154 +1021,158 @@
         line-height: 1.7;
     }
 
+
+    /* =========================================
+       MAIN CONTAINER
+    ========================================= */
+
     .order-page-container {
         width: 92%;
 
         grid-template-columns: 1fr;
 
-        gap: 20px;
+        gap: 22px;
     }
+
+
+    /* =========================================
+       LEFT
+    ========================================= */
 
     .order-left-panel {
         position: static;
 
-        padding: 20px;
+        width: 100%;
 
-        border-radius: 20px;
-    }
+        padding: 22px;
 
-    .order-right-panel {
-        padding: 20px;
-
-        border-radius: 20px;
+        border-radius: 22px;
     }
 
     .order-left-title {
-        font-size: 26px;
+        font-size: 27px;
     }
 
     .order-left-description {
         font-size: 15px;
+
+        line-height: 1.7;
     }
 
-    .order-feature-card {
-        padding: 15px;
 
-        gap: 13px;
-    }
+    /* =========================================
+       RIGHT
+    ========================================= */
 
-    .order-feature-icon {
-        width: 44px;
-        min-width: 44px;
+    .order-right-panel {
+        width: 100%;
 
-        height: 44px;
+        padding: 22px;
 
-        font-size: 17px;
-    }
-
-    .order-feature-text {
-        font-size: 15px;
-    }
-
-    .order-highlight-box {
-        padding: 24px;
-    }
-
-    .order-highlight-number {
-        font-size: 42px;
-    }
-
-    .order-highlight-text {
-        font-size: 15px;
-    }
-
-    .order-contact-box {
-        padding: 15px;
-
-        gap: 12px;
-    }
-
-    .order-contact-icon {
-        width: 48px;
-        min-width: 48px;
-
-        height: 48px;
-
-        font-size: 22px;
-    }
-
-    .order-contact-title {
-        font-size: 17px;
-    }
-
-    .order-contact-value {
-        font-size: 15px;
+        border-radius: 22px;
     }
 
     .order-form-title {
-        font-size: 27px;
+        font-size: 28px;
     }
 
     .order-form-subtitle {
         font-size: 15px;
 
+        line-height: 1.7;
+
         margin-bottom: 25px;
     }
 
+
+    /* =========================================
+       FORM
+
+       ONE FIELD PER ROW
+    ========================================= */
+
     .order-form-grid {
+        width: 100%;
+
         grid-template-columns: 1fr;
 
-        gap: 13px;
+        gap: 14px;
     }
 
     .order-input-full {
         grid-column: auto;
     }
 
-    .order-input-box {
-        min-height: 60px;
 
-        border-radius: 13px;
+    /* =========================================
+       INPUTS
+    ========================================= */
+
+    .order-input-box {
+        width: 100%;
+
+        min-height: 64px;
+
+        border-radius: 14px;
     }
 
     .order-input-icon {
-        width: 46px;
-        min-width: 46px;
+        width: 48px;
+
+        min-width: 48px;
 
         font-size: 16px;
     }
 
     .order-input-field,
     .order-select-field {
+        width: 100%;
+
+        min-width: 0;
+
         font-size: 14px;
 
-        padding: 14px 12px 14px 0;
+        padding: 15px 12px 15px 0;
     }
 
+
+    /* =========================================
+       TEXTAREA
+    ========================================= */
+
     .order-textarea-box {
-        margin-top: 18px;
+        margin-top: 20px;
     }
 
     .order-message-field {
-        min-height: 140px;
+        width: 100%;
 
-        padding: 16px;
+        min-height: 145px;
+
+        padding: 17px;
 
         font-size: 14px;
     }
 
+
+    /* =========================================
+       BUTTON
+    ========================================= */
+
     .order-submit-button {
-        min-height: 54px;
+        width: 100%;
+
+        min-height: 56px;
 
         margin-top: 22px;
 
-        padding: 14px;
+        padding: 15px;
+
+        font-size: 16px;
 
         gap: 10px;
 
-        font-size: 15px;
-
-        border-radius: 14px;
+        border-radius: 15px;
     }
 
 }
@@ -1192,10 +1180,10 @@
 
 /* =========================================================
    SMALL MOBILE
-   375px - 424px
+   BELOW 480px
 ========================================================= */
 
-@media (min-width: 375px) and (max-width: 424px) {
+@media (max-width: 479px) {
 
     .order-page-main {
         padding: 40px 0;
@@ -1203,11 +1191,12 @@
 
     .order-page-hero {
         width: 92%;
+
         margin-bottom: 32px;
     }
 
     .order-page-badge {
-        font-size: 10px;
+        font-size: 9px;
 
         padding: 7px 12px;
 
@@ -1215,34 +1204,45 @@
     }
 
     .order-page-title {
-        font-size: 24px;
+        font-size: 25px;
     }
 
     .order-page-description {
         width: 96%;
 
         font-size: 14px;
-
-        line-height: 1.7;
     }
+
+
+    /* =========================================
+       CONTAINER
+    ========================================= */
 
     .order-page-container {
         width: 92%;
 
-        grid-template-columns: 1fr;
-
         gap: 18px;
     }
+
+
+    /* =========================================
+       PANELS
+    ========================================= */
 
     .order-left-panel,
     .order-right-panel {
         padding: 18px;
 
-        border-radius: 18px;
+        border-radius: 19px;
     }
 
+
+    /* =========================================
+       LEFT
+    ========================================= */
+
     .order-left-title {
-        font-size: 23px;
+        font-size: 24px;
     }
 
     .order-left-description {
@@ -1258,17 +1258,64 @@
     }
 
     .order-feature-icon {
-        width: 40px;
-        min-width: 40px;
+        width: 42px;
 
-        height: 40px;
+        min-width: 42px;
 
-        font-size: 15px;
+        height: 42px;
+
+        font-size: 16px;
     }
 
     .order-feature-text {
         font-size: 14px;
     }
+
+    .order-highlight-box {
+        padding: 22px;
+    }
+
+    .order-highlight-number {
+        font-size: 40px;
+    }
+
+    .order-highlight-text {
+        font-size: 14px;
+    }
+
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+
+    .order-contact-box {
+        padding: 14px;
+
+        gap: 11px;
+    }
+
+    .order-contact-icon {
+        width: 46px;
+
+        min-width: 46px;
+
+        height: 46px;
+
+        font-size: 21px;
+    }
+
+    .order-contact-title {
+        font-size: 16px;
+    }
+
+    .order-contact-value {
+        font-size: 14px;
+    }
+
+
+    /* =========================================
+       FORM
+    ========================================= */
 
     .order-form-title {
         font-size: 24px;
@@ -1276,15 +1323,29 @@
 
     .order-form-subtitle {
         font-size: 14px;
+
+        margin-bottom: 22px;
     }
 
+    .order-form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    /* =========================================
+       INPUT
+    ========================================= */
+
     .order-input-box {
-        min-height: 57px;
+        min-height: 60px;
     }
 
     .order-input-icon {
-        width: 43px;
-        min-width: 43px;
+        width: 44px;
+
+        min-width: 44px;
 
         font-size: 15px;
     }
@@ -1293,8 +1354,13 @@
     .order-select-field {
         font-size: 13px;
 
-        padding-right: 9px;
+        padding: 14px 9px 14px 0;
     }
+
+
+    /* =========================================
+       TEXTAREA
+    ========================================= */
 
     .order-message-field {
         min-height: 130px;
@@ -1303,6 +1369,11 @@
 
         font-size: 13px;
     }
+
+
+    /* =========================================
+       BUTTON
+    ========================================= */
 
     .order-submit-button {
         min-height: 52px;
@@ -1319,10 +1390,10 @@
 
 /* =========================================================
    VERY SMALL MOBILE
-   320px - 374px
+   BELOW 375px
 ========================================================= */
 
-@media (min-width: 320px) and (max-width: 374px) {
+@media (max-width: 374px) {
 
     .order-page-main {
         padding: 35px 0;
@@ -1330,15 +1401,12 @@
 
     .order-page-hero {
         width: 94%;
-        margin-bottom: 28px;
     }
 
     .order-page-badge {
         font-size: 8px;
 
         padding: 6px 10px;
-
-        letter-spacing: 0.8px;
     }
 
     .order-page-title {
@@ -1346,17 +1414,11 @@
     }
 
     .order-page-description {
-        width: 97%;
-
         font-size: 13px;
-
-        line-height: 1.6;
     }
 
     .order-page-container {
         width: 94%;
-
-        grid-template-columns: 1fr;
 
         gap: 16px;
     }
@@ -1368,85 +1430,16 @@
         border-radius: 17px;
     }
 
-    .order-left-title {
-        font-size: 21px;
-    }
-
-    .order-left-description {
-        font-size: 13px;
-
-        line-height: 1.6;
-    }
-
-    .order-feature-card {
-        padding: 11px;
-
-        gap: 9px;
-
-        margin-bottom: 10px;
-
-        border-radius: 13px;
-    }
-
-    .order-feature-icon {
-        width: 36px;
-        min-width: 36px;
-
-        height: 36px;
-
-        font-size: 13px;
-    }
-
-    .order-feature-text {
-        font-size: 13px;
-    }
-
-    .order-highlight-box {
-        padding: 20px;
-    }
-
-    .order-highlight-number {
-        font-size: 36px;
-    }
-
-    .order-highlight-text {
-        font-size: 13px;
-    }
-
-    .order-contact-box {
-        padding: 12px;
-
-        gap: 9px;
-    }
-
-    .order-contact-icon {
-        width: 42px;
-        min-width: 42px;
-
-        height: 42px;
-
-        font-size: 19px;
-    }
-
-    .order-contact-title {
-        font-size: 15px;
-    }
-
-    .order-contact-value {
-        font-size: 13px;
-    }
-
     .order-form-title {
         font-size: 21px;
     }
 
     .order-form-subtitle {
         font-size: 13px;
-
-        line-height: 1.6;
-
-        margin-bottom: 20px;
     }
+
+
+    /* ONE FIELD PER ROW */
 
     .order-form-grid {
         grid-template-columns: 1fr;
@@ -1454,15 +1447,17 @@
         gap: 10px;
     }
 
-    .order-input-box {
-        min-height: 53px;
 
-        border-radius: 12px;
+    /* INPUT */
+
+    .order-input-box {
+        min-height: 54px;
     }
 
     .order-input-icon {
-        width: 39px;
-        min-width: 39px;
+        width: 40px;
+
+        min-width: 40px;
 
         font-size: 13px;
     }
@@ -1474,6 +1469,9 @@
         padding: 12px 7px 12px 0;
     }
 
+
+    /* TEXTAREA */
+
     .order-message-field {
         min-height: 115px;
 
@@ -1482,104 +1480,15 @@
         font-size: 12px;
     }
 
+
+    /* BUTTON */
+
     .order-submit-button {
         min-height: 48px;
-
-        margin-top: 18px;
 
         padding: 11px 8px;
 
         font-size: 12px;
-
-        gap: 6px;
-
-        border-radius: 12px;
-    }
-
-}
-
-
-/* =========================================================
-   BELOW 320px
-========================================================= */
-
-@media (max-width: 319px) {
-
-    .order-page-main {
-        padding: 30px 0;
-    }
-
-    .order-page-hero {
-        width: 94%;
-    }
-
-    .order-page-badge {
-        font-size: 8px;
-
-        padding: 6px 9px;
-    }
-
-    .order-page-title {
-        font-size: 19px;
-    }
-
-    .order-page-description {
-        font-size: 12px;
-    }
-
-    .order-page-container {
-        width: 94%;
-
-        grid-template-columns: 1fr;
-    }
-
-    .order-left-panel,
-    .order-right-panel {
-        width: 100%;
-
-        padding: 13px;
-
-        border-radius: 15px;
-    }
-
-    .order-form-grid {
-        grid-template-columns: 1fr;
-
-        gap: 9px;
-    }
-
-    .order-input-box {
-        min-height: 50px;
-    }
-
-    .order-input-icon {
-        width: 35px;
-        min-width: 35px;
-
-        font-size: 12px;
-    }
-
-    .order-input-field,
-    .order-select-field {
-        font-size: 11px;
-
-        padding-right: 5px;
-    }
-
-    .order-message-field {
-        min-height: 105px;
-
-        padding: 10px;
-
-        font-size: 11px;
-    }
-
-    .order-submit-button {
-        min-height: 45px;
-
-        padding: 10px 6px;
-
-        font-size: 11px;
     }
 
 }
