@@ -1,1106 +1,1585 @@
-/* ======================================================
+```css
+/* =========================================================
    ORDER REQUEST PAGE
-====================================================== */
+   FULLY RESPONSIVE
+========================================================= */
 
-.order-page-main{
-    width:100%;
-    background:linear-gradient(180deg,#ffffff 0%,#faf6f1 100%);
-    padding:80px 0;
+/* =========================================================
+   GLOBAL BOX SIZING
+========================================================= */
+
+.order-page-main,
+.order-page-main *,
+.order-page-main *::before,
+.order-page-main *::after {
+    box-sizing: border-box;
 }
 
-/* ======================================================
+.order-page-main {
+    width: 100%;
+    min-width: 0;
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #faf6f1 100%
+    );
+    padding: 80px 0;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
    HERO
-====================================================== */
+========================================================= */
 
-.order-page-hero{
-    width:90%;
-    max-width:1200px;
-    margin:0 auto 70px;
-    text-align:center;
+.order-page-hero {
+    width: min(90%, 1200px);
+    margin: 0 auto 70px;
+    text-align: center;
 }
 
-.order-page-badge{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:10px 24px;
-    background:#f5ebe2;
-    color:#8b5a35;
-    border-radius:30px;
-    font-size:40px;
-    font-weight:700;
-    letter-spacing:3px;
-    margin-bottom:25px;
+.order-page-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 100%;
+
+    padding: 10px 24px;
+
+    background: #f5ebe2;
+    color: #8b5a35;
+
+    border-radius: 30px;
+
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+
+    text-align: center;
 }
 
-.order-page-title{
-    font-size:54px;
-    font-weight:700;
-    color:#2d1d13;
-    line-height:1.2;
-    margin-bottom:22px;
+.order-page-title {
+    width: 100%;
+
+    font-size: clamp(30px, 4vw, 54px);
+    font-weight: 700;
+
+    color: #2d1d13;
+
+    line-height: 1.2;
+
+    margin: 0 0 22px;
 }
 
-.order-page-description{
-    width:80%;
-    margin:auto;
-    color:#666;
-    font-size:20px;
-    line-height:1.9;
+.order-page-description {
+    width: min(80%, 900px);
+    margin: 0 auto;
+
+    color: #666;
+
+    font-size: 20px;
+    line-height: 1.8;
+
+    overflow-wrap: break-word;
 }
 
-/* ======================================================
+
+/* =========================================================
    MAIN CONTAINER
-====================================================== */
+========================================================= */
 
-.order-page-container{
-    width:75%;
-    /* max-width:1400px; */
-    margin:auto;
-    display:grid;
-    grid-template-columns:550px 1fr;
-    gap:45px;
-    align-items:stretch;
+.order-page-container {
+    width: min(92%, 1400px);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    /*
+       Desktop:
+       left panel + right form
+    */
+    grid-template-columns:
+        minmax(320px, 0.75fr)
+        minmax(0, 1.25fr);
+
+    gap: 40px;
+
+    align-items: stretch;
+
+    min-width: 0;
 }
 
-/* ======================================================
+
+/* =========================================================
    LEFT PANEL
-====================================================== */
+========================================================= */
 
-/* .order-left-panel{
-    background:#ffffff;
-    border-radius:28px;
-    padding:35px;
-    box-shadow:0 18px 45px rgba(0,0,0,.08);
-    position:sticky;
-    top:100px;
-} */
-.order-left-panel{
-    background:#ffffff;
-    border-radius:28px;
-    padding:35px;
-    box-shadow:0 18px 45px rgba(0,0,0,.08);
-    position:sticky;
-    top:100px;
+.order-left-panel {
+    width: 100%;
+    min-width: 0;
 
-    height:100%;
-    box-sizing:border-box;
+    background: #ffffff;
+
+    border-radius: 28px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 100px;
+
+    height: fit-content;
+
+    overflow: hidden;
 }
 
 
-.order-left-title{
-    font-size:34px;
-    font-weight:700;
-    color:#2d1d13;
-    margin-bottom:15px;
+/* =========================================================
+   LEFT TITLE
+========================================================= */
+
+.order-left-title {
+    font-size: 34px;
+    font-weight: 700;
+
+    color: #2d1d13;
+
+    line-height: 1.25;
+
+    margin-bottom: 15px;
 }
 
-.order-left-description{
-    color:#666;
-    font-size:17px;
-    line-height:1.9;
-    margin-bottom:35px;
+.order-left-description {
+    color: #666;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+
+    overflow-wrap: break-word;
 }
 
-/* ======================================================
+
+/* =========================================================
    FEATURE CARD
-====================================================== */
+========================================================= */
 
-.order-feature-card{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    padding:18px;
-    border-radius:18px;
-    background:#faf6f1;
-    margin-bottom:18px;
-    transition:.35s;
+.order-feature-card {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background: #faf6f1;
+
+    margin-bottom: 18px;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
-.order-feature-card:hover{
-    transform:translateY(-6px);
-    background:#8b5a35;
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
+.order-feature-card:hover {
+    transform: translateY(-6px);
+
+    background: #8b5a35;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
-.order-feature-card:hover .order-feature-icon{
-    background:#ffffff;
-    color:#8b5a35;
+.order-feature-icon {
+    width: 50px;
+    min-width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: #8b5a35;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    flex-shrink: 0;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease;
 }
 
-.order-feature-card:hover .order-feature-text{
-    color:#ffffff;
+.order-feature-card:hover .order-feature-icon {
+    background: #ffffff;
+    color: #8b5a35;
 }
 
-.order-feature-icon{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background:#8b5a35;
-    color:#ffffff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:20px;
-    transition:.35s;
-    flex-shrink:0;
+.order-feature-text {
+    min-width: 0;
+
+    font-size: 18px;
+    color: #333;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    overflow-wrap: break-word;
+
+    transition: color 0.35s ease;
 }
 
-.order-feature-text{
-    font-size:18px;
-    color:#333;
-    font-weight:600;
-    transition:.35s;
+.order-feature-card:hover .order-feature-text {
+    color: #ffffff;
 }
 
-/* ======================================================
+
+/* =========================================================
    HIGHLIGHT BOX
-====================================================== */
+========================================================= */
 
-.order-highlight-box{
-    margin-top:35px;
-    padding:30px;
-    border-radius:22px;
-    background:linear-gradient(135deg,#8b5a35,#6f4425);
-    text-align:center;
-    color:#ffffff;
+.order-highlight-box {
+    width: 100%;
+
+    margin-top: 35px;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5a35,
+            #6f4425
+        );
+
+    text-align: center;
+
+    color: #ffffff;
 }
 
-.order-highlight-number{
-    font-size:52px;
-    font-weight:700;
-    margin-bottom:10px;
+.order-highlight-number {
+    font-size: 52px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    margin-bottom: 10px;
 }
 
-.order-highlight-text{
-    font-size:18px;
-    line-height:1.8;
+.order-highlight-text {
+    font-size: 18px;
+    line-height: 1.7;
 }
 
-/* ======================================================
+
+/* =========================================================
    CONTACT BOX
-====================================================== */
+========================================================= */
 
-.order-contact-box{
-    margin-top:35px;
-    display:flex;
-    align-items:center;
-    gap:18px;
-    padding:20px;
-    border-radius:18px;
-    background:#f3faf4;
-    border:1px solid #dcefdc;
+.order-contact-box {
+    width: 100%;
+    min-width: 0;
+
+    margin-top: 35px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background: #f3faf4;
+
+    border: 1px solid #dcefdc;
 }
 
-.order-contact-icon{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#25D366;
-    color:#ffffff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:28px;
-    flex-shrink:0;
+.order-contact-icon {
+    width: 60px;
+    min-width: 60px;
+
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #25d366;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    flex-shrink: 0;
 }
 
-.order-contact-content{
-    flex:1;
+.order-contact-content {
+    min-width: 0;
+    flex: 1;
 }
 
-.order-contact-title{
-    font-size:21px;
-    font-weight:700;
-    color:#222;
-    margin-bottom:6px;
+.order-contact-title {
+    font-size: 21px;
+    font-weight: 700;
+
+    color: #222;
+
+    margin-bottom: 6px;
 }
 
-.order-contact-value{
-    font-size:18px;
-    color:#555;
+.order-contact-value {
+    font-size: 18px;
+    color: #555;
+
+    overflow-wrap: anywhere;
 }
 
-/* ======================================================
+
+/* =========================================================
    RIGHT PANEL
-====================================================== */
+========================================================= */
 
-.order-right-panel{
-    background:#ffffff;
-    border-radius:28px;
-    padding:45px;
-    box-shadow:0 18px 45px rgba(0,0,0,.08);
+.order-right-panel {
+    width: 100%;
+    min-width: 0;
 
-    height:94%;
-    box-sizing:border-box;
-}
-.order-form-title{
-    font-size:40px;
-    font-weight:700;
-    color:#2d1d13;
-    margin-bottom:12px;
-}
+    background: #ffffff;
 
-.order-form-subtitle{
-    font-size:21px;
-    color:#666;
-    line-height:1.8;
-    margin-bottom:35px;
+    border-radius: 28px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.08);
+
+    height: fit-content;
+
+    overflow: hidden;
 }
 
-/* ======================================================
+
+/* =========================================================
+   FORM HEADING
+========================================================= */
+
+.order-form-title {
+    font-size: 40px;
+    font-weight: 700;
+
+    color: #2d1d13;
+
+    line-height: 1.25;
+
+    margin-bottom: 12px;
+}
+
+.order-form-subtitle {
+    font-size: 21px;
+
+    color: #666;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
    FORM
-====================================================== */
+========================================================= */
 
-.order-form-wrapper{
-    width:100%;
+.order-form-wrapper {
+    width: 100%;
+    min-width: 0;
 }
 
-.order-form-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
+.order-form-grid {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 20px;
 }
 
-.order-input-full{
-    grid-column:1 / 3;
+.order-input-full {
+    grid-column: 1 / -1;
 }
 
-/* ======================================================
+
+/* =========================================================
    INPUT BOX
-====================================================== */
+========================================================= */
 
-.order-input-box{
-    display:flex;
-    align-items:center;
-    background:#faf6f1;
-    border:1px solid #e7ddd4;
-    border-radius:15px;
-    overflow:hidden;
-    transition:.35s;
-    height:90px;
+.order-input-box {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    background: #faf6f1;
+
+    border: 1px solid #e7ddd4;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    min-height: 70px;
+
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
-.order-input-box:hover{
-    border-color:#8b5a35;
+.order-input-box:hover {
+    border-color: #8b5a35;
 }
 
-.order-input-box:focus-within{
-    border-color:#8b5a35;
-    box-shadow:0 0 0 4px rgba(139,90,53,.12);
+.order-input-box:focus-within {
+    border-color: #8b5a35;
+
+    box-shadow:
+        0 0 0 4px rgba(139, 90, 53, 0.12);
 }
 
-.order-input-icon{
-    width:60px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#8b5a35;
-    font-size:18px;
+
+/* =========================================================
+   INPUT ICON
+========================================================= */
+
+.order-input-icon {
+    width: 58px;
+    min-width: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #8b5a35;
+
+    font-size: 18px;
+
+    flex-shrink: 0;
 }
 
-/* ======================================================
+
+/* =========================================================
    INPUT FIELD
-====================================================== */
+========================================================= */
 
-.order-input-field{
-    flex:1;
-    border:none;
-    outline:none;
-    background:transparent;
-    padding:18px 18px 18px 0;
-    font-size:16px;
-    color:#333;
+.order-input-field {
+    width: 100%;
+    min-width: 0;
+
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    padding: 16px 16px 16px 0;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    color: #333;
 }
 
-.order-input-field::placeholder{
-    color:#999;
+.order-input-field::placeholder {
+    color: #999;
 }
 
-/* ======================================================
+
+/* =========================================================
    SELECT FIELD
-====================================================== */
+========================================================= */
 
-.order-select-field{
-    flex:1;
-    border:none;
-    outline:none;
-    background:transparent;
-    padding:18px 18px 18px 0;
-    font-size:16px;
-    color:#333;
-    cursor:pointer;
+.order-select-field {
+    width: 100%;
+    min-width: 0;
+
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    padding: 16px 16px 16px 0;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    color: #333;
+
+    cursor: pointer;
 }
 
-/* ======================================================
+
+/* =========================================================
    TEXTAREA
-====================================================== */
+========================================================= */
 
-.order-textarea-box{
-    margin-top:25px;
+.order-textarea-box {
+    width: 100%;
+
+    margin-top: 25px;
 }
 
-.order-message-field{
-    width:100%;
-    min-height:180px;
-    resize:vertical;
-    background:#faf6f1;
-    border:1px solid #e7ddd4;
-    border-radius:18px;
-    padding:22px;
-    box-sizing:border-box;
-    outline:none;
-    font-size:16px;
-    color:#333;
-    line-height:1.8;
-    transition:.35s;
+.order-message-field {
+    width: 100%;
+    min-width: 0;
+
+    min-height: 180px;
+
+    display: block;
+
+    resize: vertical;
+
+    background: #faf6f1;
+
+    border: 1px solid #e7ddd4;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    color: #333;
+
+    line-height: 1.7;
+
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
-.order-message-field:focus{
-    border-color:#8b5a35;
-    box-shadow:0 0 0 4px rgba(139,90,53,.12);
+.order-message-field:focus {
+    border-color: #8b5a35;
+
+    box-shadow:
+        0 0 0 4px rgba(139, 90, 53, 0.12);
 }
 
-.order-message-field::placeholder{
-    color:#999;
+.order-message-field::placeholder {
+    color: #999;
 }
 
-/* ======================================================
+
+/* =========================================================
    SUBMIT BUTTON
-====================================================== */
+========================================================= */
 
-.order-submit-button{
-    width:100%;
-    margin-top:30px;
-    padding:35px;
-    border:none;
-    border-radius:18px;
-    background:linear-gradient(135deg,#25D366,#1da851);
-    color:#ffffff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:15px;
-    font-size:25px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.35s;
-    letter-spacing:.5px;
+.order-submit-button {
+    width: 100%;
+    min-width: 0;
+
+    margin-top: 30px;
+
+    min-height: 68px;
+
+    padding: 18px 24px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25d366,
+            #1da851
+        );
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    font-family: inherit;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
-.order-submit-button:hover{
-    transform:translateY(-5px);
-    box-shadow:0 20px 35px rgba(37,211,102,.35);
+.order-submit-button:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 35px rgba(37, 211, 102, 0.35);
 }
 
-.order-submit-button:active{
-    transform:scale(.98);
+.order-submit-button:active {
+    transform: scale(0.98);
 }
 
-/* ======================================================
-   SMALL ANIMATIONS
-====================================================== */
+
+/* =========================================================
+   ANIMATION
+========================================================= */
 
 .order-left-panel,
-.order-right-panel{
-    animation:orderFadeUp .8s ease;
+.order-right-panel {
+    animation: orderFadeUp 0.8s ease;
 }
 
-@keyframes orderFadeUp{
+@keyframes orderFadeUp {
 
-    from{
-
-        opacity:0;
-        transform:translateY(40px);
-
+    from {
+        opacity: 0;
+        transform: translateY(40px);
     }
 
-    to{
-
-        opacity:1;
-        transform:translateY(0);
-
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
 }
 
-/* ======================================================
-   1400px
-====================================================== */
-/* ======================================================
-   1440px AND ABOVE
-====================================================== */
 
-/* @media (min-width:1440px){
+/* =========================================================
+   LARGE DESKTOP
+   1440px+
+========================================================= */
 
-    .order-page-container{
-        width:92%;
-        max-width:1450px;
+@media (min-width: 1440px) {
 
-        grid-template-columns:minmax(0, 550px) minmax(0, 1fr);
+    .order-page-container {
+        width: min(92%, 1400px);
 
-        gap:45px;
+        grid-template-columns:
+            minmax(420px, 0.8fr)
+            minmax(0, 1.2fr);
+
+        gap: 45px;
     }
 
-    .order-page-hero{
-        width:90%;
-        max-width:1200px;
+    .order-right-panel {
+        padding: 45px;
     }
 
-} */
+}
 
 
-/* ======================================================
+/* =========================================================
+   LAPTOP
    1201px - 1439px
-====================================================== */
+========================================================= */
 
-@media (min-width:1201px) and (max-width:1439px){
+@media (min-width: 1201px) and (max-width: 1439px) {
 
-    .order-page-container{
-        width:92%;
-        max-width:1250px;
-
-        grid-template-columns:minmax(0, 430px) minmax(0, 1fr);
-
-        gap:35px;
+    .order-page-main {
+        padding: 70px 0;
     }
 
-    .order-left-panel{
-        padding:30px;
+    .order-page-container {
+        width: 92%;
+
+        grid-template-columns:
+            minmax(350px, 0.75fr)
+            minmax(0, 1.25fr);
+
+        gap: 35px;
     }
 
-    .order-right-panel{
-        padding:35px;
+    .order-left-panel {
+        padding: 30px;
     }
 
-    .order-page-title{
-        font-size:48px;
+    .order-right-panel {
+        padding: 35px;
     }
 
-    .order-form-title{
-        font-size:36px;
+    .order-page-title {
+        font-size: 48px;
     }
 
-    .order-form-subtitle{
-        font-size:18px;
+    .order-form-title {
+        font-size: 36px;
     }
 
-    .order-input-box{
-        height:82px;
+    .order-form-subtitle {
+        font-size: 18px;
     }
 
 }
 
 
-/* ======================================================
+/* =========================================================
+   TABLET LANDSCAPE
    1024px - 1200px
-====================================================== */
+========================================================= */
 
-@media (min-width:1024px) and (max-width:1200px){
+@media (min-width: 1024px) and (max-width: 1200px) {
 
-    .order-page-main{
-        padding:70px 0;
+    .order-page-main {
+        padding: 65px 0;
     }
 
-    .order-page-hero{
-        width:92%;
-        margin-bottom:55px;
+    .order-page-hero {
+        width: 92%;
+        margin-bottom: 55px;
     }
 
-    .order-page-title{
-        font-size:44px;
+    .order-page-title {
+        font-size: 44px;
     }
 
-    .order-page-description{
-        width:90%;
-        font-size:18px;
+    .order-page-description {
+        width: 90%;
+        font-size: 18px;
     }
 
-    .order-page-container{
-        width:92%;
-        max-width:1000px;
+    /*
+       Switch to one column.
+       This prevents the form from becoming too narrow.
+    */
 
-        display:grid;
-        grid-template-columns:1fr;
+    .order-page-container {
+        width: 92%;
 
-        gap:30px;
+        grid-template-columns: 1fr;
+
+        gap: 30px;
     }
 
-    .order-left-panel{
-        position:static;
+    .order-left-panel {
+        position: static;
 
-        width:100%;
-        height:auto;
+        width: 100%;
 
-        padding:32px;
+        padding: 32px;
     }
 
-    .order-right-panel{
-        width:100%;
-        height:auto;
+    .order-right-panel {
+        width: 100%;
 
-        padding:35px;
+        padding: 35px;
     }
 
-    .order-form-grid{
-        grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
-    }
+    .order-form-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
 
-    .order-input-full{
-        grid-column:1 / 3;
+        gap: 18px;
     }
 
 }
 
 
-/* ======================================================
+/* =========================================================
+   TABLET
    768px - 1023px
-====================================================== */
+========================================================= */
 
-@media (min-width:768px) and (max-width:1023px){
+@media (min-width: 768px) and (max-width: 1023px) {
 
-    .order-page-main{
-        padding:60px 0;
+    .order-page-main {
+        padding: 55px 0;
     }
 
-    .order-page-hero{
-        width:92%;
-        margin-bottom:50px;
+    .order-page-hero {
+        width: 92%;
+        margin-bottom: 45px;
     }
 
-    .order-page-badge{
-        font-size:24px;
-        padding:9px 20px;
+    .order-page-badge {
+        font-size: 18px;
+        padding: 9px 18px;
     }
 
-    .order-page-title{
-        font-size:38px;
+    .order-page-title {
+        font-size: 38px;
     }
 
-    .order-page-description{
-        width:94%;
-        font-size:17px;
-        line-height:1.8;
+    .order-page-description {
+        width: 94%;
+        font-size: 17px;
+        line-height: 1.7;
     }
 
-    .order-page-container{
-        width:92%;
-        max-width:850px;
+    .order-page-container {
+        width: 92%;
 
-        display:grid;
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
-        gap:28px;
+        gap: 28px;
     }
 
-    .order-left-panel{
-        position:static;
+    .order-left-panel {
+        position: static;
 
-        width:100%;
-        height:auto;
+        width: 100%;
 
-        padding:28px;
+        padding: 28px;
     }
 
-    .order-right-panel{
-        width:100%;
-        height:auto;
+    .order-right-panel {
+        width: 100%;
 
-        padding:28px;
+        padding: 28px;
     }
 
-    .order-form-grid{
-        grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
-
-        gap:18px;
+    .order-form-title {
+        font-size: 32px;
     }
 
-    .order-input-full{
-        grid-column:1 / 3;
+    .order-form-subtitle {
+        font-size: 18px;
     }
 
-    .order-input-box{
-        height:76px;
+    .order-form-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 18px;
     }
 
-    .order-input-icon{
-        width:55px;
-        min-width:55px;
+    .order-input-box {
+        min-height: 68px;
     }
 
-    .order-submit-button{
-        padding:24px;
-        font-size:19px;
+    .order-submit-button {
+        min-height: 62px;
+        font-size: 18px;
     }
 
 }
 
 
-/* ======================================================
+/* =========================================================
+   LARGE MOBILE
    576px - 767px
-====================================================== */
+========================================================= */
 
-@media (min-width:576px) and (max-width:767px){
+@media (min-width: 576px) and (max-width: 767px) {
 
-    .order-page-main{
-        padding:55px 0;
+    .order-page-main {
+        padding: 50px 0;
     }
 
-    .order-page-hero{
-        width:92%;
-        margin-bottom:45px;
+    .order-page-hero {
+        width: 92%;
+        margin-bottom: 40px;
     }
 
-    .order-page-badge{
-        font-size:15px;
-        padding:9px 18px;
+    .order-page-badge {
+        font-size: 14px;
+        padding: 8px 16px;
+        letter-spacing: 2px;
     }
 
-    .order-page-title{
-        font-size:32px;
+    .order-page-title {
+        font-size: 32px;
     }
 
-    .order-page-description{
-        width:96%;
-        font-size:16px;
+    .order-page-description {
+        width: 96%;
+        font-size: 16px;
+        line-height: 1.7;
     }
 
-    .order-page-container{
-        width:92%;
-        max-width:650px;
+    .order-page-container {
+        width: 92%;
 
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
-        gap:25px;
+        gap: 24px;
     }
 
-    .order-left-panel{
-        position:static;
-        height:auto;
+    .order-left-panel {
+        position: static;
 
-        padding:24px;
+        padding: 24px;
+
+        border-radius: 22px;
     }
 
-    .order-right-panel{
-        height:auto;
+    .order-right-panel {
+        padding: 24px;
 
-        padding:24px;
+        border-radius: 22px;
     }
 
-    .order-form-grid{
-        grid-template-columns:1fr;
-        gap:16px;
+    /*
+       IMPORTANT:
+       One column on mobile.
+    */
+
+    .order-form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
     }
 
-    .order-input-full{
-        grid-column:auto;
+    .order-input-full {
+        grid-column: auto;
     }
 
-    .order-input-box{
-        height:70px;
+    .order-input-box {
+        min-height: 64px;
     }
 
-    .order-input-icon{
-        width:52px;
-        min-width:52px;
+    .order-input-icon {
+        width: 50px;
+        min-width: 50px;
     }
 
-    .order-submit-button{
-        padding:20px;
-        font-size:18px;
+    .order-form-title {
+        font-size: 30px;
+    }
+
+    .order-form-subtitle {
+        font-size: 17px;
+    }
+
+    .order-message-field {
+        min-height: 160px;
+    }
+
+    .order-submit-button {
+        min-height: 58px;
+
+        padding: 16px;
+
+        font-size: 17px;
     }
 
 }
 
 
-/* ======================================================
-   480px - 575px
-====================================================== */
+/* =========================================================
+   MOBILE
+   425px - 575px
+========================================================= */
 
-@media (min-width:480px) and (max-width:575px){
+@media (min-width: 425px) and (max-width: 575px) {
 
-    .order-page-main{
-        padding:50px 0;
+    .order-page-main {
+        padding: 45px 0;
     }
 
-    .order-page-hero{
-        width:92%;
-        margin-bottom:40px;
+    .order-page-hero {
+        width: 92%;
+        margin-bottom: 35px;
     }
 
-    .order-page-badge{
-        font-size:12px;
-        padding:8px 16px;
-        letter-spacing:2px;
+    .order-page-badge {
+        font-size: 11px;
+
+        padding: 8px 14px;
+
+        letter-spacing: 1.5px;
     }
 
-    .order-page-title{
-        font-size:29px;
+    .order-page-title {
+        font-size: 27px;
+
+        line-height: 1.25;
     }
 
-    .order-page-description{
-        width:96%;
-        font-size:15px;
+    .order-page-description {
+        width: 96%;
+
+        font-size: 15px;
+
+        line-height: 1.7;
     }
 
-    .order-page-container{
-        width:92%;
-        max-width:550px;
+    .order-page-container {
+        width: 92%;
 
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
-        gap:22px;
+        gap: 20px;
     }
 
-    .order-left-panel{
-        position:static;
-        height:auto;
+    .order-left-panel {
+        position: static;
 
-        padding:22px;
-        border-radius:22px;
+        padding: 20px;
+
+        border-radius: 20px;
     }
 
-    .order-right-panel{
-        height:auto;
+    .order-right-panel {
+        padding: 20px;
 
-        padding:22px;
-        border-radius:22px;
+        border-radius: 20px;
     }
 
-    .order-form-grid{
-        grid-template-columns:1fr;
-        gap:15px;
+    .order-left-title {
+        font-size: 26px;
     }
 
-    .order-input-full{
-        grid-column:auto;
+    .order-left-description {
+        font-size: 15px;
     }
 
-    .order-input-box{
-        height:68px;
+    .order-feature-card {
+        padding: 15px;
+
+        gap: 13px;
     }
 
-    .order-input-icon{
-        width:50px;
-        min-width:50px;
+    .order-feature-icon {
+        width: 44px;
+        min-width: 44px;
+
+        height: 44px;
+
+        font-size: 17px;
+    }
+
+    .order-feature-text {
+        font-size: 15px;
+    }
+
+    .order-highlight-box {
+        padding: 24px;
+    }
+
+    .order-highlight-number {
+        font-size: 42px;
+    }
+
+    .order-highlight-text {
+        font-size: 15px;
+    }
+
+    .order-contact-box {
+        padding: 15px;
+
+        gap: 12px;
+    }
+
+    .order-contact-icon {
+        width: 48px;
+        min-width: 48px;
+
+        height: 48px;
+
+        font-size: 22px;
+    }
+
+    .order-contact-title {
+        font-size: 17px;
+    }
+
+    .order-contact-value {
+        font-size: 15px;
+    }
+
+    .order-form-title {
+        font-size: 27px;
+    }
+
+    .order-form-subtitle {
+        font-size: 15px;
+
+        margin-bottom: 25px;
+    }
+
+    .order-form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+    }
+
+    .order-input-full {
+        grid-column: auto;
+    }
+
+    .order-input-box {
+        min-height: 60px;
+
+        border-radius: 13px;
+    }
+
+    .order-input-icon {
+        width: 46px;
+        min-width: 46px;
+
+        font-size: 16px;
     }
 
     .order-input-field,
-    .order-select-field{
-        font-size:15px;
+    .order-select-field {
+        font-size: 14px;
+
+        padding: 14px 12px 14px 0;
     }
 
-    .order-submit-button{
-        padding:18px;
-        font-size:16px;
+    .order-textarea-box {
+        margin-top: 18px;
     }
 
-}
+    .order-message-field {
+        min-height: 140px;
 
+        padding: 16px;
 
-/* ======================================================
-   425px - 479px
-====================================================== */
-
-@media (min-width:425px) and (max-width:479px){
-
-    .order-page-main{
-        padding:45px 0;
+        font-size: 14px;
     }
 
-    .order-page-hero{
-        width:92%;
-        margin-bottom:38px;
-    }
+    .order-submit-button {
+        min-height: 54px;
 
-    .order-page-badge{
-        font-size:11px;
-        padding:8px 15px;
-    }
+        margin-top: 22px;
 
-    .order-page-title{
-        font-size:27px;
-    }
+        padding: 14px;
 
-    .order-page-description{
-        width:96%;
-        font-size:15px;
-    }
+        gap: 10px;
 
-    .order-page-container{
-        width:92%;
-        max-width:440px;
+        font-size: 15px;
 
-        grid-template-columns:1fr;
-
-        gap:20px;
-    }
-
-    .order-left-panel{
-        height:auto;
-        padding:20px;
-        border-radius:21px;
-    }
-
-    .order-right-panel{
-        height:auto;
-        padding:20px;
-        border-radius:21px;
-    }
-
-    .order-form-grid{
-        grid-template-columns:1fr;
-        gap:14px;
-    }
-
-    .order-input-full{
-        grid-column:auto;
-    }
-
-    .order-input-box{
-        height:64px;
-    }
-
-    .order-input-icon{
-        width:48px;
-        min-width:48px;
-    }
-
-    .order-submit-button{
-        padding:17px;
-        font-size:16px;
+        border-radius: 14px;
     }
 
 }
 
 
-/* ======================================================
+/* =========================================================
+   SMALL MOBILE
    375px - 424px
-====================================================== */
+========================================================= */
 
-@media (min-width:375px) and (max-width:424px){
+@media (min-width: 375px) and (max-width: 424px) {
 
-    .order-page-main{
-        padding:42px 0;
+    .order-page-main {
+        padding: 40px 0;
     }
 
-    .order-page-hero{
-        width:92%;
-        margin-bottom:35px;
+    .order-page-hero {
+        width: 92%;
+        margin-bottom: 32px;
     }
 
-    .order-page-badge{
-        font-size:10px;
-        padding:7px 13px;
+    .order-page-badge {
+        font-size: 10px;
+
+        padding: 7px 12px;
+
+        letter-spacing: 1px;
     }
 
-    .order-page-title{
-        font-size:24px;
+    .order-page-title {
+        font-size: 24px;
     }
 
-    .order-page-description{
-        width:96%;
-        font-size:14px;
+    .order-page-description {
+        width: 96%;
+
+        font-size: 14px;
+
+        line-height: 1.7;
     }
 
-    .order-page-container{
-        width:92%;
-        max-width:400px;
+    .order-page-container {
+        width: 92%;
 
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
-        gap:18px;
-    }
-
-    .order-left-panel{
-        height:auto;
-        padding:18px;
-        border-radius:20px;
-    }
-
-    .order-right-panel{
-        height:auto;
-        padding:18px;
-        border-radius:20px;
-    }
-
-    .order-form-grid{
-        grid-template-columns:1fr;
-        gap:13px;
-    }
-
-    .order-input-box{
-        height:60px;
-    }
-
-    .order-input-icon{
-        width:44px;
-        min-width:44px;
-    }
-
-    .order-input-field,
-    .order-select-field{
-        font-size:14px;
-    }
-
-    .order-message-field{
-        min-height:135px;
-    }
-
-    .order-submit-button{
-        padding:15px;
-        font-size:15px;
-    }
-
-}
-
-
-/* ======================================================
-   320px - 374px
-====================================================== */
-
-@media (min-width:320px) and (max-width:374px){
-
-    .order-page-main{
-        padding:38px 0;
-    }
-
-    .order-page-hero{
-        width:92%;
-        margin-bottom:32px;
-    }
-
-    .order-page-badge{
-        font-size:9px;
-        padding:7px 11px;
-        letter-spacing:1px;
-    }
-
-    .order-page-title{
-        font-size:21px;
-    }
-
-    .order-page-description{
-        width:97%;
-        font-size:13px;
-    }
-
-    .order-page-container{
-        width:92%;
-        max-width:360px;
-
-        grid-template-columns:1fr;
-
-        gap:16px;
-    }
-
-    .order-left-panel{
-        height:auto;
-        padding:16px;
-        border-radius:18px;
-    }
-
-    .order-right-panel{
-        height:auto;
-        padding:16px;
-        border-radius:18px;
-    }
-
-    .order-form-grid{
-        grid-template-columns:1fr;
-        gap:11px;
-    }
-
-    .order-input-box{
-        height:56px;
-    }
-
-    .order-input-icon{
-        width:40px;
-        min-width:40px;
-        font-size:14px;
-    }
-
-    .order-input-field,
-    .order-select-field{
-        font-size:13px;
-        padding-right:10px;
-    }
-
-    .order-message-field{
-        min-height:125px;
-        font-size:13px;
-        padding:14px;
-    }
-
-    .order-submit-button{
-        padding:14px 10px;
-        font-size:14px;
-    }
-
-}
-
-
-/* ======================================================
-   BELOW 320px
-====================================================== */
-
-@media (max-width:319px){
-
-    .order-page-main{
-        padding:32px 0;
-    }
-
-    .order-page-hero{
-        width:92%;
-    }
-
-    .order-page-title{
-        font-size:19px;
-    }
-
-    .order-page-description{
-        font-size:12px;
-    }
-
-    .order-page-container{
-        width:92%;
-        grid-template-columns:1fr;
+        gap: 18px;
     }
 
     .order-left-panel,
-    .order-right-panel{
-        width:100%;
-        height:auto;
-        padding:14px;
+    .order-right-panel {
+        padding: 18px;
+
+        border-radius: 18px;
     }
 
-    .order-form-grid{
-        grid-template-columns:1fr;
+    .order-left-title {
+        font-size: 23px;
     }
 
-    .order-input-box{
-        height:52px;
+    .order-left-description {
+        font-size: 14px;
     }
 
-    .order-input-icon{
-        width:36px;
-        min-width:36px;
+    .order-feature-card {
+        padding: 13px;
+
+        gap: 11px;
+
+        margin-bottom: 12px;
+    }
+
+    .order-feature-icon {
+        width: 40px;
+        min-width: 40px;
+
+        height: 40px;
+
+        font-size: 15px;
+    }
+
+    .order-feature-text {
+        font-size: 14px;
+    }
+
+    .order-form-title {
+        font-size: 24px;
+    }
+
+    .order-form-subtitle {
+        font-size: 14px;
+    }
+
+    .order-input-box {
+        min-height: 57px;
+    }
+
+    .order-input-icon {
+        width: 43px;
+        min-width: 43px;
+
+        font-size: 15px;
     }
 
     .order-input-field,
-    .order-select-field{
-        font-size:12px;
+    .order-select-field {
+        font-size: 13px;
+
+        padding-right: 9px;
     }
 
-    .order-message-field{
-        min-height:115px;
-        font-size:12px;
+    .order-message-field {
+        min-height: 130px;
+
+        padding: 14px;
+
+        font-size: 13px;
     }
 
-    .order-submit-button{
-        padding:12px 8px;
-        font-size:13px;
+    .order-submit-button {
+        min-height: 52px;
+
+        padding: 13px 10px;
+
+        font-size: 14px;
+
+        gap: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   320px - 374px
+========================================================= */
+
+@media (min-width: 320px) and (max-width: 374px) {
+
+    .order-page-main {
+        padding: 35px 0;
+    }
+
+    .order-page-hero {
+        width: 94%;
+        margin-bottom: 28px;
+    }
+
+    .order-page-badge {
+        font-size: 8px;
+
+        padding: 6px 10px;
+
+        letter-spacing: 0.8px;
+    }
+
+    .order-page-title {
+        font-size: 21px;
+    }
+
+    .order-page-description {
+        width: 97%;
+
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+    .order-page-container {
+        width: 94%;
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .order-left-panel,
+    .order-right-panel {
+        padding: 15px;
+
+        border-radius: 17px;
+    }
+
+    .order-left-title {
+        font-size: 21px;
+    }
+
+    .order-left-description {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+    .order-feature-card {
+        padding: 11px;
+
+        gap: 9px;
+
+        margin-bottom: 10px;
+
+        border-radius: 13px;
+    }
+
+    .order-feature-icon {
+        width: 36px;
+        min-width: 36px;
+
+        height: 36px;
+
+        font-size: 13px;
+    }
+
+    .order-feature-text {
+        font-size: 13px;
+    }
+
+    .order-highlight-box {
+        padding: 20px;
+    }
+
+    .order-highlight-number {
+        font-size: 36px;
+    }
+
+    .order-highlight-text {
+        font-size: 13px;
+    }
+
+    .order-contact-box {
+        padding: 12px;
+
+        gap: 9px;
+    }
+
+    .order-contact-icon {
+        width: 42px;
+        min-width: 42px;
+
+        height: 42px;
+
+        font-size: 19px;
+    }
+
+    .order-contact-title {
+        font-size: 15px;
+    }
+
+    .order-contact-value {
+        font-size: 13px;
+    }
+
+    .order-form-title {
+        font-size: 21px;
+    }
+
+    .order-form-subtitle {
+        font-size: 13px;
+
+        line-height: 1.6;
+
+        margin-bottom: 20px;
+    }
+
+    .order-form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .order-input-box {
+        min-height: 53px;
+
+        border-radius: 12px;
+    }
+
+    .order-input-icon {
+        width: 39px;
+        min-width: 39px;
+
+        font-size: 13px;
+    }
+
+    .order-input-field,
+    .order-select-field {
+        font-size: 12px;
+
+        padding: 12px 7px 12px 0;
+    }
+
+    .order-message-field {
+        min-height: 115px;
+
+        padding: 12px;
+
+        font-size: 12px;
+    }
+
+    .order-submit-button {
+        min-height: 48px;
+
+        margin-top: 18px;
+
+        padding: 11px 8px;
+
+        font-size: 12px;
+
+        gap: 6px;
+
+        border-radius: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   BELOW 320px
+========================================================= */
+
+@media (max-width: 319px) {
+
+    .order-page-main {
+        padding: 30px 0;
+    }
+
+    .order-page-hero {
+        width: 94%;
+    }
+
+    .order-page-badge {
+        font-size: 8px;
+
+        padding: 6px 9px;
+    }
+
+    .order-page-title {
+        font-size: 19px;
+    }
+
+    .order-page-description {
+        font-size: 12px;
+    }
+
+    .order-page-container {
+        width: 94%;
+
+        grid-template-columns: 1fr;
+    }
+
+    .order-left-panel,
+    .order-right-panel {
+        width: 100%;
+
+        padding: 13px;
+
+        border-radius: 15px;
+    }
+
+    .order-form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+    }
+
+    .order-input-box {
+        min-height: 50px;
+    }
+
+    .order-input-icon {
+        width: 35px;
+        min-width: 35px;
+
+        font-size: 12px;
+    }
+
+    .order-input-field,
+    .order-select-field {
+        font-size: 11px;
+
+        padding-right: 5px;
+    }
+
+    .order-message-field {
+        min-height: 105px;
+
+        padding: 10px;
+
+        font-size: 11px;
+    }
+
+    .order-submit-button {
+        min-height: 45px;
+
+        padding: 10px 6px;
+
+        font-size: 11px;
     }
 
 }
