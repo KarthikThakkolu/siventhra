@@ -1,796 +1,289 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaArrowRight,
-  FaCheckCircle,
-  FaCouch,
-  FaHome,
-  FaHotel,
-  FaBuilding
+  FaCheck,
+  FaChevronDown,
+  FaRulerCombined,
+  FaTruck,
+  FaShieldAlt,
+  FaRegHeart
 } from "react-icons/fa";
-
 import "./Curtains.css";
+
+const productImages = [
+  {
+    src: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200",
+    alt: "Elegant curtains in a modern living room"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200",
+    alt: "Neutral window styling in a bright interior"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200",
+    alt: "Soft neutral interior and fabric textures"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200",
+    alt: "Contemporary home interior"
+  }
+];
+
+const fabricOptions = [
+  { name: "Sheer", description: "Soft daylight", color: "#eee7dc" },
+  { name: "Linen", description: "Natural texture", color: "#c9bba7" },
+  { name: "Blackout", description: "More light control", color: "#8a8178" },
+  { name: "Velvet", description: "Rich, plush finish", color: "#6b625e" }
+];
 
 const collections = [
   {
     title: "Sheer Curtains",
+    description: "Airy fabrics that soften daylight while adding a graceful finish.",
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900",
-    desc: "Soft daylight with elegant privacy for modern interiors."
+    tag: "LIGHT & AIRY"
   },
   {
     title: "Blackout Curtains",
+    description: "A practical choice for bedrooms and spaces that need more privacy.",
     image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900",
-    desc: "Complete light control for bedrooms and theatres."
+    tag: "PRIVACY & COMFORT"
   },
   {
-    title: "Velvet Curtains",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900",
-    desc: "Luxury fabrics that add warmth and richness."
-  },
-  {
-    title: "Linen Curtains",
-    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900",
-    desc: "Minimal, airy and timeless curtain collection."
+    title: "Textured Curtains",
+    description: "Subtle texture and timeless tones for a considered interior.",
+    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900",
+    tag: "TIMELESS STYLE"
   }
 ];
 
-const Curtains = () => {
+export default function Curtains() {
+  const [activeImage, setActiveImage] = useState(0);
+  const [selectedFabric, setSelectedFabric] = useState("Linen");
+  const [selectedRoom, setSelectedRoom] = useState("Living room");
+  const [width, setWidth] = useState("");
+  const [height, setHeight] = useState("");
+  const [detailsOpen, setDetailsOpen] = useState(true);
+
+  const enquiryMessage = `Hello Siventhra Interiors, I would like a quote for curtains. Fabric: ${selectedFabric}. Room: ${selectedRoom}. Width: ${width || "Not measured"}; Height: ${height || "Not measured"}.`;
+  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(enquiryMessage)}`;
+
   return (
-    <div className="curtain-page">
-
-      {/* ================= HERO ================= */}
-
-      <section className="hero">
-
-  <div className="hero-overlay"></div>
-
-  <div className="container hero-grid">
-
-    <div className="hero-content">
-
-      <p className="hero-tag">
-        Premium Curtain Collection
-      </p>
-
-      <h1 className="hero-title">
-        Curtains That
-        <br />
-        Complete Every
-        <span className="hero-title-highlight">
-          {" "}Beautiful Home
-        </span>
-      </h1>
-
-      <p className="hero-description">
-        Discover premium curtains crafted with luxury fabrics,
-        elegant stitching and professional installation.
-        Designed to elevate every living space with timeless beauty.
-      </p>
-
-      <div className="hero-buttons">
-
-        <Link
-          to="/orderrequest"
-          className="btn-primary"
-        >
-          Get Free Quote
-        </Link>
-
-        <Link
-          to="/contact"
-          className="btn-secondary"
-        >
-          Explore Collection
-        </Link>
-
+    <main className="curtain-shop-page">
+      <div className="curtain-breadcrumb">
+        <Link to="/">Home</Link>
+        <span>/</span>
+        <span>Curtains</span>
+        <span>/</span>
+        <span className="breadcrumb-current">Made-to-measure curtains</span>
       </div>
 
-    </div>
+      {/* PRODUCT DETAIL: image on the left, shopping details on the right */}
+      <section className="curtain-product-layout">
+        <div className="curtain-gallery">
+          <div className="curtain-main-image-wrap">
+            <img
+              className="curtain-main-image"
+              src={productImages[activeImage].src}
+              alt={productImages[activeImage].alt}
+            />
+            <span className="curtain-image-badge">MADE FOR YOUR HOME</span>
+            <button
+              type="button"
+              className="curtain-image-heart"
+              aria-label="Save curtain inspiration"
+              onClick={() => window.alert("Save this design by bookmarking this page.")}
+            >
+              <FaRegHeart />
+            </button>
+          </div>
 
-    <div className="hero-image">
-
-      <img
-        className="hero-image-photo"
-        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1000"
-        alt="Curtains"
-      />
-
-    </div>
-
-  </div>
-
-</section>
-
-{/* ================= STATS ================= */}
-
-<section className="stats">
-
-  <div className="container stats-grid">
-
-    <div className="stats-card">
-
-      <h2 className="stats-number">
-        500+
-      </h2>
-
-      <p className="stats-text">
-        Projects Completed
-      </p>
-
-    </div>
-
-    <div className="stats-card">
-
-      <h2 className="stats-number">
-        1000+
-      </h2>
-
-      <p className="stats-text">
-        Fabric Designs
-      </p>
-
-    </div>
-
-    <div className="stats-card">
-
-      <h2 className="stats-number">
-        10+
-      </h2>
-
-      <p className="stats-text">
-        Years Experience
-      </p>
-
-    </div>
-
-    <div className="stats-card">
-
-      <h2 className="stats-number">
-        100%
-      </h2>
-
-      <p className="stats-text">
-        Customer Satisfaction
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-      {/* ================= COLLECTIONS ================= */}
-
-     {/* ================= COLLECTIONS ================= */}
-
-<section className="collections">
-
-  <div className="section-heading">
-
-    <p className="section-tag">
-      OUR COLLECTIONS
-    </p>
-
-    <h2 className="section-title">
-      Premium Curtain Collections
-    </h2>
-
-    <p className="section-description">
-      Choose from luxury fabrics designed for modern homes
-      and commercial interiors.
-    </p>
-
-  </div>
-
-  <div className="container collection-grid">
-
-    {collections.map((item, index) => (
-
-      <div
-        className="collection-card"
-        key={index}
-      >
-
-        <div className="collection-image">
-
-          <img
-            className="collection-photo"
-            src={item.image}
-            alt={item.title}
-          />
-
+          <div className="curtain-thumbnails" aria-label="Curtain image gallery">
+            {productImages.map((image, index) => (
+              <button
+                type="button"
+                key={image.src}
+                className={`curtain-thumbnail ${activeImage === index ? "is-active" : ""}`}
+                onClick={() => setActiveImage(index)}
+                aria-label={`Show image ${index + 1}`}
+                aria-pressed={activeImage === index}
+              >
+                <img src={image.src} alt={image.alt} />
+              </button>
+            ))}
+          </div>
+          <p className="curtain-gallery-note">Room images are for style inspiration. Fabric and colour appearance may vary by screen.</p>
         </div>
 
-        <div className="collection-content">
+        <div className="curtain-product-info">
+          <p className="curtain-eyebrow">SIVENTHRA INTERIORS · WINDOW COLLECTION</p>
+          <h1 className="curtain-product-title">Made-to-Measure Curtains</h1>
+          <div className="curtain-review-line">
+            <span className="curtain-stars" aria-label="Five star design inspiration">★★★★★</span>
+            <span>Designed around your space</span>
+          </div>
 
-          <h3 className="collection-title">
-            {item.title}
-          </h3>
-
-          <p className="collection-description">
-            {item.desc}
+          <p className="curtain-product-intro">
+            Give your windows a finished look with carefully selected fabrics,
+            custom sizing and professional stitching. Choose a style that suits
+            your room, and we’ll help you plan the details.
           </p>
 
-          <button className="collection-button">
+          <div className="curtain-price-area">
+            <span className="curtain-price-label">CUSTOM PRICING</span>
+            <p className="curtain-price">Request a quote</p>
+            <p className="curtain-price-caption">Pricing depends on fabric, measurements and finishing.</p>
+          </div>
 
-            <span className="collection-button-text">
-              Explore Collection
-            </span>
+          <div className="curtain-option-block">
+            <div className="curtain-option-heading">
+              <span>Choose fabric style</span>
+              <span className="curtain-selected-value">{selectedFabric}</span>
+            </div>
+            <div className="curtain-fabric-options">
+              {fabricOptions.map((fabric) => (
+                <button
+                  type="button"
+                  key={fabric.name}
+                  className={`curtain-fabric-option ${selectedFabric === fabric.name ? "is-selected" : ""}`}
+                  onClick={() => setSelectedFabric(fabric.name)}
+                  aria-pressed={selectedFabric === fabric.name}
+                >
+                  <span className="curtain-fabric-swatch" style={{ backgroundColor: fabric.color }}>
+                    {selectedFabric === fabric.name && <FaCheck />}
+                  </span>
+                  <span className="curtain-fabric-option-name">{fabric.name}</span>
+                  <span className="curtain-fabric-option-desc">{fabric.description}</span>
+                </button>
+              ))}
+            </div>
+          </div>
 
-            <FaArrowRight className="collection-button-icon" />
+          <div className="curtain-option-block">
+            <label className="curtain-field-label" htmlFor="curtain-room">Where will you use them?</label>
+            <select
+              id="curtain-room"
+              className="curtain-select"
+              value={selectedRoom}
+              onChange={(event) => setSelectedRoom(event.target.value)}
+            >
+              <option>Living room</option>
+              <option>Bedroom</option>
+              <option>Dining room</option>
+              <option>Office</option>
+              <option>Hotel or commercial space</option>
+            </select>
+          </div>
 
-          </button>
+          <div className="curtain-measurement-block">
+            <div className="curtain-option-heading">
+              <span>Approximate window size</span>
+              <span className="curtain-optional">Optional</span>
+            </div>
+            <div className="curtain-measurement-fields">
+              <label>
+                <span>Width</span>
+                <div className="curtain-input-with-unit">
+                  <input
+                    type="number"
+                    min="0"
+                    value={width}
+                    onChange={(event) => setWidth(event.target.value)}
+                    placeholder="e.g. 120"
+                  />
+                  <span>in / cm</span>
+                </div>
+              </label>
+              <label>
+                <span>Height / drop</span>
+                <div className="curtain-input-with-unit">
+                  <input
+                    type="number"
+                    min="0"
+                    value={height}
+                    onChange={(event) => setHeight(event.target.value)}
+                    placeholder="e.g. 96"
+                  />
+                  <span>in / cm</span>
+                </div>
+              </label>
+            </div>
+            <p className="curtain-measurement-hint">Measurements are optional. Our team can help you measure your windows.</p>
+          </div>
 
+          <div className="curtain-product-actions">
+            <a className="curtain-primary-button" href={whatsappUrl} target="_blank" rel="noreferrer">
+              Request a Quote <FaArrowRight />
+            </a>
+            <Link className="curtain-secondary-button" to="/contact">Talk to our team</Link>
+          </div>
+
+          <div className="curtain-trust-points">
+            <div><FaRulerCombined /><span>Custom measurements</span></div>
+            <div><FaTruck /><span>Installation support</span></div>
+            <div><FaShieldAlt /><span>Quality finishing</span></div>
+          </div>
+
+          <div className="curtain-detail-accordion">
+            <button
+              type="button"
+              className="curtain-accordion-trigger"
+              onClick={() => setDetailsOpen(!detailsOpen)}
+              aria-expanded={detailsOpen}
+            >
+              Fabric and product details <FaChevronDown className={detailsOpen ? "is-open" : ""} />
+            </button>
+            {detailsOpen && (
+              <div className="curtain-accordion-content">
+                <p><strong>Fabric:</strong> Choose from sheer, linen-look, blackout and velvet styles.</p>
+                <p><strong>Finish:</strong> Discuss pleats, lining, tracks and accessories when requesting your quote.</p>
+                <p><strong>Fit:</strong> Made to suit your window measurements and preferred curtain drop.</p>
+              </div>
+            )}
+          </div>
         </div>
+      </section>
 
-      </div>
+      <section className="curtain-benefits-strip" aria-label="Our curtain service">
+        <div><span className="curtain-benefit-number">01</span><div><strong>Choose your style</strong><p>Explore fabric types and finishes.</p></div></div>
+        <div><span className="curtain-benefit-number">02</span><div><strong>Measure your window</strong><p>Share sizes or ask us for help.</p></div></div>
+        <div><span className="curtain-benefit-number">03</span><div><strong>Get your quote</strong><p>Plan your curtains with our team.</p></div></div>
+      </section>
 
-    ))}
-
-  </div>
-
-</section>
-      {/* ================= ABOUT ================= */}
-
-      {/* ================= ABOUT ================= */}
-
-<section className="about-curtains">
-
-  <div className="container about-grid">
-
-    <div className="about-image">
-
-      <img
-        className="about-photo"
-        src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900"
-        alt="Curtains"
-      />
-
-    </div>
-
-    <div className="about-content">
-
-      <p className="about-tag">
-        WHY CURTAINS MATTER
-      </p>
-
-      <h2 className="about-title">
-        Luxury Meets Everyday Comfort
-      </h2>
-
-      <p className="about-description">
-
-        Curtains are more than window coverings.
-        They enhance privacy, lighting, comfort,
-        energy efficiency and elevate the beauty
-        of every interior.
-
-      </p>
-
-      <div className="features">
-
-        <div className="feature-item">
-
-          <FaCheckCircle className="feature-icon"/>
-
-          <span className="feature-text">
-            Premium Fabrics
-          </span>
-
+      <section className="curtain-collection-section">
+        <div className="curtain-section-heading">
+          <p className="curtain-eyebrow">FIND YOUR LOOK</p>
+          <h2>Explore curtain styles</h2>
+          <p>Different fabrics create different moods. Find the look that feels right for your room.</p>
         </div>
-
-        <div className="feature-item">
-
-          <FaCheckCircle className="feature-icon"/>
-
-          <span className="feature-text">
-            Custom Stitching
-          </span>
-
+        <div className="curtain-collection-grid">
+          {collections.map((item) => (
+            <article className="curtain-collection-card" key={item.title}>
+              <div className="curtain-collection-image-wrap">
+                <img src={item.image} alt={item.title} loading="lazy" />
+                <span>{item.tag}</span>
+              </div>
+              <div className="curtain-collection-card-content">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <a href={whatsappUrl} target="_blank" rel="noreferrer" className="curtain-text-link">
+                  Ask about this style <FaArrowRight />
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
+      </section>
 
-        <div className="feature-item">
-
-          <FaCheckCircle className="feature-icon"/>
-
-          <span className="feature-text">
-            Designer Collections
-          </span>
-
+      <section className="curtain-bottom-cta">
+        <div>
+          <p className="curtain-eyebrow">LET’S MAKE IT YOURS</p>
+          <h2>Not sure which fabric to choose?</h2>
+          <p>Tell us about your room and we’ll help you explore suitable curtain styles.</p>
         </div>
-
-        <div className="feature-item">
-
-          <FaCheckCircle className="feature-icon"/>
-
-          <span className="feature-text">
-            Professional Installation
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-            {/* ================= CURTAIN CATEGORIES ================= */}
-
-     {/* ================= CURTAIN CATEGORIES ================= */}
-
-<section className="categories">
-
-  <div className="section-heading">
-
-    <p className="section-tag">
-      SHOP BY CATEGORY
-    </p>
-
-    <h2 className="section-title">
-      Find Curtains For Every Space
-    </h2>
-
-    <p className="section-description">
-      Designed for every room with premium fabrics,
-      elegant colors and modern styles.
-    </p>
-
-  </div>
-
-  <div className="container category-grid">
-
-    <div className="category-card">
-
-      <FaHome className="category-icon"/>
-
-      <h3 className="category-title">
-        Living Room
-      </h3>
-
-      <p className="category-description">
-        Elegant sheer and designer curtains that
-        enhance your living room beautifully.
-      </p>
-
-    </div>
-
-    <div className="category-card">
-
-      <FaCouch className="category-icon"/>
-
-      <h3 className="category-title">
-        Bedroom
-      </h3>
-
-      <p className="category-description">
-        Blackout curtains for complete privacy
-        and peaceful sleep.
-      </p>
-
-    </div>
-
-    <div className="category-card">
-
-      <FaHotel className="category-icon"/>
-
-      <h3 className="category-title">
-        Hotels
-      </h3>
-
-      <p className="category-description">
-        Premium hospitality curtain
-        collections with elegant finishing.
-      </p>
-
-    </div>
-
-    <div className="category-card">
-
-      <FaBuilding className="category-icon"/>
-
-      <h3 className="category-title">
-        Offices
-      </h3>
-
-      <p className="category-description">
-        Professional window solutions for
-        modern commercial interiors.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-      {/* ================= WHY CHOOSE US ================= */}
-
-     {/* ================= WHY CHOOSE US ================= */}
-
-<section className="why-us">
-
-  <div className="container why-grid">
-
-    <div className="why-left">
-
-      <p className="why-tag">
-        WHY CHOOSE US
-      </p>
-
-      <h2 className="why-title">
-        Crafted With Precision,
-        Designed For Luxury
-      </h2>
-
-      <p className="why-description">
-
-        Every curtain is measured,
-        stitched and installed by
-        experienced professionals.
-
-        We combine premium fabrics,
-        elegant accessories and modern
-        craftsmanship.
-
-      </p>
-
-      <div className="why-list">
-
-        <div className="why-item">
-
-          <FaCheckCircle className="why-icon"/>
-
-          <span className="why-text">
-            Free Site Measurement
-          </span>
-
-        </div>
-
-        <div className="why-item">
-
-          <FaCheckCircle className="why-icon"/>
-
-          <span className="why-text">
-            Premium Imported Fabrics
-          </span>
-
-        </div>
-
-        <div className="why-item">
-
-          <FaCheckCircle className="why-icon"/>
-
-          <span className="why-text">
-            Custom Stitching
-          </span>
-
-        </div>
-
-        <div className="why-item">
-
-          <FaCheckCircle className="why-icon"/>
-
-          <span className="why-text">
-            Professional Installation
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <div className="why-right">
-
-      <div className="feature-box">
-
-        <h3 className="feature-number">
-          1000+
-        </h3>
-
-        <p className="feature-label">
-          Fabric Options
-        </p>
-
-      </div>
-
-      <div className="feature-box">
-
-        <h3 className="feature-number">
-          500+
-        </h3>
-
-        <p className="feature-label">
-          Happy Homes
-        </p>
-
-      </div>
-
-      <div className="feature-box">
-
-        <h3 className="feature-number">
-          10+
-        </h3>
-
-        <p className="feature-label">
-          Years Experience
-        </p>
-
-      </div>
-
-      <div className="feature-box">
-
-        <h3 className="feature-number">
-          100%
-        </h3>
-
-        <p className="feature-label">
-          Quality Assured
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-      {/* ================= FABRIC SHOWCASE ================= */}
-
-     {/* ================= FABRIC SHOWCASE ================= */}
-
-<section className="fabric-showcase">
-
-  <div className="section-heading">
-
-    <p className="section-tag">
-      PREMIUM FABRICS
-    </p>
-
-    <h2 className="section-title">
-      Luxury Fabrics You'll Love
-    </h2>
-
-  </div>
-
-  <div className="container fabric-grid">
-
-    <div className="fabric-card">
-
-      <img
-        className="fabric-image"
-        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700"
-        alt="Sheer Curtains"
-      />
-
-      <div className="fabric-content">
-
-        <h3 className="fabric-title">
-          Sheer Collection
-        </h3>
-
-        <p className="fabric-description">
-          Soft daylight with elegant privacy.
-        </p>
-
-      </div>
-
-    </div>
-
-    <div className="fabric-card">
-
-      <img
-        className="fabric-image"
-        src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=700"
-        alt="Blackout Curtains"
-      />
-
-      <div className="fabric-content">
-
-        <h3 className="fabric-title">
-          Blackout Collection
-        </h3>
-
-        <p className="fabric-description">
-          Complete darkness for peaceful sleep.
-        </p>
-
-      </div>
-
-    </div>
-
-    <div className="fabric-card">
-
-      <img
-        className="fabric-image"
-        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700"
-        alt="Velvet Curtains"
-      />
-
-      <div className="fabric-content">
-
-        <h3 className="fabric-title">
-          Velvet Collection
-        </h3>
-
-        <p className="fabric-description">
-          Rich textures with luxurious elegance.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-            {/* ================= GALLERY ================= */}
-
-    {/* ================= GALLERY ================= */}
-
-<section className="gallery">
-
-  <div className="section-heading">
-
-    <p className="section-tag">
-      OUR PROJECTS
-    </p>
-
-    <h2 className="section-title">
-      Recent Curtain Installations
-    </h2>
-
-    <p className="section-description">
-      Every installation is completed with precision,
-      premium fabrics and elegant finishing.
-    </p>
-
-  </div>
-
-  <div className="container gallery-grid">
-
-    <div className="gallery-card">
-      <img
-        className="gallery-image"
-        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900"
-        alt="Curtain Installation 1"
-      />
-    </div>
-
-    <div className="gallery-card">
-      <img
-        className="gallery-image"
-        src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900"
-        alt="Curtain Installation 2"
-      />
-    </div>
-
-    <div className="gallery-card">
-      <img
-        className="gallery-image"
-        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900"
-        alt="Curtain Installation 3"
-      />
-    </div>
-
-    <div className="gallery-card">
-      <img
-        className="gallery-image"
-        src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900"
-        alt="Curtain Installation 4"
-      />
-    </div>
-
-  </div>
-
-</section>
-      {/* ================= TESTIMONIAL ================= */}
-
-     {/* ================= TESTIMONIAL ================= */}
-
-<section className="testimonial">
-
-  <div className="container">
-
-    <div className="testimonial-card">
-
-      <p className="testimonial-tag">
-        CUSTOMER REVIEW
-      </p>
-
-      <h2 className="testimonial-title">
-        Excellent finishing and premium quality curtains.
-      </h2>
-
-      <p className="testimonial-description">
-
-        Siventhra Interiors transformed our living room
-        with elegant curtains. Their measurement,
-        stitching and installation were perfect.
-
-      </p>
-
-      <div className="testimonial-user">
-
-        <img
-          className="testimonial-image"
-          src="https://i.pravatar.cc/150?img=12"
-          alt="Customer"
-        />
-
-        <div className="testimonial-details">
-
-          <h4 className="testimonial-name">
-            Karthik Thakkolu
-          </h4>
-
-          <p className="testimonial-location">
-            Home Owner • Nellore
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-      {/* ================= CTA ================= */}
-
-     {/* ================= CTA ================= */}
-
-<section className="cta">
-
-  <div className="container cta-box">
-
-    <div className="cta-content">
-
-      <p className="cta-tag">
-        LET'S DESIGN YOUR HOME
-      </p>
-
-      <h2 className="cta-title">
-        Ready To Transform Your Windows?
-      </h2>
-
-      <p className="cta-description">
-
-        Discover luxury curtain collections with
-        professional measurement, stitching and
-        installation.
-
-      </p>
-
-    </div>
-
-    <div className="cta-buttons">
-
-      <Link
-        to="/orderrequest"
-        className="btn-primary"
-      >
-        Get Free Quote
-      </Link>
-
-      <Link
-        to="/contact"
-        className="btn-secondary"
-      >
-        Contact Us
-      </Link>
-
-    </div>
-
-  </div>
-
-</section>
-    </div>
+        <Link to="/orderrequest" className="curtain-primary-button">Plan my curtains <FaArrowRight /></Link>
+      </section>
+    </main>
   );
-};
-
-export default Curtains;
+}
