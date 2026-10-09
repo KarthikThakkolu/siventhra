@@ -275,6 +275,18 @@ const Navbar = () => {
 
         </li>
 
+         <li className="navbar-item">
+
+          <Link
+            to="/Contact"
+            className="nav-link"
+            onClick={closeMenu}
+          >
+            Contact
+          </Link>
+
+        </li>
+
 
         {/* ORDER REQUEST */}
 
