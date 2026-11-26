@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "./OrderRequest.css";
 
@@ -12,10 +13,11 @@ import {
   FaClock,
   FaPaperPlane,
   FaCheckCircle,
+  FaStar,
+  FaArrowRight,
 } from "react-icons/fa";
 
 const OrderRequest = () => {
-
   const [orderFormData, setOrderFormData] = useState({
     customerName: "",
     customerPhone: "",
@@ -28,18 +30,15 @@ const OrderRequest = () => {
   });
 
   const orderInputChange = (event) => {
-
     const { name, value } = event.target;
 
-    setOrderFormData({
-      ...orderFormData,
+    setOrderFormData((previousData) => ({
+      ...previousData,
       [name]: value,
-    });
-
+    }));
   };
 
   const sendWhatsappMessage = (event) => {
-
     event.preventDefault();
 
     const whatsappMessage = `Hello Siventhra Interior & Decors,
@@ -49,17 +48,11 @@ I would like to request a quotation.
 ----------------------------
 
 Name : ${orderFormData.customerName}
-
 Phone : ${orderFormData.customerPhone}
-
 Email : ${orderFormData.customerEmail}
-
 Location : ${orderFormData.customerLocation}
-
 Service : ${orderFormData.customerService}
-
 Budget : ${orderFormData.customerBudget}
-
 Preferred Time : ${orderFormData.customerTime}
 
 Project Details :
@@ -76,125 +69,137 @@ Thank You.`;
       whatsappMessage
     )}`;
 
-    window.open(whatsappURL, "_blank");
-
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
   };
 
+  const features = [
+    "Free Interior Consultation",
+    "Customized Design Solutions",
+    "Affordable Pricing",
+    "Premium Quality Materials",
+    "Reliable Project Delivery",
+  ];
+
   return (
+    <section className="order-page-main">
 
-    <div className="order-page-main">
-
-      {/* HERO */}
+      {/* HERO SECTION */}
 
       <div className="order-page-hero">
 
         <div className="order-page-badge">
-          REQUEST A FREE QUOTATION
+          <span className="order-badge-dot"></span>
+          YOUR DREAM SPACE STARTS HERE
         </div>
 
-        <div className="order-page-title">
-          Tell Us About Your Dream Interior
-        </div>
+        <h1 className="order-page-title">
+          Let's Create Something
+          <span> Beautiful Together</span>
+        </h1>
 
-        <div className="order-page-description">
-          Share your requirements with us and receive a personalized quotation
-          directly through WhatsApp. Fast response, expert guidance, and
-          completely free consultation.
+        <p className="order-page-description">
+          Tell us about your home, your ideas, and your vision.
+          Our team will help you find the perfect interior solution
+          with beautiful designs and pricing tailored to your needs.
+        </p>
+
+        <div className="order-hero-bottom">
+          <div className="order-hero-line"></div>
+          <span>DESIGNED AROUND YOU</span>
+          <div className="order-hero-line"></div>
         </div>
 
       </div>
 
-      {/* CONTENT */}
+
+      {/* MAIN CONTENT */}
 
       <div className="order-page-container">
 
-        {/* LEFT */}
 
-        <div className="order-left-panel">
+        {/* LEFT INFORMATION PANEL */}
 
-          <div className="order-left-title">
-            Why Choose Siventhra?
-          </div>
+        <aside className="order-left-panel">
 
-          <div className="order-left-description">
-            Every project receives personal attention from our experienced
-            designers. We focus on quality, affordability, and customer
-            satisfaction.
-          </div>
+          <div className="order-left-top">
 
-          <div className="order-feature-card">
+            <span className="order-panel-label">
+              <FaStar />
+              WHY SIVENTHRA
+            </span>
 
-            <div className="order-feature-icon">
-              <FaCheckCircle />
-            </div>
+            <h2 className="order-left-title">
+              Interiors that feel
+              <span> like home.</span>
+            </h2>
 
-            <div className="order-feature-text">
-              Free Interior Consultation
-            </div>
-
-          </div>
-
-          <div className="order-feature-card">
-
-            <div className="order-feature-icon">
-              <FaCheckCircle />
-            </div>
-
-            <div className="order-feature-text">
-              Customized Design Solutions
-            </div>
+            <p className="order-left-description">
+              Thoughtfully designed spaces, quality materials,
+              and personal attention at every step. We bring
+              your vision to life with care and creativity.
+            </p>
 
           </div>
 
-          <div className="order-feature-card">
 
-            <div className="order-feature-icon">
-              <FaCheckCircle />
-            </div>
+          {/* FEATURES */}
 
-            <div className="order-feature-text">
-              Affordable Pricing
-            </div>
+          <div className="order-feature-list">
 
-          </div>
+            {features.map((feature, index) => (
+              <div className="order-feature-card" key={index}>
 
-          <div className="order-feature-card">
+                <div className="order-feature-icon">
+                  <FaCheckCircle />
+                </div>
 
-            <div className="order-feature-icon">
-              <FaCheckCircle />
-            </div>
+                <div className="order-feature-text">
+                  {feature}
+                </div>
 
-            <div className="order-feature-text">
-              Premium Quality Materials
-            </div>
+                <FaArrowRight className="order-feature-arrow" />
 
-          </div>
-
-          <div className="order-feature-card">
-
-            <div className="order-feature-icon">
-              <FaCheckCircle />
-            </div>
-
-            <div className="order-feature-text">
-              Fast Project Delivery
-            </div>
+              </div>
+            ))}
 
           </div>
+
+
+          {/* SPECIAL HIGHLIGHT */}
 
           <div className="order-highlight-box">
 
+            <div className="order-highlight-top">
+              <span className="order-highlight-small">
+                BUILT ON TRUST
+              </span>
+
+              <span className="order-highlight-star">
+                <FaStar />
+              </span>
+            </div>
+
             <div className="order-highlight-number">
-              500+
+              500<span>+</span>
             </div>
 
             <div className="order-highlight-text">
               Happy Customers Across Nellore
             </div>
 
+            <div className="order-highlight-bottom-line"></div>
+
           </div>
 
-          <div className="order-contact-box">
+
+          {/* WHATSAPP CONTACT */}
+
+          <a
+            className="order-contact-box"
+            href="https://wa.me/916383431936"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
 
             <div className="order-contact-icon">
               <FaWhatsapp />
@@ -202,8 +207,12 @@ Thank You.`;
 
             <div className="order-contact-content">
 
+              <span className="order-contact-caption">
+                HAVE A QUICK QUESTION?
+              </span>
+
               <div className="order-contact-title">
-                WhatsApp Support
+                Chat with our team
               </div>
 
               <div className="order-contact-value">
@@ -212,21 +221,47 @@ Thank You.`;
 
             </div>
 
-          </div>
+            <div className="order-contact-arrow">
+              <FaArrowRight />
+            </div>
 
-        </div>
+          </a>
 
-        {/* RIGHT */}
+        </aside>
+
+
+
+        {/* RIGHT FORM PANEL */}
 
         <div className="order-right-panel">
 
-          <div className="order-form-title">
-            Request Your Quote
+          <div className="order-form-heading-area">
+
+            <div className="order-form-heading-left">
+
+              <span className="order-form-label">
+                <span className="order-form-label-dot"></span>
+                GET STARTED
+              </span>
+
+              <h2 className="order-form-title">
+                Request a Quote
+              </h2>
+
+              <p className="order-form-subtitle">
+                A few details is all we need to get started.
+              </p>
+
+            </div>
+
+            <div className="order-form-decoration">
+              <FaClipboardList />
+            </div>
+
           </div>
 
-          <div className="order-form-subtitle">
-            Fill in the details below and we'll contact you shortly.
-          </div>
+
+          {/* FORM */}
 
           <form
             className="order-form-wrapper"
@@ -235,181 +270,279 @@ Thank You.`;
 
             <div className="order-form-grid">
 
-              <div className="order-input-box">
 
-                <div className="order-input-icon">
-                  <FaUser />
+              {/* NAME */}
+
+              <div className="order-input-group">
+
+                <label className="order-field-label">
+                  Full Name <span>*</span>
+                </label>
+
+                <div className="order-input-box">
+
+                  <div className="order-input-icon">
+                    <FaUser />
+                  </div>
+
+                  <input
+                    className="order-input-field"
+                    type="text"
+                    name="customerName"
+                    placeholder="Enter your full name"
+                    value={orderFormData.customerName}
+                    onChange={orderInputChange}
+                    autoComplete="name"
+                    required
+                  />
+
                 </div>
-
-                <input
-                  className="order-input-field"
-                  type="text"
-                  name="customerName"
-                  placeholder="Full Name"
-                  value={orderFormData.customerName}
-                  onChange={orderInputChange}
-                  required
-                />
 
               </div>
 
-              <div className="order-input-box">
 
-                <div className="order-input-icon">
-                  <FaPhoneAlt />
+              {/* PHONE */}
+
+              <div className="order-input-group">
+
+                <label className="order-field-label">
+                  Phone Number <span>*</span>
+                </label>
+
+                <div className="order-input-box">
+
+                  <div className="order-input-icon">
+                    <FaPhoneAlt />
+                  </div>
+
+                  <input
+                    className="order-input-field"
+                    type="tel"
+                    name="customerPhone"
+                    placeholder="Enter your phone number"
+                    value={orderFormData.customerPhone}
+                    onChange={orderInputChange}
+                    autoComplete="tel"
+                    required
+                  />
+
                 </div>
-
-                <input
-                  className="order-input-field"
-                  type="tel"
-                  name="customerPhone"
-                  placeholder="Phone Number"
-                  value={orderFormData.customerPhone}
-                  onChange={orderInputChange}
-                  required
-                />
 
               </div>
 
-              <div className="order-input-box">
 
-                <div className="order-input-icon">
-                  <FaEnvelope />
+              {/* EMAIL */}
+
+              <div className="order-input-group">
+
+                <label className="order-field-label">
+                  Email Address
+                </label>
+
+                <div className="order-input-box">
+
+                  <div className="order-input-icon">
+                    <FaEnvelope />
+                  </div>
+
+                  <input
+                    className="order-input-field"
+                    type="email"
+                    name="customerEmail"
+                    placeholder="Enter your email"
+                    value={orderFormData.customerEmail}
+                    onChange={orderInputChange}
+                    autoComplete="email"
+                  />
+
                 </div>
-
-                <input
-                  className="order-input-field"
-                  type="email"
-                  name="customerEmail"
-                  placeholder="Email Address"
-                  value={orderFormData.customerEmail}
-                  onChange={orderInputChange}
-                />
 
               </div>
 
-              <div className="order-input-box">
 
-                <div className="order-input-icon">
-                  <FaMapMarkerAlt />
+              {/* LOCATION */}
+
+              <div className="order-input-group">
+
+                <label className="order-field-label">
+                  Project Location
+                </label>
+
+                <div className="order-input-box">
+
+                  <div className="order-input-icon">
+                    <FaMapMarkerAlt />
+                  </div>
+
+                  <input
+                    className="order-input-field"
+                    type="text"
+                    name="customerLocation"
+                    placeholder="City / Area"
+                    value={orderFormData.customerLocation}
+                    onChange={orderInputChange}
+                    autoComplete="address-level2"
+                  />
+
                 </div>
-
-                <input
-                  className="order-input-field"
-                  type="text"
-                  name="customerLocation"
-                  placeholder="Project Location"
-                  value={orderFormData.customerLocation}
-                  onChange={orderInputChange}
-                />
 
               </div>
 
-              <div className="order-input-box">
 
-                <div className="order-input-icon">
-                  <FaClipboardList />
+              {/* SERVICE */}
+
+              <div className="order-input-group">
+
+                <label className="order-field-label">
+                  Service Required <span>*</span>
+                </label>
+
+                <div className="order-input-box">
+
+                  <div className="order-input-icon">
+                    <FaClipboardList />
+                  </div>
+
+                  <select
+                    className="order-select-field"
+                    name="customerService"
+                    value={orderFormData.customerService}
+                    onChange={orderInputChange}
+                    required
+                  >
+
+                    <option value="">Choose a service</option>
+                    <option>Curtains</option>
+                    <option>Blinds</option>
+                    <option>Wallpapers</option>
+                    <option>False Ceiling</option>
+                    <option>Mosquito Mesh</option>
+                    <option>PVC Room Partition</option>
+                    <option>Wall Panels</option>
+                    <option>Modular Interiors</option>
+
+                  </select>
+
                 </div>
-
-                <select
-                  className="order-select-field"
-                  name="customerService"
-                  value={orderFormData.customerService}
-                  onChange={orderInputChange}
-                  required
-                >
-
-                  <option value="">Select Service</option>
-
-                  <option>Curtains</option>
-                  <option>Blinds</option>
-                  <option>Wallpapers</option>
-                  <option>False Ceiling</option>
-                  <option>Mosquito Mesh</option>
-                  <option>PVC Room Partition</option>
-                  <option>Wall Panels</option>
-                  <option>Modular Interiors</option>
-
-                </select>
 
               </div>
 
-              <div className="order-input-box">
 
-                <div className="order-input-icon">
-                  <FaRupeeSign />
+              {/* BUDGET */}
+
+              <div className="order-input-group">
+
+                <label className="order-field-label">
+                  Estimated Budget
+                </label>
+
+                <div className="order-input-box">
+
+                  <div className="order-input-icon">
+                    <FaRupeeSign />
+                  </div>
+
+                  <select
+                    className="order-select-field"
+                    name="customerBudget"
+                    value={orderFormData.customerBudget}
+                    onChange={orderInputChange}
+                  >
+
+                    <option value="">Select your budget</option>
+                    <option>Below ₹10,000</option>
+                    <option>₹10,000 - ₹30,000</option>
+                    <option>₹30,000 - ₹60,000</option>
+                    <option>₹60,000 - ₹1,00,000</option>
+                    <option>Above ₹1,00,000</option>
+
+                  </select>
+
                 </div>
-
-                <select
-                  className="order-select-field"
-                  name="customerBudget"
-                  value={orderFormData.customerBudget}
-                  onChange={orderInputChange}
-                >
-
-                  <option value="">Estimated Budget</option>
-
-                  <option>Below ₹10,000</option>
-                  <option>₹10,000 - ₹30,000</option>
-                  <option>₹30,000 - ₹60,000</option>
-                  <option>₹60,000 - ₹1,00,000</option>
-                  <option>Above ₹1,00,000</option>
-
-                </select>
 
               </div>
 
-              <div className="order-input-box order-input-full">
 
-                <div className="order-input-icon">
-                  <FaClock />
+              {/* CONTACT TIME */}
+
+              <div className="order-input-group order-input-full">
+
+                <label className="order-field-label">
+                  Preferred Contact Time
+                </label>
+
+                <div className="order-input-box">
+
+                  <div className="order-input-icon">
+                    <FaClock />
+                  </div>
+
+                  <select
+                    className="order-select-field"
+                    name="customerTime"
+                    value={orderFormData.customerTime}
+                    onChange={orderInputChange}
+                  >
+
+                    <option value="">When should we contact you?</option>
+                    <option>Morning (9AM - 12PM)</option>
+                    <option>Afternoon (12PM - 4PM)</option>
+                    <option>Evening (4PM - 8PM)</option>
+                    <option>Any Time</option>
+
+                  </select>
+
                 </div>
-
-                <select
-                  className="order-select-field"
-                  name="customerTime"
-                  value={orderFormData.customerTime}
-                  onChange={orderInputChange}
-                >
-
-                  <option value="">Preferred Contact Time</option>
-
-                  <option>Morning (9AM - 12PM)</option>
-                  <option>Afternoon (12PM - 4PM)</option>
-                  <option>Evening (4PM - 8PM)</option>
-                  <option>Any Time</option>
-
-                </select>
 
               </div>
 
             </div>
 
+
+            {/* PROJECT MESSAGE */}
+
             <div className="order-textarea-box">
+
+              <label className="order-field-label">
+                Project Details
+              </label>
 
               <textarea
                 className="order-message-field"
-                rows="6"
+                rows="5"
                 name="customerMessage"
-                placeholder="Describe your project requirements..."
+                placeholder="Tell us what you're looking for... Mention room size, design ideas, colors, materials, or anything else."
                 value={orderFormData.customerMessage}
                 onChange={orderInputChange}
               />
 
             </div>
 
+
+            {/* SUBMIT */}
+
             <button
               className="order-submit-button"
               type="submit"
             >
 
-              <FaWhatsapp />
+              <span className="order-submit-icon">
+                <FaWhatsapp />
+              </span>
 
-              Send Request via WhatsApp
+              <span className="order-submit-text">
+                Send Request via WhatsApp
+              </span>
 
-              <FaPaperPlane />
+              <FaPaperPlane className="order-submit-arrow" />
 
             </button>
+
+
+            <div className="order-form-bottom-note">
+              <FaCheckCircle />
+              <span>Your details are only used to respond to your enquiry.</span>
+            </div>
 
           </form>
 
@@ -417,10 +550,8 @@ Thank You.`;
 
       </div>
 
-    </div>
-
+    </section>
   );
-
 };
 
 export default OrderRequest;

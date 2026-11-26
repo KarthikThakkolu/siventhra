@@ -1,1494 +1,1565 @@
 
-/* =========================================================
+/* =========================================
    ORDER REQUEST PAGE
-   RESPONSIVE VERSION
-========================================================= */
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-.order-page-main,
-.order-page-main ,
-.order-page-main ::before,
-.order-page-main ::after {
-    box-sizing: border-box;
-}
+========================================= */
 
 .order-page-main {
-    width: 100%;
-    min-width: 0;
+  width: 100%;
+  padding: 42px 20px 65px;
+  background: #f7f5f0;
+  color: #2c3029;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
 
-    background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #faf6f1 100%
-    );
+.order-page-main img {
+  max-width: 100%;
+}
 
-    padding: 80px 0;
+.order-page-main button,
+.order-page-main input,
+.order-page-main select,
+.order-page-main textarea {
+  font: inherit;
+}
 
-    overflow-x: hidden;
+.order-page-main button,
+.order-page-main input,
+.order-page-main select,
+.order-page-main textarea {
+  box-sizing: border-box;
 }
 
 
-/* =========================================================
-   HERO
-========================================================= */
+/* =========================================
+   HERO SECTION
+========================================= */
 
 .order-page-hero {
-    width: 90%;
-    max-width: 1250px;
-
-    margin: 0 auto 70px;
-
-    text-align: center;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto 34px;
+  text-align: center;
 }
 
 .order-page-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 9px 17px;
+  border: 1px solid #d9c9a9;
+  border-radius: 50px;
+  background: #efe8db;
+  color: #85663f;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 17px;
+}
 
-    padding: 10px 24px;
-
-    background: #f5ebe2;
-    color: #8b5a35;
-
-    border-radius: 30px;
-
-    font-size: 20px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 25px;
-
-    max-width: 100%;
-
-    text-align: center;
+.order-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a47d4c;
+  display: inline-block;
 }
 
 .order-page-title {
-    width: 100%;
+  margin: 0;
+  color: #26372e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
 
-    font-size: clamp(32px, 4vw, 54px);
-
-    font-weight: 700;
-
-    color: #2d1d13;
-
-    line-height: 1.2;
-
-    margin: 0 0 22px;
+.order-page-title span {
+  color: #a77c49;
 }
 
 .order-page-description {
-    width: 80%;
-    max-width: 950px;
+  max-width: 620px;
+  margin: 14px auto 0;
+  color: #77766f;
+  font-size: 13px;
+  line-height: 1.85;
+}
 
-    margin: 0 auto;
+.order-hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 20px;
+  color: #9b835f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-style: italic;
+}
 
-    color: #666;
-
-    font-size: 20px;
-
-    line-height: 1.8;
+.order-hero-line {
+  width: 45px;
+  height: 1px;
+  background: #d9cbb5;
 }
 
 
-/* =========================================================
-   MAIN CONTAINER
-========================================================= */
-
-/*
-   IMPORTANT:
-
-   Desktop:
-   Left panel + Right form
-
-   Tablet/Mobile:
-   One column
-*/
+/* =========================================
+   MAIN CONTENT LAYOUT
+========================================= */
 
 .order-page-container {
-    width: 93%;
-    max-width: 1850px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(400px, 0.75fr)
-        minmax(0, 1.25fr);
-
-    gap: 45px;
-
-    align-items: start;
-
-    min-width: 0;
+  max-width: 1080px;
+  width: 94%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  align-items: stretch;
+  gap: 22px;
 }
 
 
-/* =========================================================
+/* =========================================
    LEFT PANEL
-========================================================= */
+========================================= */
 
 .order-left-panel {
-    width: 100%;
-    min-width: 0;
-
-    background: #ffffff;
-
-    border-radius: 28px;
-
-    padding: 35px;
-
-    box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.08);
-
-    position: sticky;
-
-    top: 100px;
-
-    height: fit-content;
-
-    overflow: hidden;
+  background: #eae4d8;
+  border: 1px solid #e0d7c8;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
+.order-left-panel::before {
+  content: "";
+  position: absolute;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  background: rgba(183, 150, 103, 0.08);
+  top: -80px;
+  right: -70px;
+  pointer-events: none;
+}
 
-/* =========================================================
-   LEFT TITLE
-========================================================= */
+.order-left-top {
+  position: relative;
+  z-index: 1;
+}
+
+.order-panel-label {
+  display: block;
+  color: #a17b4d;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
 
 .order-left-title {
-    font-size: 34px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #29382f;
+}
 
-    font-weight: 700;
-
-    color: #2d1d13;
-
-    line-height: 1.25;
-
-    margin-bottom: 15px;
+.order-left-title span {
+  color: #a17a49;
+  display: block;
 }
 
 .order-left-description {
-    color: #666;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    margin-bottom: 35px;
+  margin: 12px 0 0;
+  color: #727169;
+  font-size: 11.5px;
+  line-height: 1.85;
 }
 
 
-/* =========================================================
-   FEATURE CARD
-========================================================= */
+/* =========================================
+   FEATURE CARDS
+========================================= */
+
+.order-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 20px;
+}
 
 .order-feature-card {
-    width: 100%;
-    min-width: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-    padding: 18px;
-
-    border-radius: 18px;
-
-    background: #faf6f1;
-
-    margin-bottom: 18px;
-
-    transition:
-        transform 0.35s ease,
-        background 0.35s ease,
-        box-shadow 0.35s ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 11px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(209, 196, 174, 0.6);
+  border-radius: 9px;
+  box-sizing: border-box;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .order-feature-card:hover {
-    transform: translateY(-6px);
-
-    background: #8b5a35;
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.12);
+  transform: translateX(4px);
+  background: #fffdf9;
+  box-shadow: 0 5px 12px rgba(71, 57, 36, 0.07);
 }
 
 .order-feature-icon {
-    width: 50px;
-    min-width: 50px;
-
-    height: 50px;
-
-    border-radius: 50%;
-
-    background: #8b5a35;
-
-    color: #ffffff;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 20px;
-
-    flex-shrink: 0;
-}
-
-.order-feature-card:hover .order-feature-icon {
-    background: #ffffff;
-
-    color: #8b5a35;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a27a49;
+  font-size: 12px;
 }
 
 .order-feature-text {
-    min-width: 0;
-
-    font-size: 18px;
-
-    color: #333;
-
-    font-weight: 600;
-
-    line-height: 1.4;
-
-    overflow-wrap: break-word;
+  flex: 1;
+  color: #45463e;
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
-.order-feature-card:hover .order-feature-text {
-    color: #ffffff;
+.order-feature-arrow {
+  color: #b7a183;
+  font-size: 9px;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: 0.25s ease;
+}
+
+.order-feature-card:hover .order-feature-arrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 
-/* =========================================================
-   HIGHLIGHT BOX
-========================================================= */
+/* =========================================
+   CUSTOMER HIGHLIGHT
+========================================= */
 
 .order-highlight-box {
-    width: 100%;
+  background: #2c4034;
+  border-radius: 12px;
+  padding: 16px 17px;
+  margin-top: 17px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
 
-    margin-top: 35px;
+.order-highlight-box::after {
+  content: "✦";
+  position: absolute;
+  right: 13px;
+  bottom: -24px;
+  color: rgba(255, 255, 255, 0.06);
+  font-size: 85px;
+  pointer-events: none;
+}
 
-    padding: 30px;
-
-    border-radius: 22px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #8b5a35,
-            #6f4425
-        );
-
-    text-align: center;
-
-    color: #ffffff;
+.order-highlight-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .order-highlight-number {
-    font-size: 52px;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #e6c99c;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
 
-    font-weight: 700;
-
-    line-height: 1;
-
-    margin-bottom: 10px;
+.order-highlight-star {
+  color: #d6b47f;
+  font-size: 18px;
 }
 
 .order-highlight-text {
-    font-size: 18px;
+  margin: 7px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #f2eee5;
+}
 
-    line-height: 1.7;
+.order-highlight-bottom {
+  margin-top: 7px;
+  color: #bfc9be;
+  font-size: 9px;
+  line-height: 1.6;
 }
 
 
-/* =========================================================
-   CONTACT BOX
-========================================================= */
+/* =========================================
+   WHATSAPP CONTACT CARD
+========================================= */
 
 .order-contact-box {
-    width: 100%;
-    min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  margin-top: auto;
+  padding: 13px 11px;
+  border: 1px solid #d4c7b1;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 11px;
+  transition: 0.25s ease;
+  box-sizing: border-box;
+  margin-top: 15px;
+}
 
-    margin-top: 35px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-    padding: 20px;
-
-    border-radius: 18px;
-
-    background: #f3faf4;
-
-    border: 1px solid #dcefdc;
+.order-contact-box:hover {
+  background: #fffdf9;
+  border-color: #b69a71;
+  transform: translateY(-2px);
 }
 
 .order-contact-icon {
-    width: 60px;
-    min-width: 60px;
-
-    height: 60px;
-
-    border-radius: 50%;
-
-    background: #25d366;
-
-    color: #ffffff;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 28px;
-
-    flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e1e9dc;
+  border-radius: 50%;
+  color: #47794f;
+  font-size: 16px;
 }
 
 .order-contact-content {
-    min-width: 0;
-
-    flex: 1;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .order-contact-title {
-    font-size: 21px;
-
-    font-weight: 700;
-
-    color: #222;
-
-    margin-bottom: 6px;
+  font-size: 9px;
+  color: #77766c;
 }
 
 .order-contact-value {
-    font-size: 18px;
+  color: #314334;
+  font-size: 12px;
+  font-weight: 700;
+}
 
-    color: #555;
+.order-contact-arrow {
+  color: #9b8058;
+  font-size: 10px;
+  transition: transform 0.25s ease;
+}
 
-    overflow-wrap: anywhere;
+.order-contact-box:hover .order-contact-arrow {
+  transform: translateX(3px);
 }
 
 
-/* =========================================================
+/* =========================================
    RIGHT FORM PANEL
-========================================================= */
+========================================= */
 
 .order-right-panel {
-    width: 100%;
-    min-width: 0;
-
-    background: #ffffff;
-
-    border-radius: 28px;
-
-    padding: 45px;
-
-    box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.08);
-
-    height: fit-content;
-
-    overflow: hidden;
+  background: #fffefa;
+  border: 1px solid #e8e2d8;
+  border-radius: 18px;
+  padding: 26px;
+  box-sizing: border-box;
+  box-shadow: 0 9px 30px rgba(46, 42, 33, 0.045);
+  min-width: 0;
 }
 
+.order-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #eee8de;
+  margin-bottom: 19px;
+}
 
-/* =========================================================
-   FORM TITLE
-========================================================= */
+.order-form-heading-content {
+  min-width: 0;
+}
+
+.order-form-header .order-panel-label {
+  margin-bottom: 7px;
+}
 
 .order-form-title {
-    font-size: 40px;
+  margin: 0;
+  color: #29382f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29px;
+  line-height: 1.2;
+  font-weight: 700;
+}
 
-    font-weight: 700;
-
-    color: #2d1d13;
-
-    line-height: 1.25;
-
-    margin-bottom: 12px;
+.order-form-title span {
+  color: #a27b49;
 }
 
 .order-form-subtitle {
-    font-size: 20px;
+  margin: 8px 0 0;
+  color: #858179;
+  font-size: 11px;
+  line-height: 1.7;
+}
 
-    color: #666;
-
-    line-height: 1.7;
-
-    margin-bottom: 35px;
+.order-form-decoration {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b38b58;
+  background: #f3ede3;
+  border: 1px solid #e8dece;
+  border-radius: 50%;
+  font-size: 20px;
 }
 
 
-/* =========================================================
-   FORM
-========================================================= */
+/* =========================================
+   FORM GRID
+========================================= */
 
 .order-form-wrapper {
-    width: 100%;
-    min-width: 0;
+  width: 100%;
 }
-
-
-/* =========================================================
-   FORM GRID
-
-   DESKTOP = TWO COLUMNS
-========================================================= */
 
 .order-form-grid {
-    width: 100%;
-    min-width: 0;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px 14px;
 }
 
-
-/*
-   Preferred Contact Time
-   Full width
-*/
+.order-input-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
 
 .order-input-full {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
+}
+
+.order-input-group label {
+  color: #51544b;
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
 
-/* =========================================================
-   INPUT BOX
-========================================================= */
+/* =========================================
+   INPUT BOXES
+========================================= */
 
 .order-input-box {
-    width: 100%;
-    min-width: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    background: #faf6f1;
-
-    border: 1px solid #e7ddd4;
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    min-height: 76px;
-
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.order-input-box:hover {
-    border-color: #8b5a35;
+  width: 100%;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  background: #fbfaf7;
+  border: 1px solid #e7e2d9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .order-input-box:focus-within {
-    border-color: #8b5a35;
-
-    box-shadow:
-        0 0 0 4px rgba(139, 90, 53, 0.12);
+  border-color: #b69469;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(182, 148, 102, 0.09);
 }
-
-
-/* =========================================================
-   INPUT ICON
-========================================================= */
 
 .order-input-icon {
-    width: 60px;
-    min-width: 60px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: #8b5a35;
-
-    font-size: 18px;
-
-    flex-shrink: 0;
+  width: 36px;
+  height: 100%;
+  flex: 0 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a38760;
+  background: #f3eee5;
+  border-right: 1px solid #e7e0d4;
+  font-size: 11px;
 }
 
-
-/* =========================================================
-   INPUT
-========================================================= */
-
-.order-input-field {
-    width: 100%;
-    min-width: 0;
-
-    flex: 1;
-
-    border: none;
-
-    outline: none;
-
-    background: transparent;
-
-    padding: 18px 18px 18px 0;
-
-    font-family: inherit;
-
-    font-size: 16px;
-
-    color: #333;
+.order-input-field,
+.order-select-field {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #41443b;
+  padding: 0 10px;
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 400;
+  box-sizing: border-box;
 }
 
 .order-input-field::placeholder {
-    color: #999;
+  color: #aaa69c;
+  opacity: 1;
 }
-
-
-/* =========================================================
-   SELECT
-========================================================= */
 
 .order-select-field {
-    width: 100%;
-    min-width: 0;
+  appearance: auto;
+  cursor: pointer;
+  color: #77766e;
+}
 
-    flex: 1;
+.order-select-field:valid {
+  color: #41443b;
+}
 
-    border: none;
-
-    outline: none;
-
-    background: transparent;
-
-    padding: 18px 18px 18px 0;
-
-    font-family: inherit;
-
-    font-size: 16px;
-
-    color: #333;
-
-    cursor: pointer;
+.order-select-field option {
+  color: #393d34;
+  background: #fffefa;
 }
 
 
-/* =========================================================
+/* =========================================
    TEXTAREA
-========================================================= */
+========================================= */
+
+.order-message-group {
+  margin-top: 15px;
+}
 
 .order-textarea-box {
-    width: 100%;
+  width: 100%;
+  border: 1px solid #e7e2d9;
+  background: #fbfaf7;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.2s ease;
+}
 
-    margin-top: 25px;
+.order-textarea-box:focus-within {
+  border-color: #b69469;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(182, 148, 102, 0.09);
 }
 
 .order-message-field {
-    display: block;
-
-    width: 100%;
-    min-width: 0;
-
-    min-height: 180px;
-
-    resize: vertical;
-
-    background: #faf6f1;
-
-    border: 1px solid #e7ddd4;
-
-    border-radius: 18px;
-
-    padding: 22px;
-
-    outline: none;
-
-    font-family: inherit;
-
-    font-size: 16px;
-
-    color: #333;
-
-    line-height: 1.7;
-
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.order-message-field:focus {
-    border-color: #8b5a35;
-
-    box-shadow:
-        0 0 0 4px rgba(139, 90, 53, 0.12);
+  display: block;
+  width: 100%;
+  min-height: 95px;
+  max-height: 220px;
+  resize: vertical;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #41443b;
+  padding: 12px;
+  font-size: 11px;
+  font-family: inherit;
+  line-height: 1.7;
+  box-sizing: border-box;
 }
 
 .order-message-field::placeholder {
-    color: #999;
+  color: #aaa69c;
+}
+
+.order-message-helper {
+  display: block;
+  margin-top: 6px;
+  color: #a09b91;
+  font-size: 9px;
+  line-height: 1.6;
 }
 
 
-/* =========================================================
+/* =========================================
    SUBMIT BUTTON
-========================================================= */
+========================================= */
 
 .order-submit-button {
-    width: 100%;
-    min-width: 0;
-
-    min-height: 70px;
-
-    margin-top: 30px;
-
-    padding: 18px 25px;
-
-    border: none;
-
-    border-radius: 18px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #25d366,
-            #1da851
-        );
-
-    color: #ffffff;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    font-family: inherit;
-
-    font-size: 20px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
+  width: 100%;
+  min-height: 47px;
+  margin-top: 17px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  border: 1px solid #344a39;
+  border-radius: 8px;
+  background: #304536;
+  color: #fff;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-sizing: border-box;
 }
 
 .order-submit-button:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 20px 35px rgba(37, 211, 102, 0.35);
+  background: #24372a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(42, 60, 46, 0.15);
 }
 
 .order-submit-button:active {
-    transform: scale(0.98);
+  transform: translateY(0);
+}
+
+.order-submit-icon {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.order-submit-arrow {
+  font-size: 10px;
+  margin-left: auto;
+  transition: transform 0.25s ease;
+}
+
+.order-submit-button:hover .order-submit-arrow {
+  transform: translateX(3px);
 }
 
 
-/* =========================================================
-   ANIMATION
-========================================================= */
+/* =========================================
+   FOOTER NOTE
+========================================= */
 
-.order-left-panel,
-.order-right-panel {
-    animation: orderFadeUp 0.8s ease;
+.order-form-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 11px 0 0;
+  color: #8d8b80;
+  font-size: 9px;
+  line-height: 1.6;
+  text-align: center;
 }
 
-@keyframes orderFadeUp {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-
+.order-form-footer-note svg {
+  color: #789078;
+  flex-shrink: 0;
 }
 
 
-/* =========================================================
-   EXTRA LARGE DESKTOP
-   1440px+
-========================================================= */
+/* =========================================
+   MEDIUM LAPTOPS
+========================================= */
 
-@media (min-width: 1440px) {
+@media (max-width: 1200px) {
+  .order-page-container {
+    max-width: 960px;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 18px;
+  }
 
-    .order-page-container {
-        width: 92%;
-        max-width: 1500px;
+  .order-left-panel {
+    padding: 21px;
+  }
 
-        /*
-           Increase overall form width
-        */
+  .order-right-panel {
+    padding: 23px;
+  }
 
-        grid-template-columns:
-            minmax(450px, 0.75fr)
-            minmax(700px, 1.25fr);
+  .order-left-title {
+    font-size: 26px;
+  }
 
-        gap: 50px;
-    }
-
-    .order-right-panel {
-        padding: 50px;
-    }
-
-    .order-form-grid {
-        gap: 24px;
-    }
-
-    .order-input-box {
-        min-height: 82px;
-    }
-
-    .order-input-icon {
-        width: 65px;
-        min-width: 65px;
-    }
-
-    .order-input-field,
-    .order-select-field {
-        font-size: 17px;
-    }
-
+  .order-form-title {
+    font-size: 27px;
+  }
 }
 
 
-/* =========================================================
-   LAPTOP
-   1200px - 1439px
-========================================================= */
+/* =========================================
+   TABLETS & SMALL LAPTOPS
+========================================= */
 
-@media (min-width: 1200px) and (max-width: 1439px) {
+@media (max-width: 900px) {
+  .order-page-main {
+    padding: 35px 18px 50px;
+  }
 
-    .order-page-container {
-        width: 92%;
-        max-width: 1350px;
+  .order-page-hero {
+    margin-bottom: 28px;
+  }
 
-        grid-template-columns:
-            minmax(400px, 0.78fr)
-            minmax(650px, 1.22fr);
+  .order-page-container {
+    width: 92%;
+    max-width: 720px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+  }
 
-        gap: 40px;
-    }
+  .order-left-panel {
+    padding: 22px;
+  }
 
-    .order-right-panel {
-        padding: 40px;
-    }
+  .order-left-title {
+    font-size: 29px;
+  }
 
-    .order-form-grid {
-        gap: 20px;
-    }
+  .order-left-title span {
+    display: inline;
+  }
 
-    .order-input-box {
-        min-height: 78px;
-    }
+  .order-left-description {
+    max-width: 550px;
+  }
 
+  .order-features-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .order-feature-card {
+    padding: 11px;
+  }
+
+  .order-highlight-box {
+    margin-top: 15px;
+  }
+
+  .order-contact-box {
+    margin-top: 12px;
+  }
+
+  .order-right-panel {
+    padding: 25px;
+  }
 }
 
 
-/* =========================================================
-   SMALL LAPTOP
-   1024px - 1199px
-
-   At this width we switch to ONE COLUMN.
-   This prevents the form fields becoming too narrow.
-========================================================= */
-
-@media (min-width: 1024px) and (max-width: 1199px) {
-
-    .order-page-main {
-        padding: 65px 0;
-    }
-
-    .order-page-hero {
-        width: 92%;
-
-        margin-bottom: 55px;
-    }
-
-    .order-page-title {
-        font-size: 44px;
-    }
-
-    .order-page-description {
-        width: 90%;
-
-        font-size: 18px;
-    }
-
-    .order-page-container {
-        width: 92%;
-
-        max-width: 1050px;
-
-        /*
-           ONE COLUMN
-        */
-
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-    }
-
-    .order-left-panel {
-        position: static;
-
-        width: 100%;
-
-        padding: 32px;
-    }
-
-    .order-right-panel {
-        width: 100%;
-
-        padding: 38px;
-    }
-
-    .order-form-grid {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr);
-
-        gap: 20px;
-    }
-
-    .order-input-box {
-        min-height: 76px;
-    }
-
-}
-
-
-/* =========================================================
-   TABLET
-   768px - 1023px
-
-   ONE FIELD PER ROW
-========================================================= */
-
-@media (min-width: 768px) and (max-width: 1023px) {
-
-    .order-page-main {
-        padding: 55px 0;
-    }
-
-    .order-page-hero {
-        width: 92%;
-
-        margin-bottom: 45px;
-    }
-
-    .order-page-badge {
-        font-size: 17px;
-
-        padding: 9px 18px;
-    }
-
-    .order-page-title {
-        font-size: 38px;
-    }
-
-    .order-page-description {
-        width: 94%;
-
-        font-size: 17px;
-
-        line-height: 1.7;
-    }
-
-    .order-page-container {
-        width: 92%;
-
-        max-width: 850px;
-
-        grid-template-columns: 1fr;
-
-        gap: 28px;
-    }
-
-    .order-left-panel {
-        position: static;
-
-        padding: 28px;
-    }
-
-    .order-right-panel {
-        padding: 30px;
-    }
-
-    .order-form-title {
-        font-size: 32px;
-    }
-
-    .order-form-subtitle {
-        font-size: 18px;
-    }
-
-    /*
-       ONE FIELD PER ROW
-    */
-
-    .order-form-grid {
-        grid-template-columns: 1fr;
-
-        gap: 16px;
-    }
-
-    .order-input-full {
-        grid-column: auto;
-    }
-
-    .order-input-box {
-        min-height: 70px;
-    }
-
-    .order-submit-button {
-        min-height: 62px;
-
-        font-size: 18px;
-    }
-
-}
-
-
-/* =========================================================
+/* =========================================
    MOBILE
-   BELOW 768px
-
-   ONE FIELD PER ROW
-========================================================= */
-
-@media (max-width: 767px) {
-
-    .order-page-main {
-        padding: 45px 0;
-    }
-
-    .order-page-hero {
-        width: 92%;
-
-        margin-bottom: 38px;
-    }
-
-    .order-page-badge {
-        font-size: 11px;
-
-        padding: 8px 15px;
-
-        letter-spacing: 1.5px;
-    }
-
-    .order-page-title {
-        font-size: clamp(24px, 7vw, 32px);
-
-        line-height: 1.25;
-    }
-
-    .order-page-description {
-        width: 96%;
-
-        font-size: 15px;
-
-        line-height: 1.7;
-    }
-
-
-    /* =========================================
-       MAIN CONTAINER
-    ========================================= */
-
-    .order-page-container {
-        width: 92%;
-
-        grid-template-columns: 1fr;
-
-        gap: 22px;
-    }
-
-
-    /* =========================================
-       LEFT
-    ========================================= */
-
-    .order-left-panel {
-        position: static;
-
-        width: 100%;
-
-        padding: 22px;
-
-        border-radius: 22px;
-    }
-
-    .order-left-title {
-        font-size: 27px;
-    }
-
-    .order-left-description {
-        font-size: 15px;
-
-        line-height: 1.7;
-    }
-
-
-    /* =========================================
-       RIGHT
-    ========================================= */
-
-    .order-right-panel {
-        width: 100%;
-
-        padding: 22px;
-
-        border-radius: 22px;
-    }
-
-    .order-form-title {
-        font-size: 28px;
-    }
-
-    .order-form-subtitle {
-        font-size: 15px;
-
-        line-height: 1.7;
-
-        margin-bottom: 25px;
-    }
-
-
-    /* =========================================
-       FORM
-
-       ONE FIELD PER ROW
-    ========================================= */
-
-    .order-form-grid {
-        width: 100%;
-
-        grid-template-columns: 1fr;
-
-        gap: 14px;
-    }
-
-    .order-input-full {
-        grid-column: auto;
-    }
-
-
-    /* =========================================
-       INPUTS
-    ========================================= */
-
-    .order-input-box {
-        width: 100%;
-
-        min-height: 64px;
-
-        border-radius: 14px;
-    }
-
-    .order-input-icon {
-        width: 48px;
-
-        min-width: 48px;
-
-        font-size: 16px;
-    }
-
-    .order-input-field,
-    .order-select-field {
-        width: 100%;
-
-        min-width: 0;
-
-        font-size: 14px;
-
-        padding: 15px 12px 15px 0;
-    }
-
-
-    /* =========================================
-       TEXTAREA
-    ========================================= */
-
-    .order-textarea-box {
-        margin-top: 20px;
-    }
-
-    .order-message-field {
-        width: 100%;
-
-        min-height: 145px;
-
-        padding: 17px;
-
-        font-size: 14px;
-    }
-
-
-    /* =========================================
-       BUTTON
-    ========================================= */
-
-    .order-submit-button {
-        width: 100%;
-
-        min-height: 56px;
-
-        margin-top: 22px;
-
-        padding: 15px;
-
-        font-size: 16px;
-
-        gap: 10px;
-
-        border-radius: 15px;
-    }
-
+========================================= */
+
+@media (max-width: 600px) {
+  .order-page-main {
+    padding: 27px 12px 40px;
+  }
+
+  .order-page-hero {
+    margin-bottom: 23px;
+  }
+
+  .order-page-badge {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    padding: 8px 13px;
+    margin-bottom: 13px;
+  }
+
+  .order-page-title {
+    font-size: clamp(27px, 8vw, 36px);
+    line-height: 1.25;
+  }
+
+  .order-page-description {
+    font-size: 11px;
+    line-height: 1.8;
+    margin-top: 11px;
+  }
+
+  .order-hero-bottom {
+    margin-top: 15px;
+    font-size: 10px;
+    gap: 9px;
+  }
+
+  .order-hero-line {
+    width: 28px;
+  }
+
+  .order-page-container {
+    width: 96%;
+    gap: 13px;
+  }
+
+  .order-left-panel {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .order-panel-label {
+    font-size: 8px;
+    letter-spacing: 1.7px;
+    margin-bottom: 8px;
+  }
+
+  .order-left-title {
+    font-size: 25px;
+  }
+
+  .order-left-description {
+    font-size: 10.5px;
+    line-height: 1.75;
+    margin-top: 9px;
+  }
+
+  .order-features-list {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    margin-top: 15px;
+  }
+
+  .order-feature-card {
+    padding: 9px 10px;
+    gap: 9px;
+  }
+
+  .order-feature-icon {
+    width: 17px;
+    height: 17px;
+    flex-basis: 17px;
+    font-size: 11px;
+  }
+
+  .order-feature-text {
+    font-size: 10px;
+  }
+
+  .order-feature-arrow {
+    opacity: 1;
+    transform: none;
+    font-size: 8px;
+  }
+
+  .order-highlight-box {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .order-highlight-number {
+    font-size: 27px;
+  }
+
+  .order-highlight-text {
+    font-size: 10px;
+  }
+
+  .order-highlight-bottom {
+    font-size: 8.5px;
+  }
+
+  .order-contact-box {
+    padding: 11px 10px;
+    gap: 9px;
+  }
+
+  .order-contact-icon {
+    width: 31px;
+    height: 31px;
+    flex-basis: 31px;
+    font-size: 14px;
+  }
+
+  .order-contact-title {
+    font-size: 8.5px;
+  }
+
+  .order-contact-value {
+    font-size: 11px;
+  }
+
+  .order-right-panel {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .order-form-header {
+    margin-bottom: 15px;
+    padding-bottom: 14px;
+  }
+
+  .order-form-title {
+    font-size: 25px;
+  }
+
+  .order-form-subtitle {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+
+  .order-form-decoration {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+    font-size: 16px;
+  }
+
+  .order-form-grid {
+    gap: 11px;
+  }
+
+  .order-input-group label {
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+
+  .order-input-box {
+    height: 41px;
+    border-radius: 7px;
+  }
+
+  .order-input-icon {
+    width: 32px;
+    flex-basis: 32px;
+    font-size: 10px;
+  }
+
+  .order-input-field,
+  .order-select-field {
+    padding: 0 7px;
+    font-size: 10px;
+  }
+
+  .order-message-group {
+    margin-top: 12px;
+  }
+
+  .order-message-field {
+    min-height: 90px;
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .order-message-helper {
+    font-size: 8px;
+  }
+
+  .order-submit-button {
+    min-height: 44px;
+    margin-top: 14px;
+    padding: 9px 11px;
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  .order-submit-icon {
+    font-size: 14px;
+  }
+
+  .order-submit-arrow {
+    font-size: 9px;
+  }
+
+  .order-form-footer-note {
+    font-size: 8px;
+    margin-top: 9px;
+  }
 }
 
 
-/* =========================================================
+/* =========================================
    SMALL MOBILE
-   BELOW 480px
-========================================================= */
-
-@media (max-width: 479px) {
-
-    .order-page-main {
-        padding: 40px 0;
-    }
-
-    .order-page-hero {
-        width: 92%;
-
-        margin-bottom: 32px;
-    }
-
-    .order-page-badge {
-        font-size: 9px;
-
-        padding: 7px 12px;
-
-        letter-spacing: 1px;
-    }
-
-    .order-page-title {
-        font-size: 25px;
-    }
-
-    .order-page-description {
-        width: 96%;
-
-        font-size: 14px;
-    }
-
-
-    /* =========================================
-       CONTAINER
-    ========================================= */
-
-    .order-page-container {
-        width: 92%;
-
-        gap: 18px;
-    }
-
-
-    /* =========================================
-       PANELS
-    ========================================= */
-
-    .order-left-panel,
-    .order-right-panel {
-        padding: 18px;
-
-        border-radius: 19px;
-    }
-
-
-    /* =========================================
-       LEFT
-    ========================================= */
-
-    .order-left-title {
-        font-size: 24px;
-    }
-
-    .order-left-description {
-        font-size: 14px;
-    }
-
-    .order-feature-card {
-        padding: 13px;
-
-        gap: 11px;
-
-        margin-bottom: 12px;
-    }
-
-    .order-feature-icon {
-        width: 42px;
-
-        min-width: 42px;
-
-        height: 42px;
-
-        font-size: 16px;
-    }
-
-    .order-feature-text {
-        font-size: 14px;
-    }
-
-    .order-highlight-box {
-        padding: 22px;
-    }
-
-    .order-highlight-number {
-        font-size: 40px;
-    }
-
-    .order-highlight-text {
-        font-size: 14px;
-    }
-
-
-    /* =========================================
-       CONTACT
-    ========================================= */
-
-    .order-contact-box {
-        padding: 14px;
-
-        gap: 11px;
-    }
-
-    .order-contact-icon {
-        width: 46px;
-
-        min-width: 46px;
-
-        height: 46px;
-
-        font-size: 21px;
-    }
-
-    .order-contact-title {
-        font-size: 16px;
-    }
-
-    .order-contact-value {
-        font-size: 14px;
-    }
-
-
-    /* =========================================
-       FORM
-    ========================================= */
-
-    .order-form-title {
-        font-size: 24px;
-    }
-
-    .order-form-subtitle {
-        font-size: 14px;
-
-        margin-bottom: 22px;
-    }
-
-    .order-form-grid {
-        grid-template-columns: 1fr;
-
-        gap: 12px;
-    }
-
-
-    /* =========================================
-       INPUT
-    ========================================= */
-
-    .order-input-box {
-        min-height: 60px;
-    }
-
-    .order-input-icon {
-        width: 44px;
-
-        min-width: 44px;
-
-        font-size: 15px;
-    }
-
-    .order-input-field,
-    .order-select-field {
-        font-size: 13px;
-
-        padding: 14px 9px 14px 0;
-    }
-
-
-    /* =========================================
-       TEXTAREA
-    ========================================= */
-
-    .order-message-field {
-        min-height: 130px;
-
-        padding: 14px;
-
-        font-size: 13px;
-    }
-
-
-    /* =========================================
-       BUTTON
-    ========================================= */
-
-    .order-submit-button {
-        min-height: 52px;
-
-        padding: 13px 10px;
-
-        font-size: 14px;
-
-        gap: 8px;
-    }
-
+========================================= */
+
+@media (max-width: 420px) {
+  .order-page-main {
+    padding: 23px 8px 32px;
+  }
+
+  .order-page-container {
+    width: 98%;
+  }
+
+  .order-left-panel {
+    padding: 15px;
+  }
+
+  .order-right-panel {
+    padding: 14px;
+  }
+
+  .order-page-title {
+    font-size: 27px;
+  }
+
+  .order-left-title {
+    font-size: 24px;
+  }
+
+  .order-form-title {
+    font-size: 24px;
+  }
+
+  .order-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .order-input-full {
+    grid-column: auto;
+  }
+
+  .order-input-box {
+    height: 42px;
+  }
+
+  .order-input-icon {
+    width: 34px;
+    flex-basis: 34px;
+  }
+
+  .order-input-field,
+  .order-select-field {
+    font-size: 11px;
+    padding: 0 9px;
+  }
+
+  .order-message-field {
+    min-height: 85px;
+  }
+
+  .order-submit-button {
+    min-height: 43px;
+    font-size: 10px;
+  }
 }
 
 
-/* =========================================================
-   VERY SMALL MOBILE
-   BELOW 375px
-========================================================= */
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
 
-@media (max-width: 374px) {
+@media (max-width: 350px) {
+  .order-page-title {
+    font-size: 24px;
+  }
 
-    .order-page-main {
-        padding: 35px 0;
-    }
+  .order-page-description {
+    font-size: 10px;
+  }
 
-    .order-page-hero {
-        width: 94%;
-    }
+  .order-left-title {
+    font-size: 22px;
+  }
 
-    .order-page-badge {
-        font-size: 8px;
+  .order-form-title {
+    font-size: 22px;
+  }
 
-        padding: 6px 10px;
-    }
+  .order-form-decoration {
+    display: none;
+  }
 
-    .order-page-title {
-        font-size: 21px;
-    }
+  .order-submit-button {
+    gap: 6px;
+    font-size: 9px;
+  }
 
-    .order-page-description {
-        font-size: 13px;
-    }
-
-    .order-page-container {
-        width: 94%;
-
-        gap: 16px;
-    }
-
-    .order-left-panel,
-    .order-right-panel {
-        padding: 15px;
-
-        border-radius: 17px;
-    }
-
-    .order-form-title {
-        font-size: 21px;
-    }
-
-    .order-form-subtitle {
-        font-size: 13px;
-    }
+  .order-contact-value {
+    font-size: 10px;
+  }
+}
 
 
-    /* ONE FIELD PER ROW */
+/* =========================================
+   ACCESSIBILITY / MOTION
+========================================= */
 
-    .order-form-grid {
-        grid-template-columns: 1fr;
-
-        gap: 10px;
-    }
-
-
-    /* INPUT */
-
-    .order-input-box {
-        min-height: 54px;
-    }
-
-    .order-input-icon {
-        width: 40px;
-
-        min-width: 40px;
-
-        font-size: 13px;
-    }
-
-    .order-input-field,
-    .order-select-field {
-        font-size: 12px;
-
-        padding: 12px 7px 12px 0;
-    }
+@media (prefers-reduced-motion: reduce) {
+  .order-page-main .order-feature-card,
+  .order-page-main .order-contact-box,
+  .order-page-main .order-submit-button,
+  .order-page-main .order-feature-arrow,
+  .order-page-main .order-contact-arrow,
+  .order-page-main .order-submit-arrow {
+    transition: none;
+  }
+}
 
 
-    /* TEXTAREA */
 
-    .order-message-field {
-        min-height: 115px;
+/* =========================================
+   LARGE DESKTOP — 1440px
+========================================= */
 
-        padding: 12px;
+@media (min-width: 1400px) {
+  .order-page-main {
+    padding: 50px 40px 75px;
+  }
 
-        font-size: 12px;
-    }
+  .order-page-container {
+    max-width: 1280px;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 26px;
+  }
+
+  .order-left-panel {
+    padding: 30px;
+  }
+
+  .order-right-panel {
+    padding: 32px;
+  }
+
+  .order-left-title {
+    font-size: 33px;
+  }
+
+  .order-form-title {
+    font-size: 34px;
+  }
+
+  .order-input-box {
+    height: 47px;
+  }
+
+  .order-input-icon {
+    width: 42px;
+    flex-basis: 42px;
+  }
+
+  .order-input-field,
+  .order-select-field {
+    font-size: 12px;
+  }
+
+  .order-message-field {
+    min-height: 115px;
+  }
+
+  .order-submit-button {
+    min-height: 51px;
+    font-size: 12px;
+  }
+}
 
 
-    /* BUTTON */
+/* =========================================
+   FULL HD — 1920px
+========================================= */
 
-    .order-submit-button {
-        min-height: 48px;
+@media (min-width: 1800px) {
+  .order-page-main {
+    padding: 60px 60px 85px;
+  }
 
-        padding: 11px 8px;
+  .order-page-hero {
+    max-width: 1100px;
+    margin-bottom: 42px;
+  }
 
-        font-size: 12px;
-    }
+  .order-page-title {
+    font-size: 50px;
+  }
 
+  .order-page-description {
+    font-size: 14px;
+    max-width: 750px;
+  }
+
+  .order-page-container {
+    max-width: 1500px;
+    gap: 32px;
+    grid-template-columns: 0.82fr 1.18fr;
+  }
+
+  .order-left-panel {
+    padding: 36px;
+    border-radius: 22px;
+  }
+
+  .order-right-panel {
+    padding: 38px;
+    border-radius: 22px;
+  }
+
+  .order-left-title {
+    font-size: 38px;
+  }
+
+  .order-left-description {
+    font-size: 13px;
+  }
+
+  .order-features-list {
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .order-feature-card {
+    padding: 13px 14px;
+  }
+
+  .order-feature-icon {
+    font-size: 14px;
+    width: 22px;
+    flex-basis: 22px;
+  }
+
+  .order-feature-text {
+    font-size: 12px;
+  }
+
+  .order-highlight-box {
+    padding: 21px;
+    margin-top: 22px;
+  }
+
+  .order-highlight-number {
+    font-size: 38px;
+  }
+
+  .order-highlight-text {
+    font-size: 13px;
+  }
+
+  .order-contact-box {
+    padding: 16px;
+  }
+
+  .order-contact-icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    font-size: 19px;
+  }
+
+  .order-contact-value {
+    font-size: 14px;
+  }
+
+  .order-form-title {
+    font-size: 39px;
+  }
+
+  .order-form-subtitle {
+    font-size: 13px;
+  }
+
+  .order-form-header {
+    margin-bottom: 26px;
+    padding-bottom: 23px;
+  }
+
+  .order-form-grid {
+    gap: 19px 22px;
+  }
+
+  .order-input-group label {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .order-input-box {
+    height: 52px;
+    border-radius: 10px;
+  }
+
+  .order-input-icon {
+    width: 46px;
+    flex-basis: 46px;
+    font-size: 13px;
+  }
+
+  .order-input-field,
+  .order-select-field {
+    font-size: 13px;
+    padding: 0 14px;
+  }
+
+  .order-message-group {
+    margin-top: 21px;
+  }
+
+  .order-message-field {
+    min-height: 130px;
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .order-message-helper {
+    font-size: 10px;
+  }
+
+  .order-submit-button {
+    min-height: 57px;
+    margin-top: 23px;
+    font-size: 13px;
+  }
+
+  .order-form-footer-note {
+    font-size: 10px;
+    margin-top: 14px;
+  }
+}
+
+
+/* =========================================
+   2K / 2560px MONITORS
+========================================= */
+
+@media (min-width: 2400px) {
+  .order-page-main {
+    padding: 75px 100px 100px;
+  }
+
+  .order-page-hero {
+    max-width: 1250px;
+    margin-bottom: 52px;
+  }
+
+  .order-page-badge {
+    font-size: 12px;
+    padding: 11px 21px;
+    margin-bottom: 22px;
+  }
+
+  .order-page-title {
+    font-size: 58px;
+  }
+
+  .order-page-description {
+    font-size: 15px;
+    max-width: 850px;
+    line-height: 2;
+    margin-top: 19px;
+  }
+
+  .order-hero-bottom {
+    font-size: 14px;
+    margin-top: 26px;
+  }
+
+  .order-hero-line {
+    width: 65px;
+  }
+
+  .order-page-container {
+    max-width: 1680px;
+    gap: 38px;
+    grid-template-columns: 0.82fr 1.18fr;
+  }
+
+  .order-left-panel {
+    padding: 42px;
+    border-radius: 26px;
+  }
+
+  .order-right-panel {
+    padding: 45px;
+    border-radius: 26px;
+  }
+
+  .order-panel-label {
+    font-size: 11px;
+    letter-spacing: 2.4px;
+    margin-bottom: 14px;
+  }
+
+  .order-left-title {
+    font-size: 45px;
+  }
+
+  .order-left-description {
+    font-size: 15px;
+    line-height: 1.95;
+    margin-top: 16px;
+  }
+
+  .order-features-list {
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .order-feature-card {
+    padding: 16px 17px;
+    border-radius: 12px;
+    gap: 14px;
+  }
+
+  .order-feature-icon {
+    width: 25px;
+    height: 25px;
+    flex-basis: 25px;
+    font-size: 16px;
+  }
+
+  .order-feature-text {
+    font-size: 14px;
+  }
+
+  .order-feature-arrow {
+    font-size: 12px;
+  }
+
+  .order-highlight-box {
+    padding: 25px;
+    border-radius: 16px;
+    margin-top: 26px;
+  }
+
+  .order-highlight-number {
+    font-size: 46px;
+  }
+
+  .order-highlight-star {
+    font-size: 25px;
+  }
+
+  .order-highlight-text {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .order-highlight-bottom {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .order-contact-box {
+    padding: 20px;
+    border-radius: 14px;
+    gap: 15px;
+    margin-top: 22px;
+  }
+
+  .order-contact-icon {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
+    font-size: 22px;
+  }
+
+  .order-contact-title {
+    font-size: 12px;
+  }
+
+  .order-contact-value {
+    font-size: 16px;
+  }
+
+  .order-contact-arrow {
+    font-size: 13px;
+  }
+
+  .order-form-header {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+
+  .order-form-title {
+    font-size: 47px;
+  }
+
+  .order-form-subtitle {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+
+  .order-form-decoration {
+    width: 55px;
+    height: 55px;
+    flex-basis: 55px;
+    font-size: 25px;
+  }
+
+  .order-form-grid {
+    gap: 24px 26px;
+  }
+
+  .order-input-group label {
+    font-size: 13px;
+    margin-bottom: 9px;
+  }
+
+  .order-input-box {
+    height: 58px;
+    border-radius: 11px;
+  }
+
+  .order-input-icon {
+    width: 52px;
+    flex-basis: 52px;
+    font-size: 15px;
+  }
+
+  .order-input-field,
+  .order-select-field {
+    font-size: 14px;
+    padding: 0 16px;
+  }
+
+  .order-message-group {
+    margin-top: 25px;
+  }
+
+  .order-message-field {
+    min-height: 150px;
+    padding: 19px;
+    font-size: 14px;
+  }
+
+  .order-message-helper {
+    font-size: 11px;
+    margin-top: 8px;
+  }
+
+  .order-submit-button {
+    min-height: 65px;
+    margin-top: 27px;
+    padding: 15px 22px;
+    gap: 15px;
+    border-radius: 11px;
+    font-size: 15px;
+  }
+
+  .order-submit-icon {
+    font-size: 21px;
+  }
+
+  .order-submit-arrow {
+    font-size: 13px;
+  }
+
+  .order-form-footer-note {
+    font-size: 11px;
+    margin-top: 16px;
+  }
 }
