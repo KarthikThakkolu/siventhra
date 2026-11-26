@@ -14,13 +14,13 @@
 
   padding: 10px 32px;
 
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     #004d99,
     #005eb8
-  );
+  ); */
 
-  color: #ffffff;
+  color:  #25352e;
 
   position: sticky;
   top: 0;
@@ -85,26 +85,14 @@
 
 .brand-name {
   margin: 0;
-
-  color: #ffffff;
-
-  /*
-     Using px here intentionally.
-     This prevents global rem settings from
-     making the navbar text unexpectedly small.
-  */
-
+  color: #25352e;
+  font-family: Georgia, "Times New Roman";
   font-size: 55px;
-
   font-weight: 800;
-
-  line-height: 1.2;
-
+  line-height: 1.6;
   letter-spacing: 0.3px;
-
   white-space: nowrap;
 }
-
 
 /* =========================================================
    NAVIGATION MENU
@@ -150,7 +138,7 @@
 
   padding: 8px 0;
 
-  color: #ffffff;
+  color:#25352e;
 
   text-decoration: none;
 
@@ -225,7 +213,7 @@
 
   background: transparent;
 
-  color: #ffffff;
+  color: #25352e;
 
   font-family: inherit;
 
@@ -413,7 +401,7 @@
 
   border-radius: 7px;
 
-  color: #004d99;
+  color: #25352e;
 
   text-decoration: none;
 
@@ -451,7 +439,7 @@
 
   padding: 9px 17px;
 
-  color: #004d99;
+  color: #25352e;
 
   background: #ffffff;
 

@@ -121,7 +121,7 @@ const Navbar = () => {
           />
 
           <h1 className="brand-name">
-            SIVENTHRA
+            Siventhra
           </h1>
 
         </Link>
@@ -184,7 +184,7 @@ const Navbar = () => {
             aria-expanded={isServicesOpen}
           >
 
-            <span>Services</span>
+            <span>Products</span>
 
             <span className="services-arrow">
               ▾

@@ -13,6 +13,7 @@ import Contact from "./Main/Contact";
 import OrderRequest from "./Main/OrderRequest";
 import Feedback from "./Main/Feedback";
 import Curtains from "./Pages/Curtains";
+// import Newhomepage from "./Main/Newhomepage";
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
       <Navbar />
 
       <Routes>
+        {/* <Route path="/" element={<Newhomepage />} /> */}
         <Route path="/" element={<Homepage />} />
+
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/orderrequest" element={<OrderRequest />} />

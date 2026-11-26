@@ -9,29 +9,29 @@ const Homepage = () => {
 
     const images = [
         {
-            url: "https://i.pinimg.com/736x/59/3c/17/593c1764523530d5f3e0f2ff8fd6b06d.jpg",
-            title: "Modern Interior Design",
-            subtitle: "Advanced Locking Systems for Your Safety",
+            url: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85",
+            title: "Curatins",
+            subtitle: "Add elegance and comfort to your space.",
             link: "/services/ss-automation",
         },
         {
             url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiYMwrqifrlc7dbWzvWvpzA9qkisti67LVtM7D_j_Xeg&s=10",
-            title: "Floor Designers",
-            subtitle: "Transforms Your Space with Elegance",
+            title: "wallpapers",
+            subtitle: "Transform your walls with stunning designs.",
             link: "/services/floor-designers",
         },
         {
             url: "https://img.freepik.com/premium-photo/stylish-modern-living-room-interior-design-3d-render-8k-image_901408-22328.jpg",
-            title: "The Best Interior Products",
-            subtitle: "Create Your Dream Living Space",
+            title: "Blinds",
+            subtitle: "Control light, style your space.",
             link: "/services/the-best",
         },
-        {
-            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ3qgmfPqSDCwbDhClJqxnQq-55WTKvZAJDRzCmFTadw&s=10",
-            title: "Pest Control Services",
-            subtitle: "Protect your home from unwanted guests",
-            link: "/services/pest-control",
-        },
+        // {
+        //     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ3qgmfPqSDCwbDhClJqxnQq-55WTKvZAJDRzCmFTadw&s=10",
+        //     title: "Pest Control Services",
+        //     subtitle: "Protect your home from unwanted guests",
+        //     link: "/services/pest-control",
+        // },
     ];
 
     const nextSlide = useCallback(() => {
