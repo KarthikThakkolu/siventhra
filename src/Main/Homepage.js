@@ -37,7 +37,7 @@ const collections = [
         category: "FABRIC / LIGHT / ELEGANCE",
         description: "Make every window a statement with beautifully tailored curtains and textures.",
         image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85",
-        link: "/Pages/Curtains",
+        link: "/Pages/CurtainExplorer",
         style: "collection-large",
     },
     {
@@ -70,7 +70,7 @@ const collections = [
 ];
 
 const services = [
-    { number: "01", title: "Curtains", detail: "Custom fabric & finishing", link: "/Pages/Curtains" },
+    { number: "01", title: "Curtains", detail: "Custom fabric & finishing", link: "/Pages/CurtainExplorer" },
     { number: "02", title: "Wallpapers", detail: "Patterns & wall textures", link: "/Pages/Wallpapers" },
     { number: "03", title: "Window Blinds", detail: "Roller, zebra & roman", link: "/Pages/Blinds" },
     { number: "04", title: "Wooden Flooring", detail: "SPC & laminate flooring", link: "/Pages/Flooring" },

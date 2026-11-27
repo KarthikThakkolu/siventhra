@@ -14,6 +14,8 @@ import OrderRequest from "./Main/OrderRequest";
 import Feedback from "./Main/Feedback";
 import Curtains from "./Pages/Curtains";
 // import Newhomepage from "./Main/Newhomepage";
+import CurtainExplorer from "./Pages/CurtainExplorer";
+import CurtainOrder from "./Pages/CurtainOrder";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/orderrequest" element={<OrderRequest />} />
         <Route path="/Feedback" element={<Feedback />} />
         <Route path="/Pages/Curtains" element={<Curtains />} />
+        <Route path="/Pages/CurtainExplorer" element={<CurtainExplorer />} />
+        <Route path="/pages/CurtainOrder" element={<CurtainOrder />} />
       </Routes>
 
       <Footer />

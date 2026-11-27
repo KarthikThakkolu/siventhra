@@ -1,0 +1,1045 @@
+
+/* =========================================================
+   SIVENTHRA INTERIOR & DECORS
+   CURTAIN ORDER SUMMARY PAGE
+========================================================= */
+
+.curtain-order-page {
+    width: 100%;
+    max-width: 2560px;
+    margin: 0 auto;
+    background: #f8f4ed;
+    color: #293a2d;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.curtain-order-hero {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image:
+        linear-gradient(90deg, rgba(27, 43, 32, 0.97) 0%, rgba(27, 43, 32, 0.83) 42%, rgba(27, 43, 32, 0.12) 100%),
+        url("https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=1800");
+    background-size: cover;
+    background-position: center;
+}
+
+.curtain-order-hero-content {
+    width: 90%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 45px 0;
+}
+
+.curtain-order-hero-label {
+    color: #d6bb8d;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-bottom: 14px;
+}
+
+.curtain-order-hero-title {
+    color: #fffaf0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 4vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 13px;
+}
+
+.curtain-order-hero-description {
+    max-width: 530px;
+    color: #eee7da;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.curtain-order-main {
+    width: 90%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 35px 0 50px;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.curtain-order-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.curtain-order-back {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #55634f;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.curtain-order-back:hover {
+    color: #a18151;
+}
+
+.curtain-order-back-arrow {
+    font-size: 19px;
+}
+
+.curtain-order-step-label {
+    padding: 8px 13px;
+    background: #e9e6d9;
+    color: #50604a;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   ORDER GRID
+========================================================= */
+
+.curtain-order-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(300px, 0.85fr);
+    align-items: start;
+    gap: 25px;
+}
+
+.curtain-order-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.curtain-order-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+/* =========================================================
+   CARD COMMON
+========================================================= */
+
+.curtain-order-product-card,
+.curtain-order-details-card,
+.curtain-order-customer-card,
+.curtain-order-price-card,
+.curtain-order-whatsapp-card {
+    background: #fffdf9;
+    border: 1px solid #e9dfd1;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(45, 52, 40, 0.045);
+    box-sizing: border-box;
+}
+
+.curtain-order-product-card,
+.curtain-order-details-card,
+.curtain-order-customer-card {
+    padding: 25px;
+}
+
+.curtain-order-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.curtain-order-heading-icon {
+    width: 31px;
+    height: 31px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #293a2d;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.curtain-order-heading-text {
+    color: #293a2d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   PRODUCT
+========================================================= */
+
+.curtain-order-product-image {
+    width: 100%;
+    height: 245px;
+    border-radius: 11px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.curtain-order-product-image-1 {
+    background-image: url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000");
+}
+
+.curtain-order-product-image-2 {
+    background-image: url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1000");
+}
+
+.curtain-order-product-image-3 {
+    background-image: url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000");
+}
+
+.curtain-order-product-image-4 {
+    background-image: url("https://images.unsplash.com/photo-1615874694520-474822394e73?w=1000");
+}
+
+.curtain-order-product-image-5 {
+    background-image: url("https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=1000");
+}
+
+.curtain-order-product-image-6 {
+    background-image: url("https://images.unsplash.com/photo-1617104678098-de229db51175?w=1000");
+}
+
+.curtain-order-product-info {
+    padding-top: 19px;
+}
+
+.curtain-order-product-name {
+    color: #293a2d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.curtain-order-product-description {
+    color: #777367;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 8px;
+}
+
+.curtain-order-product-price {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    color: #344632;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 13px;
+}
+
+.curtain-order-product-unit {
+    color: #817966;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.curtain-order-edit-fabric {
+    width: fit-content;
+    margin-top: 18px;
+    color: #7e6746;
+    font-size: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid #c5ad88;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   CUSTOMIZATION DETAILS
+========================================================= */
+
+.curtain-order-detail-row {
+    display: grid;
+    grid-template-columns: 27px minmax(105px, 0.9fr) 12px minmax(0, 1.2fr);
+    align-items: center;
+    gap: 10px;
+    min-height: 49px;
+    border-bottom: 1px solid #eee7dc;
+}
+
+.curtain-order-detail-row:last-of-type {
+    border-bottom: none;
+}
+
+.curtain-order-detail-icon {
+    color: #65745c;
+    font-size: 18px;
+    text-align: center;
+}
+
+.curtain-order-detail-label {
+    color: #5f6257;
+    font-size: 13px;
+}
+
+.curtain-order-detail-separator {
+    color: #a69b87;
+    font-size: 12px;
+}
+
+.curtain-order-detail-value {
+    color: #293a2d;
+    font-size: 13px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.curtain-order-quantity {
+    color: #3f6942;
+}
+
+.curtain-order-edit-measurements {
+    width: fit-content;
+    margin-top: 17px;
+    color: #7e6746;
+    font-size: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid #c5ad88;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   CUSTOMER DETAILS
+========================================================= */
+
+.curtain-order-customer-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+}
+
+.curtain-order-field {
+    min-width: 0;
+}
+
+.curtain-order-field-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #47513f;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+.curtain-order-field input,
+.curtain-order-field textarea {
+    width: 100%;
+    border: 1px solid #e0d6c7;
+    border-radius: 9px;
+    outline: none;
+    background: #fffdfa;
+    color: #293a2d;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.curtain-order-field input {
+    height: 47px;
+    padding: 0 13px;
+}
+
+.curtain-order-field textarea {
+    min-height: 105px;
+    padding: 13px;
+    line-height: 1.7;
+    resize: vertical;
+}
+
+.curtain-order-field input::placeholder,
+.curtain-order-field textarea::placeholder {
+    color: #aaa294;
+}
+
+.curtain-order-field input:focus,
+.curtain-order-field textarea:focus {
+    border-color: #63765b;
+    box-shadow: 0 0 0 3px rgba(99, 118, 91, 0.09);
+}
+
+.curtain-order-requirements-field {
+    margin-top: 20px;
+}
+
+.curtain-order-optional-label {
+    color: #a39986;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/* =========================================================
+   PRICE SUMMARY
+========================================================= */
+
+.curtain-order-price-card {
+    padding: 28px;
+    background: linear-gradient(155deg, #f4efe2, #fffaf2);
+    border-color: #e4d7c0;
+}
+
+.curtain-order-price-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.curtain-order-price-icon {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e2e5d6;
+    color: #354735;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.curtain-order-price-title {
+    color: #293a2d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.curtain-order-price-total {
+    color: #293a2d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(34px, 3vw, 48px);
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+    overflow-wrap: anywhere;
+}
+
+.curtain-order-price-rate {
+    color: #827765;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 9px;
+}
+
+.curtain-order-price-divider {
+    width: 100%;
+    height: 1px;
+    background: #d4c2a4;
+    margin: 25px 0;
+}
+
+.curtain-order-includes-title {
+    color: #374535;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.curtain-order-includes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.curtain-order-includes-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #50564b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.curtain-order-includes-check {
+    width: 23px;
+    height: 23px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #405740;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.curtain-order-estimate-note {
+    margin-top: 23px;
+    padding-top: 17px;
+    border-top: 1px solid #e1d5c3;
+    color: #847866;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   WHATSAPP CARD
+========================================================= */
+
+.curtain-order-whatsapp-card {
+    padding: 27px;
+    background: #fffdf9;
+    text-align: center;
+}
+
+.curtain-order-whatsapp-title {
+    color: #293a2d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.curtain-order-whatsapp-description {
+    color: #7a766a;
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 12px 0 22px;
+}
+
+.curtain-order-whatsapp-button {
+    width: 100%;
+    min-height: 55px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #293a2d;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+    box-sizing: border-box;
+}
+
+.curtain-order-whatsapp-button:hover {
+    background: #435c43;
+    transform: translateY(-2px);
+}
+
+.curtain-order-whatsapp-icon {
+    font-size: 19px;
+}
+
+.curtain-order-whatsapp-arrow {
+    font-size: 18px;
+}
+
+.curtain-order-privacy-note {
+    color: #9a907e;
+    font-size: 10px;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   TRUST SECTION
+========================================================= */
+
+.curtain-order-trust-section {
+    margin-top: 30px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    border: 1px solid #e5d9c8;
+    border-radius: 13px;
+    background: #f3eee4;
+}
+
+.curtain-order-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.curtain-order-trust-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e1e5d6;
+    color: #354735;
+    border-radius: 50%;
+    font-size: 17px;
+}
+
+.curtain-order-trust-text {
+    color: #56604e;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.curtain-order-footer {
+    width: 100%;
+    min-height: 115px;
+    padding: 25px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #293a2d;
+    box-sizing: border-box;
+}
+
+.curtain-order-footer-brand {
+    color: #f7f0e5;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.curtain-order-footer-tagline {
+    color: #d2b98e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+    .curtain-order-main {
+        max-width: 1550px;
+    }
+
+    .curtain-order-hero {
+        min-height: 380px;
+    }
+
+    .curtain-order-product-image {
+        height: 310px;
+    }
+
+    .curtain-order-product-name {
+        font-size: 32px;
+    }
+
+    .curtain-order-detail-row {
+        min-height: 56px;
+    }
+
+    .curtain-order-detail-label,
+    .curtain-order-detail-value {
+        font-size: 15px;
+    }
+
+    .curtain-order-price-card {
+        padding: 35px;
+    }
+
+    .curtain-order-whatsapp-card {
+        padding: 32px;
+    }
+}
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+    .curtain-order-main {
+        width: 93%;
+    }
+
+    .curtain-order-grid {
+        grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.85fr);
+        gap: 18px;
+    }
+
+    .curtain-order-product-card,
+    .curtain-order-details-card,
+    .curtain-order-customer-card {
+        padding: 20px;
+    }
+
+    .curtain-order-price-card,
+    .curtain-order-whatsapp-card {
+        padding: 22px;
+    }
+
+    .curtain-order-detail-row {
+        grid-template-columns: 24px minmax(90px, 0.9fr) 10px minmax(0, 1.2fr);
+        gap: 7px;
+    }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+    .curtain-order-hero {
+        min-height: 260px;
+    }
+
+    .curtain-order-main {
+        width: 92%;
+    }
+
+    .curtain-order-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .curtain-order-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+    }
+
+    .curtain-order-price-card,
+    .curtain-order-whatsapp-card {
+        height: 100%;
+    }
+
+    .curtain-order-product-image {
+        height: 280px;
+    }
+
+    .curtain-order-trust-section {
+        gap: 22px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+    .curtain-order-hero {
+        min-height: 225px;
+        background-position: center;
+    }
+
+    .curtain-order-hero-content {
+        width: 88%;
+        padding: 30px 0;
+    }
+
+    .curtain-order-hero-label {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+    }
+
+    .curtain-order-hero-title {
+        font-size: 35px;
+    }
+
+    .curtain-order-hero-description {
+        max-width: 330px;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .curtain-order-main {
+        width: 92%;
+        padding: 23px 0 32px;
+    }
+
+    .curtain-order-topbar {
+        margin-bottom: 20px;
+    }
+
+    .curtain-order-back {
+        font-size: 11px;
+        gap: 5px;
+    }
+
+    .curtain-order-step-label {
+        font-size: 9px;
+        padding: 7px 10px;
+    }
+
+    .curtain-order-grid {
+        gap: 15px;
+    }
+
+    .curtain-order-left,
+    .curtain-order-right {
+        gap: 15px;
+    }
+
+    .curtain-order-product-card,
+    .curtain-order-details-card,
+    .curtain-order-customer-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .curtain-order-card-heading {
+        gap: 9px;
+        margin-bottom: 17px;
+    }
+
+    .curtain-order-heading-icon {
+        width: 27px;
+        height: 27px;
+        font-size: 10px;
+    }
+
+    .curtain-order-heading-text {
+        font-size: 19px;
+    }
+
+    .curtain-order-product-image {
+        height: 210px;
+    }
+
+    .curtain-order-product-name {
+        font-size: 23px;
+    }
+
+    .curtain-order-product-description {
+        font-size: 12px;
+    }
+
+    .curtain-order-product-price {
+        font-size: 20px;
+    }
+
+    .curtain-order-detail-row {
+        grid-template-columns: 23px minmax(80px, 0.85fr) 8px minmax(0, 1.15fr);
+        min-height: 46px;
+        gap: 6px;
+    }
+
+    .curtain-order-detail-icon {
+        font-size: 15px;
+    }
+
+    .curtain-order-detail-label,
+    .curtain-order-detail-value {
+        font-size: 11px;
+    }
+
+    .curtain-order-customer-fields {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .curtain-order-field-label {
+        font-size: 11px;
+    }
+
+    .curtain-order-field input {
+        height: 44px;
+        font-size: 12px;
+    }
+
+    .curtain-order-field textarea {
+        min-height: 95px;
+        font-size: 12px;
+    }
+
+    .curtain-order-requirements-field {
+        margin-top: 16px;
+    }
+
+    .curtain-order-right {
+        grid-template-columns: 1fr;
+    }
+
+    .curtain-order-price-card {
+        padding: 22px 18px;
+    }
+
+    .curtain-order-price-title {
+        font-size: 21px;
+    }
+
+    .curtain-order-price-total {
+        font-size: 38px;
+        margin-top: 23px;
+    }
+
+    .curtain-order-price-divider {
+        margin: 20px 0;
+    }
+
+    .curtain-order-includes-list {
+        gap: 13px;
+    }
+
+    .curtain-order-includes-item {
+        font-size: 12px;
+    }
+
+    .curtain-order-whatsapp-card {
+        padding: 22px 18px;
+    }
+
+    .curtain-order-whatsapp-title {
+        font-size: 20px;
+    }
+
+    .curtain-order-whatsapp-button {
+        min-height: 50px;
+        font-size: 12px;
+    }
+
+    .curtain-order-trust-section {
+        margin-top: 22px;
+        padding: 16px 10px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .curtain-order-trust-item {
+        gap: 6px;
+    }
+
+    .curtain-order-trust-icon {
+        width: 27px;
+        height: 27px;
+        font-size: 13px;
+    }
+
+    .curtain-order-trust-text {
+        font-size: 10px;
+    }
+
+    .curtain-order-footer {
+        min-height: 100px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 9px;
+        padding: 23px 5%;
+    }
+
+    .curtain-order-footer-brand {
+        font-size: 21px;
+    }
+
+    .curtain-order-footer-tagline {
+        font-size: 12px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+    .curtain-order-main {
+        width: 94%;
+    }
+
+    .curtain-order-hero-title {
+        font-size: 30px;
+    }
+
+    .curtain-order-hero-description {
+        font-size: 11px;
+    }
+
+    .curtain-order-product-image {
+        height: 180px;
+    }
+
+    .curtain-order-heading-text {
+        font-size: 17px;
+    }
+
+    .curtain-order-detail-row {
+        grid-template-columns: 20px minmax(70px, 0.85fr) 7px minmax(0, 1.15fr);
+        gap: 4px;
+    }
+
+    .curtain-order-detail-label,
+    .curtain-order-detail-value {
+        font-size: 10px;
+    }
+
+    .curtain-order-price-total {
+        font-size: 33px;
+    }
+
+    .curtain-order-trust-section {
+        gap: 9px;
+    }
+
+    .curtain-order-trust-text {
+        font-size: 9px;
+    }
+}
+
+/* =========================================================
+   EXTRA LARGE SCREENS
+========================================================= */
+
+@media (min-width: 2000px) {
+    .curtain-order-main {
+        max-width: 1550px;
+    }
+
+    .curtain-order-hero-content {
+        max-width: 1550px;
+    }
+
+    .curtain-order-hero {
+        min-height: 440px;
+    }
+
+    .curtain-order-product-image {
+        height: 350px;
+    }
+
+    .curtain-order-heading-text {
+        font-size: 28px;
+    }
+
+    .curtain-order-price-title {
+        font-size: 29px;
+    }
+
+    .curtain-order-detail-row {
+        min-height: 60px;
+    }
+
+    .curtain-order-whatsapp-button {
+        min-height: 64px;
+        font-size: 16px;
+    }
+}
