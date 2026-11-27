@@ -112,6 +112,7 @@ const CurtainExplorer = () => {
       alert("Please enter valid window measurements.");
       return;
     }
+    
 
     navigate("/pages/CurtainOrder", {
       state: {
