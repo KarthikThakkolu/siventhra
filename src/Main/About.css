@@ -1,20 +1,20 @@
+
 /* =========================================================
    ABOUT PAGE
 ========================================================= */
 
-.about-page{
-    width:100%;
-    max-width:100%;
-    background:#ffffff;
-    margin-top:150px;
-    overflow:hidden;
+.about-page {
+    width: 100%;
+    max-width: 100%;
+    background: #ffffff;
+    margin-top: 120px;
+    overflow: hidden;
 }
 
-/* IMPORTANT GLOBAL BOX SIZING */
 .about-page *,
 .about-page *::before,
-.about-page *::after{
-    box-sizing:border-box;
+.about-page *::after {
+    box-sizing: border-box;
 }
 
 
@@ -22,14 +22,14 @@
    MAIN CONTAINER
 ========================================================= */
 
-.about-container{
-    width:88%;
-    max-width:1900px;
-    margin:0 auto;
+.about-container {
+    width: 88%;
+    max-width: 1600px;
+    margin: 0 auto;
 
-    display:flex;
-    align-items:flex-start;
-    gap:70px;
+    display: flex;
+    align-items: flex-start;
+    gap: 45px;
 }
 
 
@@ -37,10 +37,10 @@
    LEFT COLUMN
 ========================================================= */
 
-.about-left-column{
-    flex:1 1 0;
-    min-width:0;
-    width:100%;
+.about-left-column {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 100%;
 }
 
 
@@ -48,56 +48,60 @@
    PROCESS CARD
 ========================================================= */
 
-.about-process-card{
-    width:100%;
-    max-width:100%;
+.about-process-card {
+    width: 90%;
+    max-width: 100%;
 
-    background:#fdf8f2;
-    border-radius:24px;
-    padding:35px;
+    background: #fdf8f2;
+    border-radius: 18px;
+    padding: 25px;
 
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
 }
 
 
-.about-process-header{
-    width:100%;
+/* =========================================================
+   LOGO + HEADING
+========================================================= */
 
-    display:flex;
-    align-items:center;
+.about-process-header {
+    width: 100%;
 
-    gap:18px;
-    margin-bottom:25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 14px;
+    margin-bottom: 18px;
 }
 
+.about-process-logo {
+    width: 130px;
+    height: 100px;
 
-.about-process-logo{
-    width:45px;
-    height:45px;
-
-    object-fit:contain;
-    flex-shrink:0;
+    /* object-fit: contain; */
+    display: block;
+    flex-shrink: 0;
 }
 
+.about-process-heading {
+    min-width: 0;
 
-.about-process-heading{
-    min-width:0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2f2118;
 
-    font-size:36px;
-    font-weight:700;
-    color:#2f2118;
-
-    letter-spacing:.4px;
+    letter-spacing: .3px;
+    line-height: 1.3;
 }
 
+.about-process-divider {
+    width: 100%;
+    height: 1px;
 
-.about-process-divider{
-    width:100%;
-    height:1px;
+    background: #e6d8ca;
 
-    background:#e6d8ca;
-
-    margin-bottom:25px;
+    margin-bottom: 18px;
 }
 
 
@@ -105,106 +109,102 @@
    PROCESS ITEMS
 ========================================================= */
 
-.about-process-item{
-    width:100%;
-    min-width:0;
+.about-process-item {
+    width: 80%;
+    min-width: 0;
 
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
 
-    gap:18px;
+    gap: 10px;
 
-    background:#ffffff;
-    border-radius:18px;
+    background: #ffffff;
+    border-radius: 13px;
 
-    padding:22px;
-    margin-bottom:22px;
+    padding: 10px;
+    margin-bottom: 10px;
 
-    box-shadow:0 5px 18px rgba(0,0,0,.05);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .04);
 
-    transition:.35s;
+    transition: .3s;
 }
 
-
-.about-process-item:last-child{
-    margin-bottom:0;
+.about-process-item:last-child {
+    margin-bottom: 0;
 }
 
-
-.about-process-item:hover{
-    transform:translateY(-6px);
-    box-shadow:0 18px 35px rgba(0,0,0,.12);
+.about-process-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .09);
 }
 
 
 /* NUMBER */
 
-.about-process-number{
-    width:48px;
-    height:48px;
+.about-process-number {
+    width: 38px;
+    height: 38px;
 
-    border-radius:50%;
+    border-radius: 50%;
 
-    background:#7d4d2c;
-    color:#fff;
+    background: #7d4d2c;
+    color: #ffffff;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    font-size:18px;
-    font-weight:700;
+    font-size: 14px;
+    font-weight: 700;
 
-    flex:0 0 48px;
+    flex: 0 0 38px;
 }
 
 
 /* ICON */
 
-.about-process-icon{
-    width:55px;
-    height:55px;
+.about-process-icon {
+    width: 42px;
+    height: 42px;
 
-    background:#f5ebe1;
+    background: #f5ebe1;
 
-    border-radius:15px;
+    border-radius: 11px;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    color:#7d4d2c;
-    font-size:22px;
+    color: #7d4d2c;
+    font-size: 17px;
 
-    flex:0 0 55px;
+    flex: 0 0 42px;
 }
 
 
 /* CONTENT */
 
-.about-process-content{
-    flex:1 1 0;
-    min-width:0;
+.about-process-content {
+    flex: 1 1 0;
+    min-width: 0;
 }
 
+.about-process-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #222;
 
-.about-process-title{
-    font-size:24px;
-    font-weight:700;
-    color:#222;
+    margin-bottom: 4px;
 
-    margin-bottom:6px;
-
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
 }
 
+.about-process-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
 
-.about-process-text{
-    font-size:17px;
-    line-height:1.7;
-    color:#666;
-
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
 }
 
 
@@ -212,10 +212,10 @@
    RIGHT COLUMN
 ========================================================= */
 
-.about-right-column{
-    flex:1 1 0;
-    min-width:0;
-    width:100%;
+.about-right-column {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 100%;
 }
 
 
@@ -223,41 +223,39 @@
    RIGHT CONTENT
 ========================================================= */
 
-.about-small-title{
-    font-size:15px;
-    color:#7d4d2c;
+.about-small-title {
+    font-size: 13px;
+    color: #7d4d2c;
 
-    letter-spacing:4px;
-    font-weight:700;
+    letter-spacing: 3px;
+    font-weight: 700;
 
-    margin-bottom:18px;
+    margin-bottom: 12px;
 }
 
+.about-main-title {
+    font-size: 44px;
+    color: #24170f;
 
-.about-main-title{
-    font-size:58px;
-    color:#24170f;
+    font-weight: 700;
+    line-height: 1.2;
 
-    font-weight:700;
-    line-height:1.2;
+    margin-bottom: 24px;
 
-    margin-bottom:35px;
-
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
 }
 
+.about-description {
+    width: 100%;
 
-.about-description{
-    width:100%;
+    font-size: 17px;
+    color: #555;
 
-    font-size:21px;
-    color:#555;
+    line-height: 1.8;
 
-    line-height:2;
+    margin-bottom: 30px;
 
-    margin-bottom:45px;
-
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
 }
 
 
@@ -265,86 +263,80 @@
    FEATURES
 ========================================================= */
 
-.about-feature-grid{
-    width:100%;
-    min-width:0;
+.about-feature-grid {
+    width: 100%;
+    min-width: 0;
 
-    display:grid;
+    display: grid;
 
     grid-template-columns:
-        minmax(0,1fr)
-        minmax(0,1fr);
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
-    gap:20px;
+    gap: 14px;
 }
 
+.about-feature-card {
+    width: 100%;
+    min-width: 0;
 
-.about-feature-card{
-    width:100%;
-    min-width:0;
+    display: flex;
+    align-items: center;
 
-    display:flex;
-    align-items:center;
+    gap: 12px;
 
-    gap:18px;
+    background: #f8f3ee;
 
-    background:#f8f3ee;
+    border-radius: 12px;
 
-    border-radius:16px;
+    padding: 14px;
 
-    padding:20px;
-
-    transition:.35s;
+    transition: .3s;
 }
 
-
-.about-feature-card:hover{
-    background:#7d4d2c;
+.about-feature-card:hover {
+    background: #7d4d2c;
 }
 
-
-.about-feature-card:hover .about-feature-title{
-    color:#fff;
+.about-feature-card:hover .about-feature-title {
+    color: #ffffff;
 }
 
-
-.about-feature-card:hover .about-feature-icon{
-    background:#ffffff;
-    color:#7d4d2c;
+.about-feature-card:hover .about-feature-icon {
+    background: #ffffff;
+    color: #7d4d2c;
 }
 
+.about-feature-icon {
+    width: 40px;
+    height: 40px;
 
-.about-feature-icon{
-    width:50px;
-    height:50px;
+    border-radius: 10px;
 
-    border-radius:12px;
+    background: #7d4d2c;
+    color: #ffffff;
 
-    background:#7d4d2c;
-    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    font-size: 15px;
 
-    font-size:18px;
+    flex: 0 0 40px;
 
-    flex:0 0 50px;
-
-    transition:.35s;
+    transition: .3s;
 }
 
+.about-feature-title {
+    min-width: 0;
 
-.about-feature-title{
-    min-width:0;
+    font-size: 16px;
+    color: #222;
+    font-weight: 600;
 
-    font-size:20px;
-    color:#222;
-    font-weight:600;
+    transition: .3s;
 
-    transition:.35s;
-
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
 }
 
 
@@ -352,55 +344,52 @@
    FOUNDER SECTION
 ========================================================= */
 
-.about-founder-section{
-    width:90%;
-    max-width:1200px;
+.about-founder-section {
+    width: 90%;
+    max-width: 1100px;
 
-    margin:100px auto 0;
+    margin: 75px auto 0;
 
-    border-top:1px solid #e6d8ca;
+    border-top: 1px solid #e6d8ca;
 
-    padding-top:90px;
+    padding-top: 65px;
 
-    text-align:center;
+    text-align: center;
 }
 
+.about-founder-small-title {
+    color: #7d4d2c;
 
-.about-founder-small-title{
-    color:#7d4d2c;
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 700;
 
-    font-size:15px;
-    letter-spacing:5px;
-    font-weight:700;
-
-    margin-bottom:20px;
+    margin-bottom: 15px;
 }
 
+.about-founder-main-title {
+    font-size: 46px;
 
-.about-founder-main-title{
-    font-size:62px;
+    color: #24170f;
+    font-weight: 700;
 
-    color:#24170f;
-    font-weight:700;
+    margin-bottom: 30px;
 
-    margin-bottom:45px;
-
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
 }
 
+.about-founder-description {
+    width: 80%;
+    max-width: 900px;
 
-.about-founder-description{
-    width:80%;
-    max-width:1000px;
+    margin: 0 auto;
 
-    margin:0 auto;
+    font-size: 18px;
+    color: #555;
 
-    font-size:22px;
-    color:#555;
+    line-height: 1.85;
 
-    line-height:2;
-
-    overflow-wrap:break-word;
+    overflow-wrap: break-word;
 }
 
 
@@ -408,228 +397,83 @@
    STATS
 ========================================================= */
 
-.about-stats-container{
-    width:100%;
+.about-stats-container {
+    width: 100%;
 
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 
-    gap:70px;
+    gap: 45px;
 
-    margin-top:70px;
+    margin-top: 50px;
 
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
+.about-stat-card {
+    text-align: center;
 
-.about-stat-card{
-    text-align:center;
-
-    min-width:120px;
+    min-width: 100px;
 }
 
+.about-stat-number {
+    font-size: 46px;
 
-.about-stat-number{
-    font-size:58px;
-
-    color:#7d4d2c;
-    font-weight:700;
+    color: #7d4d2c;
+    font-weight: 700;
 }
 
+.about-stat-title {
+    margin-top: 7px;
 
-.about-stat-title{
-    margin-top:10px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
 
-    font-size:18px;
-    letter-spacing:2px;
-
-    color:#555;
+    color: #555;
 }
 
 
 /* =========================================================
-   LARGE DESKTOP
-   1600px+
+   LARGE SCREENS
 ========================================================= */
 
-@media (min-width:1600px){
+@media (min-width: 1600px) {
 
-    .about-container{
-        width:86%;
-        max-width:1600px;
-        gap:90px;
+    .about-container {
+        width: 86%;
+        max-width: 1650px;
+        gap: 65px;
     }
 
-    .about-process-card{
-        padding:40px;
+    .about-process-card {
+        padding: 30px;
     }
 
-    .about-main-title{
-        font-size:62px;
+    .about-main-title {
+        font-size: 48px;
     }
 
-    .about-description{
-        font-size:22px;
-    }
-
-    .about-process-heading{
-        font-size:38px;
-    }
-
-    .about-process-title{
-        font-size:25px;
-    }
-
-    .about-process-text{
-        font-size:18px;
+    .about-description {
+        font-size: 18px;
     }
 
 }
 
 
 /* =========================================================
-   1400px - 1599px
+   1200px - 1599px
 ========================================================= */
 
-@media (min-width:1400px) and (max-width:1599px){
+@media (max-width: 1599px) {
 
-    .about-container{
-        width:87%;
-        max-width:1500px;
-        gap:70px;
+    .about-container {
+        width: 90%;
+        gap: 40px;
     }
 
-    .about-main-title{
-        font-size:56px;
-    }
-
-    .about-description{
-        font-size:20px;
-    }
-
-}
-
-
-/* =========================================================
-   1200px - 1399px
-========================================================= */
-
-@media (max-width:1399px){
-
-    .about-container{
-        width:90%;
-        gap:50px;
-    }
-
-    .about-process-card{
-        padding:30px;
-    }
-
-    .about-process-heading{
-        font-size:32px;
-    }
-
-    .about-main-title{
-        font-size:50px;
-    }
-
-    .about-description{
-        font-size:19px;
-        line-height:1.9;
-    }
-
-    .about-founder-main-title{
-        font-size:56px;
-    }
-
-    .about-founder-description{
-        width:85%;
-        font-size:20px;
-    }
-
-}
-
-
-/* =========================================================
-   1024px - 1199px
-========================================================= */
-
-@media (max-width:1199px){
-
-    .about-page{
-        margin-top:120px;
-    }
-
-    .about-container{
-        width:92%;
-        gap:40px;
-    }
-
-    .about-process-card{
-        padding:28px;
-    }
-
-    .about-process-heading{
-        font-size:30px;
-    }
-
-    .about-process-item{
-        gap:14px;
-        padding:18px;
-    }
-
-    .about-process-number{
-        width:44px;
-        height:44px;
-        flex-basis:44px;
-        font-size:16px;
-    }
-
-    .about-process-icon{
-        width:50px;
-        height:50px;
-        flex-basis:50px;
-        font-size:20px;
-    }
-
-    .about-process-title{
-        font-size:21px;
-    }
-
-    .about-process-text{
-        font-size:15px;
-    }
-
-    .about-main-title{
-        font-size:44px;
-        margin-bottom:28px;
-    }
-
-    .about-description{
-        font-size:18px;
-        line-height:1.85;
-        margin-bottom:35px;
-    }
-
-    .about-feature-grid{
-        gap:15px;
-    }
-
-    .about-feature-card{
-        padding:16px;
-        gap:12px;
-    }
-
-    .about-feature-icon{
-        width:44px;
-        height:44px;
-        flex-basis:44px;
-        font-size:16px;
-    }
-
-    .about-feature-title{
-        font-size:17px;
+    .about-main-title {
+        font-size: 40px;
     }
 
 }
@@ -637,735 +481,454 @@
 
 /* =========================================================
    TABLET
-   768px - 1023px
-
-   STACK MAIN CONTENT
 ========================================================= */
 
-@media (max-width:1023px){
+@media (max-width: 1023px) {
 
-    .about-page{
-        margin-top:100px;
+    .about-page {
+        margin-top: 100px;
     }
 
-    .about-container{
-        width:92%;
-        max-width:850px;
+    .about-container {
+        width: 92%;
+        max-width: 850px;
 
-        flex-direction:column;
+        flex-direction: column;
 
-        gap:50px;
+        gap: 35px;
     }
 
     .about-left-column,
-    .about-right-column{
-        width:100%;
-        max-width:100%;
+    .about-right-column {
+        width: 100%;
+        max-width: 100%;
     }
 
-    .about-process-card{
-        padding:30px;
+    .about-process-card {
+        padding: 25px;
     }
 
-    .about-process-heading{
-        font-size:32px;
+    .about-process-heading {
+        font-size: 28px;
     }
 
-    .about-process-title{
-        font-size:22px;
+    .about-process-title {
+        font-size: 20px;
     }
 
-    .about-process-text{
-        font-size:16px;
+    .about-process-text {
+        font-size: 15px;
     }
 
-    .about-main-title{
-        font-size:46px;
+    .about-main-title {
+        font-size: 42px;
     }
 
-    .about-description{
-        font-size:18px;
-        line-height:1.85;
+    .about-description {
+        font-size: 17px;
+        line-height: 1.8;
     }
 
-    .about-feature-grid{
+    .about-feature-grid {
         grid-template-columns:
-            minmax(0,1fr)
-            minmax(0,1fr);
+            minmax(0, 1fr)
+            minmax(0, 1fr);
 
-        gap:18px;
+        gap: 15px;
     }
 
-    .about-founder-section{
-        width:92%;
-        margin-top:80px;
-        padding-top:70px;
+    .about-founder-section {
+        width: 92%;
+        margin-top: 65px;
+        padding-top: 55px;
     }
 
-    .about-founder-main-title{
-        font-size:48px;
+    .about-founder-main-title {
+        font-size: 42px;
     }
 
-    .about-founder-description{
-        width:95%;
-        font-size:19px;
+    .about-founder-description {
+        width: 95%;
+        font-size: 18px;
     }
 
-    .about-stats-container{
-        gap:45px;
-    }
-
-}
-
-
-/* =========================================================
-   768px - 991px
-========================================================= */
-
-@media (min-width:768px) and (max-width:991px){
-
-    .about-container{
-        width:90%;
-    }
-
-    .about-process-card{
-        padding:30px;
-    }
-
-    .about-process-item{
-        padding:20px;
-    }
-
-    .about-process-title{
-        font-size:23px;
-    }
-
-    .about-process-text{
-        font-size:16px;
-    }
-
-    .about-main-title{
-        font-size:44px;
-    }
-
-    .about-description{
-        font-size:18px;
-    }
-
-    .about-founder-main-title{
-        font-size:46px;
+    .about-stats-container {
+        gap: 35px;
     }
 
 }
 
 
 /* =========================================================
-   576px - 767px
+   MOBILE
 ========================================================= */
 
-@media (max-width:767px){
+@media (max-width: 767px) {
 
-    .about-page{
-        margin-top:80px;
+    .about-page {
+        margin-top: 75px;
     }
 
-    .about-container{
-        width:92%;
-        gap:40px;
+    .about-container {
+        width: 92%;
+        gap: 30px;
     }
 
-    /* PROCESS */
+    /* PROCESS CARD */
 
-    .about-process-card{
-        padding:24px;
-        border-radius:20px;
+    .about-process-card {
+        padding: 20px;
+        border-radius: 16px;
     }
 
-    .about-process-header{
-        gap:12px;
-        margin-bottom:20px;
+    .about-process-header {
+        gap: 12px;
+        margin-bottom: 16px;
     }
 
-    .about-process-logo{
-        width:38px;
-        height:38px;
+    .about-process-logo {
+        width: 42px;
+        height: 42px;
     }
 
-    .about-process-heading{
-        font-size:28px;
+    .about-process-heading {
+        font-size: 25px;
     }
 
-    .about-process-item{
-        padding:18px;
-        gap:13px;
+    .about-process-item {
+        padding: 14px;
+        gap: 10px;
     }
 
-    .about-process-number{
-        width:42px;
-        height:42px;
-        flex-basis:42px;
-        font-size:15px;
+    .about-process-number {
+        width: 35px;
+        height: 35px;
+        flex-basis: 35px;
+        font-size: 13px;
     }
 
-    .about-process-icon{
-        width:46px;
-        height:46px;
-        flex-basis:46px;
-        font-size:18px;
+    .about-process-icon {
+        width: 39px;
+        height: 39px;
+        flex-basis: 39px;
+        font-size: 16px;
     }
 
-    .about-process-title{
-        font-size:20px;
+    .about-process-title {
+        font-size: 18px;
     }
 
-    .about-process-text{
-        font-size:15px;
-        line-height:1.6;
+    .about-process-text {
+        font-size: 14px;
+        line-height: 1.55;
     }
 
     /* RIGHT */
 
-    .about-small-title{
-        font-size:13px;
-        letter-spacing:3px;
-        margin-bottom:15px;
+    .about-small-title {
+        font-size: 12px;
+        letter-spacing: 2.5px;
+        margin-bottom: 10px;
     }
 
-    .about-main-title{
-        font-size:38px;
-        line-height:1.2;
-        margin-bottom:25px;
+    .about-main-title {
+        font-size: 35px;
+        line-height: 1.2;
+        margin-bottom: 20px;
     }
 
-    .about-description{
-        font-size:17px;
-        line-height:1.8;
-        margin-bottom:30px;
+    .about-description {
+        font-size: 16px;
+        line-height: 1.75;
+        margin-bottom: 25px;
     }
 
-    .about-feature-grid{
-        grid-template-columns:1fr;
-        gap:14px;
+    .about-feature-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
 
-    .about-feature-card{
-        padding:17px;
+    .about-feature-card {
+        padding: 14px;
     }
 
-    .about-feature-title{
-        font-size:17px;
+    .about-feature-title {
+        font-size: 16px;
     }
 
     /* FOUNDER */
 
-    .about-founder-section{
-        width:92%;
-        margin-top:60px;
-        padding-top:55px;
+    .about-founder-section {
+        width: 92%;
+        margin-top: 50px;
+        padding-top: 45px;
     }
 
-    .about-founder-small-title{
-        font-size:12px;
-        letter-spacing:4px;
+    .about-founder-small-title {
+        font-size: 11px;
+        letter-spacing: 3px;
     }
 
-    .about-founder-main-title{
-        font-size:38px;
-        line-height:1.2;
-        margin-bottom:30px;
+    .about-founder-main-title {
+        font-size: 35px;
+        line-height: 1.2;
+        margin-bottom: 25px;
     }
 
-    .about-founder-description{
-        width:100%;
-        font-size:17px;
-        line-height:1.8;
+    .about-founder-description {
+        width: 100%;
+        font-size: 16px;
+        line-height: 1.75;
     }
 
     /* STATS */
 
-    .about-stats-container{
-        gap:35px;
-        margin-top:50px;
+    .about-stats-container {
+        gap: 25px;
+        margin-top: 40px;
     }
 
-    .about-stat-card{
-        min-width:100px;
+    .about-stat-card {
+        min-width: 90px;
     }
 
-    .about-stat-number{
-        font-size:42px;
+    .about-stat-number {
+        font-size: 36px;
     }
 
-    .about-stat-title{
-        font-size:15px;
-        letter-spacing:1.5px;
-    }
-
-}
-
-
-/* =========================================================
-   480px - 575px
-========================================================= */
-
-@media (max-width:575px){
-
-    .about-page{
-        margin-top:70px;
-    }
-
-    .about-container{
-        width:94%;
-        gap:35px;
-    }
-
-    .about-process-card{
-        padding:20px;
-        border-radius:18px;
-    }
-
-    .about-process-header{
-        gap:10px;
-    }
-
-    .about-process-logo{
-        width:34px;
-        height:34px;
-    }
-
-    .about-process-heading{
-        font-size:24px;
-    }
-
-    .about-process-item{
-        padding:15px;
-        gap:11px;
-        border-radius:15px;
-    }
-
-    .about-process-number{
-        width:38px;
-        height:38px;
-        flex-basis:38px;
-        font-size:14px;
-    }
-
-    .about-process-icon{
-        width:42px;
-        height:42px;
-        flex-basis:42px;
-        font-size:16px;
-    }
-
-    .about-process-title{
-        font-size:18px;
-    }
-
-    .about-process-text{
-        font-size:14px;
-        line-height:1.55;
-    }
-
-    .about-small-title{
-        font-size:12px;
-        letter-spacing:2.5px;
-    }
-
-    .about-main-title{
-        font-size:32px;
-        line-height:1.25;
-    }
-
-    .about-description{
-        font-size:16px;
-        line-height:1.75;
-    }
-
-    .about-feature-card{
-        padding:15px;
-        gap:12px;
-    }
-
-    .about-feature-icon{
-        width:42px;
-        height:42px;
-        flex-basis:42px;
-        font-size:15px;
-    }
-
-    .about-feature-title{
-        font-size:16px;
-    }
-
-    .about-founder-section{
-        width:94%;
-        margin-top:50px;
-        padding-top:45px;
-    }
-
-    .about-founder-small-title{
-        font-size:11px;
-        letter-spacing:3px;
-    }
-
-    .about-founder-main-title{
-        font-size:32px;
-    }
-
-    .about-founder-description{
-        font-size:16px;
-        line-height:1.75;
-    }
-
-    .about-stats-container{
-        gap:28px;
-    }
-
-    .about-stat-card{
-        min-width:90px;
-    }
-
-    .about-stat-number{
-        font-size:36px;
-    }
-
-    .about-stat-title{
-        font-size:13px;
-        letter-spacing:1px;
+    .about-stat-title {
+        font-size: 13px;
+        letter-spacing: 1px;
     }
 
 }
 
 
 /* =========================================================
-   425px - 479px
+   SMALL MOBILE
 ========================================================= */
 
-@media (max-width:479px){
+@media (max-width: 480px) {
 
-    .about-page{
-        margin-top:60px;
+    .about-container {
+        width: 94%;
     }
 
-    .about-container{
-        width:94%;
+    .about-process-card {
+        padding: 16px;
     }
 
-    .about-process-card{
-        padding:17px;
+    .about-process-header {
+        gap: 10px;
     }
 
-    .about-process-heading{
-        font-size:22px;
+    .about-process-logo {
+        width: 36px;
+        height: 36px;
     }
 
-    /*
-       Important:
-       Keep number + icon + text in one row.
-       Do NOT use flex-direction:column here.
-    */
-
-    .about-process-item{
-        display:flex;
-        flex-direction:row;
-        align-items:flex-start;
-        gap:10px;
-        padding:13px;
+    .about-process-heading {
+        font-size: 22px;
     }
 
-    .about-process-number{
-        width:34px;
-        height:34px;
-        flex-basis:34px;
-        font-size:13px;
+    .about-process-item {
+        gap: 8px;
+        padding: 12px;
+        border-radius: 12px;
     }
 
-    .about-process-icon{
-        width:38px;
-        height:38px;
-        flex-basis:38px;
-        font-size:15px;
+    .about-process-number {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+        font-size: 12px;
     }
 
-    .about-process-content{
-        flex:1 1 0;
-        min-width:0;
+    .about-process-icon {
+        width: 35px;
+        height: 35px;
+        flex-basis: 35px;
+        font-size: 14px;
     }
 
-    .about-process-title{
-        font-size:17px;
-        line-height:1.3;
+    .about-process-title {
+        font-size: 16px;
     }
 
-    .about-process-text{
-        font-size:13px;
-        line-height:1.5;
+    .about-process-text {
+        font-size: 13px;
+        line-height: 1.5;
     }
 
-    .about-main-title{
-        font-size:29px;
+    .about-small-title {
+        font-size: 11px;
+        letter-spacing: 2px;
     }
 
-    .about-description{
-        font-size:15px;
-        line-height:1.7;
+    .about-main-title {
+        font-size: 29px;
+        line-height: 1.25;
     }
 
-    .about-founder-main-title{
-        font-size:29px;
+    .about-description {
+        font-size: 15px;
+        line-height: 1.7;
     }
 
-    .about-founder-description{
-        font-size:15px;
+    .about-feature-card {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .about-feature-icon {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+        font-size: 14px;
+    }
+
+    .about-feature-title {
+        font-size: 15px;
+    }
+
+    .about-founder-section {
+        width: 94%;
+        margin-top: 40px;
+        padding-top: 35px;
+    }
+
+    .about-founder-small-title {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .about-founder-main-title {
+        font-size: 29px;
+    }
+
+    .about-founder-description {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .about-stats-container {
+        gap: 20px;
+    }
+
+    .about-stat-card {
+        min-width: 75px;
+    }
+
+    .about-stat-number {
+        font-size: 32px;
+    }
+
+    .about-stat-title {
+        font-size: 11px;
     }
 
 }
 
 
 /* =========================================================
-   375px - 424px
+   VERY SMALL MOBILE
 ========================================================= */
 
-@media (max-width:424px){
+@media (max-width: 374px) {
 
-    .about-container{
-        width:94%;
+    .about-page {
+        margin-top: 55px;
     }
 
-    .about-process-card{
-        padding:15px;
+    .about-process-card {
+        padding: 13px;
     }
 
-    .about-process-header{
-        gap:8px;
+    .about-process-header {
+        gap: 8px;
     }
 
-    .about-process-logo{
-        width:30px;
-        height:30px;
+    .about-process-logo {
+        width: 32px;
+        height: 32px;
     }
 
-    .about-process-heading{
-        font-size:20px;
+    .about-process-heading {
+        font-size: 19px;
     }
 
-    .about-process-item{
-        gap:8px;
-        padding:12px;
+    .about-process-item {
+        gap: 6px;
+        padding: 10px;
     }
 
-    .about-process-number{
-        width:32px;
-        height:32px;
-        flex-basis:32px;
-        font-size:12px;
+    .about-process-number {
+        width: 29px;
+        height: 29px;
+        flex-basis: 29px;
+        font-size: 11px;
     }
 
-    .about-process-icon{
-        width:36px;
-        height:36px;
-        flex-basis:36px;
-        font-size:14px;
+    .about-process-icon {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+        font-size: 12px;
     }
 
-    .about-process-title{
-        font-size:16px;
+    .about-process-title {
+        font-size: 15px;
     }
 
-    .about-process-text{
-        font-size:12.5px;
+    .about-process-text {
+        font-size: 11.5px;
     }
 
-    .about-small-title{
-        font-size:11px;
-        letter-spacing:2px;
+    .about-main-title {
+        font-size: 25px;
     }
 
-    .about-main-title{
-        font-size:27px;
+    .about-description {
+        font-size: 14px;
     }
 
-    .about-description{
-        font-size:14.5px;
+    .about-feature-card {
+        gap: 8px;
+        padding: 10px;
     }
 
-    .about-feature-card{
-        padding:13px;
+    .about-feature-icon {
+        width: 33px;
+        height: 33px;
+        flex-basis: 33px;
     }
 
-    .about-feature-icon{
-        width:38px;
-        height:38px;
-        flex-basis:38px;
+    .about-feature-title {
+        font-size: 14px;
     }
 
-    .about-feature-title{
-        font-size:15px;
+    .about-founder-main-title {
+        font-size: 25px;
     }
 
-    .about-founder-main-title{
-        font-size:27px;
+    .about-founder-description {
+        font-size: 14px;
     }
 
-    .about-founder-description{
-        font-size:14.5px;
+    .about-stats-container {
+        gap: 18px;
     }
 
-}
-
-
-/* =========================================================
-   320px - 374px
-========================================================= */
-
-@media (max-width:374px){
-
-    .about-page{
-        margin-top:50px;
+    .about-stat-card {
+        min-width: 65px;
     }
 
-    .about-container{
-        width:94%;
+    .about-stat-number {
+        font-size: 29px;
     }
 
-    .about-process-card{
-        padding:13px;
-    }
-
-    .about-process-heading{
-        font-size:18px;
-    }
-
-    .about-process-item{
-        gap:6px;
-        padding:10px;
-    }
-
-    .about-process-number{
-        width:29px;
-        height:29px;
-        flex-basis:29px;
-        font-size:11px;
-    }
-
-    .about-process-icon{
-        width:33px;
-        height:33px;
-        flex-basis:33px;
-        font-size:13px;
-    }
-
-    .about-process-title{
-        font-size:15px;
-    }
-
-    .about-process-text{
-        font-size:11.5px;
-    }
-
-    .about-main-title{
-        font-size:25px;
-    }
-
-    .about-description{
-        font-size:14px;
-        line-height:1.65;
-    }
-
-    .about-feature-card{
-        gap:9px;
-        padding:11px;
-    }
-
-    .about-feature-icon{
-        width:35px;
-        height:35px;
-        flex-basis:35px;
-        font-size:14px;
-    }
-
-    .about-feature-title{
-        font-size:14px;
-    }
-
-    .about-founder-section{
-        width:94%;
-        padding-top:40px;
-    }
-
-    .about-founder-main-title{
-        font-size:25px;
-    }
-
-    .about-founder-description{
-        font-size:14px;
-    }
-
-    .about-stats-container{
-        gap:22px;
-    }
-
-    .about-stat-card{
-        min-width:75px;
-    }
-
-    .about-stat-number{
-        font-size:32px;
-    }
-
-    .about-stat-title{
-        font-size:11px;
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL DEVICES
-   BELOW 320px
-========================================================= */
-
-@media (max-width:319px){
-
-    .about-container{
-        width:96%;
-    }
-
-    .about-process-card{
-        padding:10px;
-    }
-
-    .about-process-item{
-        gap:5px;
-        padding:9px;
-    }
-
-    .about-process-number{
-        width:27px;
-        height:27px;
-        flex-basis:27px;
-    }
-
-    .about-process-icon{
-        width:31px;
-        height:31px;
-        flex-basis:31px;
-    }
-
-    .about-process-title{
-        font-size:14px;
-    }
-
-    .about-process-text{
-        font-size:11px;
-    }
-
-    .about-main-title{
-        font-size:23px;
-    }
-
-    .about-description{
-        font-size:13.5px;
+    .about-stat-title {
+        font-size: 10px;
     }
 
 }

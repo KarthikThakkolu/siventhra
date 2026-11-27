@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   FaComments,
@@ -8,6 +9,7 @@ import {
 } from "react-icons/fa";
 
 import "./About.css";
+import logo from "../assets/siventhra logo.jpeg";
 
 const About = () => {
   const processData = [
@@ -51,17 +53,19 @@ const About = () => {
 
       <div className="about-container">
 
-        {/* ================= LEFT ================= */}
+        {/* LEFT COLUMN */}
 
         <div className="about-left-column">
 
           <div className="about-process-card">
 
+            {/* LOGO + HEADING ROW */}
+
             <div className="about-process-header">
 
               <img
-                src="/logo192.png"
-                alt="logo"
+                 src={logo}
+                alt="Siventhra Interior & Decors"
                 className="about-process-logo"
               />
 
@@ -105,7 +109,7 @@ const About = () => {
 
         </div>
 
-        {/* ================= RIGHT ================= */}
+        {/* RIGHT COLUMN */}
 
         <div className="about-right-column">
 
@@ -159,6 +163,8 @@ const About = () => {
 
           </div>
 
+          {/* FEATURES */}
+
           <div className="about-feature-grid">
 
             {featureData.map((item, index) => (
@@ -186,11 +192,7 @@ const About = () => {
 
       </div>
 
-      {/* ================================================= */}
-
-      {/* FOUNDER */}
-
-      {/* ================================================= */}
+      {/* FOUNDER SECTION */}
 
       <div className="about-founder-section">
 
@@ -234,54 +236,28 @@ const About = () => {
 
         </div>
 
+        {/* STATS */}
+
         <div className="about-stats-container">
 
           <div className="about-stat-card">
-
-            <div className="about-stat-number">
-              500+
-            </div>
-
-            <div className="about-stat-title">
-              HAPPY CLIENTS
-            </div>
-
+            <div className="about-stat-number">500+</div>
+            <div className="about-stat-title">HAPPY CLIENTS</div>
           </div>
 
           <div className="about-stat-card">
-
-            <div className="about-stat-number">
-              40+
-            </div>
-
-            <div className="about-stat-title">
-              SERVICES
-            </div>
-
+            <div className="about-stat-number">40+</div>
+            <div className="about-stat-title">SERVICES</div>
           </div>
 
           <div className="about-stat-card">
-
-            <div className="about-stat-number">
-              5+
-            </div>
-
-            <div className="about-stat-title">
-              YEARS VISION
-            </div>
-
+            <div className="about-stat-number">5+</div>
+            <div className="about-stat-title">YEARS VISION</div>
           </div>
 
           <div className="about-stat-card">
-
-            <div className="about-stat-number">
-              24/7
-            </div>
-
-            <div className="about-stat-title">
-              SUPPORT
-            </div>
-
+            <div className="about-stat-number">24/7</div>
+            <div className="about-stat-title">SUPPORT</div>
           </div>
 
         </div>

@@ -1,19 +1,24 @@
 
-/* =========================================
+/* =====================================================
    ORDER REQUEST PAGE
-========================================= */
+   SIVENTHRA INTERIOR & DECORS
+   PREMIUM RESPONSIVE DESIGN
+===================================================== */
 
 .order-page-main {
   width: 100%;
-  padding: 42px 20px 65px;
-  background: #f7f5f0;
-  color: #2c3029;
-  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  position: relative;
   overflow: hidden;
+  padding: 48px 24px 35px;
+  background: #f6f3eb;
+  color: #293a30;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
-.order-page-main img {
+.order-page-main img,
+.order-page-main svg {
   max-width: 100%;
 }
 
@@ -22,71 +27,104 @@
 .order-page-main select,
 .order-page-main textarea {
   font: inherit;
-}
-
-.order-page-main button,
-.order-page-main input,
-.order-page-main select,
-.order-page-main textarea {
   box-sizing: border-box;
 }
 
+.order-page-main button {
+  cursor: pointer;
+}
 
-/* =========================================
+
+/* =====================================================
    HERO SECTION
-========================================= */
+===================================================== */
 
 .order-page-hero {
-  max-width: 900px;
   width: 100%;
-  margin: 0 auto 34px;
+  max-width: 1050px;
+  position: relative;
+  margin: 0 auto 38px;
   text-align: center;
+  animation: orderHeroReveal 0.8s ease both;
+}
+
+.order-hero-decoration {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.order-hero-decoration-one {
+  width: 100px;
+  height: 100px;
+  top: -25px;
+  left: 4%;
+  border: 1px solid rgba(174, 133, 83, 0.15);
+  animation: orderFloat 7s ease-in-out infinite;
+}
+
+.order-hero-decoration-two {
+  width: 65px;
+  height: 65px;
+  right: 6%;
+  bottom: 5px;
+  background: rgba(174, 133, 83, 0.06);
+  animation: orderFloat 6s ease-in-out infinite reverse;
 }
 
 .order-page-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  padding: 9px 17px;
-  border: 1px solid #d9c9a9;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  padding: 9px 19px;
+  margin-bottom: 17px;
+  border: 1px solid #d9c8a9;
   border-radius: 50px;
-  background: #efe8db;
-  color: #85663f;
+  background: #eee8dc;
+  color: #8c6a42;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
-  margin-bottom: 17px;
 }
 
 .order-badge-dot {
   width: 7px;
   height: 7px;
+  flex: 0 0 7px;
   border-radius: 50%;
-  background: #a47d4c;
-  display: inline-block;
+  background: #a77d4e;
+  box-shadow: 0 0 0 4px rgba(167, 125, 78, 0.12);
+  animation: orderDotPulse 2s ease-in-out infinite;
 }
 
 .order-page-title {
-  margin: 0;
-  color: #26372e;
+  position: relative;
+  z-index: 1;
+  color: #253a2e;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(30px, 4vw, 43px);
-  line-height: 1.2;
+  font-size: clamp(34px, 4vw, 49px);
   font-weight: 700;
-  letter-spacing: -0.8px;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
 }
 
-.order-page-title span {
-  color: #a77c49;
+.order-title-highlight {
+  color: #a77a48;
+  font-style: italic;
 }
 
 .order-page-description {
-  max-width: 620px;
-  margin: 14px auto 0;
-  color: #77766f;
-  font-size: 13px;
-  line-height: 1.85;
+  max-width: 670px;
+  position: relative;
+  z-index: 1;
+  margin: 15px auto 0;
+  color: #77776e;
+  font-size: 12px;
+  line-height: 1.9;
 }
 
 .order-hero-bottom {
@@ -94,60 +132,78 @@
   align-items: center;
   justify-content: center;
   gap: 13px;
-  margin-top: 20px;
-  color: #9b835f;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 12px;
-  font-style: italic;
+  margin-top: 21px;
 }
 
 .order-hero-line {
-  width: 45px;
+  width: 47px;
   height: 1px;
-  background: #d9cbb5;
+  background: #cbb99a;
+}
+
+.order-hero-bottom-text {
+  color: #947b59;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  font-style: italic;
+  letter-spacing: 1.3px;
 }
 
 
-/* =========================================
+/* =====================================================
    MAIN CONTENT LAYOUT
-========================================= */
+===================================================== */
 
 .order-page-container {
-  max-width: 1080px;
-  width: 94%;
+  width: 100%;
+  max-width: 1160px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.78fr 1.22fr;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
   align-items: stretch;
-  gap: 22px;
+  gap: 24px;
 }
 
 
-/* =========================================
+/* =====================================================
    LEFT PANEL
-========================================= */
+===================================================== */
 
 .order-left-panel {
-  background: #eae4d8;
-  border: 1px solid #e0d7c8;
-  border-radius: 18px;
-  padding: 24px;
+  min-width: 0;
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
+  padding: 27px;
   overflow: hidden;
+  border: 1px solid #e0d7c8;
+  border-radius: 19px;
+  background: linear-gradient(145deg, #eee9df 0%, #e7e0d3 100%);
   box-sizing: border-box;
+  animation: orderPanelReveal 0.8s ease 0.1s both;
 }
 
 .order-left-panel::before {
   content: "";
+  width: 230px;
+  height: 230px;
   position: absolute;
-  width: 175px;
-  height: 175px;
+  top: -110px;
+  right: -110px;
+  border: 1px solid rgba(166, 126, 77, 0.16);
   border-radius: 50%;
-  background: rgba(183, 150, 103, 0.08);
-  top: -80px;
-  right: -70px;
+  pointer-events: none;
+}
+
+.order-left-panel::after {
+  content: "";
+  width: 165px;
+  height: 165px;
+  position: absolute;
+  top: -78px;
+  right: -78px;
+  border: 1px solid rgba(166, 126, 77, 0.12);
+  border-radius: 50%;
   pointer-events: none;
 }
 
@@ -157,67 +213,79 @@
 }
 
 .order-panel-label {
-  display: block;
-  color: #a17b4d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #a17a4c;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 2px;
-  margin-bottom: 10px;
+}
+
+.order-panel-label svg {
+  font-size: 12px;
 }
 
 .order-left-title {
-  margin: 0;
+  color: #293a30;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 28px;
-  line-height: 1.25;
+  font-size: 30px;
   font-weight: 700;
-  color: #29382f;
+  line-height: 1.22;
+  letter-spacing: -0.5px;
 }
 
-.order-left-title span {
-  color: #a17a49;
-  display: block;
+.order-left-title-highlight {
+  color: #a67a48;
+  font-style: italic;
 }
 
 .order-left-description {
-  margin: 12px 0 0;
-  color: #727169;
-  font-size: 11.5px;
-  line-height: 1.85;
+  max-width: 400px;
+  margin-top: 13px;
+  color: #73736a;
+  font-size: 11px;
+  line-height: 1.9;
 }
 
 
-/* =========================================
-   FEATURE CARDS
-========================================= */
+/* =====================================================
+   FEATURE LIST
+===================================================== */
 
-.order-features-list {
+.order-feature-list {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: 23px;
+  position: relative;
+  z-index: 1;
 }
 
 .order-feature-card {
   width: 100%;
+  min-height: 43px;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 11px;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(209, 196, 174, 0.6);
+  padding: 10px 12px;
+  border: 1px solid rgba(210, 197, 175, 0.72);
   border-radius: 9px;
+  background: rgba(255, 255, 255, 0.47);
   box-sizing: border-box;
   transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .order-feature-card:hover {
-  transform: translateX(4px);
-  background: #fffdf9;
-  box-shadow: 0 5px 12px rgba(71, 57, 36, 0.07);
+  transform: translateX(5px);
+  border-color: #c7ad88;
+  background: #fffdf8;
+  box-shadow: 0 7px 17px rgba(65, 54, 36, 0.07);
 }
 
 .order-feature-icon {
@@ -233,18 +301,21 @@
 
 .order-feature-text {
   flex: 1;
-  color: #45463e;
-  font-size: 10.5px;
+  color: #41463d;
+  font-size: 10px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .order-feature-arrow {
-  color: #b7a183;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a78a61;
   font-size: 9px;
   opacity: 0;
-  transform: translateX(-4px);
-  transition: 0.25s ease;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
 }
 
 .order-feature-card:hover .order-feature-arrow {
@@ -253,27 +324,36 @@
 }
 
 
-/* =========================================
+/* =====================================================
    CUSTOMER HIGHLIGHT
-========================================= */
+===================================================== */
 
 .order-highlight-box {
-  background: #2c4034;
-  border-radius: 12px;
-  padding: 16px 17px;
-  margin-top: 17px;
-  color: #fff;
   position: relative;
+  z-index: 1;
   overflow: hidden;
+  margin-top: 19px;
+  padding: 18px;
+  border: 1px solid rgba(222, 196, 154, 0.2);
+  border-radius: 13px;
+  background: linear-gradient(135deg, #304638 0%, #20362b 100%);
+  color: #fff;
+  box-shadow: 0 9px 20px rgba(36, 57, 43, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-highlight-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 13px 25px rgba(36, 57, 43, 0.16);
 }
 
 .order-highlight-box::after {
   content: "✦";
   position: absolute;
-  right: 13px;
-  bottom: -24px;
-  color: rgba(255, 255, 255, 0.06);
-  font-size: 85px;
+  right: 12px;
+  bottom: -34px;
+  color: rgba(255, 255, 255, 0.055);
+  font-size: 105px;
   pointer-events: none;
 }
 
@@ -281,227 +361,304 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.order-highlight-small {
+  color: #d1bd99;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.order-highlight-star {
+  display: flex;
+  color: #d8b981;
+  font-size: 17px;
 }
 
 .order-highlight-number {
+  display: flex;
+  align-items: baseline;
+  margin-top: 8px;
+  color: #f0d6aa;
   font-family: Georgia, "Times New Roman", serif;
-  color: #e6c99c;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 700;
   line-height: 1;
 }
 
-.order-highlight-star {
-  color: #d6b47f;
-  font-size: 18px;
+.order-highlight-plus {
+  color: #d8b981;
+  font-size: 24px;
 }
 
 .order-highlight-text {
-  margin: 7px 0 0;
-  font-size: 11px;
-  font-weight: 600;
-  color: #f2eee5;
-}
-
-.order-highlight-bottom {
+  position: relative;
+  z-index: 1;
   margin-top: 7px;
-  color: #bfc9be;
-  font-size: 9px;
-  line-height: 1.6;
+  color: #f2eee5;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.order-highlight-bottom-line {
+  width: 42px;
+  height: 2px;
+  margin-top: 13px;
+  border-radius: 5px;
+  background: #bd9863;
 }
 
 
-/* =========================================
+/* =====================================================
    WHATSAPP CONTACT CARD
-========================================= */
+===================================================== */
 
 .order-contact-box {
+  min-width: 0;
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 11px;
-  text-decoration: none;
   margin-top: auto;
-  padding: 13px 11px;
-  border: 1px solid #d4c7b1;
-  background: rgba(255, 255, 255, 0.5);
+  padding: 13px 12px;
+  border: 1px solid #d5c7b1;
   border-radius: 11px;
-  transition: 0.25s ease;
+  background: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
   box-sizing: border-box;
-  margin-top: 15px;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .order-contact-box:hover {
+  transform: translateY(-3px);
+  border-color: #b79a70;
   background: #fffdf9;
-  border-color: #b69a71;
-  transform: translateY(-2px);
+  box-shadow: 0 8px 17px rgba(69, 54, 32, 0.08);
 }
 
 .order-contact-icon {
-  width: 34px;
-  height: 34px;
-  flex: 0 0 34px;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e1e9dc;
   border-radius: 50%;
-  color: #47794f;
-  font-size: 16px;
+  background: #e0eadf;
+  color: #397348;
+  font-size: 17px;
+  transition: transform 0.3s ease;
+}
+
+.order-contact-box:hover .order-contact-icon {
+  transform: rotate(-9deg) scale(1.06);
 }
 
 .order-contact-content {
-  flex: 1;
   min-width: 0;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
+.order-contact-caption {
+  color: #9a815f;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+}
+
 .order-contact-title {
+  color: #77766d;
   font-size: 9px;
-  color: #77766c;
 }
 
 .order-contact-value {
-  color: #314334;
+  color: #304537;
   font-size: 12px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .order-contact-arrow {
-  color: #9b8058;
+  display: flex;
+  color: #9d8057;
   font-size: 10px;
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease;
 }
 
 .order-contact-box:hover .order-contact-arrow {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 
-/* =========================================
+/* =====================================================
    RIGHT FORM PANEL
-========================================= */
+===================================================== */
 
 .order-right-panel {
-  background: #fffefa;
-  border: 1px solid #e8e2d8;
-  border-radius: 18px;
-  padding: 26px;
-  box-sizing: border-box;
-  box-shadow: 0 9px 30px rgba(46, 42, 33, 0.045);
   min-width: 0;
+  padding: 28px;
+  border: 1px solid #e8e1d5;
+  border-radius: 19px;
+  background: #fffefa;
+  box-shadow: 0 12px 35px rgba(44, 49, 38, 0.055);
+  box-sizing: border-box;
+  animation: orderPanelReveal 0.8s ease 0.2s both;
 }
 
-.order-form-header {
+.order-form-heading-area {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding-bottom: 17px;
+  gap: 15px;
+  padding-bottom: 18px;
+  margin-bottom: 20px;
   border-bottom: 1px solid #eee8de;
-  margin-bottom: 19px;
 }
 
-.order-form-heading-content {
+.order-form-heading-left {
   min-width: 0;
 }
 
-.order-form-header .order-panel-label {
-  margin-bottom: 7px;
+.order-form-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #a17a4c;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.order-form-label-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #a77d4c;
+  box-shadow: 0 0 0 4px rgba(167, 125, 78, 0.1);
 }
 
 .order-form-title {
-  margin: 0;
-  color: #29382f;
+  color: #293a30;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 29px;
-  line-height: 1.2;
+  font-size: 30px;
   font-weight: 700;
-}
-
-.order-form-title span {
-  color: #a27b49;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
 }
 
 .order-form-subtitle {
-  margin: 8px 0 0;
-  color: #858179;
-  font-size: 11px;
+  margin-top: 7px;
+  color: #858177;
+  font-size: 10px;
   line-height: 1.7;
 }
 
 .order-form-decoration {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #b38b58;
-  background: #f3ede3;
   border: 1px solid #e8dece;
-  border-radius: 50%;
+  border-radius: 13px;
+  background: #f3eee5;
+  color: #a78252;
   font-size: 20px;
+  transform: rotate(0deg);
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.order-right-panel:hover .order-form-decoration {
+  transform: rotate(-7deg);
+  background: #eee5d7;
 }
 
 
-/* =========================================
+/* =====================================================
    FORM GRID
-========================================= */
+===================================================== */
 
 .order-form-wrapper {
   width: 100%;
+  min-width: 0;
 }
 
 .order-form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 13px 14px;
+  gap: 14px 16px;
 }
 
 .order-input-group {
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  min-width: 0;
 }
 
 .order-input-full {
   grid-column: 1 / -1;
 }
 
-.order-input-group label {
-  color: #51544b;
+.order-field-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 7px;
+  color: #4e544a;
   font-size: 10px;
   font-weight: 600;
-  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.order-required {
+  color: #b36e4e;
+  font-size: 11px;
+  font-weight: 700;
 }
 
 
-/* =========================================
-   INPUT BOXES
-========================================= */
+/* =====================================================
+   INPUT FIELDS
+===================================================== */
 
 .order-input-box {
   width: 100%;
   height: 43px;
+  min-width: 0;
   display: flex;
   align-items: center;
-  background: #fbfaf7;
-  border: 1px solid #e7e2d9;
-  border-radius: 8px;
   overflow: hidden;
+  border: 1px solid #e6e0d6;
+  border-radius: 8px;
+  background: #fbfaf7;
   box-sizing: border-box;
   transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .order-input-box:focus-within {
-  border-color: #b69469;
+  border-color: #a98a61;
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(182, 148, 102, 0.09);
+  box-shadow: 0 0 0 3px rgba(169, 138, 97, 0.1);
 }
 
 .order-input-icon {
@@ -511,342 +668,461 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #a38760;
-  background: #f3eee5;
   border-right: 1px solid #e7e0d4;
+  background: #f2eee5;
+  color: #9e8059;
   font-size: 11px;
 }
 
 .order-input-field,
 .order-select-field {
   width: 100%;
-  min-width: 0;
   height: 100%;
+  min-width: 0;
+  padding: 0 10px;
   border: 0;
   outline: none;
   background: transparent;
-  color: #41443b;
-  padding: 0 10px;
-  font-size: 11px;
+  color: #41463d;
   font-family: inherit;
+  font-size: 10px;
   font-weight: 400;
   box-sizing: border-box;
 }
 
 .order-input-field::placeholder {
-  color: #aaa69c;
+  color: #aaa69d;
   opacity: 1;
 }
 
 .order-select-field {
   appearance: auto;
   cursor: pointer;
-  color: #77766e;
+  color: #858177;
 }
 
 .order-select-field:valid {
-  color: #41443b;
+  color: #41463d;
 }
 
 .order-select-field option {
-  color: #393d34;
   background: #fffefa;
+  color: #393d34;
 }
 
 
-/* =========================================
-   TEXTAREA
-========================================= */
+/* =====================================================
+   PROJECT DETAILS TEXTAREA
+===================================================== */
 
-.order-message-group {
-  margin-top: 15px;
+.order-textarea-section {
+  margin-top: 17px;
 }
 
 .order-textarea-box {
   width: 100%;
-  border: 1px solid #e7e2d9;
-  background: #fbfaf7;
-  border-radius: 8px;
   overflow: hidden;
-  transition: 0.2s ease;
+  border: 1px solid #e6e0d6;
+  border-radius: 8px;
+  background: #fbfaf7;
+  box-sizing: border-box;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
 .order-textarea-box:focus-within {
-  border-color: #b69469;
+  border-color: #a98a61;
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(182, 148, 102, 0.09);
+  box-shadow: 0 0 0 3px rgba(169, 138, 97, 0.1);
 }
 
 .order-message-field {
   display: block;
   width: 100%;
-  min-height: 95px;
-  max-height: 220px;
+  min-height: 92px;
+  max-height: 190px;
+  padding: 12px;
   resize: vertical;
   border: 0;
   outline: none;
   background: transparent;
-  color: #41443b;
-  padding: 12px;
-  font-size: 11px;
+  color: #41463d;
   font-family: inherit;
-  line-height: 1.7;
+  font-size: 10px;
+  line-height: 1.8;
   box-sizing: border-box;
 }
 
 .order-message-field::placeholder {
-  color: #aaa69c;
+  color: #aaa69d;
+  opacity: 1;
 }
 
 .order-message-helper {
-  display: block;
   margin-top: 6px;
   color: #a09b91;
-  font-size: 9px;
+  font-size: 8px;
   line-height: 1.6;
 }
 
 
-/* =========================================
+/* =====================================================
    SUBMIT BUTTON
-========================================= */
+===================================================== */
 
 .order-submit-button {
   width: 100%;
   min-height: 47px;
-  margin-top: 17px;
-  padding: 10px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 11px;
+  margin-top: 18px;
+  padding: 10px 15px;
   border: 1px solid #344a39;
   border-radius: 8px;
-  background: #304536;
+  background: linear-gradient(110deg, #304638, #24392d);
   color: #fff;
   font-family: inherit;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  cursor: pointer;
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.order-submit-button::before {
+  content: "";
+  width: 45%;
+  height: 250%;
+  position: absolute;
+  top: -75%;
+  left: -65%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(25deg);
+  transition: left 0.6s ease;
+}
+
+.order-submit-button:hover::before {
+  left: 125%;
 }
 
 .order-submit-button:hover {
-  background: #24372a;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(42, 60, 46, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 9px 20px rgba(42, 60, 46, 0.17);
 }
 
 .order-submit-button:active {
-  transform: translateY(0);
+  transform: translateY(-1px);
 }
 
 .order-submit-icon {
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-}
-
-.order-submit-arrow {
-  font-size: 10px;
-  margin-left: auto;
-  transition: transform 0.25s ease;
-}
-
-.order-submit-button:hover .order-submit-arrow {
-  transform: translateX(3px);
-}
-
-
-/* =========================================
-   FOOTER NOTE
-========================================= */
-
-.order-form-footer-note {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  margin: 11px 0 0;
-  color: #8d8b80;
-  font-size: 9px;
+  font-size: 16px;
+}
+
+.order-submit-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.order-submit-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  font-size: 11px;
+  transition: transform 0.3s ease;
+}
+
+.order-submit-button:hover .order-submit-arrow {
+  transform: translate(3px, -2px);
+}
+
+
+/* =====================================================
+   PRIVACY NOTE
+===================================================== */
+
+.order-form-bottom-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 12px;
+  color: #89877d;
+  font-size: 8px;
   line-height: 1.6;
   text-align: center;
 }
 
-.order-form-footer-note svg {
-  color: #789078;
-  flex-shrink: 0;
+.order-form-bottom-note svg {
+  flex: 0 0 auto;
+  color: #779078;
+  font-size: 11px;
 }
 
 
-/* =========================================
-   MEDIUM LAPTOPS
-========================================= */
+/* =====================================================
+   BOTTOM BRAND DECORATION
+===================================================== */
+
+.order-page-bottom-decoration {
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 34px auto 0;
+}
+
+.order-bottom-line {
+  width: 45px;
+  height: 1px;
+  background: #d7c9b4;
+}
+
+.order-bottom-text {
+  color: #a08a6a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 9px;
+  letter-spacing: 1.7px;
+  text-align: center;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes orderHeroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orderPanelReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orderFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes orderDotPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(167, 125, 78, 0.12);
+  }
+
+  50% {
+    box-shadow: 0 0 0 7px rgba(167, 125, 78, 0.04);
+  }
+}
+
+
+/* =====================================================
+   LAPTOPS
+===================================================== */
 
 @media (max-width: 1200px) {
   .order-page-container {
-    max-width: 960px;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 18px;
+    max-width: 1020px;
+    gap: 19px;
   }
 
   .order-left-panel {
-    padding: 21px;
-  }
-
-  .order-right-panel {
     padding: 23px;
   }
 
+  .order-right-panel {
+    padding: 24px;
+  }
+
   .order-left-title {
-    font-size: 26px;
+    font-size: 27px;
   }
 
   .order-form-title {
-    font-size: 27px;
+    font-size: 28px;
   }
 }
 
 
-/* =========================================
-   TABLETS & SMALL LAPTOPS
-========================================= */
+/* =====================================================
+   TABLETS
+===================================================== */
 
 @media (max-width: 900px) {
   .order-page-main {
-    padding: 35px 18px 50px;
-  }
-
-  .order-page-hero {
-    margin-bottom: 28px;
+    padding: 38px 20px 32px;
   }
 
   .order-page-container {
-    width: 92%;
     max-width: 720px;
     grid-template-columns: minmax(0, 1fr);
     gap: 17px;
   }
 
   .order-left-panel {
-    padding: 22px;
+    padding: 24px;
   }
 
   .order-left-title {
-    font-size: 29px;
+    font-size: 30px;
   }
 
-  .order-left-title span {
+  .order-left-title-highlight {
     display: inline;
   }
 
   .order-left-description {
-    max-width: 550px;
+    max-width: 560px;
   }
 
-  .order-features-list {
+  .order-feature-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 9px;
   }
 
-  .order-feature-card {
-    padding: 11px;
-  }
-
   .order-highlight-box {
-    margin-top: 15px;
+    margin-top: 17px;
   }
 
   .order-contact-box {
-    margin-top: 12px;
+    margin-top: 15px;
   }
 
   .order-right-panel {
-    padding: 25px;
+    padding: 27px;
   }
 }
 
 
-/* =========================================
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
 @media (max-width: 600px) {
   .order-page-main {
-    padding: 27px 12px 40px;
+    padding: 28px 13px 28px;
   }
 
   .order-page-hero {
-    margin-bottom: 23px;
+    margin-bottom: 24px;
+  }
+
+  .order-hero-decoration-one {
+    width: 65px;
+    height: 65px;
+    left: 0;
+  }
+
+  .order-hero-decoration-two {
+    width: 45px;
+    height: 45px;
+    right: 0;
   }
 
   .order-page-badge {
-    font-size: 9px;
-    letter-spacing: 1.5px;
     padding: 8px 13px;
-    margin-bottom: 13px;
+    margin-bottom: 14px;
+    gap: 8px;
+    font-size: 8px;
+    letter-spacing: 1.4px;
   }
 
   .order-page-title {
-    font-size: clamp(27px, 8vw, 36px);
-    line-height: 1.25;
+    font-size: clamp(29px, 7.5vw, 37px);
+    line-height: 1.22;
+    letter-spacing: -0.7px;
   }
 
   .order-page-description {
-    font-size: 11px;
+    max-width: 470px;
+    margin-top: 12px;
+    font-size: 10px;
     line-height: 1.8;
-    margin-top: 11px;
   }
 
   .order-hero-bottom {
-    margin-top: 15px;
-    font-size: 10px;
     gap: 9px;
+    margin-top: 16px;
   }
 
   .order-hero-line {
     width: 28px;
   }
 
+  .order-hero-bottom-text {
+    font-size: 9px;
+  }
+
   .order-page-container {
-    width: 96%;
+    width: 100%;
     gap: 13px;
   }
 
   .order-left-panel {
-    padding: 18px;
-    border-radius: 14px;
+    padding: 19px;
+    border-radius: 15px;
   }
 
   .order-panel-label {
+    margin-bottom: 9px;
     font-size: 8px;
-    letter-spacing: 1.7px;
-    margin-bottom: 8px;
+    letter-spacing: 1.6px;
   }
 
   .order-left-title {
-    font-size: 25px;
+    font-size: 26px;
   }
 
   .order-left-description {
-    font-size: 10.5px;
-    line-height: 1.75;
     margin-top: 9px;
+    font-size: 10px;
+    line-height: 1.8;
   }
 
-  .order-features-list {
-    grid-template-columns: 1fr;
+  .order-feature-list {
+    grid-template-columns: minmax(0, 1fr);
     gap: 7px;
-    margin-top: 15px;
+    margin-top: 16px;
   }
 
   .order-feature-card {
+    min-height: 39px;
     padding: 9px 10px;
     gap: 9px;
   }
@@ -859,7 +1135,7 @@
   }
 
   .order-feature-text {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .order-feature-arrow {
@@ -869,36 +1145,42 @@
   }
 
   .order-highlight-box {
-    padding: 14px;
-    border-radius: 10px;
+    padding: 15px;
+    margin-top: 14px;
+    border-radius: 11px;
   }
 
   .order-highlight-number {
-    font-size: 27px;
+    font-size: 30px;
+  }
+
+  .order-highlight-plus {
+    font-size: 21px;
   }
 
   .order-highlight-text {
-    font-size: 10px;
-  }
-
-  .order-highlight-bottom {
-    font-size: 8.5px;
+    font-size: 9px;
   }
 
   .order-contact-box {
-    padding: 11px 10px;
+    padding: 11px;
     gap: 9px;
+    margin-top: 13px;
   }
 
   .order-contact-icon {
-    width: 31px;
-    height: 31px;
-    flex-basis: 31px;
-    font-size: 14px;
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+    font-size: 15px;
+  }
+
+  .order-contact-caption {
+    font-size: 7px;
   }
 
   .order-contact-title {
-    font-size: 8.5px;
+    font-size: 8px;
   }
 
   .order-contact-value {
@@ -906,13 +1188,20 @@
   }
 
   .order-right-panel {
-    padding: 18px;
-    border-radius: 14px;
+    padding: 19px;
+    border-radius: 15px;
   }
 
-  .order-form-header {
-    margin-bottom: 15px;
+  .order-form-heading-area {
+    gap: 10px;
     padding-bottom: 14px;
+    margin-bottom: 16px;
+  }
+
+  .order-form-label {
+    margin-bottom: 6px;
+    font-size: 8px;
+    letter-spacing: 1.6px;
   }
 
   .order-form-title {
@@ -920,14 +1209,15 @@
   }
 
   .order-form-subtitle {
-    font-size: 10px;
     margin-top: 6px;
+    font-size: 9px;
   }
 
   .order-form-decoration {
-    width: 34px;
-    height: 34px;
-    flex-basis: 34px;
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+    border-radius: 10px;
     font-size: 16px;
   }
 
@@ -935,9 +1225,9 @@
     gap: 11px;
   }
 
-  .order-input-group label {
-    font-size: 9px;
+  .order-field-label {
     margin-bottom: 5px;
+    font-size: 9px;
   }
 
   .order-input-box {
@@ -946,25 +1236,25 @@
   }
 
   .order-input-icon {
-    width: 32px;
-    flex-basis: 32px;
+    width: 33px;
+    flex-basis: 33px;
     font-size: 10px;
   }
 
   .order-input-field,
   .order-select-field {
-    padding: 0 7px;
-    font-size: 10px;
+    padding: 0 8px;
+    font-size: 9px;
   }
 
-  .order-message-group {
-    margin-top: 12px;
+  .order-textarea-section {
+    margin-top: 13px;
   }
 
   .order-message-field {
-    min-height: 90px;
+    min-height: 85px;
     padding: 10px;
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .order-message-helper {
@@ -973,10 +1263,10 @@
 
   .order-submit-button {
     min-height: 44px;
+    gap: 8px;
     margin-top: 14px;
     padding: 9px 11px;
-    gap: 8px;
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .order-submit-icon {
@@ -987,36 +1277,45 @@
     font-size: 9px;
   }
 
-  .order-form-footer-note {
-    font-size: 8px;
+  .order-form-bottom-note {
+    gap: 5px;
     margin-top: 9px;
+    font-size: 7.5px;
+  }
+
+  .order-page-bottom-decoration {
+    margin-top: 25px;
   }
 }
 
 
-/* =========================================
+/* =====================================================
    SMALL MOBILE
-========================================= */
+===================================================== */
 
 @media (max-width: 420px) {
   .order-page-main {
-    padding: 23px 8px 32px;
-  }
-
-  .order-page-container {
-    width: 98%;
-  }
-
-  .order-left-panel {
-    padding: 15px;
-  }
-
-  .order-right-panel {
-    padding: 14px;
+    padding: 24px 9px 24px;
   }
 
   .order-page-title {
-    font-size: 27px;
+    font-size: 28px;
+  }
+
+  .order-page-description {
+    font-size: 9px;
+  }
+
+  .order-page-container {
+    gap: 11px;
+  }
+
+  .order-left-panel {
+    padding: 16px;
+  }
+
+  .order-right-panel {
+    padding: 15px;
   }
 
   .order-left-title {
@@ -1024,7 +1323,7 @@
   }
 
   .order-form-title {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .order-form-grid {
@@ -1047,32 +1346,47 @@
 
   .order-input-field,
   .order-select-field {
-    font-size: 11px;
     padding: 0 9px;
+    font-size: 10px;
   }
 
   .order-message-field {
-    min-height: 85px;
+    min-height: 82px;
   }
 
   .order-submit-button {
     min-height: 43px;
-    font-size: 10px;
+    font-size: 9px;
+  }
+
+  .order-bottom-text {
+    font-size: 8px;
   }
 }
 
 
-/* =========================================
+/* =====================================================
    VERY SMALL DEVICES
-========================================= */
+===================================================== */
 
 @media (max-width: 350px) {
+  .order-page-main {
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+
   .order-page-title {
-    font-size: 24px;
+    font-size: 25px;
+  }
+
+  .order-page-badge {
+    font-size: 7px;
+    letter-spacing: 1px;
+    padding: 7px 10px;
   }
 
   .order-page-description {
-    font-size: 10px;
+    font-size: 8.5px;
   }
 
   .order-left-title {
@@ -1080,7 +1394,7 @@
   }
 
   .order-form-title {
-    font-size: 22px;
+    font-size: 21px;
   }
 
   .order-form-decoration {
@@ -1089,266 +1403,185 @@
 
   .order-submit-button {
     gap: 6px;
-    font-size: 9px;
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 8px;
   }
 
   .order-contact-value {
     font-size: 10px;
   }
-}
 
-
-/* =========================================
-   ACCESSIBILITY / MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .order-page-main .order-feature-card,
-  .order-page-main .order-contact-box,
-  .order-page-main .order-submit-button,
-  .order-page-main .order-feature-arrow,
-  .order-page-main .order-contact-arrow,
-  .order-page-main .order-submit-arrow {
-    transition: none;
+  .order-form-bottom-note {
+    font-size: 7px;
   }
 }
 
 
-
-/* =========================================
-   LARGE DESKTOP — 1440px
-========================================= */
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
 
 @media (min-width: 1400px) {
   .order-page-main {
-    padding: 50px 40px 75px;
-  }
-
-  .order-page-container {
-    max-width: 1280px;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 26px;
-  }
-
-  .order-left-panel {
-    padding: 30px;
-  }
-
-  .order-right-panel {
-    padding: 32px;
-  }
-
-  .order-left-title {
-    font-size: 33px;
-  }
-
-  .order-form-title {
-    font-size: 34px;
-  }
-
-  .order-input-box {
-    height: 47px;
-  }
-
-  .order-input-icon {
-    width: 42px;
-    flex-basis: 42px;
-  }
-
-  .order-input-field,
-  .order-select-field {
-    font-size: 12px;
-  }
-
-  .order-message-field {
-    min-height: 115px;
-  }
-
-  .order-submit-button {
-    min-height: 51px;
-    font-size: 12px;
-  }
-}
-
-
-/* =========================================
-   FULL HD — 1920px
-========================================= */
-
-@media (min-width: 1800px) {
-  .order-page-main {
-    padding: 60px 60px 85px;
+    padding: 55px 40px 40px;
   }
 
   .order-page-hero {
-    max-width: 1100px;
-    margin-bottom: 42px;
+    max-width: 1150px;
+    margin-bottom: 43px;
   }
 
   .order-page-title {
-    font-size: 50px;
+    font-size: 52px;
   }
 
   .order-page-description {
-    font-size: 14px;
-    max-width: 750px;
+    max-width: 760px;
+    font-size: 13px;
   }
 
   .order-page-container {
-    max-width: 1500px;
-    gap: 32px;
-    grid-template-columns: 0.82fr 1.18fr;
+    max-width: 1320px;
+    gap: 27px;
   }
 
   .order-left-panel {
-    padding: 36px;
-    border-radius: 22px;
+    padding: 31px;
+    border-radius: 21px;
   }
 
   .order-right-panel {
-    padding: 38px;
-    border-radius: 22px;
+    padding: 33px;
+    border-radius: 21px;
   }
 
   .order-left-title {
-    font-size: 38px;
+    font-size: 34px;
   }
 
   .order-left-description {
-    font-size: 13px;
+    font-size: 12px;
   }
 
-  .order-features-list {
-    gap: 10px;
-    margin-top: 24px;
+  .order-feature-list {
+    gap: 9px;
+    margin-top: 25px;
   }
 
   .order-feature-card {
-    padding: 13px 14px;
+    min-height: 47px;
+    padding: 12px 14px;
+    gap: 12px;
   }
 
   .order-feature-icon {
-    font-size: 14px;
-    width: 22px;
-    flex-basis: 22px;
+    width: 21px;
+    height: 21px;
+    flex-basis: 21px;
+    font-size: 13px;
   }
 
   .order-feature-text {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .order-highlight-box {
-    padding: 21px;
-    margin-top: 22px;
+    padding: 20px;
+    margin-top: 21px;
   }
 
   .order-highlight-number {
-    font-size: 38px;
+    font-size: 40px;
   }
 
   .order-highlight-text {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .order-contact-box {
-    padding: 16px;
+    padding: 15px;
+    gap: 13px;
   }
 
   .order-contact-icon {
-    width: 42px;
-    height: 42px;
-    flex-basis: 42px;
-    font-size: 19px;
+    width: 41px;
+    height: 41px;
+    flex-basis: 41px;
+    font-size: 18px;
   }
 
   .order-contact-value {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .order-form-title {
-    font-size: 39px;
+    font-size: 35px;
   }
 
   .order-form-subtitle {
-    font-size: 13px;
-  }
-
-  .order-form-header {
-    margin-bottom: 26px;
-    padding-bottom: 23px;
+    font-size: 11px;
   }
 
   .order-form-grid {
-    gap: 19px 22px;
+    gap: 17px 19px;
   }
 
-  .order-input-group label {
-    font-size: 12px;
-    margin-bottom: 8px;
+  .order-field-label {
+    font-size: 11px;
+    margin-bottom: 7px;
   }
 
   .order-input-box {
-    height: 52px;
-    border-radius: 10px;
+    height: 48px;
   }
 
   .order-input-icon {
-    width: 46px;
-    flex-basis: 46px;
-    font-size: 13px;
+    width: 42px;
+    flex-basis: 42px;
+    font-size: 12px;
   }
 
   .order-input-field,
   .order-select-field {
-    font-size: 13px;
-    padding: 0 14px;
-  }
-
-  .order-message-group {
-    margin-top: 21px;
+    font-size: 11px;
+    padding: 0 12px;
   }
 
   .order-message-field {
-    min-height: 130px;
-    padding: 16px;
-    font-size: 13px;
-  }
-
-  .order-message-helper {
-    font-size: 10px;
+    min-height: 108px;
+    padding: 14px;
+    font-size: 11px;
   }
 
   .order-submit-button {
-    min-height: 57px;
-    margin-top: 23px;
-    font-size: 13px;
+    min-height: 52px;
+    font-size: 11px;
   }
 
-  .order-form-footer-note {
-    font-size: 10px;
-    margin-top: 14px;
+  .order-form-bottom-note {
+    font-size: 9px;
   }
 }
 
 
-/* =========================================
-   2K / 2560px MONITORS
-========================================= */
+/* =====================================================
+   FULL HD DESKTOP
+===================================================== */
 
-@media (min-width: 2400px) {
+@media (min-width: 1800px) {
   .order-page-main {
-    padding: 75px 100px 100px;
+    padding: 65px 60px 45px;
   }
 
   .order-page-hero {
     max-width: 1250px;
-    margin-bottom: 52px;
+    margin-bottom: 49px;
   }
 
   .order-page-badge {
-    font-size: 12px;
     padding: 11px 21px;
-    margin-bottom: 22px;
+    font-size: 11px;
   }
 
   .order-page-title {
@@ -1356,15 +1589,222 @@
   }
 
   .order-page-description {
-    font-size: 15px;
-    max-width: 850px;
+    max-width: 830px;
+    font-size: 14px;
     line-height: 2;
-    margin-top: 19px;
+  }
+
+  .order-hero-bottom-text {
+    font-size: 12px;
+  }
+
+  .order-page-container {
+    max-width: 1500px;
+    gap: 32px;
+  }
+
+  .order-left-panel {
+    padding: 37px;
+    border-radius: 24px;
+  }
+
+  .order-right-panel {
+    padding: 39px;
+    border-radius: 24px;
+  }
+
+  .order-panel-label {
+    font-size: 10px;
+    margin-bottom: 14px;
+  }
+
+  .order-left-title {
+    font-size: 39px;
+  }
+
+  .order-left-description {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .order-feature-list {
+    gap: 11px;
+    margin-top: 28px;
+  }
+
+  .order-feature-card {
+    min-height: 53px;
+    padding: 14px 16px;
+    border-radius: 11px;
+  }
+
+  .order-feature-icon {
+    width: 23px;
+    height: 23px;
+    flex-basis: 23px;
+    font-size: 15px;
+  }
+
+  .order-feature-text {
+    font-size: 12px;
+  }
+
+  .order-highlight-box {
+    padding: 23px;
+    margin-top: 24px;
+    border-radius: 15px;
+  }
+
+  .order-highlight-number {
+    font-size: 45px;
+  }
+
+  .order-highlight-text {
+    font-size: 13px;
+  }
+
+  .order-contact-box {
+    padding: 18px;
+    border-radius: 13px;
+  }
+
+  .order-contact-icon {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+    font-size: 20px;
+  }
+
+  .order-contact-caption {
+    font-size: 9px;
+  }
+
+  .order-contact-title {
+    font-size: 11px;
+  }
+
+  .order-contact-value {
+    font-size: 15px;
+  }
+
+  .order-form-heading-area {
+    padding-bottom: 23px;
+    margin-bottom: 25px;
+  }
+
+  .order-form-label {
+    font-size: 10px;
+  }
+
+  .order-form-title {
+    font-size: 41px;
+  }
+
+  .order-form-subtitle {
+    font-size: 13px;
+  }
+
+  .order-form-decoration {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+    font-size: 23px;
+  }
+
+  .order-form-grid {
+    gap: 21px 23px;
+  }
+
+  .order-field-label {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .order-input-box {
+    height: 53px;
+    border-radius: 10px;
+  }
+
+  .order-input-icon {
+    width: 47px;
+    flex-basis: 47px;
+    font-size: 13px;
+  }
+
+  .order-input-field,
+  .order-select-field {
+    padding: 0 14px;
+    font-size: 12px;
+  }
+
+  .order-textarea-section {
+    margin-top: 22px;
+  }
+
+  .order-message-field {
+    min-height: 125px;
+    padding: 16px;
+    font-size: 12px;
+  }
+
+  .order-message-helper {
+    font-size: 9px;
+  }
+
+  .order-submit-button {
+    min-height: 58px;
+    margin-top: 22px;
+    font-size: 13px;
+  }
+
+  .order-submit-icon {
+    font-size: 19px;
+  }
+
+  .order-form-bottom-note {
+    font-size: 10px;
+  }
+}
+
+
+/* =====================================================
+   2K / 2560px AND ABOVE
+===================================================== */
+
+@media (min-width: 2400px) {
+  .order-page-main {
+    padding: 78px 100px 55px;
+  }
+
+  .order-page-hero {
+    max-width: 1400px;
+    margin-bottom: 57px;
+  }
+
+  .order-page-badge {
+    padding: 12px 24px;
+    margin-bottom: 23px;
+    font-size: 12px;
+    letter-spacing: 2.4px;
+  }
+
+  .order-page-title {
+    font-size: 66px;
+  }
+
+  .order-page-description {
+    max-width: 920px;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 2;
   }
 
   .order-hero-bottom {
+    margin-top: 27px;
+  }
+
+  .order-hero-bottom-text {
     font-size: 14px;
-    margin-top: 26px;
   }
 
   .order-hero-line {
@@ -1372,53 +1812,59 @@
   }
 
   .order-page-container {
-    max-width: 1680px;
-    gap: 38px;
-    grid-template-columns: 0.82fr 1.18fr;
+    max-width: 1740px;
+    gap: 39px;
   }
 
   .order-left-panel {
-    padding: 42px;
-    border-radius: 26px;
+    padding: 44px;
+    border-radius: 27px;
   }
 
   .order-right-panel {
-    padding: 45px;
-    border-radius: 26px;
+    padding: 47px;
+    border-radius: 27px;
   }
 
   .order-panel-label {
+    gap: 10px;
+    margin-bottom: 16px;
     font-size: 11px;
-    letter-spacing: 2.4px;
-    margin-bottom: 14px;
+    letter-spacing: 2.5px;
+  }
+
+  .order-panel-label svg {
+    font-size: 14px;
   }
 
   .order-left-title {
-    font-size: 45px;
+    font-size: 47px;
   }
 
   .order-left-description {
+    max-width: 480px;
+    margin-top: 18px;
     font-size: 15px;
-    line-height: 1.95;
-    margin-top: 16px;
+    line-height: 2;
   }
 
-  .order-features-list {
-    gap: 12px;
-    margin-top: 30px;
+  .order-feature-list {
+    gap: 13px;
+    margin-top: 32px;
   }
 
   .order-feature-card {
-    padding: 16px 17px;
-    border-radius: 12px;
-    gap: 14px;
+    min-height: 62px;
+    padding: 17px 19px;
+    gap: 15px;
+    border-radius: 13px;
   }
 
   .order-feature-icon {
-    width: 25px;
-    height: 25px;
-    flex-basis: 25px;
-    font-size: 16px;
+    width: 27px;
+    height: 27px;
+    flex-basis: 27px;
+    font-size: 17px;
   }
 
   .order-feature-text {
@@ -1430,137 +1876,194 @@
   }
 
   .order-highlight-box {
-    padding: 25px;
-    border-radius: 16px;
-    margin-top: 26px;
+    padding: 27px;
+    margin-top: 29px;
+    border-radius: 17px;
   }
 
-  .order-highlight-number {
-    font-size: 46px;
+  .order-highlight-small {
+    font-size: 10px;
   }
 
   .order-highlight-star {
-    font-size: 25px;
+    font-size: 24px;
+  }
+
+  .order-highlight-number {
+    font-size: 51px;
+  }
+
+  .order-highlight-plus {
+    font-size: 30px;
   }
 
   .order-highlight-text {
+    margin-top: 10px;
     font-size: 15px;
-    margin-top: 10px;
-  }
-
-  .order-highlight-bottom {
-    font-size: 12px;
-    margin-top: 10px;
   }
 
   .order-contact-box {
-    padding: 20px;
-    border-radius: 14px;
-    gap: 15px;
-    margin-top: 22px;
+    padding: 21px;
+    gap: 16px;
+    margin-top: 25px;
+    border-radius: 15px;
   }
 
   .order-contact-icon {
-    width: 50px;
-    height: 50px;
-    flex-basis: 50px;
-    font-size: 22px;
+    width: 53px;
+    height: 53px;
+    flex-basis: 53px;
+    font-size: 23px;
+  }
+
+  .order-contact-caption {
+    font-size: 10px;
   }
 
   .order-contact-title {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .order-contact-value {
-    font-size: 16px;
+    font-size: 17px;
   }
 
-  .order-contact-arrow {
-    font-size: 13px;
+  .order-form-heading-area {
+    padding-bottom: 31px;
+    margin-bottom: 31px;
   }
 
-  .order-form-header {
-    padding-bottom: 30px;
-    margin-bottom: 30px;
+  .order-form-label {
+    font-size: 11px;
+    letter-spacing: 2.3px;
   }
 
   .order-form-title {
-    font-size: 47px;
+    font-size: 49px;
   }
 
   .order-form-subtitle {
-    font-size: 15px;
     margin-top: 12px;
+    font-size: 15px;
   }
 
   .order-form-decoration {
-    width: 55px;
-    height: 55px;
-    flex-basis: 55px;
-    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    flex-basis: 60px;
+    border-radius: 16px;
+    font-size: 27px;
   }
 
   .order-form-grid {
-    gap: 24px 26px;
+    gap: 25px 28px;
   }
 
-  .order-input-group label {
-    font-size: 13px;
-    margin-bottom: 9px;
+  .order-field-label {
+    margin-bottom: 10px;
+    font-size: 14px;
   }
 
   .order-input-box {
-    height: 58px;
-    border-radius: 11px;
+    height: 61px;
+    border-radius: 12px;
   }
 
   .order-input-icon {
-    width: 52px;
-    flex-basis: 52px;
-    font-size: 15px;
+    width: 55px;
+    flex-basis: 55px;
+    font-size: 16px;
   }
 
   .order-input-field,
   .order-select-field {
+    padding: 0 17px;
     font-size: 14px;
-    padding: 0 16px;
   }
 
-  .order-message-group {
-    margin-top: 25px;
+  .order-textarea-section {
+    margin-top: 27px;
   }
 
   .order-message-field {
-    min-height: 150px;
-    padding: 19px;
+    min-height: 155px;
+    padding: 20px;
     font-size: 14px;
   }
 
   .order-message-helper {
-    font-size: 11px;
     margin-top: 8px;
+    font-size: 11px;
   }
 
   .order-submit-button {
-    min-height: 65px;
-    margin-top: 27px;
+    min-height: 67px;
+    margin-top: 28px;
     padding: 15px 22px;
-    gap: 15px;
-    border-radius: 11px;
+    gap: 16px;
+    border-radius: 12px;
     font-size: 15px;
   }
 
   .order-submit-icon {
-    font-size: 21px;
+    font-size: 22px;
   }
 
   .order-submit-arrow {
-    font-size: 13px;
-    
+    font-size: 14px;
   }
 
-  .order-form-footer-note {
+  .order-form-bottom-note {
+    gap: 8px;
+    margin-top: 17px;
     font-size: 11px;
-    margin-top: 16px;
+  }
+
+  .order-page-bottom-decoration {
+    margin-top: 42px;
+  }
+
+  .order-bottom-text {
+    font-size: 11px;
+  }
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.order-page-main a:focus-visible,
+.order-page-main button:focus-visible,
+.order-page-main input:focus-visible,
+.order-page-main select:focus-visible,
+.order-page-main textarea:focus-visible {
+  outline: 2px solid #a98252;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .order-page-hero,
+  .order-left-panel,
+  .order-right-panel,
+  .order-hero-decoration-one,
+  .order-hero-decoration-two,
+  .order-badge-dot {
+    animation: none;
+  }
+
+  .order-feature-card,
+  .order-feature-arrow,
+  .order-contact-box,
+  .order-contact-icon,
+  .order-contact-arrow,
+  .order-highlight-box,
+  .order-form-decoration,
+  .order-input-box,
+  .order-textarea-box,
+  .order-submit-button,
+  .order-submit-button::before,
+  .order-submit-arrow {
+    transition: none;
   }
 }

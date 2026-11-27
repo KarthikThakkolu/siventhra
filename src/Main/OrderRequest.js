@@ -81,34 +81,39 @@ Thank You.`;
   ];
 
   return (
-    <section className="order-page-main">
+    <div className="order-page-main">
 
-      {/* HERO SECTION */}
+      {/* HERO */}
 
       <div className="order-page-hero">
+        <div className="order-hero-decoration order-hero-decoration-one"></div>
+        <div className="order-hero-decoration order-hero-decoration-two"></div>
 
         <div className="order-page-badge">
-          <span className="order-badge-dot"></span>
+          <div className="order-badge-dot"></div>
           YOUR DREAM SPACE STARTS HERE
         </div>
 
-        <h1 className="order-page-title">
+        <div className="order-page-title">
           Let's Create Something
-          <span> Beautiful Together</span>
-        </h1>
+          <div className="order-title-highlight">
+            Beautiful Together.
+          </div>
+        </div>
 
-        <p className="order-page-description">
+        <div className="order-page-description">
           Tell us about your home, your ideas, and your vision.
           Our team will help you find the perfect interior solution
           with beautiful designs and pricing tailored to your needs.
-        </p>
+        </div>
 
         <div className="order-hero-bottom">
           <div className="order-hero-line"></div>
-          <span>DESIGNED AROUND YOU</span>
+          <div className="order-hero-bottom-text">
+            DESIGNED AROUND YOU
+          </div>
           <div className="order-hero-line"></div>
         </div>
-
       </div>
 
 
@@ -116,28 +121,29 @@ Thank You.`;
 
       <div className="order-page-container">
 
-
         {/* LEFT INFORMATION PANEL */}
 
-        <aside className="order-left-panel">
+        <div className="order-left-panel">
 
           <div className="order-left-top">
 
-            <span className="order-panel-label">
+            <div className="order-panel-label">
               <FaStar />
               WHY SIVENTHRA
-            </span>
+            </div>
 
-            <h2 className="order-left-title">
+            <div className="order-left-title">
               Interiors that feel
-              <span> like home.</span>
-            </h2>
+              <div className="order-left-title-highlight">
+                like home.
+              </div>
+            </div>
 
-            <p className="order-left-description">
+            <div className="order-left-description">
               Thoughtfully designed spaces, quality materials,
               and personal attention at every step. We bring
               your vision to life with care and creativity.
-            </p>
+            </div>
 
           </div>
 
@@ -157,7 +163,9 @@ Thank You.`;
                   {feature}
                 </div>
 
-                <FaArrowRight className="order-feature-arrow" />
+                <div className="order-feature-arrow">
+                  <FaArrowRight />
+                </div>
 
               </div>
             ))}
@@ -165,22 +173,22 @@ Thank You.`;
           </div>
 
 
-          {/* SPECIAL HIGHLIGHT */}
+          {/* CUSTOMER HIGHLIGHT */}
 
           <div className="order-highlight-box">
 
             <div className="order-highlight-top">
-              <span className="order-highlight-small">
+              <div className="order-highlight-small">
                 BUILT ON TRUST
-              </span>
+              </div>
 
-              <span className="order-highlight-star">
+              <div className="order-highlight-star">
                 <FaStar />
-              </span>
+              </div>
             </div>
 
             <div className="order-highlight-number">
-              500<span>+</span>
+              500<div className="order-highlight-plus">+</div>
             </div>
 
             <div className="order-highlight-text">
@@ -207,9 +215,9 @@ Thank You.`;
 
             <div className="order-contact-content">
 
-              <span className="order-contact-caption">
+              <div className="order-contact-caption">
                 HAVE A QUICK QUESTION?
-              </span>
+              </div>
 
               <div className="order-contact-title">
                 Chat with our team
@@ -227,8 +235,7 @@ Thank You.`;
 
           </a>
 
-        </aside>
-
+        </div>
 
 
         {/* RIGHT FORM PANEL */}
@@ -239,18 +246,18 @@ Thank You.`;
 
             <div className="order-form-heading-left">
 
-              <span className="order-form-label">
-                <span className="order-form-label-dot"></span>
+              <div className="order-form-label">
+                <div className="order-form-label-dot"></div>
                 GET STARTED
-              </span>
+              </div>
 
-              <h2 className="order-form-title">
+              <div className="order-form-title">
                 Request a Quote
-              </h2>
+              </div>
 
-              <p className="order-form-subtitle">
-                A few details is all we need to get started.
-              </p>
+              <div className="order-form-subtitle">
+                A few details are all we need to get started.
+              </div>
 
             </div>
 
@@ -270,17 +277,14 @@ Thank You.`;
 
             <div className="order-form-grid">
 
-
               {/* NAME */}
 
               <div className="order-input-group">
-
-                <label className="order-field-label">
-                  Full Name <span>*</span>
-                </label>
+                <div className="order-field-label">
+                  Full Name <div className="order-required">*</div>
+                </div>
 
                 <div className="order-input-box">
-
                   <div className="order-input-icon">
                     <FaUser />
                   </div>
@@ -293,24 +297,21 @@ Thank You.`;
                     value={orderFormData.customerName}
                     onChange={orderInputChange}
                     autoComplete="name"
+                    aria-label="Full Name"
                     required
                   />
-
                 </div>
-
               </div>
 
 
               {/* PHONE */}
 
               <div className="order-input-group">
-
-                <label className="order-field-label">
-                  Phone Number <span>*</span>
-                </label>
+                <div className="order-field-label">
+                  Phone Number <div className="order-required">*</div>
+                </div>
 
                 <div className="order-input-box">
-
                   <div className="order-input-icon">
                     <FaPhoneAlt />
                   </div>
@@ -323,24 +324,21 @@ Thank You.`;
                     value={orderFormData.customerPhone}
                     onChange={orderInputChange}
                     autoComplete="tel"
+                    aria-label="Phone Number"
                     required
                   />
-
                 </div>
-
               </div>
 
 
               {/* EMAIL */}
 
               <div className="order-input-group">
-
-                <label className="order-field-label">
+                <div className="order-field-label">
                   Email Address
-                </label>
+                </div>
 
                 <div className="order-input-box">
-
                   <div className="order-input-icon">
                     <FaEnvelope />
                   </div>
@@ -353,23 +351,20 @@ Thank You.`;
                     value={orderFormData.customerEmail}
                     onChange={orderInputChange}
                     autoComplete="email"
+                    aria-label="Email Address"
                   />
-
                 </div>
-
               </div>
 
 
               {/* LOCATION */}
 
               <div className="order-input-group">
-
-                <label className="order-field-label">
+                <div className="order-field-label">
                   Project Location
-                </label>
+                </div>
 
                 <div className="order-input-box">
-
                   <div className="order-input-icon">
                     <FaMapMarkerAlt />
                   </div>
@@ -382,23 +377,20 @@ Thank You.`;
                     value={orderFormData.customerLocation}
                     onChange={orderInputChange}
                     autoComplete="address-level2"
+                    aria-label="Project Location"
                   />
-
                 </div>
-
               </div>
 
 
               {/* SERVICE */}
 
               <div className="order-input-group">
-
-                <label className="order-field-label">
-                  Service Required <span>*</span>
-                </label>
+                <div className="order-field-label">
+                  Service Required <div className="order-required">*</div>
+                </div>
 
                 <div className="order-input-box">
-
                   <div className="order-input-icon">
                     <FaClipboardList />
                   </div>
@@ -408,36 +400,31 @@ Thank You.`;
                     name="customerService"
                     value={orderFormData.customerService}
                     onChange={orderInputChange}
+                    aria-label="Service Required"
                     required
                   >
-
                     <option value="">Choose a service</option>
-                    <option>Curtains</option>
-                    <option>Blinds</option>
-                    <option>Wallpapers</option>
-                    <option>False Ceiling</option>
-                    <option>Mosquito Mesh</option>
-                    <option>PVC Room Partition</option>
-                    <option>Wall Panels</option>
-                    <option>Modular Interiors</option>
-
+                    <option value="Curtains">Curtains</option>
+                    <option value="Blinds">Blinds</option>
+                    <option value="Wallpapers">Wallpapers</option>
+                    <option value="False Ceiling">False Ceiling</option>
+                    <option value="Mosquito Mesh">Mosquito Mesh</option>
+                    <option value="PVC Room Partition">PVC Room Partition</option>
+                    <option value="Wall Panels">Wall Panels</option>
+                    <option value="Modular Interiors">Modular Interiors</option>
                   </select>
-
                 </div>
-
               </div>
 
 
               {/* BUDGET */}
 
               <div className="order-input-group">
-
-                <label className="order-field-label">
+                <div className="order-field-label">
                   Estimated Budget
-                </label>
+                </div>
 
                 <div className="order-input-box">
-
                   <div className="order-input-icon">
                     <FaRupeeSign />
                   </div>
@@ -447,32 +434,27 @@ Thank You.`;
                     name="customerBudget"
                     value={orderFormData.customerBudget}
                     onChange={orderInputChange}
+                    aria-label="Estimated Budget"
                   >
-
                     <option value="">Select your budget</option>
-                    <option>Below ₹10,000</option>
-                    <option>₹10,000 - ₹30,000</option>
-                    <option>₹30,000 - ₹60,000</option>
-                    <option>₹60,000 - ₹1,00,000</option>
-                    <option>Above ₹1,00,000</option>
-
+                    <option value="Below ₹10,000">Below ₹10,000</option>
+                    <option value="₹10,000 - ₹30,000">₹10,000 - ₹30,000</option>
+                    <option value="₹30,000 - ₹60,000">₹30,000 - ₹60,000</option>
+                    <option value="₹60,000 - ₹1,00,000">₹60,000 - ₹1,00,000</option>
+                    <option value="Above ₹1,00,000">Above ₹1,00,000</option>
                   </select>
-
                 </div>
-
               </div>
 
 
               {/* CONTACT TIME */}
 
               <div className="order-input-group order-input-full">
-
-                <label className="order-field-label">
+                <div className="order-field-label">
                   Preferred Contact Time
-                </label>
+                </div>
 
                 <div className="order-input-box">
-
                   <div className="order-input-icon">
                     <FaClock />
                   </div>
@@ -482,39 +464,43 @@ Thank You.`;
                     name="customerTime"
                     value={orderFormData.customerTime}
                     onChange={orderInputChange}
+                    aria-label="Preferred Contact Time"
                   >
-
                     <option value="">When should we contact you?</option>
-                    <option>Morning (9AM - 12PM)</option>
-                    <option>Afternoon (12PM - 4PM)</option>
-                    <option>Evening (4PM - 8PM)</option>
-                    <option>Any Time</option>
-
+                    <option value="Morning (9AM - 12PM)">Morning (9AM - 12PM)</option>
+                    <option value="Afternoon (12PM - 4PM)">Afternoon (12PM - 4PM)</option>
+                    <option value="Evening (4PM - 8PM)">Evening (4PM - 8PM)</option>
+                    <option value="Any Time">Any Time</option>
                   </select>
-
                 </div>
-
               </div>
 
             </div>
 
 
-            {/* PROJECT MESSAGE */}
+            {/* PROJECT DETAILS */}
 
-            <div className="order-textarea-box">
+            <div className="order-textarea-section">
 
-              <label className="order-field-label">
+              <div className="order-field-label">
                 Project Details
-              </label>
+              </div>
 
-              <textarea
-                className="order-message-field"
-                rows="5"
-                name="customerMessage"
-                placeholder="Tell us what you're looking for... Mention room size, design ideas, colors, materials, or anything else."
-                value={orderFormData.customerMessage}
-                onChange={orderInputChange}
-              />
+              <div className="order-textarea-box">
+                <textarea
+                  className="order-message-field"
+                  rows="4"
+                  name="customerMessage"
+                  placeholder="Tell us what you're looking for... Mention room size, design ideas, colors, materials, or anything else."
+                  value={orderFormData.customerMessage}
+                  onChange={orderInputChange}
+                  aria-label="Project Details"
+                />
+              </div>
+
+              <div className="order-message-helper">
+                Share your ideas so we can understand your project better.
+              </div>
 
             </div>
 
@@ -525,23 +511,27 @@ Thank You.`;
               className="order-submit-button"
               type="submit"
             >
-
-              <span className="order-submit-icon">
+              <div className="order-submit-icon">
                 <FaWhatsapp />
-              </span>
+              </div>
 
-              <span className="order-submit-text">
+              <div className="order-submit-text">
                 Send Request via WhatsApp
-              </span>
+              </div>
 
-              <FaPaperPlane className="order-submit-arrow" />
-
+              <div className="order-submit-arrow">
+                <FaPaperPlane />
+              </div>
             </button>
 
 
+            {/* PRIVACY NOTE */}
+
             <div className="order-form-bottom-note">
               <FaCheckCircle />
-              <span>Your details are only used to respond to your enquiry.</span>
+              <div>
+                Your details are only used to respond to your enquiry.
+              </div>
             </div>
 
           </form>
@@ -550,7 +540,15 @@ Thank You.`;
 
       </div>
 
-    </section>
+      <div className="order-page-bottom-decoration">
+        <div className="order-bottom-line"></div>
+        <div className="order-bottom-text">
+          SIVENTHRA INTERIOR & DECORS
+        </div>
+        <div className="order-bottom-line"></div>
+      </div>
+
+    </div>
   );
 };
 

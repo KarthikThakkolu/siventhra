@@ -1,610 +1,655 @@
+
 import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Homepage.css";
-import { Link } from "react-router-dom";
+
+const slides = [
+    {
+        image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=2200&q=90",
+        eyebrow: "01 / CURTAIN COLLECTION",
+        title: "Spaces that\nfeel like you.",
+        description: "Thoughtfully chosen interiors. Beautifully finished spaces. A feeling that stays.",
+        link: "/Pages/Curtains",
+        label: "Curtains",
+    },
+    {
+        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2200&q=90",
+        eyebrow: "02 / WALL DESIGN",
+        title: "A wall can\nchange everything.",
+        description: "Bring your walls to life with textures, tones and patterns that tell your story.",
+        link: "/Pages/Wallpapers",
+        label: "Wallpapers",
+    },
+    {
+        image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2200&q=90",
+        eyebrow: "03 / LIGHT & LIVING",
+        title: "Let the light\nfind its place.",
+        description: "Beautiful window solutions that balance light, privacy and everyday comfort.",
+        link: "/Pages/Blinds",
+        label: "Window Blinds",
+    },
+];
+
+const collections = [
+    {
+        number: "01",
+        title: "Curtains",
+        category: "FABRIC / LIGHT / ELEGANCE",
+        description: "Make every window a statement with beautifully tailored curtains and textures.",
+        image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85",
+        link: "/Pages/Curtains",
+        style: "collection-large",
+    },
+    {
+        number: "02",
+        title: "Wallpapers",
+        category: "PATTERN / PERSONALITY / DEPTH",
+        description: "Walls with character. Explore designs that bring personality into every corner.",
+        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85",
+        link: "/Pages/Wallpapers",
+        style: "collection-small",
+    },
+    {
+        number: "03",
+        title: "Window Blinds",
+    category: "CONTROL / COMFORT / STYLE",
+        description: "A smarter way to shape sunlight, privacy and the mood of your room.",
+        image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85",
+        link: "/Pages/Blinds",
+        style: "collection-small",
+    },
+    {
+        number: "04",
+        title: "Flooring",
+        category: "FOUNDATION / WARMTH / DETAIL",
+        description: "Understated flooring that brings the whole space together.",
+        image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=85",
+        link: "/Pages/Flooring",
+        style: "collection-large",
+    },
+];
+
+const services = [
+    { number: "01", title: "Curtains", detail: "Custom fabric & finishing", link: "/Pages/Curtains" },
+    { number: "02", title: "Wallpapers", detail: "Patterns & wall textures", link: "/Pages/Wallpapers" },
+    { number: "03", title: "Window Blinds", detail: "Roller, zebra & roman", link: "/Pages/Blinds" },
+    { number: "04", title: "Wooden Flooring", detail: "SPC & laminate flooring", link: "/Pages/Flooring" },
+    { number: "05", title: "PVC Wall Panels", detail: "Decorative wall solutions", link: "/Pages/PVC" },
+    { number: "06", title: "Room Partitions", detail: "Space & privacy design", link: "/Pages/Partitions" },
+    { number: "07", title: "Mosquito Mesh", detail: "Protection with a clear view", link: "/Pages/Mesh" },
+    { number: "08", title: "Ceiling Hangers", detail: "Modern drying systems", link: "/Pages/CeilingHangers" },
+];
+
+const testimonials = [
+    {
+        name: "Karthik Thakkolu",
+        location: "Homeowner · Nellore",
+        image: "https://i.pravatar.cc/150?img=12",
+        review: "Excellent work by Siventhra Interiors. Wallpaper installation and mosquito mesh quality exceeded my expectations. The finishing was premium, the staff were professional, and the project was completed on time. Highly recommended for home interiors.",
+    },
+    {
+        name: "Our Happy Customer",
+        location: "Homeowner",
+        image: "https://i.pravatar.cc/150?img=47",
+        review: "Beautiful quality and excellent finishing. The team helped us choose the right designs for our home. Everything looks elegant and feels comfortable.",
+    },
+    {
+        name: "Our Happy Customer",
+        location: "Homeowner",
+        image: "https://i.pravatar.cc/150?img=32",
+        review: "A wonderful experience from choosing the materials to the final installation. The design, attention to detail and overall work were impressive.",
+    },
+];
 
 const Homepage = () => {
     const navigate = useNavigate();
     const [current, setCurrent] = useState(0);
-
-    const images = [
-        {
-            url: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85",
-            title: "Curatins",
-            subtitle: "Add elegance and comfort to your space.",
-            link: "/services/ss-automation",
-        },
-        {
-            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiYMwrqifrlc7dbWzvWvpzA9qkisti67LVtM7D_j_Xeg&s=10",
-            title: "wallpapers",
-            subtitle: "Transform your walls with stunning designs.",
-            link: "/services/floor-designers",
-        },
-        {
-            url: "https://img.freepik.com/premium-photo/stylish-modern-living-room-interior-design-3d-render-8k-image_901408-22328.jpg",
-            title: "Blinds",
-            subtitle: "Control light, style your space.",
-            link: "/services/the-best",
-        },
-        // {
-        //     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ3qgmfPqSDCwbDhClJqxnQq-55WTKvZAJDRzCmFTadw&s=10",
-        //     title: "Pest Control Services",
-        //     subtitle: "Protect your home from unwanted guests",
-        //     link: "/services/pest-control",
-        // },
-    ];
+    const [reviewIndex, setReviewIndex] = useState(0);
 
     const nextSlide = useCallback(() => {
-        setCurrent((prev) => (prev + 1) % images.length);
-    }, [images.length]);
+        setCurrent((prev) => (prev + 1) % slides.length);
+    }, []);
 
-    const prevSlide = () => {
-        setCurrent((prev) => (prev - 1 + images.length) % images.length);
-    };
+    const prevSlide = useCallback(() => {
+        setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+    }, []);
 
     useEffect(() => {
-        const interval = setInterval(nextSlide, 5000);
-        return () => clearInterval(interval);
+        const timer = setInterval(nextSlide, 6500);
+        return () => clearInterval(timer);
     }, [nextSlide]);
 
+    useEffect(() => {
+        const elements = document.querySelectorAll(".home-reveal");
+
+        if (!("IntersectionObserver" in window)) {
+            elements.forEach((element) => element.classList.add("home-visible"));
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("home-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px",
+            }
+        );
+
+        elements.forEach((element) => observer.observe(element));
+
+        return () => observer.disconnect();
+    }, []);
+
+    const nextReview = () => {
+        setReviewIndex((prev) => (prev + 1) % testimonials.length);
+    };
+
+    const prevReview = () => {
+        setReviewIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    };
+
+    const activeReview = testimonials[reviewIndex];
+
     return (
-        <div>
-            <div className="slider-wrapper">
-                {images.map((img, index) => (
-                    <div
-                        key={index}
-                        className={`slider-slide ${index === current ? "active" : ""}`}
-                    >
-                        {index === current && (
-                            <>
-                                <img src={img.url} alt={img.title} />
+        <main className="sv-homepage">
 
-                                <div className="slider-overlay">
-                                    <h1 className="slider-overlay-title">{img.title}</h1>
+            {/* ================= HERO ================= */}
 
-                                    <p className="slider-overlay-subtitle">
-                                        {img.subtitle}
-                                    </p>
+            <section className="sv-hero">
 
-                                    <button
-                                        className="slider-overlay-button"
-                                        onClick={() => navigate(img.link)}
-                                    >
-                                        Get Started
-                                    </button>
-                                </div>
-                            </>
-                        )}
+                <div className="sv-hero-slides">
+                    {slides.map((slide, index) => (
+                        <div
+                            key={slide.eyebrow}
+                            className={`sv-hero-slide ${index === current ? "sv-active" : ""}`}
+                        >
+                            <img
+                                src={slide.image}
+                                alt={slide.label}
+                                className="sv-hero-image"
+                            />
+
+                            <div className="sv-hero-shade"></div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="sv-hero-content">
+
+                    <div className="sv-hero-left">
+
+                        <span className="sv-hero-eyebrow" key={slides[current].eyebrow}>
+                            {slides[current].eyebrow}
+                        </span>
+
+                        <h1 className="sv-hero-title" key={`title-${current}`}>
+                            {slides[current].title.split("\n").map((line, index) => (
+                                <span key={index}>
+                                    {line}
+                                    {index === 0 && <br />}
+                                </span>
+                            ))}
+                        </h1>
+
+                        <p className="sv-hero-description" key={`description-${current}`}>
+                            {slides[current].description}
+                        </p>
+
+                        <button
+                            className="sv-hero-cta"
+                            onClick={() => navigate(slides[current].link)}
+                        >
+                            <span>Explore collection</span>
+                            <span className="sv-cta-arrow">↗</span>
+                        </button>
+
                     </div>
-                ))}
 
-                <button className="slider-arrow-prev" onClick={prevSlide}>
-                    ❮
-                </button>
+                    <div className="sv-hero-bottom">
 
-                <button className="slider-arrow-next" onClick={nextSlide}>
-                    ❯
-                </button>
+                        <div className="sv-hero-note">
+                            <span className="sv-hero-note-line"></span>
+                            <span>Interiors made meaningful</span>
+                        </div>
 
-                <div className="slider-dots">
-                    {images.map((_, index) => (
-                        <span
-                            key={index}
-                            className={`slider-dot ${index === current ? "active" : ""
-                                }`}
+                        <div className="sv-hero-controls">
+
+                            <span className="sv-hero-counter">
+                                <span>{String(current + 1).padStart(2, "0")}</span>
+                                <span className="sv-counter-divider">/</span>
+                                <span>{String(slides.length).padStart(2, "0")}</span>
+                            </span>
+
+                            <button
+                                className="sv-hero-arrow"
+                                onClick={prevSlide}
+                                aria-label="Previous slide"
+                            >
+                                ←
+                            </button>
+
+                            <button
+                                className="sv-hero-arrow"
+                                onClick={nextSlide}
+                                aria-label="Next slide"
+                            >
+                                →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div className="sv-hero-side-label">
+                    SIVENTHRA / INTERIOR & DECORS
+                </div>
+
+                <div className="sv-hero-progress">
+                    {slides.map((slide, index) => (
+                        <button
+                            key={slide.label}
+                            className={`sv-progress-item ${index === current ? "sv-progress-active" : ""}`}
                             onClick={() => setCurrent(index)}
-                        ></span>
+                            aria-label={`Go to ${slide.label}`}
+                        >
+                            <span></span>
+                        </button>
+                    ))}
+                </div>
+
+            </section>
+
+
+            {/* ================= MOVING TICKER ================= */}
+
+            <section className="sv-ticker" aria-label="Interior design categories">
+
+                <div className="sv-ticker-track">
+                    {[0, 1, 2, 3].map((group) => (
+                        <div className="sv-ticker-group" key={group}>
+                            <span>DESIGN</span>
+                            <span className="sv-ticker-star">✳</span>
+                            <span>TEXTURE</span>
+                            <span className="sv-ticker-star">✳</span>
+                            <span>COMFORT</span>
+                            <span className="sv-ticker-star">✳</span>
+                            <span>DETAIL</span>
+                            <span className="sv-ticker-star">✳</span>
+                        </div>
+                    ))}
+                </div>
+
+            </section>
+
+
+            {/* ================= INTRO ================= */}
+
+            <section className="sv-intro home-reveal">
+
+                <div className="sv-intro-label">
+                    <span className="sv-section-number">01 — OUR WORLD</span>
+                    <span className="sv-label-line"></span>
+                    <span>More than decoration</span>
+                </div>
+
+                <div className="sv-intro-main">
+
+                    <h2>
+                        Your home is a feeling.
+                        <br />
+                        <span>We make it visible.</span>
+                    </h2>
+
+                    <div className="sv-intro-description">
+
+                        <p>
+                            Every room has a story waiting to unfold.
+                            We bring together beautiful materials, thoughtful
+                            details and functional design to create spaces
+                            that feel unmistakably yours.
+                        </p>
+
+                        <Link to="/About" className="sv-text-link">
+                            <span>Get to know us</span>
+                            <span>↗</span>
+                        </Link>
+
+                    </div>
+
+                </div>
+
+                <div className="sv-intro-bottom">
+
+                    <div className="sv-intro-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85"
+                            alt="Warm modern interior designed with thoughtful details"
+                        />
+                    </div>
+
+                    <div className="sv-intro-stats">
+
+                        <div className="sv-stat">
+                            <strong>500<span>+</span></strong>
+                            <span>Happy customers</span>
+                        </div>
+
+                        <div className="sv-stat">
+                            <strong>30<span>+</span></strong>
+                            <span>Interior solutions</span>
+                        </div>
+
+                        <div className="sv-stat">
+                            <strong>5<span>+</span></strong>
+                            <span>Years of experience</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* ================= COLLECTIONS ================= */}
+
+            <section className="sv-collections">
+
+                <div className="sv-collections-heading home-reveal">
+
+                    <div>
+                        <span className="sv-section-number">02 — THE COLLECTIONS</span>
+
+                        <h2>
+                            Pieces that make
+                            <br />
+                            <span>a space yours.</span>
+                        </h2>
+                    </div>
+
+                    <p>
+                        Explore our collection of textures, materials
+                        and designs. Find the details that make a house
+                        feel like home.
+                    </p>
+
+                </div>
+
+                <div className="sv-collections-grid">
+
+                    {collections.map((item, index) => (
+                        <Link
+                            to={item.link}
+                            className={`sv-collection-card ${item.style} home-reveal`}
+                            key={item.number}
+                            style={{ "--reveal-delay": `${index * 100}ms` }}
+                        >
+
+                            <div className="sv-collection-image">
+                                <img src={item.image} alt={item.title} />
+
+                                <div className="sv-collection-image-shade"></div>
+
+                                <span className="sv-collection-number">
+                                    {item.number}
+                                </span>
+
+                                <span className="sv-collection-open">
+                                    ↗
+                                </span>
+                            </div>
+
+                            <div className="sv-collection-info">
+
+                                <div>
+                                    <span className="sv-collection-category">
+                                        {item.category}
+                                    </span>
+
+                                    <h3>{item.title}</h3>
+                                </div>
+
+                                <p>{item.description}</p>
+
+                            </div>
+
+                        </Link>
                     ))}
 
+                </div>
+
+                <div className="sv-collections-footer">
+
+                    <span>DESIGNED FOR YOUR EVERYDAY</span>
+
+                    <Link to="/Services" className="sv-round-link">
+                        <span>Explore everything</span>
+                        <span>↗</span>
+                    </Link>
 
                 </div>
 
-                {/* <div className="client-section">
-                <div className="clients-container">
+            </section>
 
-                    <div className="client-box">
-                        <h2 className="client-box-h2">500+</h2>
-                        <p className="client-box-p">Happy Clients</p>
-                    </div>
 
-                    <div className="client-box">
-                        <h2 className="client-box-h2">30+</h2>
-                        <p className="client-box-p">Services Offered</p>
-                    </div>
+            {/* ================= SERVICES ================= */}
 
-                    <div className="client-box">
-                        <h2 className="client-box-h2">24/7</h2>
-                        <p className="client-box-p">Days Support</p>
-                    </div>
+            <section className="sv-services">
 
-                    <div className="client-box">
-                        <h2 className="client-box-h2">5+</h2>
-                        <p className="client-box-p">Years Experienced Persons</p>
-                    </div>
+                <div className="sv-services-heading home-reveal">
 
-                </div>
-            </div> */}
+                    <span className="sv-section-number">03 — WHAT WE DO</span>
 
+                    <h2>
+                        Thoughtful design.
+                        <br />
+                        <span>Every little detail.</span>
+                    </h2>
 
-                {/* <div className="homepage-container">
-
-                <div className="homepage-row">
-
-                    <div className="homepage-card">
-                        <div className="homepage-card-image">
-                            <img
-                                className="homepage-card-img"
-                                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
-                                alt=""
-                            />
-                        </div>
-
-                        <div className="homepage-card-content">
-                            <div className="homepage-card-title">
-                                Premium Curtains
-                            </div>
-
-                            <div className="homepage-card-description">
-                                Elegant curtain collections for homes, offices and commercial spaces.
-                            </div>
-
-                            <button className="homepage-card-button">
-                                View More
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="homepage-card">
-                        <div className="homepage-card-image">
-                            <img
-                                className="homepage-card-img"
-                                src="https://images.unsplash.com/photo-1484154218962-a197022b5858"
-                                alt=""
-                            />
-                        </div>
-
-                        <div className="homepage-card-content">
-                            <div className="homepage-card-title">
-                                PVC Wall Panels
-                            </div>
-
-                            <div className="homepage-card-description">
-                                Stylish waterproof decorative wall panels for modern interiors.
-                            </div>
-
-                            <button className="homepage-card-button">
-                                View More
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="homepage-card">
-                        <div className="homepage-card-image">
-                            <img
-                                className="homepage-card-img"
-                                src="https://images.unsplash.com/photo-1494526585095-c41746248156"
-                                alt=""
-                            />
-                        </div>
-
-                        <div className="homepage-card-content">
-                            <div className="homepage-card-title">
-                                Wooden Flooring
-                            </div>
-
-                                <div className="homepage-card-description">
-                                    Premium flooring solutions with elegant finishes.
-                                </div>
-
-                                <button className="homepage-card-button">
-                                    View More
-                                </button>
-                            </div>
-                        </div>
-
-                    </div> */}
-
-                {/* </div> */}
-
-            </div>
-
-            <div className="client-section">
-                <div className="clients-container">
-
-                    <div className="client-box">
-                        <h2 className="client-box-h2">500+</h2>
-                        <p className="client-box-p">Happy Clients</p>
-                    </div>
-
-                    <div className="client-box">
-                        <h2 className="client-box-h2">30+</h2>
-                        <p className="client-box-p">Services Offered</p>
-                    </div>
-
-                    <div className="client-box">
-                        <h2 className="client-box-h2">24/7</h2>
-                        <p className="client-box-p">Days Support</p>
-                    </div>
-
-                    <div className="client-box">
-                        <h2 className="client-box-h2">5+</h2>
-                        <p className="client-box-p">Years Experienced Persons</p>
-                    </div>
-
-                </div>
-            </div>
-            <div className="small-under-container">
-                <div className="small-under-content">
-                    <h3 className="small-under-container-heading">Discover</h3>
-
-                    <h1 className="small-under-container-title">
-                        Explore Our Collections
-                    </h1>
-
-                    <p className="small-under-container-paragraph">
-                        Browse our curated interior categories crafted for modern Indian homes.
-                    </p>
-                </div>
-            </div>
-
-
-            <div className="homepage-container">
-
-                <div className="homepage-row">
-
-                    <div className="homepage-card">
-                        <div className="homepage-card-image">
-                            <img
-                                className="homepage-card-img"
-                                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
-                                alt=""
-                            />
-                        </div>
-
-                        <div className="homepage-card-content">
-                            <div className="homepage-card-title">
-                                Premium Curtains
-                            </div>
-
-                            <div className="homepage-card-description">
-                                Elegant curtain collections for homes, offices and commercial spaces.
-                            </div>
-<Link to="/Pages/Curtains">
-    <button className="homepage-card-button">
-        View More
-    </button>
-</Link>
-                        </div>
-                    </div>
-
-                    <div className="homepage-card">
-                        <div className="homepage-card-image">
-                            <img
-                                className="homepage-card-img"
-                                src="https://images.unsplash.com/photo-1484154218962-a197022b5858"
-                                alt=""
-                            />
-                        </div>
-
-                        <div className="homepage-card-content">
-                            <div className="homepage-card-title">
-                                PVC Wall Panels
-                            </div>
-
-                            <div className="homepage-card-description">
-                                Stylish waterproof decorative wall panels for modern interiors.
-                            </div>
-
-                            <button className="homepage-card-button">
-                                View More
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="homepage-card">
-                        <div className="homepage-card-image">
-                            <img
-                                className="homepage-card-img"
-                                src="https://images.unsplash.com/photo-1494526585095-c41746248156"
-                                alt=""
-                            />
-                        </div>
-
-                        <div className="homepage-card-content">
-                            <div className="homepage-card-title">
-                                Wooden Flooring
-                            </div>
-
-                            <div className="homepage-card-description">
-                                Premium flooring solutions with elegant finishes.
-                            </div>
-
-                            <button className="homepage-card-button">
-                                View More
-                            </button>
-                        </div>
-
-                    </div>
-
-
-
-
-
-                </div>
-
-                <div className="button-container">
-                    <button className="specialization-btn">
-                        See All Specializations
-                    </button>
-                </div>
-
-            </div>
-
-            <div className="specialization-section">
-
-                <div className="specialization-grid">
-
-                    <div className="specialization-card">
-
-                        <div className="specialization-image">
-                            <img
-                                className="specialization-img"
-                                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600"
-                                alt="Wallpapers"
-                            />
-                        </div>
-
-                        <div className="specialization-content">
-                            <h3 className="specialization-title">Wallpapers</h3>
-
-                            <p className="specialization-description">
-                                Premium imported wallpapers for homes, offices and commercial interiors.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div className="specialization-card">
-
-                        <div className="specialization-image">
-                            <img
-                                className="specialization-img"
-                                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600"
-                                alt="Blinds"
-                            />
-                        </div>
-
-                        <div className="specialization-content">
-                            <h3 className="specialization-title">Window Blinds</h3>
-
-                            <p className="specialization-description">
-                                Stylish Zebra, Roller, Roman and Venetian blinds for every space.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div className="specialization-card">
-
-                        <div className="specialization-image">
-                            <img
-                                className="specialization-img"
-                                src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600"
-                                alt="Flooring"
-                            />
-                        </div>
-
-                        <div className="specialization-content">
-                            <h3 className="specialization-title">Wooden Flooring</h3>
-
-                            <p className="specialization-description">
-                                Elegant laminate and SPC flooring with premium finish.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div className="specialization-card">
-
-                        <div className="specialization-image">
-                            <img
-                                className="specialization-img"
-                                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600"
-                                alt="PVC Partition"
-                            />
-                        </div>
-
-                        <div className="specialization-content">
-                            <h3 className="specialization-title">PVC Room Partition</h3>
-
-                            <p className="specialization-description">
-                                Modern decorative partition screens for homes and offices.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div className="specialization-card">
-
-                        <div className="specialization-image">
-                            <img
-                                className="specialization-img"
-                                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600"
-                                alt="AC Partition"
-                            />
-                        </div>
-
-                        <div className="specialization-content">
-                            <h3 className="specialization-title">AC Partition</h3>
-
-                            <p className="specialization-description">
-                                PVC strip curtains and industrial AC partitions for cooling efficiency.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div className="specialization-card">
-
-                        <div className="specialization-image">
-                            <img
-                                className="specialization-img"
-                                src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600"
-                                alt="Mosquito Mesh"
-                            />
-                        </div>
-
-                        <div className="specialization-content">
-                            <h3 className="specialization-title">Mosquito Mesh</h3>
-
-                            <p className="specialization-description">
-                                Invisible mosquito protection with durable mesh systems.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div className="specialization-card">
-
-                        <div className="specialization-image">
-                            <img
-                                className="specialization-img"
-                                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600"
-                                alt="Ceiling Hanger"
-                            />
-                        </div>
-
-                        <div className="specialization-content">
-                            <h3 className="specialization-title">Ceiling Hangers</h3>
-
-                            <p className="specialization-description">
-                                Automatic ceiling cloth drying hangers with modern designs.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div className="specialization-card">
-
-                        <div className="specialization-image">
-                            <img
-                                className="specialization-img"
-                                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600"
-                                alt="Ceiling Hanger"
-                            />
-                        </div>
-
-                        <div className="specialization-content">
-                            <h3 className="specialization-title">Ceiling Hangers</h3>
-
-                            <p className="specialization-description">
-                                Automatic ceiling cloth drying hangers with modern designs.
-                            </p>
-                        </div>
-
-                    </div>
-
- <div className="specialization-card">
-
-                        <div className="specialization-image">
-                            <img
-                                className="specialization-img"
-                                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600"
-                                alt="Ceiling Hanger"
-                            />
-                        </div>
-
-                        <div className="specialization-content">
-                            <h3 className="specialization-title">Ceiling Hangers</h3>
-
-                            <p className="specialization-description">
-                                Automatic ceiling cloth drying hangers with modern designs.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            {/* ================= Testimonials Section ================= */}
-
-            <div className="testimonial-section">
-
-                <div className="testimonial-heading">
-
-                    <p className="testimonial-subtitle">
-                        TESTIMONIALS
+                    <p>
+                        From the first layer to the final finish,
+                        we bring the right solutions together for your space.
                     </p>
 
-                    <h2 className="testimonial-title">
-                        What Our Customers Say
+                </div>
+
+                <div className="sv-services-list">
+
+                    {services.map((service, index) => (
+                        <Link
+                            to={service.link}
+                            className="sv-service-row home-reveal"
+                            key={service.number}
+                            style={{ "--reveal-delay": `${index * 45}ms` }}
+                        >
+
+                            <span className="sv-service-number">
+                                {service.number}
+                            </span>
+
+                            <span className="sv-service-name">
+                                {service.title}
+                            </span>
+
+                            <span className="sv-service-detail">
+                                {service.detail}
+                            </span>
+
+                            <span className="sv-service-arrow">
+                                ↗
+                            </span>
+
+                        </Link>
+                    ))}
+
+                </div>
+
+                <div className="sv-services-footer">
+                    <span>MADE TO FIT YOUR SPACE</span>
+
+                    <Link to="/Services" className="sv-text-link">
+                        <span>View all services</span>
+                        <span>↗</span>
+                    </Link>
+                </div>
+
+            </section>
+
+
+            {/* ================= SIGNATURE BANNER ================= */}
+
+            <section className="sv-signature">
+
+                <img
+                    className="sv-signature-image"
+                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=90"
+                    alt="Beautifully styled contemporary home interior"
+                />
+
+                <div className="sv-signature-shade"></div>
+
+                <div className="sv-signature-content home-reveal">
+
+                    <span className="sv-signature-eyebrow">
+                        SIVENTHRA INTERIOR & DECORS
+                    </span>
+
+                    <h2>
+                        Not just a space.
+                        <br />
+                        <span>A place to belong.</span>
+                    </h2>
+
+                    <p>
+                        Good design isn't just seen.
+                        It's experienced every single day.
+                    </p>
+
+                    <Link to="/About" className="sv-signature-button">
+                        <span>Discover our story</span>
+                        <span>↗</span>
+                    </Link>
+
+                </div>
+
+                <span className="sv-signature-caption">
+                    MADE WITH INTENTION / MADE FOR LIVING
+                </span>
+
+            </section>
+
+
+            {/* ================= TESTIMONIALS ================= */}
+
+            <section className="sv-testimonials">
+
+                <div className="sv-testimonials-heading home-reveal">
+
+                    <span className="sv-section-number">04 — WORDS THAT MATTER</span>
+
+                    <h2>
+                        Loved by the people
+                        <br />
+                        <span>who live in it.</span>
                     </h2>
 
                 </div>
 
-                <div className="testimonial-card">
+                <div className="sv-review-layout home-reveal">
 
-                    <div className="quote-icon">
-                        ❝
+                    <div className="sv-review-side">
+                        <span className="sv-review-quote-mark">“</span>
+                        <span>REAL EXPERIENCES.</span>
+                        <span>REAL SPACES.</span>
                     </div>
 
-                    <img
-                        src="https://i.pravatar.cc/150?img=12"
-                        alt="Customer"
-                        className="testimonial-image"
-                    />
+                    <div className="sv-review-main" key={reviewIndex}>
 
-                    <div className="testimonial-stars">
-                        ★★★★★
-                    </div>
+                        <div className="sv-review-stars">
+                            ★★★★★
+                        </div>
 
-                    <p className="testimonial-review">
-                        Excellent work by Siventhra Interiors. Wallpaper installation
-                        and mosquito mesh quality exceeded my expectations. The
-                        finishing was premium, the staff were professional, and the
-                        project was completed on time. Highly recommended for home
-                        interiors.
-                    </p>
+                        <p className="sv-review-text">
+                            {activeReview.review}
+                        </p>
 
-                    <h3 className="testimonial-name">
-                        Karthik Thakkolu
-                    </h3>
+                        <div className="sv-review-person">
 
-                    <p className="testimonial-location">
-                        Homeowner • Nellore
-                    </p>
+                            <img
+                                src={activeReview.image}
+                                alt={activeReview.name}
+                            />
 
-                    <div className="testimonial-buttons">
+                            <div>
+                                <strong>{activeReview.name}</strong>
+                                <span>{activeReview.location}</span>
+                            </div>
 
-                        <button className="testimonial-btn">
-                            ←
-                        </button>
+                        </div>
 
-                        <button className="testimonial-btn">
-                            →
-                        </button>
+                        <div className="sv-review-controls">
 
-                    </div>
+                            <span className="sv-review-count">
+                                {String(reviewIndex + 1).padStart(2, "0")}
+                                <span> / </span>
+                                {String(testimonials.length).padStart(2, "0")}
+                            </span>
 
-                    <div className="testimonial-dots">
-                        <span className="active"></span>
-                        <span></span>
-                        <span></span>
+                            <button onClick={prevReview} aria-label="Previous testimonial">
+                                ←
+                            </button>
+
+                            <button onClick={nextReview} aria-label="Next testimonial">
+                                →
+                            </button>
+
+                        </div>
+
                     </div>
 
                 </div>
 
-            </div>
-
-            {/* ================= End Testimonials ================= */}
-
-        </div>
+            </section>
 
 
+            {/* ================= FINAL CTA ================= */}
+
+            <section className="sv-home-contact home-reveal">
+
+                <span className="sv-section-number">
+                    05 — LET'S MAKE IT BEAUTIFUL
+                </span>
+
+                <h2>
+                    Your space.
+                    <br />
+                    <span>Your story.</span>
+                    <br />
+                    Let's begin.
+                </h2>
+
+                <Link to="/Contact" className="sv-home-contact-button">
+                    <span>Start your project</span>
+                    <span>↗</span>
+                </Link>
+
+                <div className="sv-home-contact-bottom">
+                    <span>SIVENTHRA INTERIOR & DECORS</span>
+                    <span>DESIGN WITH FEELING.</span>
+                </div>
+
+            </section>
+
+        </main>
     );
 };
 
