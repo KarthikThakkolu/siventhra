@@ -6,7 +6,7 @@ import {
   FaArrowRight,
   FaBars,
   FaTimes,
-  FaLeaf
+  // FaLeaf
 } from "react-icons/fa";
 
 import "./Navbar.css";
