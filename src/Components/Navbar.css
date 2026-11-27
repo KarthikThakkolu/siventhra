@@ -1090,6 +1090,7 @@
   .order-link-icon,
   .menu-toggle {
     transition: none;
+    
     animation: none;
   }
 }
