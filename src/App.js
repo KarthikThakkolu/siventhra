@@ -18,6 +18,7 @@ import CurtainExplorer from "./Pages/CurtainExplorer";
 import CurtainOrder from "./Pages/CurtainOrder";
 import Wallpapers from "./Pages/Wallpapers";
 import WallpaperDetails from "./Pages/WallpaperDetails";
+import CeilingHangers from "./Pages/CeilingHangers";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/Pages/CurtainOrder" element={<CurtainOrder />} />
         <Route path="/Pages/Wallpapers" element={<Wallpapers />} />
         <Route path="/Pages/WallpaperDetails" element={<WallpaperDetails />} />
+        <Route path="/Pages/CeilingHangers" element={<CeilingHangers/>}/>
       </Routes>
 
       <Footer />

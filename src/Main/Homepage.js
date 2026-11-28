@@ -64,7 +64,7 @@ const collections = [
         category: "FOUNDATION / WARMTH / DETAIL",
         description: "Understated flooring that brings the whole space together.",
         image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=85",
-        link: "/Pages/Flooring",
+        link: "/Pages/CeilingHangers",
         style: "collection-large",
     },
 ];

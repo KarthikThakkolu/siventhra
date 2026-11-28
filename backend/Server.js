@@ -9,7 +9,7 @@ const path = require("path");
 
 // ROUTES
 const feedbackRoutes = require("./routers/feedback");
-const orderRoutes = require("./routers/orderRoutes");
+// const orderRoutes = require("./routers/orderRoutes");
 
 // ENVIRONMENT VARIABLES
 dotenv.config();
@@ -56,7 +56,7 @@ app.get("/", (req, res) => {
 app.use("/api/feedback", feedbackRoutes);
 
 // CURTAIN ORDER API
-app.use("/api/orders", orderRoutes);
+// app.use("/api/orders", orderRoutes);
 
 // HTTP SERVER
 const server = http.createServer(app);

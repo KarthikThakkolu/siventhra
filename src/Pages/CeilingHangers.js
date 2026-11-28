@@ -1,956 +1,722 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import {
-  FaCheckCircle,
-  FaArrowRight,
-  FaHome,
-  FaBuilding,
-  FaCouch,
-  FaWarehouse,
-} from "react-icons/fa";
 
+import React, { useState } from "react";
 import "./CeilingHangers.css";
 
-// Images
-import heroImage from "../../assets/ceiling-hanger.png";
-import chooseImage from "../../assets/ceiling-hanger-installation.jpg";
+const normalImage =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiL59cn98gDp2fu1cvWqwM6929phMtRIooFDqGFrNBQw&s=10";
 
-const features = [
-  "16 mm Heavy Duty Stainless Steel Pipes",
-  "Premium Quality Nylon Ropes",
-  "Powder Coated Aluminium Holders",
-  "Rust & Corrosion Resistant",
-  "Smooth Pulley Lifting System",
-  "Strong Load Carrying Capacity",
-  "Space Saving Design",
-  "Suitable for Indoor & Outdoor Use",
-];
+const wallImage =
+  "https://flyinghanger.in/cdn/shop/files/IMG-20250704-WA0007.jpg?v=1751612438&width=1100";
+
+// Example prices: replace with your actual product rates
+const hangerPrices = {
+  4: 1200,
+  5: 1450,
+  6: 1700,
+  7: 1950,
+  8: 2200,
+};
+
+const wallExtra = 800;
+const installationPrice = 350;
 
 const CeilingHangers = () => {
+  const [hangerType, setHangerType] = useState("normal");
+  const [length, setLength] = useState(4);
+  const [installation, setInstallation] = useState(true);
+  const [quantity, setQuantity] = useState(1);
+  const [customer, setCustomer] = useState({
+    name: "",
+    phone: "",
+    address: "",
+    city: "",
+    pincode: "",
+    ceilingType: "",
+    notes: "",
+  });
+
+  const isWall = hangerType === "wall";
+
+  const productPrice = hangerPrices[length];
+  const wallCharge = isWall ? wallExtra : 0;
+  const baseTotal = productPrice + wallCharge;
+  const installCost = installation ? installationPrice : 0;
+  const unitTotal = baseTotal + installCost;
+  const totalPrice = unitTotal * quantity;
+
+  const updateCustomer = (event) => {
+    const { name, value } = event.target;
+
+    setCustomer((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
+  };
+
+  const submitOrder = (event) => {
+    event.preventDefault();
+
+    const orderDetails = {
+      product: "Ceiling Clothes Hanger",
+      hangerType: isWall ? "Wall Mounted" : "Normal Ceiling Mounted",
+      length: `${length} feet`,
+      basePrice: productPrice,
+      wallMountExtra: wallCharge,
+      installation: installation ? "Included" : "Not Included",
+      installationPrice: installCost,
+      quantity,
+      totalPrice,
+      ...customer,
+    };
+
+    console.log("Hanger Order:", orderDetails);
+
+    alert(
+      `Order Request!\n\nType: ${isWall ? "Wall Mounted" : "Normal Ceiling"}\nLength: ${length} Feet\nQuantity: ${quantity}\nTotal: ₹${totalPrice.toLocaleString("en-IN")}`
+    );
+
+    // Later connect this to your backend API.
+  };
+
   return (
-    <>
-      {/* ================= HERO SECTION ================= */}
+    <div className="ch-page">
+      <div className="ch-topbar">
+        <div className="ch-brand">
+          <div className="ch-brand-symbol">S</div>
+          <div className="ch-brand-name">
+            SIVENTHRA
+            <span className="ch-brand-subtitle">HOME SOLUTIONS</span>
+          </div>
+        </div>
 
-      <section className="hero-section">
-  <div className="hero-section-container">
-    <div className="hero-section-image-wrapper">
-      <img
-        className="hero-section-image"
-        src={heroImage}
-        alt="Ceiling Cloth Hanger"
-      />
-    </div>
+        <div className="ch-topbar-right">
+          <div className="ch-topbar-note">SMART HOME ACCESSORIES</div>
+          <div className="ch-topbar-contact">CUSTOM ORDER</div>
+        </div>
+      </div>
 
-    <div className="hero-section-content">
-      <span className="hero-section-tag">
-        Premium Drying Solution
-      </span>
+      <div className="ch-breadcrumb">
+        Home <span>/</span> Products <span>/</span> Ceiling Hangers
+      </div>
 
-      <h1 className="hero-section-title">
-        Premium
-        <span className="hero-section-title-highlight">
-          Ceiling Cloth Hangers
-        </span>
-      </h1>
-            <p>
-              Transform your laundry space with our premium ceiling cloth
-              hangers designed for modern homes. Built using superior quality
-              materials, our ceiling drying systems offer exceptional strength,
-              durability, and effortless operation while keeping your floor
-              space completely free.
+      <main className="ch-main">
+        {/* HERO SECTION */}
+        <section className="ch-hero">
+          <div className="ch-hero-content">
+            <div className="ch-category">SMART SPACE · SMART LIVING</div>
+
+            <h1 className="ch-hero-title">
+              Dry smarter.
+              <span>Live better.</span>
+            </h1>
+
+            <p className="ch-hero-description">
+              A space-saving clothes drying solution designed for
+              modern homes. Choose the right hanger for your ceiling
+              and enjoy effortless everyday drying.
             </p>
 
+            <div className="ch-hero-points">
+              <div className="ch-hero-point">
+                <span>01</span> Space-saving design
+              </div>
+              <div className="ch-hero-point">
+                <span>02</span> Smooth pulley operation
+              </div>
+              <div className="ch-hero-point">
+                <span>03</span> Installation available
+              </div>
+            </div>
+          </div>
+
+          <div className="ch-hero-image">
+            <img
+              className="ch-hero-photo"
+              src={normalImage}
+              alt="Ceiling mounted clothes drying hanger"
+            />
+            <div className="ch-hero-image-caption">
+              <span>HOME ESSENTIALS</span>
+              <strong>Make every space count.</strong>
+            </div>
+          </div>
+        </section>
+
+        {/* PRODUCT TYPE SELECTION */}
+        <section className="ch-type-section">
+          <div className="ch-section-heading">
+            <div className="ch-category">CHOOSE YOUR INSTALLATION</div>
+            <h2>Which hanger suits your ceiling?</h2>
             <p>
-              Whether you live in an apartment, villa, or independent house,
-              our ceiling hangers provide a practical and stylish solution for
-              drying clothes throughout every season.
+              Select your ceiling type. We will show you the recommended
+              hanger and price.
             </p>
+          </div>
 
-            {/* Feature List */}
+          <div className="ch-type-grid">
+            <button
+              type="button"
+              className={`ch-type-card ${
+                hangerType === "normal" ? "ch-type-selected" : ""
+              }`}
+              onClick={() => setHangerType("normal")}
+            >
+              <div className="ch-type-photo">
+                <img
+                  className="ch-type-image"
+                  src={normalImage}
+                  alt="Normal ceiling hanger"
+                />
+                <span className="ch-type-badge">STANDARD</span>
+              </div>
 
-            <div className="feature-grid">
-              {features.map((item, index) => (
-                <div className="feature-item" key={index}>
-                  <FaCheckCircle className="feature-icon" />
-                  <span>{item}</span>
+              <div className="ch-type-card-content">
+                <div className="ch-type-title-row">
+                  <h3>Normal Ceiling Hanger</h3>
+                  <span className="ch-type-radio">
+                    {hangerType === "normal" ? "✓" : ""}
+                  </span>
                 </div>
-              ))}
+
+                <p>
+                  Directly fixed to a solid concrete or RCC ceiling.
+                  Ideal for homes with strong exposed ceilings.
+                </p>
+
+                <div className="ch-type-footer">
+                  <strong>Standard price</strong>
+                  <span>Choose length ↓</span>
+                </div>
+              </div>
+            </button>
+
+            <button
+              type="button"
+              className={`ch-type-card ${
+                hangerType === "wall" ? "ch-type-selected" : ""
+              }`}
+              onClick={() => setHangerType("wall")}
+            >
+              <div className="ch-type-photo">
+                <img
+                  className="ch-type-image"
+                  src={wallImage}
+                  alt="Wall mounted ceiling clothes hanger"
+                />
+                <span className="ch-type-badge ch-wall-badge">
+                  FALSE CEILING SOLUTION
+                </span>
+              </div>
+
+              <div className="ch-type-card-content">
+                <div className="ch-type-title-row">
+                  <h3>Wall-Mounted Hanger</h3>
+                  <span className="ch-type-radio">
+                    {hangerType === "wall" ? "✓" : ""}
+                  </span>
+                </div>
+
+                <p>
+                  Supported by wall brackets instead of your ceiling.
+                  Suitable for POP, gypsum and false ceiling spaces.
+                </p>
+
+                <div className="ch-type-footer">
+                  <strong>₹800 extra</strong>
+                  <span>Recommended for false ceilings ↓</span>
+                </div>
+              </div>
+            </button>
+          </div>
+
+          <div className={`ch-recommendation ${isWall ? "ch-recommend-wall" : ""}`}>
+            <div className="ch-recommend-icon">
+              {isWall ? "⌂" : "✓"}
+            </div>
+            <div className="ch-recommend-text">
+              <strong>
+                {isWall
+                  ? "Wall mounting recommended for your false ceiling"
+                  : "Suitable for solid ceiling installation"}
+              </strong>
+              <span>
+                {isWall
+                  ? "Avoid fixing heavy hanger loads directly onto POP or gypsum ceiling sheets. The wall brackets must be secured to a suitable structural wall."
+                  : "The mounting points must be secured firmly to the concrete ceiling for safe everyday use."}
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* PRODUCT DETAILS AND PRICING */}
+        <section className="ch-product-section">
+          <div className="ch-product-visual">
+            <div className="ch-product-visual-label">
+              {isWall ? "WALL-MOUNTED SYSTEM" : "CEILING-MOUNTED SYSTEM"}
             </div>
 
-            {/* Buttons */}
-
-            <div className="hero-buttons">
-
-              <Link to="/contact" className="primary-btn">
-                Book Installation
-                <FaArrowRight />
-              </Link>
-
-              <Link to="/products" className="secondary-btn">
-                View Products
-              </Link>
-
+            <div className="ch-product-visual-image">
+              <img
+                className="ch-product-main-image"
+                src={isWall ? wallImage : normalImage}
+                alt={
+                  isWall
+                    ? "Wall mounted hanger system"
+                    : "Ceiling mounted hanger system"
+                }
+              />
             </div>
 
+            <div className="ch-product-visual-footer">
+              <span className="ch-live-dot"></span>
+              {isWall
+                ? "WALL BRACKET SUPPORTED"
+                : "DIRECT CEILING SUPPORTED"}
+            </div>
           </div>
 
-        </div>
-      </section>
-
-      {/* ================= WHY CHOOSE US ================= */}
-
-{/* ================= WHY CHOOSE US ================= */}
-
-<section className="why-section">
-
-  <div className="container why-section-container">
-
-    {/* Left Content */}
-
-    <div className="why-section-content">
-
-      <span className="why-section-tag">
-        Why Choose Us
-      </span>
-
-      <h2 className="why-section-title">
-        <span className="why-section-title-first">
-          Smart Drying Solution
-        </span>
-        <span className="why-section-title-highlight">
-          For Every Home
-        </span>
-      </h2>
-
-      <p className="why-section-description-one">
-        Our ceiling cloth hangers are designed to maximize unused ceiling
-        space while providing a convenient, safe, and efficient way to
-        dry clothes. Unlike traditional floor stands, they keep your home
-        neat, spacious, and clutter-free.
-      </p>
-
-      <p className="why-section-description-two">
-        Every ceiling hanger is manufactured using premium-grade
-        materials, ensuring excellent strength, rust resistance,
-        smooth lifting, and years of reliable performance.
-      </p>
-
-      <div className="why-card-grid">
-
-        {/* Card 1 */}
-
-        <div className="why-card">
-
-          <div className="why-card-icon-wrapper">
-            <FaHome className="why-card-icon" />
-          </div>
-
-          <h4 className="why-card-title">
-            Perfect for Homes
-          </h4>
-
-          <p className="why-card-description">
-            Ideal for apartments, villas, and independent houses with
-            limited drying space.
-          </p>
-
-        </div>
-
-        {/* Card 2 */}
-
-        <div className="why-card">
-
-          <div className="why-card-icon-wrapper">
-            <FaBuilding className="why-card-icon" />
-          </div>
-
-          <h4 className="why-card-title">
-            Apartments
-          </h4>
-
-          <p className="why-card-description">
-            Makes balconies and utility areas more organized without
-            occupying valuable floor space.
-          </p>
-
-        </div>
-
-        {/* Card 3 */}
-
-        <div className="why-card">
-
-          <div className="why-card-icon-wrapper">
-            <FaWarehouse className="why-card-icon" />
-          </div>
-
-          <h4 className="why-card-title">
-            Utility Areas
-          </h4>
-
-          <p className="why-card-description">
-            A perfect drying solution for laundry rooms, wash areas,
-            terraces, and service spaces.
-          </p>
-
-        </div>
-
-        {/* Card 4 */}
-
-        <div className="why-card">
-
-          <div className="why-card-icon-wrapper">
-            <FaCouch className="why-card-icon" />
-          </div>
-
-          <h4 className="why-card-title">
-            Modern Design
-          </h4>
-
-          <p className="why-card-description">
-            Stylish appearance that complements contemporary interior
-            spaces while offering outstanding functionality.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    {/* Right Image */}
-
-    <div className="why-section-image-wrapper">
-
-      <img
-        className="why-section-image"
-        src={chooseImage}
-        alt="Ceiling Hanger Installation"
-      />
-
-    </div>
-
-  </div>
-
-</section>
-
-            {/* ================= ALL SEASONS ================= */}
-{/* ================= ALL SEASONS ================= */}
-
-<section className="season-section">
-
-  <div className="container season-container">
-
-    {/* Heading */}
-
-    <div className="season-heading">
-
-      <span className="season-tag">
-        Suitable for Every Season
-      </span>
-
-      <h2 className="season-title">
-        <span className="season-title-first">
-          One Drying Solution
-        </span>
-        <span className="season-title-highlight">
-          For All Weather Conditions
-        </span>
-      </h2>
-
-      <p className="season-description">
-        Our premium ceiling cloth hangers provide a reliable and convenient
-        drying solution throughout the year. Whether it's the hot summer,
-        rainy monsoon, or cool winter, you can dry your clothes efficiently
-        while keeping your home clean, organized, and clutter-free.
-      </p>
-
-    </div>
-
-    {/* Cards */}
-
-    <div className="season-card-wrapper">
-
-      {/* Summer */}
-
-      <div className="season-card">
-
-        <div className="season-card-icon-wrapper">
-          <span className="season-card-icon">
-            ☀️
-          </span>
-        </div>
-
-        <h3 className="season-card-title">
-          Summer Season
-        </h3>
-
-        <p className="season-card-description">
-          Bright sunlight and excellent airflow help clothes dry much faster.
-          Our ceiling hanger keeps clothes elevated, organized, and wrinkle-free
-          while making full use of available ceiling space.
-        </p>
-
-        <ul className="season-card-list">
-
-          <li className="season-card-list-item">
-            Faster Drying in Direct Sunlight
-          </li>
-
-          <li className="season-card-list-item">
-            Better Air Circulation
-          </li>
-
-          <li className="season-card-list-item">
-            Saves Valuable Floor Space
-          </li>
-
-          <li className="season-card-list-item">
-            Perfect for Daily Laundry
-          </li>
-
-        </ul>
-
-      </div>
-
-      {/* Rainy */}
-
-      <div className="season-card">
-
-        <div className="season-card-icon-wrapper">
-          <span className="season-card-icon">
-            🌧️
-          </span>
-        </div>
-
-        <h3 className="season-card-title">
-          Rainy Season
-        </h3>
-
-        <p className="season-card-description">
-          During the rainy season, drying clothes becomes challenging due to
-          humidity and lack of sunlight. Ceiling hangers provide an excellent
-          indoor drying solution while keeping your home neat and hygienic.
-        </p>
-
-        <ul className="season-card-list">
-
-          <li className="season-card-list-item">
-            Ideal for Indoor Drying
-          </li>
-
-          <li className="season-card-list-item">
-            Suitable for Monsoon Weather
-          </li>
-
-          <li className="season-card-list-item">
-            Keeps Clothes Above Floor Level
-          </li>
-
-          <li className="season-card-list-item">
-            Clean & Organized Drying Space
-          </li>
-
-        </ul>
-
-      </div>
-
-      {/* Winter */}
-
-      <div className="season-card">
-
-        <div className="season-card-icon-wrapper">
-          <span className="season-card-icon">
-            ❄️
-          </span>
-        </div>
-
-        <h3 className="season-card-title">
-          Winter Season
-        </h3>
-
-        <p className="season-card-description">
-          Even during cold weather, ceiling-mounted drying improves air
-          circulation around garments, helping them dry naturally while
-          maintaining a spacious and tidy living environment.
-        </p>
-
-        <ul className="season-card-list">
-
-          <li className="season-card-list-item">
-            Better Ventilation
-          </li>
-
-          <li className="season-card-list-item">
-            Organized Drying
-          </li>
-
-          <li className="season-card-list-item">
-            Space Saving Solution
-          </li>
-
-          <li className="season-card-list-item">
-            Convenient Everyday Use
-          </li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-      {/* ================= PREMIUM MATERIALS ================= */}
-
-      {/* ================= PREMIUM MATERIALS ================= */}
-
-<section className="materials-section">
-
-  <div className="container materials-container">
-
-    {/* Section Heading */}
-
-    <div className="materials-heading">
-
-      <span className="materials-tag">
-        Premium Quality Materials
-      </span>
-
-      <h2 className="materials-title">
-
-        <span className="materials-title-first">
-          Built With
-        </span>
-
-        <span className="materials-title-highlight">
-          High-Performance Components
-        </span>
-
-      </h2>
-
-      <p className="materials-description">
-        At Siventhra Interior Decors, we believe quality materials create
-        long-lasting products. Every ceiling cloth hanger is manufactured using
-        premium-grade stainless steel, durable nylon ropes, and powder-coated
-        aluminium accessories to ensure years of smooth and reliable
-        performance.
-      </p>
-
-    </div>
-
-    {/* Material Cards */}
-
-    <div className="materials-card-wrapper">
-
-      {/* Card 1 */}
-
-      <div className="material-card">
-
-        <div className="material-card-number-wrapper">
-          <span className="material-card-number">
-            01
-          </span>
-        </div>
-
-        <h3 className="material-card-title">
-          16 mm Stainless Steel Pipes
-        </h3>
-
-        <p className="material-card-description">
-          We use premium quality 16 mm stainless steel pipes that provide
-          superior strength and excellent resistance against rust, corrosion,
-          moisture, and everyday wear. These heavy-duty pipes ensure maximum
-          durability and long-lasting performance.
-        </p>
-
-        <ul className="material-card-list">
-
-          <li className="material-card-list-item">
-            Heavy Duty 16 mm Stainless Steel
-          </li>
-
-          <li className="material-card-list-item">
-            Rust & Corrosion Resistant
-          </li>
-
-          <li className="material-card-list-item">
-            High Load Carrying Capacity
-          </li>
-
-          <li className="material-card-list-item">
-            Long Lasting Mirror Finish
-          </li>
-
-          <li className="material-card-list-item">
-            Premium Quality Material
-          </li>
-
-        </ul>
-
-      </div>
-
-      {/* Card 2 */}
-
-      <div className="material-card">
-
-        <div className="material-card-number-wrapper">
-          <span className="material-card-number">
-            02
-          </span>
-        </div>
-
-        <h3 className="material-card-title">
-          Heavy-Duty Nylon Rope
-        </h3>
-
-        <p className="material-card-description">
-          Our high-strength nylon ropes are specially selected for smooth pulley
-          movement and excellent durability. They provide effortless lifting and
-          lowering while maintaining strength even after years of continuous
-          usage.
-        </p>
-
-        <ul className="material-card-list">
-
-          <li className="material-card-list-item">
-            Premium Nylon Material
-          </li>
-
-          <li className="material-card-list-item">
-            Smooth Pulley Operation
-          </li>
-
-          <li className="material-card-list-item">
-            High Tensile Strength
-          </li>
-
-          <li className="material-card-list-item">
-            Wear & Tear Resistant
-          </li>
-
-          <li className="material-card-list-item">
-            Long Service Life
-          </li>
-
-        </ul>
-
-      </div>
-
-      {/* Card 3 */}
-
-      <div className="material-card">
-
-        <div className="material-card-number-wrapper">
-          <span className="material-card-number">
-            03
-          </span>
-        </div>
-
-        <h3 className="material-card-title">
-          Powder-Coated Aluminium Holders
-        </h3>
-
-        <p className="material-card-description">
-          Our lightweight aluminium holders are finished with premium
-          powder coating to provide outstanding corrosion resistance,
-          enhanced durability, and an elegant appearance that complements
-          modern interiors.
-        </p>
-
-        <ul className="material-card-list">
-
-          <li className="material-card-list-item">
-            Premium Aluminium Body
-          </li>
-
-          <li className="material-card-list-item">
-            Powder-Coated Finish
-          </li>
-
-          <li className="material-card-list-item">
-            Corrosion Resistant
-          </li>
-
-          <li className="material-card-list-item">
-            Strong Yet Lightweight
-          </li>
-
-          <li className="material-card-list-item">
-            Elegant Modern Appearance
-          </li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-{/* ================= PRODUCT HIGHLIGHTS ================= */}
-
-<section className="product-highlight-section">
-
-  <div className="container product-highlight-container">
-
-    <div className="product-highlight-left">
-
-      <span className="product-highlight-tag">
-        Product Highlights
-      </span>
-
-      <h2 className="product-highlight-title">
-
-        <span className="product-highlight-title-first">
-          Designed For
-        </span>
-
-        <span className="product-highlight-title-highlight">
-          Everyday Convenience
-        </span>
-
-      </h2>
-
-      <p className="product-highlight-description">
-        Our ceiling cloth hanger combines premium materials with modern
-        engineering to deliver a hassle-free drying experience. Every component
-        is designed for comfort, safety, durability, and smooth daily use.
-      </p>
-
-    </div>
-
-    <div className="product-highlight-right">
-
-      <div className="product-highlight-item">
-
-        <h4 className="product-highlight-item-title">
-          Space Saving Design
-        </h4>
-
-        <p className="product-highlight-item-description">
-          Utilizes unused ceiling space, keeping your balcony and utility area
-          clean and clutter-free.
-        </p>
-
-      </div>
-
-      <div className="product-highlight-item">
-
-        <h4 className="product-highlight-item-title">
-          Smooth Pulley Mechanism
-        </h4>
-
-        <p className="product-highlight-item-description">
-          Easily raise and lower clothes with minimal effort using the premium
-          nylon rope system.
-        </p>
-
-      </div>
-
-      <div className="product-highlight-item">
-
-        <h4 className="product-highlight-item-title">
-          Elegant Appearance
-        </h4>
-
-        <p className="product-highlight-item-description">
-          Modern design enhances the overall look of your utility area while
-          providing maximum functionality.
-        </p>
-
-      </div>
-
-      <div className="product-highlight-item">
-
-        <h4 className="product-highlight-item-title">
-          Professional Installation
-        </h4>
-
-        <p className="product-highlight-item-description">
-          Installed securely by experienced professionals to ensure safety,
-          reliability, and long-term performance.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-            {/* ================= ADVANTAGES ================= */}
-
-      <section className="advantages-section">
-
-        <div className="container">
-
-          <div className="section-heading">
-            <span className="section-tag">Why Customers Love It</span>
-
-            <h2>
-              Advantages of Our
-              <span> Ceiling Cloth Hangers</span>
+          <div className="ch-product-info">
+            <div className="ch-category">
+              {isWall ? "WALL MOUNTED SERIES" : "STANDARD SERIES"}
+            </div>
+
+            <h2 className="ch-product-title">
+              Ceiling Clothes
+              <span>Drying Hanger</span>
             </h2>
 
+            <p className="ch-product-description">
+              Lift your drying space out of the way. Designed with
+              sturdy stainless-steel rods, nylon ropes and a smooth
+              lifting system for practical daily use.
+            </p>
+
+            <div className="ch-spec-list">
+              <div className="ch-spec-row">
+                <span>Hanger type</span>
+                <strong>
+                  {isWall ? "Wall Mounted" : "Normal Ceiling"}
+                </strong>
+              </div>
+
+              <div className="ch-spec-row">
+                <span>Rods</span>
+                <strong>Stainless Steel</strong>
+              </div>
+
+              <div className="ch-spec-row">
+                <span>Lifting rope</span>
+                <strong>Durable Nylon</strong>
+              </div>
+
+              <div className="ch-spec-row">
+                <span>Channel</span>
+                <strong>Aluminium</strong>
+              </div>
+            </div>
+
+            <div className="ch-price-selector">
+              <div className="ch-price-selector-heading">
+                <div>
+                  <span className="ch-small-label">SELECT YOUR LENGTH</span>
+                  <h3>Hanger Size</h3>
+                </div>
+
+                <div className="ch-size-indicator">
+                  {length}<small>FT</small>
+                </div>
+              </div>
+
+              <div className="ch-size-grid">
+                {Object.keys(hangerPrices).map((size) => (
+                  <button
+                    key={size}
+                    type="button"
+                    className={`ch-size-option ${
+                      length === Number(size) ? "ch-size-active" : ""
+                    }`}
+                    onClick={() => setLength(Number(size))}
+                  >
+                    <span>{size}</span>
+                    <small>FT</small>
+                  </button>
+                ))}
+              </div>
+
+              <div className="ch-breakdown">
+                <div className="ch-price-row">
+                  <span>Standard hanger · {length} ft</span>
+                  <strong>₹{productPrice.toLocaleString("en-IN")}</strong>
+                </div>
+
+                {isWall && (
+                  <div className="ch-price-row ch-wall-extra">
+                    <span>Wall mount hardware / support</span>
+                    <strong>+ ₹{wallExtra.toLocaleString("en-IN")}</strong>
+                  </div>
+                )}
+
+                <div className="ch-price-row">
+                  <span>Installation</span>
+                  <strong>
+                    {installation
+                      ? `₹${installationPrice.toLocaleString("en-IN")}`
+                      : "₹0"}
+                  </strong>
+                </div>
+
+                <label className="ch-install-toggle">
+                  <input
+                    className="ch-install-input"
+                    type="checkbox"
+                    checked={installation}
+                    onChange={(event) =>
+                      setInstallation(event.target.checked)
+                    }
+                  />
+                  <span className="ch-checkmark"></span>
+                  <span className="ch-install-copy">
+                    <strong>Include installation service</strong>
+                    <small>Professional fitting at your location</small>
+                  </span>
+                </label>
+
+                <div className="ch-total">
+                  <div>
+                    <span>Total price / unit</span>
+                    <small>
+                      {isWall ? "Wall mounted + ₹800" : "Standard model"}
+                    </small>
+                  </div>
+                  <strong>₹{unitTotal.toLocaleString("en-IN")}</strong>
+                </div>
+              </div>
+            </div>
+
+            <div className="ch-price-note">
+              Final installation suitability will be verified by our team.
+            </div>
+          </div>
+        </section>
+
+        {/* EXPLANATION SECTION */}
+        <section className="ch-explanation-section">
+          <div className="ch-section-heading">
+            <div className="ch-category">WHY CHOOSE A WALL MOUNT?</div>
+            <h2>Not every ceiling can hold a hanger.</h2>
             <p>
-              Our premium ceiling cloth hangers are designed to simplify your
-              daily laundry routine while enhancing the appearance and
-              functionality of your home.
+              False ceilings are usually decorative. A clothes hanger
+              carrying wet laundry should be supported by a strong
+              structural surface, not just the ceiling panel.
             </p>
           </div>
 
-          <div className="advantages-grid">
-
-            <div className="advantage-card">
-              <span>🏠</span>
-              <h4>Space Saving</h4>
-              <p>Utilizes ceiling space and keeps your floor completely free.</p>
+          <div className="ch-explanation-grid">
+            <div className="ch-explanation-card">
+              <div className="ch-explanation-number">01</div>
+              <h3>POP / False Ceilings</h3>
+              <p>
+                POP and gypsum sheets are not intended to support the
+                weight of wet clothes and a moving hanger mechanism.
+                Wall-mounted brackets help transfer the load to
+                suitable wall fixings.
+              </p>
             </div>
 
-            <div className="advantage-card">
-              <span>🛡️</span>
-              <h4>Rust Resistant</h4>
-              <p>Premium stainless steel components ensure years of durability.</p>
+            <div className="ch-explanation-card">
+              <div className="ch-explanation-number">02</div>
+              <h3>Strong Wall Support</h3>
+              <p>
+                The wall-mounted system is fixed into a suitable
+                masonry or structural wall. The wall and anchor
+                selection should be checked before installation.
+              </p>
             </div>
 
-            <div className="advantage-card">
-              <span>💪</span>
-              <h4>Heavy Duty</h4>
-              <p>Strong enough to hold multiple clothes with ease.</p>
+            <div className="ch-explanation-card">
+              <div className="ch-explanation-number">03</div>
+              <h3>Convenient Lifting</h3>
+              <p>
+                Nylon rope and the pulley system allow the drying
+                rods to be lowered for loading clothes and lifted
+                back up to free your floor and walking space.
+              </p>
             </div>
-
-            <div className="advantage-card">
-              <span>⬆️</span>
-              <h4>Smooth Pulley</h4>
-              <p>Easy lifting and lowering with minimal effort.</p>
-            </div>
-
-            <div className="advantage-card">
-              <span>🌦️</span>
-              <h4>All Seasons</h4>
-              <p>Suitable for summer, rainy season, and winter use.</p>
-            </div>
-
-            <div className="advantage-card">
-              <span>🏢</span>
-              <h4>Modern Homes</h4>
-              <p>Perfect for apartments, villas, and independent houses.</p>
-            </div>
-
-            <div className="advantage-card">
-              <span>✨</span>
-              <h4>Premium Finish</h4>
-              <p>Elegant design that blends beautifully with interiors.</p>
-            </div>
-
-            <div className="advantage-card">
-              <span>⚙️</span>
-              <h4>Low Maintenance</h4>
-              <p>Requires very little maintenance for long-term use.</p>
-            </div>
-
-            <div className="advantage-card">
-              <span>🌬️</span>
-              <h4>Better Airflow</h4>
-              <p>Improves ventilation around clothes for faster drying.</p>
-            </div>
-
-            <div className="advantage-card">
-              <span>🧺</span>
-              <h4>Large Capacity</h4>
-              <p>Ideal for drying clothes, towels, bedsheets, and blankets.</p>
-            </div>
-
-            <div className="advantage-card">
-              <span>🔧</span>
-              <h4>Professional Installation</h4>
-              <p>Installed securely by experienced technicians.</p>
-            </div>
-
-            <div className="advantage-card">
-              <span>✔️</span>
-              <h4>Best Quality</h4>
-              <p>Manufactured using premium-grade materials for maximum life.</p>
-            </div>
-
           </div>
 
-        </div>
+          <div className="ch-ceiling-guide">
+            <div className="ch-guide-column ch-guide-safe">
+              <div className="ch-guide-symbol">✓</div>
+              <div>
+                <strong>Normal Ceiling Hanger</strong>
+                <span>Solid RCC / concrete ceiling with secure anchor points</span>
+              </div>
+            </div>
 
-      </section>
+            <div className="ch-guide-column ch-guide-wall">
+              <div className="ch-guide-symbol">↗</div>
+              <div>
+                <strong>Wall-Mounted Hanger</strong>
+                <span>POP, gypsum, false ceilings or locations where a suitable ceiling fixing is unavailable</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      {/* ================= INSTALLATION AREAS ================= */}
-
-      <section className="installation-section">
-
-        <div className="container installation-wrapper">
-
-          <div className="installation-content">
-
-            <span className="section-tag">
-              Installation Areas
-            </span>
-
-            <h2>
-              Perfect for Every
-              <span> Living Space</span>
-            </h2>
-
+        {/* MATERIALS */}
+        <section className="ch-material-section">
+          <div className="ch-section-heading">
+            <div className="ch-category">BUILT FOR DAILY USE</div>
+            <h2>Materials that matter.</h2>
             <p>
-              Our ceiling cloth hangers are suitable for residential and
-              commercial spaces. They are designed to fit seamlessly into
-              different environments while providing maximum convenience.
+              Each part serves a purpose, from supporting your clothes
+              to helping the hanger move smoothly.
             </p>
+          </div>
 
-            <div className="installation-grid">
-
-              <div className="install-item">🏢 Apartments</div>
-
-              <div className="install-item">🏠 Villas</div>
-
-              <div className="install-item">🏡 Independent Houses</div>
-
-              <div className="install-item">🌇 Balconies</div>
-
-              <div className="install-item">🧺 Utility Areas</div>
-
-              <div className="install-item">🧼 Laundry Rooms</div>
-
-              <div className="install-item">🌤️ Terraces</div>
-
-              <div className="install-item">🏘️ Service Areas</div>
-
+          <div className="ch-material-grid">
+            <div className="ch-material-card">
+              <div className="ch-material-visual ch-ss-visual">
+                <div className="ch-material-rod"></div>
+                <div className="ch-material-rod"></div>
+                <div className="ch-material-rod"></div>
+                <div className="ch-material-tag">SS</div>
+              </div>
+              <div className="ch-material-content">
+                <span className="ch-material-index">MATERIAL 01</span>
+                <h3>Stainless Steel Rods</h3>
+                <p>
+                  Sturdy rods designed to hold laundry. Stainless
+                  steel provides a durable surface and helps resist
+                  rust in normal use.
+                </p>
+              </div>
             </div>
 
+            <div className="ch-material-card">
+              <div className="ch-material-visual ch-rope-visual">
+                <div className="ch-rope-line"></div>
+                <div className="ch-rope-line"></div>
+                <div className="ch-rope-line"></div>
+                <div className="ch-material-tag">NYLON</div>
+              </div>
+              <div className="ch-material-content">
+                <span className="ch-material-index">MATERIAL 02</span>
+                <h3>Nylon Lifting Rope</h3>
+                <p>
+                  Flexible rope used in the pulley mechanism to
+                  raise and lower the hanger. Proper installation
+                  and periodic inspection are important.
+                </p>
+              </div>
+            </div>
+
+            <div className="ch-material-card">
+              <div className="ch-material-visual ch-channel-visual">
+                <div className="ch-channel-shape"></div>
+                <div className="ch-channel-shape ch-channel-second"></div>
+                <div className="ch-material-tag">AL</div>
+              </div>
+              <div className="ch-material-content">
+                <span className="ch-material-index">MATERIAL 03</span>
+                <h3>Aluminium Channels</h3>
+                <p>
+                  Lightweight channels with a powder-coated finish
+                  designed for a neat look, corrosion resistance
+                  and smooth hanger support.
+                </p>
+              </div>
+            </div>
           </div>
+        </section>
 
-        </div>
-
-      </section>
-
-      {/* ================= COUNTER SECTION ================= */}
-
-      <section className="counter-section">
-
-        <div className="container counter-grid">
-
-          <div className="counter-card">
-            <h2>1000+</h2>
-            <p>Happy Customers</p>
-          </div>
-
-          <div className="counter-card">
-            <h2>10+</h2>
-            <p>Years Experience</p>
-          </div>
-
-          <div className="counter-card">
-            <h2>100%</h2>
-            <p>Quality Materials</p>
-          </div>
-
-          <div className="counter-card">
-            <h2>24/7</h2>
-            <p>Customer Support</p>
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ================= FAQ ================= */}
-
-      <section className="faq-section">
-
-        <div className="container">
-
-          <div className="section-heading">
-
-            <span className="section-tag">
-              Frequently Asked Questions
-            </span>
-
-            <h2>
-              Common
-              <span> Questions</span>
-            </h2>
-
-          </div>
-
-          <div className="faq-container">
-
-            <div className="faq-card">
-              <h4>Is the ceiling hanger rust resistant?</h4>
+        {/* ORDER FORM */}
+        <section className="ch-order-section">
+          <div className="ch-order-heading">
+            <div>
+              <div className="ch-category">LET'S MAKE YOUR SPACE BETTER</div>
+              <h2>Request an installation.</h2>
               <p>
-                Yes. We use premium 16 mm stainless steel pipes and
-                powder-coated aluminium components that resist rust and
-                corrosion.
+                Tell us about your ceiling, and our team will help
+                confirm the right hanger for your home.
               </p>
             </div>
-
-            <div className="faq-card">
-              <h4>How much weight can it carry?</h4>
-              <p>
-                Our heavy-duty ceiling hanger is designed to support multiple
-                clothes, bedsheets, towels, and blankets safely.
-              </p>
-            </div>
-
-            <div className="faq-card">
-              <h4>Can it be installed in apartments?</h4>
-              <p>
-                Absolutely. It is ideal for apartments, villas, independent
-                houses, balconies, and utility rooms.
-              </p>
-            </div>
-
-            <div className="faq-card">
-              <h4>Is the pulley easy to operate?</h4>
-              <p>
-                Yes. The high-quality nylon rope and smooth pulley mechanism
-                make lifting and lowering effortless.
-              </p>
-            </div>
-
+            <div className="ch-order-number">ORDER DETAILS / 01</div>
           </div>
 
-        </div>
+          <form className="ch-order-form" onSubmit={submitOrder}>
+            <div className="ch-fields-grid">
+              <div className="ch-field">
+                <label className="ch-label" htmlFor="ch-name">
+                  Full Name *
+                </label>
+                <input
+                  className="ch-input"
+                  id="ch-name"
+                  name="name"
+                  value={customer.name}
+                  onChange={updateCustomer}
+                  placeholder="Your name"
+                  required
+                />
+              </div>
 
-      </section>
+              <div className="ch-field">
+                <label className="ch-label" htmlFor="ch-phone">
+                  Mobile Number *
+                </label>
+                <input
+                  className="ch-input"
+                  id="ch-phone"
+                  name="phone"
+                  type="tel"
+                  value={customer.phone}
+                  onChange={updateCustomer}
+                  placeholder="Your contact number"
+                  required
+                />
+              </div>
 
-      {/* ================= CALL TO ACTION ================= */}
+              <div className="ch-field">
+                <label className="ch-label" htmlFor="ch-city">
+                  City *
+                </label>
+                <input
+                  className="ch-input"
+                  id="ch-city"
+                  name="city"
+                  value={customer.city}
+                  onChange={updateCustomer}
+                  placeholder="Your city"
+                  required
+                />
+              </div>
 
-      <section className="hanger-cta">
+              <div className="ch-field">
+                <label className="ch-label" htmlFor="ch-pincode">
+                  PIN Code *
+                </label>
+                <input
+                  className="ch-input"
+                  id="ch-pincode"
+                  name="pincode"
+                  inputMode="numeric"
+                  value={customer.pincode}
+                  onChange={updateCustomer}
+                  placeholder="6 digit PIN"
+                  required
+                />
+              </div>
 
-        <div className="container cta-wrapper">
+              <div className="ch-field ch-field-full">
+                <label className="ch-label" htmlFor="ch-address">
+                  Full Address *
+                </label>
+                <input
+                  className="ch-input"
+                  id="ch-address"
+                  name="address"
+                  value={customer.address}
+                  onChange={updateCustomer}
+                  placeholder="House, street, area, landmark"
+                  required
+                />
+              </div>
 
-          <h2>
-            Upgrade Your Laundry Space with Premium Ceiling Cloth Hangers
-          </h2>
+              <div className="ch-field">
+                <label className="ch-label" htmlFor="ch-ceiling">
+                  Ceiling Type *
+                </label>
+                <select
+                  className="ch-input ch-select"
+                  id="ch-ceiling"
+                  name="ceilingType"
+                  value={customer.ceilingType}
+                  onChange={updateCustomer}
+                  required
+                >
+                  <option value="">Select ceiling type</option>
+                  <option value="RCC Concrete">RCC / Concrete</option>
+                  <option value="POP Ceiling">POP Ceiling</option>
+                  <option value="Gypsum False Ceiling">Gypsum False Ceiling</option>
+                  <option value="Other">Other / Not sure</option>
+                </select>
+              </div>
 
-          <p>
-            Enjoy a cleaner, smarter, and more organised drying solution with
-            our high-quality ceiling cloth hangers. Designed for durability,
-            convenience, and modern living, they're the perfect addition to any
-            home.
-          </p>
+              <div className="ch-field">
+                <label className="ch-label" htmlFor="ch-quantity">
+                  Quantity
+                </label>
+                <div className="ch-quantity">
+                  <button
+                    className="ch-quantity-btn"
+                    type="button"
+                    onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                  >
+                    −
+                  </button>
+                  <div className="ch-quantity-value">{quantity}</div>
+                  <button
+                    className="ch-quantity-btn"
+                    type="button"
+                    onClick={() => setQuantity((q) => q + 1)}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
 
-          <Link to="/contact" className="cta-btn">
-            Contact Us Today
-            <FaArrowRight />
-          </Link>
+              <div className="ch-field ch-field-full">
+                <label className="ch-label" htmlFor="ch-notes">
+                  Additional Requirements
+                </label>
+                <textarea
+                  className="ch-input ch-textarea"
+                  id="ch-notes"
+                  name="notes"
+                  value={customer.notes}
+                  onChange={updateCustomer}
+                  placeholder="Describe your installation area or additional requirements..."
+                  rows={4}
+                />
+              </div>
+            </div>
 
-        </div>
+            <div className="ch-order-summary">
+              <div className="ch-summary-info">
+                <span>SELECTED PRODUCT</span>
+                <strong>
+                  {isWall ? "Wall-Mounted" : "Normal Ceiling"} · {length} Feet
+                </strong>
+                <small>
+                  {installation ? "Installation included" : "Installation excluded"}
+                </small>
+              </div>
 
-      </section>
-    </>
+              <div className="ch-summary-price">
+                <span>GRAND TOTAL</span>
+                <strong>₹{totalPrice.toLocaleString("en-IN")}</strong>
+              </div>
+            </div>
+
+            <button className="ch-submit-button" type="submit">
+              <span>Submit Order Request</span>
+              <span className="ch-submit-arrow">→</span>
+            </button>
+
+            <div className="ch-submit-note">
+              Final price and installation availability will be confirmed
+              by our team.
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <footer className="ch-footer">
+        <span>SIVENTHRA HOME SOLUTIONS</span>
+        <span>BETTER SPACES. BETTER LIVING.</span>
+      </footer>
+    </div>
   );
 };
 
