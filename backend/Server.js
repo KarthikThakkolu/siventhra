@@ -1,105 +1,123 @@
 
-// const path = require("path");
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const http = require("http");
+const WebSocket = require("ws");
+const path = require("path");
 
-// require("dotenv").config({
-//   path: path.join(__dirname, ".env"),
-//   override: true,
-// });
+// ROUTES
+const feedbackRoutes = require("./routers/feedback");
+const orderRoutes = require("./routers/orderRoutes");
 
-// const express = require("express");
-// const cors = require("cors");
-// const mongoose = require("mongoose");
-// const http = require("http");
-// const WebSocket = require("ws");
+// ENVIRONMENT VARIABLES
+dotenv.config();
 
-// // Routes must be imported AFTER dotenv
-// const feedbackRoutes = require("./routers/feedback");
-// const orderRoutes = require("./routers/orderRoutes");
+// EXPRESS APP
+const app = express();
 
-// const app = express();
+// PORT
+const PORT = process.env.PORT || 5000;
 
-// const PORT = process.env.PORT || 5000;
-// const MONGO_URI = process.env.MONGO_URI;
-// const FRONTEND_URL =
-//   process.env.FRONTEND_URL || "http://localhost:3000";
+// CORS
+app.use(
+    cors({
+        origin: process.env.FRONTEND_URL || "http://localhost:3000",
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"]
+    })
+);
 
-// app.use(cors({
-//   origin: FRONTEND_URL,
-//   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-//   allowedHeaders: ["Content-Type", "Authorization"],
-// }));
+// BODY PARSERS
+app.use(express.json({ limit: "10kb" }));
 
-// app.use(express.json({ limit: "10kb" }));
+app.use(
+    express.urlencoded({
+        extended: true
+    })
+);
 
-// app.use(express.urlencoded({
-//   extended: true,
-//   limit: "10kb",
-// }));
+// STATIC UPLOADS
+app.use(
+    "/uploads",
+    express.static(path.join(__dirname, "uploads"))
+);
 
-// app.use(
-//   "/uploads",
-//   express.static(path.join(__dirname, "uploads"))
-// );
+// ROOT ROUTE
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Siventhra Interior & Decors backend is running successfully."
+    });
+});
 
-// app.get("/", (req, res) => {
-//   res.json({
-//     success: true,
-//     message: "Siventhra backend is running.",
-//   });
-// });
+// FEEDBACK API
+app.use("/api/feedback", feedbackRoutes);
 
-// app.use("/api/feedback", feedbackRoutes);
-// app.use("/api/orders", orderRoutes);
+// CURTAIN ORDER API
+app.use("/api/orders", orderRoutes);
 
-// app.use((req, res) => {
-//   res.status(404).json({
-//     success: false,
-//     message: "API route not found.",
-//     path: req.originalUrl,
-//   });
-// });
+// HTTP SERVER
+const server = http.createServer(app);
 
-// const server = http.createServer(app);
+// WEBSOCKET SERVER
+const wss = new WebSocket.Server({
+    server,
+    path: "/ws"
+});
 
-// const wss = new WebSocket.Server({
-//   server,
-//   path: "/ws",
-// });
+wss.on("connection", (socket) => {
 
-// wss.on("connection", (socket) => {
-//   console.log("WebSocket connected");
+    console.log("WebSocket client connected");
 
-//   socket.send(JSON.stringify({
-//     success: true,
-//     message: "WebSocket connected successfully",
-//   }));
+    socket.send(
+        JSON.stringify({
+            message: "WebSocket connected successfully"
+        })
+    );
 
-//   socket.on("message", (message) => {
-//     console.log("Received:", message.toString());
-//   });
-// });
+    socket.on("close", () => {
+        console.log("WebSocket client disconnected");
+    });
 
-// const startServer = async () => {
-//   try {
-//     if (!MONGO_URI) {
-//       throw new Error("MONGO_URI is missing.");
-//     }
+    socket.on("error", (error) => {
+        console.error("WebSocket error:", error);
+    });
+});
 
-//     await mongoose.connect(MONGO_URI);
+// DATABASE CONNECTION AND SERVER START
+const startServer = async () => {
 
-//     console.log("MongoDB connected successfully");
+    try {
 
-//     server.listen(PORT, () => {
-//       console.log(`Server running on http://localhost:${PORT}`);
-//       console.log(`Orders API: http://localhost:${PORT}/api/orders`);
-//       console.log(`WebSocket: ws://localhost:${PORT}/ws`);
-//     });
+        // CONNECT MONGODB
+        await mongoose.connect(process.env.MONGO_URI);
 
-//   } catch (error) {
-//     console.error("Server startup failed:", error.message);
-//     await mongoose.disconnect().catch(() => {});
-//     process.exit(1);
-//   }
-// };
+        console.log("MongoDB connected successfully");
 
-// startServer();
+        // START SERVER
+        server.listen(PORT, () => {
+
+            console.log(`Server running on http://localhost:${PORT}`);
+
+            console.log(`Feedback API: http://localhost:${PORT}/api/feedback`);
+
+            console.log(`Curtain Order API: http://localhost:${PORT}/api/orders`);
+
+            console.log(`WebSocket: ws://localhost:${PORT}/ws`);
+
+        });
+
+    } catch (error) {
+
+        console.error("Server startup failed:");
+        console.error(error);
+
+        process.exit(1);
+
+    }
+};
+
+// START APPLICATION
+startServer();
