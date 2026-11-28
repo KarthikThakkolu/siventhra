@@ -20,15 +20,22 @@ const CurtainOrder = () => {
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
   const [requirements, setRequirements] = useState("");
+
   const [isSending, setIsSending] = useState(false);
+  const [orderSuccess, setOrderSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [submittedOrderId, setSubmittedOrderId] = useState("");
 
   const room = order.room || "Living Room";
   const width = order.width || "10";
   const height = order.height || "8";
   const style = order.curtainStyle || "Regular Pleats";
   const fullness = order.fullness || "1.5";
+
   const quantity = Number(order.quantity) || 8;
   const estimatedPrice = Number(order.estimatedPrice) || 9600;
+
+  // BACK TO CURTAIN EXPLORER
 
   const goBackToExplorer = () => {
     navigate("/curtain-explorer", {
@@ -36,61 +43,118 @@ const CurtainOrder = () => {
     });
   };
 
-  const sendWhatsAppOrder = () => {
-    if (!customerName.trim()) {
-      alert("Please enter your name.");
+  // DIRECT ORDER SUBMISSION
+
+  const submitCurtainOrder = async () => {
+    // Prevent duplicate submissions
+    if (isSending || orderSuccess) {
       return;
     }
 
+    setSubmitError("");
+
+    // VALIDATE CUSTOMER NAME
+
+    if (!customerName.trim()) {
+      setSubmitError("Please enter your name.");
+      return;
+    }
+
+    // VALIDATE PHONE NUMBER
+
     if (!customerPhone.trim()) {
-      alert("Please enter your mobile number.");
+      setSubmitError("Please enter your mobile number.");
       return;
     }
 
     if (!/^[0-9+\-\s()]{8,18}$/.test(customerPhone.trim())) {
-      alert("Please enter a valid mobile number.");
+      setSubmitError("Please enter a valid mobile number.");
       return;
     }
 
-    // Replace with Siventhra's WhatsApp business number.
-    const businessWhatsAppNumber = "916383431936";
+    // ORDER DATA
 
-    const message = `
-*CURTAIN ORDER ENQUIRY*
-*Siventhra Interior & Decors*
+    const orderData = {
+      customerName: customerName.trim(),
+      customerPhone: customerPhone.trim(),
+      requirements: requirements.trim(),
 
-*Customer Details*
-Name: ${customerName}
-Mobile: ${customerPhone}
+      fabric: {
+        name: fabric.name,
+        price: Number(fabric.price) || 0,
+      },
 
-*Curtain Details*
-Fabric: ${fabric.name}
-Fabric Price: ₹${fabric.price.toLocaleString("en-IN")} / metre
-Room: ${room}
-Window Width: ${width} ft
-Window Height: ${height} ft
-Curtain Style: ${style}
-Fullness: ${fullness}x
+      room,
+      width: Number(width),
+      height: Number(height),
+      curtainStyle: style,
+      fullness: Number(fullness),
+      quantity,
+      estimatedPrice,
+    };
 
-*Estimated Fabric Quantity*
-${quantity.toFixed(1)} metres
+    try {
+      setIsSending(true);
 
-*Estimated Amount*
-₹${estimatedPrice.toLocaleString("en-IN")}
+      const apiURL = (
+        process.env.REACT_APP_API_URL || "http://localhost:5000"
+      ).replace(/\/+$/, "");
 
-*Additional Requirements*
-${requirements.trim() || "None"}
+      // SEND ORDER TO BACKEND
 
-Please contact me regarding this curtain order.
-    `.trim();
+      const response = await fetch(`${apiURL}/api/orders`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderData),
+      });
 
-    const whatsappURL = `https://wa.me/${businessWhatsAppNumber}?text=${encodeURIComponent(
-      message
-    )}`;
+      // SAFELY READ RESPONSE
 
-    setIsSending(true);
-    window.open(whatsappURL, "_blank", "noopener,noreferrer");
-    setIsSending(false);
+      const result = await response.json();
+
+      // CHECK BACKEND RESPONSE
+
+      if (!response.ok) {
+        throw new Error(
+          result.message || "Unable to submit your order."
+        );
+      }
+
+      if (!result.success) {
+        throw new Error(
+          result.message || "Order submission was unsuccessful."
+        );
+      }
+
+      // GET ORDER ID FROM MVC RESPONSE
+
+      const orderId =
+        result.order?._id ||
+        result.order?.id ||
+        result.orderId ||
+        result._id ||
+        "";
+
+      setSubmittedOrderId(orderId);
+      setOrderSuccess(true);
+
+      console.log("Curtain order submitted successfully:", orderId);
+
+      // WhatsApp notification is handled by the backend.
+      // No separate WhatsApp API call is needed here.
+
+    } catch (error) {
+      console.error("Curtain order submission error:", error);
+
+      setSubmitError(
+        error.message || "Something went wrong. Please try again."
+      );
+
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -100,6 +164,7 @@ Please contact me regarding this curtain order.
 
       <div className="curtain-order-hero">
         <div className="curtain-order-hero-content">
+
           <div className="curtain-order-hero-label">
             YOUR CUSTOM CURTAINS
           </div>
@@ -112,6 +177,7 @@ Please contact me regarding this curtain order.
             Your space, your style. Review your curtain selections
             and send your requirements directly to our team.
           </div>
+
         </div>
       </div>
 
@@ -122,22 +188,30 @@ Please contact me regarding this curtain order.
         {/* BACK AND PROGRESS */}
 
         <div className="curtain-order-topbar">
+
           <div
             className="curtain-order-back"
             onClick={goBackToExplorer}
             role="button"
             tabIndex={0}
             onKeyDown={(event) => {
-              if (event.key === "Enter") goBackToExplorer();
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                goBackToExplorer();
+              }
             }}
           >
-            <div className="curtain-order-back-arrow">←</div>
+            <div className="curtain-order-back-arrow">
+              ←
+            </div>
+
             <div>Back to Curtain Explorer</div>
           </div>
 
           <div className="curtain-order-step-label">
             STEP 2 OF 2
           </div>
+
         </div>
 
         {/* ORDER GRID */}
@@ -153,15 +227,21 @@ Please contact me regarding this curtain order.
             <div className="curtain-order-product-card">
 
               <div className="curtain-order-card-heading">
-                <div className="curtain-order-heading-icon">01</div>
+                <div className="curtain-order-heading-icon">
+                  01
+                </div>
+
                 <div className="curtain-order-heading-text">
                   Your Selected Fabric
                 </div>
               </div>
 
-              <div className={`curtain-order-product-image curtain-order-product-image-${fabric.id || 2}`}></div>
+              <div
+                className={`curtain-order-product-image curtain-order-product-image-${fabric.id || 2}`}
+              ></div>
 
               <div className="curtain-order-product-info">
+
                 <div className="curtain-order-product-name">
                   {fabric.name}
                 </div>
@@ -171,9 +251,13 @@ Please contact me regarding this curtain order.
                 </div>
 
                 <div className="curtain-order-product-price">
-                  ₹{Number(fabric.price).toLocaleString("en-IN")}
-                  <div className="curtain-order-product-unit">/ metre</div>
+                  ₹{Number(fabric.price || 0).toLocaleString("en-IN")}
+
+                  <div className="curtain-order-product-unit">
+                    / metre
+                  </div>
                 </div>
+
               </div>
 
               <div
@@ -181,17 +265,27 @@ Please contact me regarding this curtain order.
                 onClick={goBackToExplorer}
                 role="button"
                 tabIndex={0}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    goBackToExplorer();
+                  }
+                }}
               >
                 Change Fabric
               </div>
+
             </div>
 
-            {/* DETAILS */}
+            {/* CUSTOMIZATION DETAILS */}
 
             <div className="curtain-order-details-card">
 
               <div className="curtain-order-card-heading">
-                <div className="curtain-order-heading-icon">02</div>
+                <div className="curtain-order-heading-icon">
+                  02
+                </div>
+
                 <div className="curtain-order-heading-text">
                   Your Customization
                 </div>
@@ -206,35 +300,53 @@ Please contact me regarding this curtain order.
 
               <div className="curtain-order-detail-row">
                 <div className="curtain-order-detail-icon">↔</div>
-                <div className="curtain-order-detail-label">Window Width</div>
+                <div className="curtain-order-detail-label">
+                  Window Width
+                </div>
                 <div className="curtain-order-detail-separator">:</div>
-                <div className="curtain-order-detail-value">{width} ft</div>
+                <div className="curtain-order-detail-value">
+                  {width} ft
+                </div>
               </div>
 
               <div className="curtain-order-detail-row">
                 <div className="curtain-order-detail-icon">↕</div>
-                <div className="curtain-order-detail-label">Window Height</div>
+                <div className="curtain-order-detail-label">
+                  Window Height
+                </div>
                 <div className="curtain-order-detail-separator">:</div>
-                <div className="curtain-order-detail-value">{height} ft</div>
+                <div className="curtain-order-detail-value">
+                  {height} ft
+                </div>
               </div>
 
               <div className="curtain-order-detail-row">
                 <div className="curtain-order-detail-icon">⌁</div>
-                <div className="curtain-order-detail-label">Curtain Style</div>
+                <div className="curtain-order-detail-label">
+                  Curtain Style
+                </div>
                 <div className="curtain-order-detail-separator">:</div>
-                <div className="curtain-order-detail-value">{style}</div>
+                <div className="curtain-order-detail-value">
+                  {style}
+                </div>
               </div>
 
               <div className="curtain-order-detail-row">
                 <div className="curtain-order-detail-icon">▤</div>
-                <div className="curtain-order-detail-label">Fabric Fullness</div>
+                <div className="curtain-order-detail-label">
+                  Fabric Fullness
+                </div>
                 <div className="curtain-order-detail-separator">:</div>
-                <div className="curtain-order-detail-value">{fullness}x</div>
+                <div className="curtain-order-detail-value">
+                  {fullness}x
+                </div>
               </div>
 
               <div className="curtain-order-detail-row">
                 <div className="curtain-order-detail-icon">◫</div>
-                <div className="curtain-order-detail-label">Quantity Required</div>
+                <div className="curtain-order-detail-label">
+                  Quantity Required
+                </div>
                 <div className="curtain-order-detail-separator">:</div>
                 <div className="curtain-order-detail-value curtain-order-quantity">
                   {quantity.toFixed(1)} metres
@@ -246,9 +358,16 @@ Please contact me regarding this curtain order.
                 onClick={goBackToExplorer}
                 role="button"
                 tabIndex={0}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    goBackToExplorer();
+                  }
+                }}
               >
                 Edit Measurements
               </div>
+
             </div>
 
             {/* CUSTOMER INFORMATION */}
@@ -256,7 +375,10 @@ Please contact me regarding this curtain order.
             <div className="curtain-order-customer-card">
 
               <div className="curtain-order-card-heading">
-                <div className="curtain-order-heading-icon">03</div>
+                <div className="curtain-order-heading-icon">
+                  03
+                </div>
+
                 <div className="curtain-order-heading-text">
                   Your Contact Details
                 </div>
@@ -265,6 +387,7 @@ Please contact me regarding this curtain order.
               <div className="curtain-order-customer-fields">
 
                 <div className="curtain-order-field">
+
                   <div className="curtain-order-field-label">
                     Your Name
                   </div>
@@ -272,13 +395,18 @@ Please contact me regarding this curtain order.
                   <input
                     type="text"
                     value={customerName}
-                    onChange={(event) => setCustomerName(event.target.value)}
+                    onChange={(event) =>
+                      setCustomerName(event.target.value)
+                    }
                     placeholder="Enter your full name"
                     maxLength={100}
+                    disabled={isSending || orderSuccess}
                   />
+
                 </div>
 
                 <div className="curtain-order-field">
+
                   <div className="curtain-order-field-label">
                     Mobile Number
                   </div>
@@ -286,17 +414,23 @@ Please contact me regarding this curtain order.
                   <input
                     type="tel"
                     value={customerPhone}
-                    onChange={(event) => setCustomerPhone(event.target.value)}
+                    onChange={(event) =>
+                      setCustomerPhone(event.target.value)
+                    }
                     placeholder="Enter your phone number"
                     maxLength={18}
+                    disabled={isSending || orderSuccess}
                   />
+
                 </div>
 
               </div>
 
               <div className="curtain-order-field curtain-order-requirements-field">
+
                 <div className="curtain-order-field-label">
                   Additional Requirements
+
                   <div className="curtain-order-optional-label">
                     Optional
                   </div>
@@ -304,11 +438,15 @@ Please contact me regarding this curtain order.
 
                 <textarea
                   value={requirements}
-                  onChange={(event) => setRequirements(event.target.value)}
+                  onChange={(event) =>
+                    setRequirements(event.target.value)
+                  }
                   placeholder="Tell us about lining, colour preferences, installation or anything else you need..."
                   rows={4}
                   maxLength={1000}
+                  disabled={isSending || orderSuccess}
                 />
+
               </div>
 
             </div>
@@ -324,7 +462,10 @@ Please contact me regarding this curtain order.
             <div className="curtain-order-price-card">
 
               <div className="curtain-order-price-heading">
-                <div className="curtain-order-price-icon">₹</div>
+                <div className="curtain-order-price-icon">
+                  ₹
+                </div>
+
                 <div className="curtain-order-price-title">
                   Estimated Cost
                 </div>
@@ -336,7 +477,7 @@ Please contact me regarding this curtain order.
 
               <div className="curtain-order-price-rate">
                 {quantity.toFixed(1)} m × ₹
-                {Number(fabric.price).toLocaleString("en-IN")}
+                {Number(fabric.price || 0).toLocaleString("en-IN")}
               </div>
 
               <div className="curtain-order-price-divider"></div>
@@ -346,6 +487,7 @@ Please contact me regarding this curtain order.
               </div>
 
               <div className="curtain-order-includes-list">
+
                 <div className="curtain-order-includes-item">
                   <div className="curtain-order-includes-check">✓</div>
                   <div>Premium Quality Fabric</div>
@@ -365,6 +507,7 @@ Please contact me regarding this curtain order.
                   <div className="curtain-order-includes-check">✓</div>
                   <div>Installation Support</div>
                 </div>
+
               </div>
 
               <div className="curtain-order-estimate-note">
@@ -374,38 +517,97 @@ Please contact me regarding this curtain order.
 
             </div>
 
-            {/* WHATSAPP ACTION */}
+            {/* DIRECT ORDER SUBMISSION */}
 
             <div className="curtain-order-whatsapp-card">
 
-              <div className="curtain-order-whatsapp-title">
-                Ready to send your enquiry?
-              </div>
+              {orderSuccess ? (
 
-              <div className="curtain-order-whatsapp-description">
-                Send all your selected fabric and measurement
-                details directly to our WhatsApp.
-              </div>
+                <div className="curtain-order-success">
 
-              <div
-                className="curtain-order-whatsapp-button"
-                onClick={sendWhatsAppOrder}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") sendWhatsAppOrder();
-                }}
-              >
-                <div className="curtain-order-whatsapp-icon">◉</div>
-                <div>
-                  {isSending ? "Opening WhatsApp..." : "Send Order on WhatsApp"}
+                  <div className="curtain-order-success-icon">
+                    ✓
+                  </div>
+
+                  <div className="curtain-order-whatsapp-title">
+                    Order Submitted Successfully!
+                  </div>
+
+                  <div className="curtain-order-whatsapp-description">
+                    Thank you for choosing Siventhra Interior & Decors.
+                    We have received your curtain order request.
+                    Our team will contact you shortly.
+                  </div>
+
+                  {submittedOrderId && (
+                    <div className="curtain-order-reference">
+                      Order Reference: {submittedOrderId}
+                    </div>
+                  )}
+
                 </div>
-                <div className="curtain-order-whatsapp-arrow">→</div>
-              </div>
 
-              <div className="curtain-order-privacy-note">
-                Your details are shared securely through WhatsApp.
-              </div>
+              ) : (
+
+                <>
+
+                  <div className="curtain-order-whatsapp-title">
+                    Ready to Place Your Order?
+                  </div>
+
+                  <div className="curtain-order-whatsapp-description">
+                    Submit your curtain requirements directly through
+                    our website. Our team will contact you shortly.
+                  </div>
+
+                  <div
+                    className="curtain-order-whatsapp-button"
+                    onClick={!isSending ? submitCurtainOrder : undefined}
+                    role="button"
+                    tabIndex={isSending ? -1 : 0}
+                    aria-disabled={isSending}
+                    onKeyDown={(event) => {
+                      if (
+                        !isSending &&
+                        (event.key === "Enter" ||
+                          event.key === " ")
+                      ) {
+                        event.preventDefault();
+                        submitCurtainOrder();
+                      }
+                    }}
+                  >
+
+                    <div className="curtain-order-whatsapp-icon">
+                      ✓
+                    </div>
+
+                    <div>
+                      {isSending
+                        ? "Submitting Order..."
+                        : "Submit Order"}
+                    </div>
+
+                    <div className="curtain-order-whatsapp-arrow">
+                      →
+                    </div>
+
+                  </div>
+
+                  {submitError && (
+                    <div className="curtain-order-error">
+                      {submitError}
+                    </div>
+                  )}
+
+                  <div className="curtain-order-privacy-note">
+                    Your order details will be submitted securely
+                    through our website.
+                  </div>
+
+                </>
+
+              )}
 
             </div>
 
@@ -445,6 +647,7 @@ Please contact me regarding this curtain order.
       {/* FOOTER */}
 
       <div className="curtain-order-footer">
+
         <div className="curtain-order-footer-brand">
           Siventhra Interior & Decors
         </div>
@@ -452,6 +655,7 @@ Please contact me regarding this curtain order.
         <div className="curtain-order-footer-tagline">
           Beautiful Curtains. A Beautiful Home.
         </div>
+
       </div>
 
     </div>

@@ -16,6 +16,8 @@ import Curtains from "./Pages/Curtains";
 // import Newhomepage from "./Main/Newhomepage";
 import CurtainExplorer from "./Pages/CurtainExplorer";
 import CurtainOrder from "./Pages/CurtainOrder";
+import Wallpapers from "./Pages/Wallpapers";
+import WallpaperDetails from "./Pages/WallpaperDetails";
 
 function App() {
   return (
@@ -32,7 +34,9 @@ function App() {
         <Route path="/Feedback" element={<Feedback />} />
         <Route path="/Pages/Curtains" element={<Curtains />} />
         <Route path="/Pages/CurtainExplorer" element={<CurtainExplorer />} />
-        <Route path="/pages/CurtainOrder" element={<CurtainOrder />} />
+        <Route path="/Pages/CurtainOrder" element={<CurtainOrder />} />
+        <Route path="/Pages/Wallpapers" element={<Wallpapers />} />
+        <Route path="/Pages/WallpaperDetails" element={<WallpaperDetails />} />
       </Routes>
 
       <Footer />

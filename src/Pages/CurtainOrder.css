@@ -1043,3 +1043,43 @@
         font-size: 16px;
     }
 }
+
+
+.curtain-order-success {
+    text-align: center;
+    padding: 20px 12px;
+}
+
+.curtain-order-success-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e4eee4;
+    color: #294b32;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.curtain-order-reference {
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #293a2d;
+    overflow-wrap: anywhere;
+}
+
+.curtain-order-error {
+    margin-top: 14px;
+    color: #b42318;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.curtain-order-whatsapp-button[aria-disabled="true"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

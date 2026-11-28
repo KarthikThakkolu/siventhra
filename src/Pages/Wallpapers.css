@@ -1,0 +1,618 @@
+
+/* ==============================
+   WALLPAPER PAGE
+============================== */
+
+.wallpaper-page {
+  width: 100%;
+  background: #faf7f2;
+  color: #27231e;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.wallpaper-page * {
+  box-sizing: border-box;
+}
+
+/* ==============================
+   HERO
+============================== */
+
+.wallpaper-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 360px;
+  padding: 55px 6%;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(245, 236, 220, 0.96) 0%,
+      rgba(245, 236, 220, 0.88) 30%,
+      rgba(245, 236, 220, 0.15) 70%,
+      rgba(245, 236, 220, 0.02) 100%
+    ),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=90");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.wallpaper-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 540px;
+}
+
+.wallpaper-hero-small {
+  display: block;
+  color: #a67a24;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  font-family: Georgia, serif;
+}
+
+.wallpaper-hero-title {
+  margin: 0;
+  color: #191612;
+  font-size: clamp(42px, 5vw, 68px);
+  font-family: Georgia, serif;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.wallpaper-hero-description {
+  margin: 18px 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #38332c;
+}
+
+.wallpaper-gold-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #a87916;
+  color: #ffffff;
+  padding: 13px 23px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.wallpaper-gold-button:hover {
+  background: #77500b;
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   SECTION
+============================== */
+
+.wallpaper-section {
+  padding: 24px 4%;
+}
+
+.wallpaper-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.wallpaper-heading-line {
+  flex: 1;
+  max-width: 180px;
+  height: 1px;
+  background: #c8a45d;
+}
+
+.wallpaper-section-title {
+  margin: 0;
+  color: #31281f;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+/* ==============================
+   STYLE GRID
+============================== */
+
+.wallpaper-style-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.wallpaper-style-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #25211c;
+  min-width: 0;
+}
+
+.wallpaper-style-image-wrapper {
+  width: 100%;
+  height: 95px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.wallpaper-style-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.wallpaper-style-card:hover .wallpaper-style-image {
+  transform: scale(1.08);
+}
+
+.wallpaper-style-name {
+  font-size: 13px;
+  margin-top: 9px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ==============================
+   ROOM GRID
+============================== */
+
+.wallpaper-room-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.wallpaper-room-card {
+  position: relative;
+  display: block;
+  min-width: 0;
+  height: 200px;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.wallpaper-room-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.wallpaper-room-card:hover .wallpaper-room-image {
+  transform: scale(1.08);
+}
+
+.wallpaper-room-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: #ffffff;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.03)
+  );
+}
+
+.wallpaper-room-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.wallpaper-room-explore {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* ==============================
+   BEST SELLING
+============================== */
+
+.wallpaper-best-heading {
+  position: relative;
+}
+
+.wallpaper-view-all {
+  position: absolute;
+  right: 0;
+  color: #8a641d;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.wallpaper-best-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.wallpaper-best-card {
+  position: relative;
+  display: block;
+  height: 145px;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+}
+
+.wallpaper-best-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.wallpaper-best-card:hover .wallpaper-best-image {
+  transform: scale(1.08);
+}
+
+.wallpaper-best-name {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 14px 10px;
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.65)
+  );
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.wallpaper-best-card:hover .wallpaper-best-name {
+  opacity: 1;
+}
+
+/* ==============================
+   BENEFITS
+============================== */
+
+.wallpaper-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 25px 4%;
+  background: #f4eee3;
+  border-top: 1px solid #e6dccb;
+  border-bottom: 1px solid #e6dccb;
+}
+
+.wallpaper-benefit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px 15px;
+  border-right: 1px solid #d8c7a6;
+}
+
+.wallpaper-benefit-card:last-child {
+  border-right: none;
+}
+
+.wallpaper-benefit-icon {
+  font-size: 28px;
+  color: #a67a24;
+  margin-bottom: 8px;
+}
+
+.wallpaper-benefit-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wallpaper-benefit-subtitle {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* ==============================
+   CTA
+============================== */
+
+.wallpaper-bottom-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 28px 6%;
+  color: white;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(24, 33, 22, 0.96),
+      rgba(24, 33, 22, 0.86)
+    ),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1500&q=80");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.wallpaper-cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wallpaper-cta-title {
+  font-family: Georgia, serif;
+  font-size: clamp(20px, 2.5vw, 30px);
+  font-weight: 600;
+}
+
+.wallpaper-cta-description {
+  font-size: 14px;
+  color: #e4dfd6;
+  line-height: 1.5;
+}
+
+.wallpaper-cta-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 13px 22px;
+  background: #a87916;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.wallpaper-cta-whatsapp:hover {
+  background: #c08b24;
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   TABLET
+============================== */
+
+@media (max-width: 1024px) {
+  .wallpaper-hero {
+    min-height: 310px;
+    padding: 45px 5%;
+  }
+
+  .wallpaper-style-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .wallpaper-style-image-wrapper {
+    height: 115px;
+  }
+
+  .wallpaper-room-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wallpaper-room-card {
+    height: 220px;
+  }
+
+  .wallpaper-best-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .wallpaper-best-card {
+    height: 180px;
+  }
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 600px) {
+  .wallpaper-hero {
+    min-height: 300px;
+    padding: 30px 6%;
+    background-position: 60% center;
+  }
+
+  .wallpaper-hero-content {
+    max-width: 90%;
+  }
+
+  .wallpaper-hero-small {
+    font-size: 20px;
+  }
+
+  .wallpaper-hero-title {
+    font-size: 40px;
+  }
+
+  .wallpaper-hero-description {
+    font-size: 15px;
+  }
+
+  .wallpaper-gold-button {
+    padding: 11px 18px;
+    font-size: 13px;
+  }
+
+  .wallpaper-section {
+    padding: 20px 4%;
+  }
+
+  .wallpaper-section-heading {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .wallpaper-section-title {
+    font-size: 18px;
+  }
+
+  .wallpaper-heading-line {
+    max-width: 60px;
+  }
+
+  .wallpaper-style-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .wallpaper-style-image-wrapper {
+    height: 75px;
+    border-radius: 9px;
+  }
+
+  .wallpaper-style-name {
+    font-size: 11px;
+  }
+
+  .wallpaper-room-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .wallpaper-room-card {
+    height: 155px;
+    border-radius: 10px;
+  }
+
+  .wallpaper-room-overlay {
+    padding: 12px;
+  }
+
+  .wallpaper-room-name {
+    font-size: 15px;
+  }
+
+  .wallpaper-room-explore {
+    font-size: 11px;
+  }
+
+  .wallpaper-best-heading {
+    flex-wrap: wrap;
+  }
+
+  .wallpaper-view-all {
+    position: static;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .wallpaper-best-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .wallpaper-best-card {
+    height: 145px;
+    border-radius: 10px;
+  }
+
+  .wallpaper-best-name {
+    opacity: 1;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .wallpaper-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 15px 4%;
+  }
+
+  .wallpaper-benefit-card {
+    padding: 15px 8px;
+  }
+
+  .wallpaper-benefit-card:nth-child(2) {
+    border-right: none;
+  }
+
+  .wallpaper-benefit-card:nth-child(1),
+  .wallpaper-benefit-card:nth-child(2) {
+    border-bottom: 1px solid #d8c7a6;
+  }
+
+  .wallpaper-benefit-icon {
+    font-size: 24px;
+  }
+
+  .wallpaper-benefit-title {
+    font-size: 12px;
+  }
+
+  .wallpaper-benefit-subtitle {
+    font-size: 11px;
+  }
+
+  .wallpaper-bottom-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 6%;
+    gap: 18px;
+  }
+
+  .wallpaper-cta-title {
+    font-size: 23px;
+  }
+
+  .wallpaper-cta-description {
+    font-size: 13px;
+  }
+
+  .wallpaper-cta-whatsapp {
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+}
+
+/* ==============================
+   EXTRA SMALL DEVICES
+============================== */
+
+@media (max-width: 380px) {
+  .wallpaper-hero-title {
+    font-size: 34px;
+  }
+
+  .wallpaper-style-grid {
+    gap: 7px;
+  }
+
+  .wallpaper-style-image-wrapper {
+    height: 65px;
+  }
+
+  .wallpaper-section-title {
+    font-size: 16px;
+  }
+
+  .wallpaper-room-card {
+    height: 130px;
+  }
+
+  .wallpaper-best-card {
+    height: 125px;
+  }
+}
